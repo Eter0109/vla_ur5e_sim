@@ -1,0 +1,36 @@
+seed: 42
+robot: UR5e
+gripper: Robotiq85Gripper
+environment: CustomLift
+instruction: "Grasp the red object and lift it"
+
+control:
+  simulator_hz: 10
+  policy_hz: 10
+  horizon: 200
+  controller: OSC_POSE
+  max_delta_position_m: 0.02
+  max_delta_rotation_rad: 0.10
+
+camera:
+  name: agentview
+  width: 256
+  height: 256
+  depth: false
+
+object:
+  kind: box
+  name: target
+  size_m: [0.025, 0.025, 0.025]
+  rgba: [0.9, 0.05, 0.05, 1.0]
+  density_kg_m3: 350
+  friction: [1.0, 0.005, 0.0001]
+
+randomization:
+  x_range_m: [-0.06, 0.06]
+  y_range_m: [-0.06, 0.06]
+  yaw_range_rad: [-3.14159, 3.14159]
+
+success:
+  lift_height_m: 0.10
+  hold_steps: 10
