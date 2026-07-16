@@ -74,6 +74,11 @@ def _install_smolvla_loss_fix() -> None:
         # 32-D for checkpoint compatibility, while this task has 7 real dims.
         action_dim = self.config.action_feature.shape[0]
         losses = losses[:, :, :action_dim]
+        # 对旋转维度 (dRx, dRy, dRz) 施加低权重 0.1
+        dim_weights = torch.ones(action_dim, device=losses.device)
+        if action_dim >= 7:
+            dim_weights[3:6] = 0.1
+        losses = losses * dim_weights.unsqueeze(0).unsqueeze(0)
         metrics = {"losses_after_forward": losses.detach().mean().item()}
 
         if action_is_pad is None:
