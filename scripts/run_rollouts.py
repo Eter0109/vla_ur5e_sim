@@ -47,6 +47,33 @@ from vla_sim.scenes import load_manifest  # noqa: E402
 install_fast_parquet_loader()
 
 
+class TemporalEnsemble:
+    """Temporal ensemble that aggregates action predictions over time using exponential decay weights."""
+
+    def __init__(self, chunk_size: int, action_dim: int, decay: float = 0.5):
+        self.chunk_size = chunk_size
+        self.action_dim = action_dim
+        self.decay = decay
+        self._buffer: dict[int, list[tuple[np.ndarray, float]]] = {}
+
+    def add_chunk(self, start_step: int, chunk: np.ndarray):
+        weights = self.decay ** np.arange(len(chunk))
+        for i, (action, w) in enumerate(zip(chunk, weights)):
+            t = start_step + i
+            self._buffer.setdefault(t, []).append((action, w))
+
+    def get_action(self, step: int) -> np.ndarray:
+        entries = self._buffer.pop(step, None)
+        if entries is None:
+            raise ValueError(f"No prediction for step {step}")
+        actions, weights = zip(*entries)
+        weights = np.array(weights)
+        return np.average(actions, axis=0, weights=weights)
+
+    def has_action(self, step: int) -> bool:
+        return step in self._buffer
+
+
 def _install_peft_compatibility() -> None:
     if not hasattr(SmolVLAConfig, "get"):
         SmolVLAConfig.get = lambda self, key, default=None: getattr(self, key, default)  # type: ignore[attr-defined]
@@ -125,6 +152,23 @@ def main() -> int:
         default=1,
         help="Average this many independently sampled action chunks.",
     )
+    parser.add_argument(
+        "--temporal-ensemble",
+        action="store_true",
+        help="Enable temporal ensembling of action chunks over time.",
+    )
+    parser.add_argument(
+        "--temporal-ensemble-decay",
+        type=float,
+        default=0.5,
+        help="Exponential decay weight for temporal ensembling.",
+    )
+    parser.add_argument(
+        "--replan-steps",
+        type=int,
+        default=4,
+        help="Replan frequency (in steps) when temporal ensembling is enabled.",
+    )
     parser.add_argument("--output", type=Path, default=ROOT / "outputs" / "rollouts.json")
     args = parser.parse_args()
 
@@ -152,10 +196,39 @@ def main() -> int:
             max_cube_z = float(initial_cube_pos[2])
             max_hold_count = 0
             ensemble_actions: deque[np.ndarray] = deque()
+            temporal_ensemble = (
+                TemporalEnsemble(
+                    chunk_size=config.n_action_steps,
+                    action_dim=7,
+                    decay=args.temporal_ensemble_decay,
+                )
+                if args.temporal_ensemble
+                else None
+            )
+
+            # Diagnostics initialization
+            min_dist = float("inf")
+            approach_success = False
+            grasp_attempted = False
+            time_to_approach = -1
+
             success = False
             for step in range(1, args.horizon + 1):
                 started = time.perf_counter()
-                if args.samples_per_plan > 1:
+                if args.temporal_ensemble:
+                    if (step - 1) % args.replan_steps == 0:
+                        chunk = predict_ensemble_chunk(
+                            observation,
+                            policy,
+                            preprocessor,
+                            postprocessor,
+                            torch.device("cuda"),
+                            config.use_amp,
+                            samples=1,
+                        )
+                        temporal_ensemble.add_chunk(step, chunk)
+                    action_array = temporal_ensemble.get_action(step)
+                elif args.samples_per_plan > 1:
                     if not ensemble_actions:
                         chunk = predict_ensemble_chunk(
                             observation,
@@ -198,6 +271,19 @@ def main() -> int:
                 )
                 max_hold_count = max(max_hold_count, int(info["success_hold_count"]))
                 success = bool(info["success"])
+
+                # Update diagnostics
+                cube_pos = np.asarray(env.raw_observation["cube_pos"], dtype=float)
+                eef_pos = np.asarray(env.raw_observation["robot0_eef_pos"], dtype=float)
+                dist = float(np.linalg.norm(cube_pos - eef_pos))
+                min_dist = min(min_dist, dist)
+                if dist < 0.03:
+                    approach_success = True
+                    if time_to_approach == -1:
+                        time_to_approach = step
+                if action[6] > 0.5:
+                    grasp_attempted = True
+
                 if terminated or truncated:
                     break
             action_array = np.asarray(actions)
@@ -216,6 +302,11 @@ def main() -> int:
                 "max_success_hold_steps": max_hold_count,
                 "mean_action": action_array.mean(axis=0).tolist(),
                 "std_action": action_array.std(axis=0).tolist(),
+                # Diagnostics
+                "min_eef_cube_dist_m": min_dist,
+                "approach_success": approach_success,
+                "grasp_attempted": grasp_attempted,
+                "time_to_approach_steps": time_to_approach,
             }
             results.append(result)
             print(json.dumps(result), flush=True)
