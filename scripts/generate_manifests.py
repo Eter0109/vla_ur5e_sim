@@ -15,7 +15,7 @@ from vla_sim.scenes import generate_scenes, save_manifest  # noqa: E402
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, default=ROOT / "data" / "manifests")
-    parser.add_argument("--train", type=int, default=200)
+    parser.add_argument("--train", type=int, default=500)
     parser.add_argument("--validation", type=int, default=30)
     parser.add_argument("--test", type=int, default=50)
     args = parser.parse_args()

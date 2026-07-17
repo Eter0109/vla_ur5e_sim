@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import argparse
 import faulthandler
+import hashlib
 import json
 import os
+import subprocess
 import sys
 import tempfile
 import time
@@ -43,35 +45,55 @@ from lerobot.policies.utils import prepare_observation_for_inference  # noqa: E4
 from vla_sim.envs import UR5eLiftConfig, make_ur5e_lift  # noqa: E402
 from vla_sim.lerobot_compat import install_fast_parquet_loader  # noqa: E402
 from vla_sim.scenes import load_manifest  # noqa: E402
+from vla_sim.temporal import TemporalEnsemble  # noqa: E402
 
 install_fast_parquet_loader()
 
 
-class TemporalEnsemble:
-    """Temporal ensemble that aggregates action predictions over time using exponential decay weights."""
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
 
-    def __init__(self, chunk_size: int, action_dim: int, decay: float = 0.5):
-        self.chunk_size = chunk_size
-        self.action_dim = action_dim
-        self.decay = decay
-        self._buffer: dict[int, list[tuple[np.ndarray, float]]] = {}
 
-    def add_chunk(self, start_step: int, chunk: np.ndarray):
-        weights = self.decay ** np.arange(len(chunk))
-        for i, (action, w) in enumerate(zip(chunk, weights)):
-            t = start_step + i
-            self._buffer.setdefault(t, []).append((action, w))
+def _write_json_atomic(path: Path, value: Any) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temporary_path = path.with_name(f".{path.stem}.{os.getpid()}.partial.json")
+    serialized = json.dumps(value, indent=2)
+    try:
+        temporary_path.write_text(serialized, encoding="utf-8")
+        temporary_path.replace(path)
+    except PermissionError:
+        # Some managed Windows sandboxes allow overwriting an approved output
+        # file but deny creation of a sibling temporary file.
+        path.write_text(serialized, encoding="utf-8")
 
-    def get_action(self, step: int) -> np.ndarray:
-        entries = self._buffer.pop(step, None)
-        if entries is None:
-            raise ValueError(f"No prediction for step {step}")
-        actions, weights = zip(*entries)
-        weights = np.array(weights)
-        return np.average(actions, axis=0, weights=weights)
 
-    def has_action(self, step: int) -> bool:
-        return step in self._buffer
+def _git_metadata() -> dict[str, Any]:
+    def run(*args: str) -> str:
+        completed = subprocess.run(
+            ["git", "-c", f"safe.directory={ROOT.as_posix()}", *args],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+        )
+        return completed.stdout.strip()
+
+    try:
+        status = run("status", "--porcelain")
+        return {
+            "branch": run("branch", "--show-current"),
+            "commit": run("rev-parse", "HEAD"),
+            "dirty": bool(status),
+            "diff_sha256": hashlib.sha256(run("diff", "--binary").encode()).hexdigest(),
+        }
+    except (OSError, subprocess.CalledProcessError):
+        return {"branch": None, "commit": None, "dirty": None, "diff_sha256": None}
 
 
 def _install_peft_compatibility() -> None:
@@ -169,8 +191,45 @@ def main() -> int:
         default=4,
         help="Replan frequency (in steps) when temporal ensembling is enabled.",
     )
+    parser.add_argument(
+        "--gripper-mode",
+        choices=sorted(TemporalEnsemble.MODES),
+        default="latest",
+        help="How to aggregate the discrete gripper command in temporal mode.",
+    )
+    parser.add_argument(
+        "--gripper-close-threshold",
+        type=float,
+        default=0.5,
+        help="Latch the gripper closed above this command value.",
+    )
+    parser.add_argument(
+        "--gripper-confirm-steps",
+        type=int,
+        default=2,
+        help="Consecutive close commands required before debounce mode latches.",
+    )
+    parser.add_argument(
+        "--gripper-hold-steps",
+        type=int,
+        default=4,
+        help="Minimum closed duration after a close command in hold mode.",
+    )
     parser.add_argument("--output", type=Path, default=ROOT / "outputs" / "rollouts.json")
     args = parser.parse_args()
+
+    if args.samples_per_plan < 1:
+        parser.error("--samples-per-plan must be at least 1")
+    if args.replan_steps < 1:
+        parser.error("--replan-steps must be at least 1")
+    if not 0 < args.temporal_ensemble_decay <= 1:
+        parser.error("--temporal-ensemble-decay must be in (0, 1]")
+    if not -1 <= args.gripper_close_threshold <= 1:
+        parser.error("--gripper-close-threshold must be in [-1, 1]")
+    if args.gripper_confirm_steps < 1:
+        parser.error("--gripper-confirm-steps must be at least 1")
+    if args.gripper_hold_steps < 1:
+        parser.error("--gripper-hold-steps must be at least 1")
 
     dataset = LeRobotDataset(args.repo_id, root=args.dataset_root)
     config, policy, preprocessor, postprocessor = load_policy(
@@ -201,6 +260,10 @@ def main() -> int:
                     chunk_size=config.n_action_steps,
                     action_dim=7,
                     decay=args.temporal_ensemble_decay,
+                    gripper_mode=args.gripper_mode,
+                    gripper_close_threshold=args.gripper_close_threshold,
+                    gripper_confirm_steps=args.gripper_confirm_steps,
+                    gripper_hold_steps=args.gripper_hold_steps,
                 )
                 if args.temporal_ensemble
                 else None
@@ -211,6 +274,11 @@ def main() -> int:
             approach_success = False
             grasp_attempted = False
             time_to_approach = -1
+            first_gripper_close_step = -1
+            gripper_transition_count = 0
+            eef_cube_dist_at_first_close_m: float | None = None
+            max_lift_after_first_close_m: float | None = None
+            previous_gripper_closed = False
 
             success = False
             for step in range(1, args.horizon + 1):
@@ -224,8 +292,13 @@ def main() -> int:
                             postprocessor,
                             torch.device("cuda"),
                             config.use_amp,
-                            samples=1,
+                            samples=args.samples_per_plan,
                         )
+                        if len(chunk) < args.replan_steps:
+                            raise ValueError(
+                                f"replan_steps={args.replan_steps} exceeds predicted chunk "
+                                f"length={len(chunk)}"
+                            )
                         temporal_ensemble.add_chunk(step, chunk)
                     action_array = temporal_ensemble.get_action(step)
                 elif args.samples_per_plan > 1:
@@ -262,6 +335,18 @@ def main() -> int:
                     1.0,
                 ).astype(np.float32)
                 actions.append(action.copy())
+                pre_cube_pos = np.asarray(env.raw_observation["cube_pos"], dtype=float)
+                pre_eef_pos = np.asarray(env.raw_observation["robot0_eef_pos"], dtype=float)
+                gripper_closed = bool(action[6] > args.gripper_close_threshold)
+                if gripper_closed != previous_gripper_closed:
+                    gripper_transition_count += 1
+                if gripper_closed and first_gripper_close_step == -1:
+                    first_gripper_close_step = step
+                    eef_cube_dist_at_first_close_m = float(
+                        np.linalg.norm(pre_cube_pos - pre_eef_pos)
+                    )
+                    max_lift_after_first_close_m = 0.0
+                previous_gripper_closed = gripper_closed
                 observation, _, terminated, truncated, info = env.step(action)
                 if args.render:
                     env.render()
@@ -269,6 +354,11 @@ def main() -> int:
                     max_cube_z,
                     float(np.asarray(env.raw_observation["cube_pos"])[2]),
                 )
+                if first_gripper_close_step != -1:
+                    max_lift_after_first_close_m = max(
+                        float(max_lift_after_first_close_m or 0.0),
+                        max_cube_z - float(initial_cube_pos[2]),
+                    )
                 max_hold_count = max(max_hold_count, int(info["success_hold_count"]))
                 success = bool(info["success"])
 
@@ -307,13 +397,30 @@ def main() -> int:
                 "approach_success": approach_success,
                 "grasp_attempted": grasp_attempted,
                 "time_to_approach_steps": time_to_approach,
+                "first_gripper_close_step": first_gripper_close_step,
+                "gripper_transition_count": gripper_transition_count,
+                "eef_cube_dist_at_first_close_m": eef_cube_dist_at_first_close_m,
+                "max_lift_after_first_close_m": max_lift_after_first_close_m,
             }
             results.append(result)
+            _write_json_atomic(args.output, results)
             print(json.dumps(result), flush=True)
     finally:
         env.close()
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(results, indent=2), encoding="utf-8")
+    _write_json_atomic(args.output, results)
+    metadata = {
+        "schema_version": 1,
+        "arguments": {
+            key: str(value) if isinstance(value, Path) else value
+            for key, value in vars(args).items()
+        },
+        "checkpoint": str(args.checkpoint.resolve()),
+        "manifest": str(args.manifest.resolve()),
+        "manifest_sha256": _sha256(args.manifest),
+        "git": _git_metadata(),
+    }
+    metadata_path = Path(f"{args.output}.meta.json")
+    _write_json_atomic(metadata_path, metadata)
     successes = sum(int(result["success"]) for result in results)
     print(f"rollout_summary successes={successes}/{len(results)} output={args.output}")
     return 0
