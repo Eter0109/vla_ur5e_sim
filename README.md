@@ -88,7 +88,7 @@ python scripts/run_rollouts.py `
 
 - `.runtime`：基础模型、Hugging Face 离线缓存、Numba 缓存和临时文件。
 - `data`：场景清单和 LeRobotDataset。
-- `docs`：实验与验收报告（如验收报告 `docs/EXPERIMENT_ACCEPTANCE_REPORT.md`）。
+- `docs`：项目文档索引、当前报告、计划、参考资料和历史归档；入口见 `docs/README.md`。
 - `outputs`：训练 checkpoint 和 rollout 结果。
 
 这些目录包含模型或实验资产，不属于可随意删除的 Python 缓存。
@@ -97,9 +97,9 @@ python scripts/run_rollouts.py `
 
 为规范实验记录与复现性，本项目遵循以下报告管理流程：
 
-1. **报告归档**：所有正式实验总结、阶段优化方案和验收报告统一存放在 [docs](file:///D:/vla_ur5e_sim/docs/) 目录下。
+1. **报告归档**：当前报告放在 `docs/reports/`，历史报告放在 `docs/reports/archive/`；当前计划放在 `docs/plans/`，完成的计划放在 `docs/plans/archive/`。
 2. **命名规范**：
-   - 验收报告统一命名为 `EXPERIMENT_ACCEPTANCE_REPORT.md`。
-   - 阶段实验记录建议命名为 `EXPERIMENT_REPORT_YYYYMMDD.md`（如 `EXPERIMENT_REPORT_20260717.md`）。
+   - 当前最终报告建议命名为 `<阶段>_FINAL_EXPERIMENT_REPORT_YYYYMMDD.md`。
+   - 后续计划建议命名为 `NEXT_PHASE_EXECUTION_PLAN_YYYYMMDD.md`。
 3. **版本证明**：所有评估和训练实验必须记录对应的 Git Commit ID、运行时的参数配置（`run_manifest.json`）以确保完全可复现。
-
+4. **唯一事实源**：benchmark 消费状态和 canonical 只在 `docs/reference/EXPERIMENT_REGISTRY.md` 中维护；临时交接和状态说明在任务收口后删除。

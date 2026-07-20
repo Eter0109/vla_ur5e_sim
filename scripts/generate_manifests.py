@@ -1,4 +1,4 @@
-"""Generate non-overlapping deterministic train/validation/test scene files."""
+"""Generate legacy splits or schema-v2 development/blind benchmark manifests."""
 
 from __future__ import annotations
 
@@ -18,7 +18,26 @@ def main() -> int:
     parser.add_argument("--train", type=int, default=500)
     parser.add_argument("--validation", type=int, default=30)
     parser.add_argument("--test", type=int, default=50)
+    parser.add_argument(
+        "--v2", action="store_true", help="Generate validation_v2, test_v2, and ood_v1 manifests."
+    )
     args = parser.parse_args()
+    if args.v2:
+        for split, count, seed, role in (
+            ("validation_v2", 40, 45000, "development"),
+            ("test_v2", 100, 46000, "blind"),
+            ("ood_v1", 40, 47000, "diagnostic"),
+        ):
+            path = save_manifest(
+                args.output / f"{split}.json",
+                generate_scenes(split.replace("_", "-"), count, seed),
+                benchmark_id=split,
+                role=role,
+                generator_seed=seed,
+                environment_preset="legacy_20260719",
+            )
+            print(f"{split}: {count} scenes ({role}) -> {path}")
+        return 0
     for split, count, seed in (
         ("train", args.train, 42000),
         ("validation", args.validation, 43000),

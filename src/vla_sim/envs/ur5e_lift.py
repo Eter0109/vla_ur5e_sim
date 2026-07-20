@@ -228,9 +228,17 @@ class UR5eLiftEnv:
         self._raw_observation = raw
 
         info = dict(backend_info or {})
-        success = self._check_success()
+        lifted, grasped, lift_m = self._success_state()
+        self._success_hold_count = self._success_hold_count + 1 if lifted and grasped else 0
+        success = self._success_hold_count >= self.config.success_hold_steps
         info["success"] = success
         info["success_hold_count"] = self._success_hold_count
+        # These privileged fields are for simulator diagnostics only. They make
+        # rollout failure categories reflect the environment's real grasp check
+        # instead of an arbitrary end-effector distance threshold.
+        info["grasped"] = grasped
+        info["lifted"] = lifted
+        info["object_lift_m"] = lift_m
         terminated = bool(success and self.config.terminate_on_success)
         truncated = bool(done and not terminated)
         return (
@@ -250,13 +258,21 @@ class UR5eLiftEnv:
             close()
 
     def _check_success(self) -> bool:
+        lifted, grasped, _ = self._success_state()
+        self._success_hold_count = self._success_hold_count + 1 if lifted and grasped else 0
+        return self._success_hold_count >= self.config.success_hold_steps
+
+    def _success_state(self) -> tuple[bool, bool, float]:
+        """Return current lift and grasp state without mutating hold counters."""
         if self._raw_observation is None or self._initial_object_z is None:
-            return False
+            return False, False, 0.0
         cube_pos = np.asarray(self._raw_observation.get("cube_pos"), dtype=np.float64).reshape(-1)
+        lift_m = 0.0
+        if cube_pos.size >= 3:
+            lift_m = float(cube_pos[2]) - self._initial_object_z
         lifted = bool(
             cube_pos.size >= 3
-            and float(cube_pos[2])
-            >= self._initial_object_z + self.config.success_lift_height_m
+            and lift_m >= self.config.success_lift_height_m
         )
         grasped = False
         grasp_checker = getattr(self.backend, "_check_grasp", None)
@@ -267,8 +283,7 @@ class UR5eLiftEnv:
         elif not callable(grasp_checker):
             # Lightweight fake backends used by contract tests have no contacts.
             grasped = bool(getattr(self.backend, "_check_success", lambda: False)())
-        self._success_hold_count = self._success_hold_count + 1 if lifted and grasped else 0
-        return self._success_hold_count >= self.config.success_hold_steps
+        return lifted, grasped, lift_m
 
     def _validate_backend_action_space(self) -> None:
         raw_spec = getattr(self.backend, "action_spec", None)

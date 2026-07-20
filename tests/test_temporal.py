@@ -102,6 +102,24 @@ def test_hold_filters_short_reopen_then_releases() -> None:
     assert ensemble.get_action(4)[6] == pytest.approx(-1.0)
 
 
+def test_confirm_then_hold_requires_confirmation_then_can_reopen() -> None:
+    ensemble = TemporalEnsemble(
+        1,
+        7,
+        gripper_mode="confirm_then_hold",
+        gripper_confirm_steps=2,
+        gripper_hold_steps=2,
+    )
+    outputs = []
+    for step, gripper in enumerate((0.8, 0.9, -1.0, -1.0), start=1):
+        action = np.zeros((1, 7), dtype=np.float32)
+        action[0, 6] = gripper
+        ensemble.add_chunk(step, action)
+        outputs.append(ensemble.get_action(step)[6])
+    assert outputs == pytest.approx([-1.0, 1.0, 1.0, -1.0])
+    assert ensemble.last_raw_gripper == pytest.approx(-1.0)
+
+
 @pytest.mark.parametrize("decay", [0.0, -0.1, 1.1, float("nan")])
 def test_invalid_decay_is_rejected(decay: float) -> None:
     with pytest.raises(ValueError, match="decay"):

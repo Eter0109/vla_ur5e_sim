@@ -14,6 +14,7 @@ param(
     [double]$LearningRate = 0.0001,
     [int]$WarmupSteps = 1000,
     [int]$DecaySteps = 0,
+    [double]$DecayLR = 0,
     [int]$LogFreq = 20,
     [int]$SaveFreq = 0,
     [int]$Seed = 1000,
@@ -130,6 +131,10 @@ $TrainArgs = @(
     "--job_name=$([System.IO.Path]::GetFileName($Output))"
 )
 
+if ($DecayLR -gt 0) {
+    $TrainArgs += "--policy.scheduler_decay_lr=$DecayLR"
+}
+
 if ($WandbMode -eq "disabled") {
     $TrainArgs += "--wandb.enable=false"
 }
@@ -143,6 +148,7 @@ else {
 if (-not $FullExpert) {
     $TrainArgs += "--peft.method_type=LORA"
     $TrainArgs += "--peft.r=$Rank"
+    $TrainArgs += "--peft.target_modules=`"all-linear`""
 }
 if ($Resume) {
     $env:VLA_RESUME_CHECKPOINT = $CheckpointPath
@@ -157,7 +163,8 @@ if ($Resume) {
     $TrainArgs += "--scheduler.num_warmup_steps=$WarmupSteps"
     $TrainArgs += "--scheduler.num_decay_steps=$DecaySteps"
     $TrainArgs += "--scheduler.peak_lr=$LearningRate"
-    $TrainArgs += "--scheduler.decay_lr=0.0000025"
+    $ActualDecayLR = if ($DecayLR -gt 0) { $DecayLR } else { 0.0000025 }
+    $TrainArgs += "--scheduler.decay_lr=$ActualDecayLR"
 }
 
 $OutputFull = if ([System.IO.Path]::IsPathRooted($Output)) {
@@ -208,6 +215,7 @@ $Manifest = [ordered]@{
     learning_rate = $LearningRate
     warmup_steps = $WarmupSteps
     decay_steps = $DecaySteps
+    decay_lr = if ($DecayLR -gt 0) { $DecayLR } else { 2.5e-6 }
     rotation_loss_weight = $RotationLossWeight
     gripper_loss_weight = $GripperLossWeight
     transition_oversample_factor = $TransitionOversampleFactor

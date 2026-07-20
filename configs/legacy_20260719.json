@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "experiment_id": "legacy_20260719",
+  "code_preset": "legacy_20260719",
+  "environment": {
+    "camera": "agentview",
+    "image_size": 256,
+    "horizon": 200,
+    "object_density_kg_m3": 400.0,
+    "success_lift_height_m": 0.1,
+    "success_hold_steps": 10
+  },
+  "training": {
+    "model": ".runtime/models/smolvla_base",
+    "dataset": "data/lerobot/expert_500demos",
+    "repo_id": "local/ur5e_custom_lift",
+    "full_expert": true,
+    "steps": 15000,
+    "seed": 1000,
+    "batch_size": 8,
+    "learning_rate": 0.00005,
+    "warmup_steps": 1500,
+    "decay_steps": 15000,
+    "decay_lr": 0.000001,
+    "rotation_loss_weight": 0.01,
+    "gripper_loss_weight": 2.0,
+    "transition_oversample_factor": 3.0,
+    "transition_oversample_window": 5,
+    "scheduler_semantics": "legacy_absolute"
+  },
+  "inference": {
+    "temporal_ensemble": true,
+    "replan_steps": 4,
+    "temporal_ensemble_decay": 0.5,
+    "samples_per_plan": 1,
+    "gripper_mode": "confirm",
+    "gripper_close_threshold": 0.5,
+    "gripper_confirm_steps": 2,
+    "gripper_hold_steps": 4
+  }
+}

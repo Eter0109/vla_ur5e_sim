@@ -10,7 +10,16 @@ import numpy as np
 class TemporalEnsemble:
     """Aggregate overlapping action chunks while treating the gripper discretely."""
 
-    MODES = {"average", "confirm", "debounce", "hold", "hysteresis", "latest", "latch"}
+    MODES = {
+        "average",
+        "confirm",
+        "confirm_then_hold",
+        "debounce",
+        "hold",
+        "hysteresis",
+        "latest",
+        "latch",
+    }
 
     def __init__(
         self,
@@ -46,6 +55,8 @@ class TemporalEnsemble:
         self._gripper_latched = False
         self._gripper_close_streak = 0
         self._gripper_hold_remaining = 0
+        self._gripper_confirmed = False
+        self.last_raw_gripper: float | None = None
 
     def add_chunk(self, start_step: int, chunk: np.ndarray) -> None:
         values = np.asarray(chunk)
@@ -67,6 +78,7 @@ class TemporalEnsemble:
 
         if self.action_dim >= 7 and self.gripper_mode != "average":
             latest = float(actions[-1][6])
+            self.last_raw_gripper = latest
             if self.gripper_mode == "hold":
                 if latest > self.gripper_close_threshold:
                     self._gripper_hold_remaining = self.gripper_hold_steps
@@ -74,6 +86,32 @@ class TemporalEnsemble:
                     averaged[6] = 1.0
                     self._gripper_hold_remaining -= 1
                 else:
+                    averaged[6] = latest
+            elif self.gripper_mode == "confirm_then_hold":
+                if latest > self.gripper_close_threshold:
+                    self._gripper_close_streak += 1
+                else:
+                    self._gripper_close_streak = 0
+
+                if not self._gripper_confirmed:
+                    self._gripper_confirmed = (
+                        self._gripper_close_streak >= self.gripper_confirm_steps
+                    )
+                    if self._gripper_confirmed:
+                        self._gripper_hold_remaining = self.gripper_hold_steps
+
+                if self._gripper_confirmed and self._gripper_hold_remaining > 0:
+                    averaged[6] = 1.0
+                    self._gripper_hold_remaining -= 1
+                elif self._gripper_confirmed and latest > self.gripper_close_threshold:
+                    averaged[6] = 1.0
+                elif not self._gripper_confirmed:
+                    averaged[6] = -1.0
+                else:
+                    # A close that survived the minimum hold can recover from
+                    # an early false positive; unlike debounce this is not a
+                    # permanent latch.
+                    self._gripper_confirmed = False
                     averaged[6] = latest
             elif self.gripper_mode in {"confirm", "debounce", "hysteresis"}:
                 if latest > self.gripper_close_threshold:

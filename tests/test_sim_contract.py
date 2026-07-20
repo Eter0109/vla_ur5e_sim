@@ -117,7 +117,13 @@ def test_fake_backend_exercises_full_env_contract_without_robosuite() -> None:
     assert reward == pytest.approx(0.25)
     assert not terminated
     assert not truncated
-    assert step_info == {"success": False, "success_hold_count": 0}
+    assert step_info == {
+        "success": False,
+        "success_hold_count": 0,
+        "grasped": False,
+        "lifted": False,
+        "object_lift_m": 0.0,
+    }
     env.close()
     assert backend.closed
 

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import shutil
 import sys
@@ -56,6 +57,11 @@ def main() -> int:
     parser.add_argument("--repo-id", default="local/ur5e_custom_lift")
     parser.add_argument("--limit", type=int)
     parser.add_argument("--overwrite", action="store_true")
+    parser.add_argument(
+        "--scene-log",
+        type=Path,
+        help="Write per-scene collection provenance; defaults inside the dataset root.",
+    )
     args = parser.parse_args()
 
     scenes = load_manifest(args.manifest)
@@ -80,6 +86,7 @@ def main() -> int:
         UR5eLiftConfig(camera=CameraConfig(width=width, height=height), horizon=200)
     )
     successes = 0
+    scene_records: list[dict[str, object]] = []
     try:
         for index, scene in enumerate(scenes):
             observation, _ = env.reset(seed=scene.seed, scene=scene)
@@ -105,6 +112,19 @@ def main() -> int:
                 successes += 1
             else:
                 dataset.clear_episode_buffer()
+            scene_records.append(
+                {
+                    "scene_id": scene.scene_id,
+                    "seed": scene.seed,
+                    "env_seed": scene.effective_env_seed,
+                    "x_m": scene.x_m,
+                    "y_m": scene.y_m,
+                    "yaw_rad": scene.yaw_rad,
+                    "success": successful,
+                    "steps": steps,
+                    "saved_episode_index": successes - 1 if successful else None,
+                }
+            )
             print(
                 f"scene={scene.scene_id} success={successful} steps={steps} "
                 f"collected={successes}/{index + 1}",
@@ -113,11 +133,14 @@ def main() -> int:
     finally:
         env.close()
     dataset.finalize()
+    scene_log = args.scene_log or args.root / "collection_scenes.json"
+    scene_log.parent.mkdir(parents=True, exist_ok=True)
+    scene_log.write_text(json.dumps(scene_records, indent=2), encoding="utf-8")
 
     reopened = LeRobotDataset(args.repo_id, root=args.root)
     print(
         f"dataset_ok root={args.root} episodes={reopened.num_episodes} "
-        f"frames={len(reopened)} success_rate={successes / len(scenes):.3f}"
+        f"frames={len(reopened)} success_rate={successes / len(scenes):.3f} scene_log={scene_log}"
     )
     return 0 if successes == len(scenes) else 1
 
