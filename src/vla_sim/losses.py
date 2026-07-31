@@ -10,6 +10,7 @@ def action_dimension_weights(
     *,
     rotation_weight: float,
     gripper_weight: float,
+    xyz_weight: float = 1.0,
     device: torch.device,
     dtype: torch.dtype,
 ) -> torch.Tensor:
@@ -19,6 +20,7 @@ def action_dimension_weights(
         raise ValueError("action_dim must be positive")
     values = torch.ones(action_dim, device=device, dtype=dtype)
     if action_dim >= 7:
+        values[0:3] = xyz_weight
         values[3:6] = rotation_weight
         values[6] = gripper_weight
     if not torch.isfinite(values).all() or torch.any(values < 0) or values.sum() <= 0:

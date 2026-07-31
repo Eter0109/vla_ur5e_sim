@@ -5,6 +5,218 @@ from __future__ import annotations
 import math
 
 import torch
+from datasets import concatenate_datasets
+
+
+PHASE_GROUPS = ("approach", "grasp", "lift", "transport", "place_release")
+PHASE_INDEX_TO_GROUP = {
+    0: "grasp",
+    1: "approach",
+    2: "lift",
+    3: "transport",
+    4: "place_release",
+    5: "place_release",
+}
+
+
+class ReplayMixDataset(torch.utils.data.Dataset):
+    """Concatenate base and auxiliary data while retaining source sampling weights."""
+
+    def __init__(self, base, auxiliary, auxiliary_sample_weight: float) -> None:
+        if not math.isfinite(auxiliary_sample_weight) or auxiliary_sample_weight <= 0:
+            raise ValueError("auxiliary_sample_weight must be finite and positive")
+        if getattr(base, "features", None) != getattr(auxiliary, "features", None):
+            raise ValueError("Replay datasets must have identical features")
+        if getattr(base, "fps", None) != getattr(auxiliary, "fps", None):
+            raise ValueError("Replay datasets must have identical FPS")
+        self.base = base
+        self.auxiliary = auxiliary
+        self.auxiliary_sample_weight = float(auxiliary_sample_weight)
+        self._vla_replay_mixed = True
+        self.base_length = len(base)
+        self.hf_dataset = concatenate_datasets([base.hf_dataset, auxiliary.hf_dataset])
+        self.sampling_multipliers = torch.cat(
+            (
+                torch.ones(self.base_length, dtype=torch.double),
+                torch.full(
+                    (len(auxiliary),),
+                    self.auxiliary_sample_weight,
+                    dtype=torch.double,
+                ),
+            )
+        )
+        self.meta = base.meta
+
+    def __len__(self) -> int:
+        return self.base_length + len(self.auxiliary)
+
+    def __getitem__(self, index: int):
+        if not 0 <= index < len(self):
+            raise IndexError("ReplayMixDataset index is outside the dataset")
+        if index < self.base_length:
+            return self.base[index]
+        return self.auxiliary[index - self.base_length]
+
+    def __getattr__(self, name: str):
+        return getattr(self.base, name)
+
+
+class GlobalTaskPromptDataset(torch.utils.data.Dataset):
+    """Expose one task-level prompt while preserving the original action sequence."""
+
+    def __init__(self, dataset, prompt: str, task_key: str = "task") -> None:
+        if not prompt.strip():
+            raise ValueError("Global task prompt must not be empty")
+        self.dataset = dataset
+        self.prompt = prompt
+        self.task_key = task_key
+
+    def __len__(self) -> int:
+        return len(self.dataset)
+
+    def __getitem__(self, index: int):
+        return {**self.dataset[index], self.task_key: self.prompt}
+
+    def __getattr__(self, name: str):
+        return getattr(self.dataset, name)
+
+
+class PhaseActionMaskedDataset(torch.utils.data.Dataset):
+    """Mask action targets after the current prompt phase ends."""
+
+    def __init__(
+        self,
+        dataset,
+        phase_groups: list[str],
+        episode_indices: list[int],
+        chunk_size: int,
+    ) -> None:
+        if len(dataset) != len(phase_groups) or len(dataset) != len(episode_indices):
+            raise ValueError("Dataset, phase groups, and episode indices must have equal length")
+        if chunk_size < 1:
+            raise ValueError("chunk_size must be positive")
+        self.dataset = dataset
+        self.phase_groups = phase_groups
+        self.episode_indices = episode_indices
+        self.chunk_size = chunk_size
+
+    def __len__(self) -> int:
+        return len(self.dataset)
+
+    def __getitem__(self, index: int):
+        item = self.dataset[index]
+        phase_pad = phase_action_pad_mask(
+            self.phase_groups,
+            self.episode_indices,
+            index,
+            self.chunk_size,
+        )
+        existing = item.get("action_is_pad")
+        if existing is not None:
+            existing = torch.as_tensor(existing, dtype=torch.bool)
+            if existing.shape != phase_pad.shape:
+                raise ValueError(
+                    "Existing action_is_pad shape does not match configured action chunk: "
+                    f"{tuple(existing.shape)} != {tuple(phase_pad.shape)}"
+                )
+            phase_pad |= existing
+        return {**item, "action_is_pad": phase_pad}
+
+    def __getattr__(self, name: str):
+        return getattr(self.dataset, name)
+
+
+def phase_action_pad_mask(
+    phase_groups: list[str],
+    episode_indices: list[int],
+    start_index: int,
+    chunk_size: int,
+) -> torch.Tensor:
+    """Pad action targets once a chunk leaves its starting prompt or episode."""
+
+    if len(phase_groups) != len(episode_indices):
+        raise ValueError("phase_groups and episode_indices must have the same length")
+    if not 0 <= start_index < len(phase_groups):
+        raise IndexError("start_index is outside the dataset")
+    if chunk_size < 1:
+        raise ValueError("chunk_size must be positive")
+    start_group = phase_groups[start_index]
+    start_episode = episode_indices[start_index]
+    mask = torch.ones(chunk_size, dtype=torch.bool)
+    for offset in range(chunk_size):
+        index = start_index + offset
+        if (
+            index >= len(phase_groups)
+            or phase_groups[index] != start_group
+            or episode_indices[index] != start_episode
+        ):
+            break
+        mask[offset] = False
+    return mask
+
+
+def phase_groups_from_indices(phase_indices: list[int]) -> list[str]:
+    """Map immutable Stack phase labels to the four sampling groups."""
+
+    unknown = sorted(set(phase_indices) - set(PHASE_INDEX_TO_GROUP))
+    if unknown:
+        raise ValueError(f"Unknown Stack phase indices: {unknown}")
+    return [PHASE_INDEX_TO_GROUP[index] for index in phase_indices]
+
+
+def phase_chunk_safe_mask(
+    phase_labels: list[int] | list[str],
+    episode_indices: list[int],
+    chunk_size: int,
+) -> torch.Tensor:
+    """Mark starts whose full action chunk stays in one episode and exact phase."""
+
+    if len(phase_labels) != len(episode_indices):
+        raise ValueError("phase_labels and episode_indices must have the same length")
+    if chunk_size < 1:
+        raise ValueError("chunk_size must be positive")
+    if not phase_labels:
+        return torch.zeros(0, dtype=torch.bool)
+    safe = torch.ones(len(phase_labels), dtype=torch.bool)
+    label_codes = {label: index for index, label in enumerate(dict.fromkeys(phase_labels))}
+    group_codes = torch.as_tensor(
+        [label_codes[label] for label in phase_labels],
+        dtype=torch.int16,
+    )
+    episodes = torch.as_tensor(episode_indices, dtype=torch.int64)
+    for offset in range(1, chunk_size):
+        if offset >= len(safe):
+            safe[:] = False
+            break
+        safe[:-offset] &= (group_codes[:-offset] == group_codes[offset:]) & (
+            episodes[:-offset] == episodes[offset:]
+        )
+        safe[-offset:] = False
+    return safe
+
+
+def phase_sampling_weights(
+    phase_groups: list[str],
+    target_proportions: dict[str, float] | None = None,
+) -> torch.Tensor:
+    """Return weights that give each present Stack phase group specified probability (default equal)."""
+
+    if not phase_groups:
+        raise ValueError("phase_groups must not be empty")
+    unknown = sorted(set(phase_groups) - set(PHASE_GROUPS))
+    if unknown:
+        raise ValueError(f"Unknown phase groups: {', '.join(unknown)}")
+    counts = {name: phase_groups.count(name) for name in PHASE_GROUPS}
+    missing = [name for name, count in counts.items() if count == 0]
+    if missing:
+        raise ValueError(f"Dataset is missing required phase groups: {', '.join(missing)}")
+    if target_proportions is None:
+        return torch.as_tensor([1.0 / counts[name] for name in phase_groups], dtype=torch.double)
+    scale = float(len(PHASE_GROUPS))
+    return torch.as_tensor(
+        [target_proportions[name] * scale / counts[name] for name in phase_groups],
+        dtype=torch.double,
+    )
 
 
 def transition_sampling_weights(

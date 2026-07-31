@@ -132,3 +132,14 @@ def test_missing_or_malformed_predictions_are_rejected() -> None:
         ensemble.add_chunk(1, np.zeros((2, 6)))
     with pytest.raises(ValueError, match="No prediction"):
         ensemble.get_action(1)
+
+
+def test_reset_discards_chunks_and_gripper_history() -> None:
+    ensemble = TemporalEnsemble(2, 7, gripper_mode="latch")
+    ensemble.add_chunk(1, _chunk(1.0, 1.0))
+    assert ensemble.get_action(1)[6] == pytest.approx(1.0)
+    ensemble.reset()
+    assert ensemble.last_raw_gripper is None
+    assert not ensemble.has_action(2)
+    ensemble.add_chunk(2, _chunk(-1.0, -1.0))
+    assert ensemble.get_action(2)[6] == pytest.approx(-1.0)

@@ -51,6 +51,10 @@ class TemporalEnsemble:
         self.gripper_close_threshold = gripper_close_threshold
         self.gripper_confirm_steps = gripper_confirm_steps
         self.gripper_hold_steps = gripper_hold_steps
+        self.reset()
+
+    def reset(self) -> None:
+        """Discard stale chunks and discrete gripper state after a controller retry."""
         self._buffer: dict[int, list[tuple[np.ndarray, float]]] = {}
         self._gripper_latched = False
         self._gripper_close_streak = 0

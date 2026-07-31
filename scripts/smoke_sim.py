@@ -1,4 +1,4 @@
-"""Smoke-test the UR5e Lift simulator with a heuristic or random policy."""
+"""Smoke-test the current UR5e dual-camera PickPlace simulator."""
 
 from __future__ import annotations
 
@@ -15,27 +15,12 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from vla_sim.envs import (  # noqa: E402
-    CameraConfig,
-    PrimitiveObjectConfig,
-    UR5eLiftConfig,
-    make_ur5e_lift,
-)
+from vla_sim.envs import UR5ePickPlaceConfig, make_ur5e_pick_place  # noqa: E402
 from vla_sim.sim import (  # noqa: E402
     ContractError,
-    HeuristicLiftExpert,
+    HeuristicPickPlaceExpert,
     RobosuiteUnavailableError,
 )
-
-
-def _dimensions(value: str) -> tuple[float, float, float]:
-    try:
-        parts = tuple(float(part.strip()) for part in value.split(","))
-    except ValueError as exc:
-        raise argparse.ArgumentTypeError("dimensions must be comma-separated metres") from exc
-    if len(parts) != 3 or any(part <= 0 for part in parts):
-        raise argparse.ArgumentTypeError("dimensions must contain three positive values")
-    return parts  # type: ignore[return-value]
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -43,18 +28,12 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--episodes", type=int, default=1)
     parser.add_argument("--steps", type=int, default=300)
     parser.add_argument("--seed", type=int, default=0)
-    parser.add_argument("--camera", default="agentview")
-    parser.add_argument("--width", type=int, default=256)
-    parser.add_argument("--height", type=int, default=256)
-    parser.add_argument("--shape", choices=("box", "cylinder", "sphere"), default="box")
-    parser.add_argument(
-        "--dimensions",
-        type=_dimensions,
-        default=(0.05, 0.05, 0.05),
-        help="full X,Y,Z dimensions in metres, e.g. 0.05,0.05,0.05",
-    )
     parser.add_argument("--render", action="store_true")
-    parser.add_argument("--random", action="store_true", help="use random actions instead of the heuristic")
+    parser.add_argument(
+        "--random",
+        action="store_true",
+        help="use random actions instead of the privileged smoke-test expert",
+    )
     return parser
 
 
@@ -62,16 +41,14 @@ def run(args: argparse.Namespace) -> int:
     if args.episodes <= 0 or args.steps <= 0:
         raise ValueError("episodes and steps must be positive")
 
-    config = UR5eLiftConfig(
-        camera=CameraConfig(name=args.camera, width=args.width, height=args.height),
-        object=PrimitiveObjectConfig(shape=args.shape, dimensions_m=args.dimensions),
-        horizon=args.steps,
-        seed=args.seed,
-        has_renderer=args.render,
-    )
-
     try:
-        env = make_ur5e_lift(config)
+        env = make_ur5e_pick_place(
+            UR5ePickPlaceConfig(
+                horizon=args.steps,
+                seed=args.seed,
+                has_renderer=args.render,
+            )
+        )
     except RobosuiteUnavailableError as exc:
         print(str(exc), file=sys.stderr)
         return 2
@@ -81,7 +58,7 @@ def run(args: argparse.Namespace) -> int:
     try:
         for episode in range(args.episodes):
             observation, _ = env.reset(seed=args.seed + episode)
-            expert = HeuristicLiftExpert()
+            expert = HeuristicPickPlaceExpert()
             total_reward = 0.0
             success = False
 
@@ -100,10 +77,11 @@ def run(args: argparse.Namespace) -> int:
                     break
 
             successes += int(success)
-            image_shape = observation["observation.images.front"].shape
+            front_shape = observation["observation.images.front"].shape
+            wrist_shape = observation["observation.images.wrist"].shape
             print(
                 f"episode={episode} steps={step + 1} reward={total_reward:.3f} "
-                f"success={success} image_shape={image_shape}"
+                f"success={success} front_shape={front_shape} wrist_shape={wrist_shape}"
             )
     except ContractError as exc:
         print(f"Simulation contract error: {exc}", file=sys.stderr)

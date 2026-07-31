@@ -1,0 +1,17 @@
+{
+  "schema_version": 2,
+  "experiment_id": "stack_v1_supervised_xyz",
+  "environment": {
+    "horizon": 250
+  },
+  "inference": {
+    "temporal_ensemble": true,
+    "temporal_ensemble_decay": 0.5,
+    "replan_steps": 4,
+    "samples_per_plan": 1,
+    "gripper_mode": "latest",
+    "gripper_close_threshold": 0.5,
+    "gripper_confirm_steps": 2,
+    "gripper_hold_steps": 4
+  }
+}
