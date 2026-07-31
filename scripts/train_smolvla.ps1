@@ -3,6 +3,9 @@ param(
     [string]$Model = ".runtime\models\smolvla_base",
     [string]$Dataset = "data\lerobot\expert_gate10",
     [string]$RepoId = "local/ur5e_custom_lift",
+    [string]$AuxiliaryDataset = "",
+    [string]$AuxiliaryRepoId = "",
+    [double]$AuxiliarySampleWeight = 1.0,
     [string]$Output = "outputs\smolvla_lora_smoke",
     [string]$CheckpointPath = "",
     [int]$Steps = 20,
@@ -11,6 +14,7 @@ param(
     [int]$ChunkSize = 16,
     [int]$ActionSteps = 8,
     [int]$BatchSize = 1,
+    [int]$NumWorkers = 0,
     [double]$LearningRate = 0.0001,
     [int]$WarmupSteps = 1000,
     [int]$DecaySteps = 0,
@@ -18,10 +22,18 @@ param(
     [int]$LogFreq = 20,
     [int]$SaveFreq = 0,
     [int]$Seed = 1000,
+    [double]$XYZLossWeight = 1.0,
     [double]$RotationLossWeight = 1.0,
     [double]$GripperLossWeight = 1.0,
+    [double]$ApproachWeight = 0.25,
+    [double]$GraspWeight = 0.20,
+    [double]$LiftWeight = 0.25,
+    [double]$TransportWeight = 0.20,
+    [double]$PlaceReleaseWeight = 0.10,
     [double]$TransitionOversampleFactor = 1.0,
     [int]$TransitionOversampleWindow = 0,
+    [string]$GlobalTaskPrompt = "",
+    [switch]$PhaseBalanced,
     [ValidateSet("disabled", "offline", "online")]
     [string]$WandbMode = "offline",
     [switch]$Resume,
@@ -41,11 +53,23 @@ $env:HF_HUB_OFFLINE = "1"
 $env:TRANSFORMERS_OFFLINE = "1"
 $env:USE_TF = "0"
 $env:TF_CPP_MIN_LOG_LEVEL = "3"
+$env:VLA_XYZ_LOSS_WEIGHT = [string]$XYZLossWeight
 $env:VLA_ROTATION_LOSS_WEIGHT = [string]$RotationLossWeight
 $env:VLA_GRIPPER_LOSS_WEIGHT = [string]$GripperLossWeight
+$env:VLA_APPROACH_WEIGHT = [string]$ApproachWeight
+$env:VLA_GRASP_WEIGHT = [string]$GraspWeight
+$env:VLA_LIFT_WEIGHT = [string]$LiftWeight
+$env:VLA_TRANSPORT_WEIGHT = [string]$TransportWeight
+$env:VLA_PLACE_RELEASE_WEIGHT = [string]$PlaceReleaseWeight
+$env:VLA_PHASE_CHUNK_SIZE = [string]$ChunkSize
 $env:VLA_TRANSITION_OVERSAMPLE_FACTOR = [string]$TransitionOversampleFactor
 $env:VLA_TRANSITION_OVERSAMPLE_WINDOW = [string]$TransitionOversampleWindow
+$env:VLA_GLOBAL_TASK_PROMPT = $GlobalTaskPrompt
 $env:VLA_SAMPLING_SEED = [string]$Seed
+$env:VLA_PHASE_BALANCED = if ($PhaseBalanced) { "1" } else { "0" }
+$env:VLA_AUXILIARY_DATASET = $AuxiliaryDataset
+$env:VLA_AUXILIARY_REPO_ID = $AuxiliaryRepoId
+$env:VLA_AUXILIARY_SAMPLE_WEIGHT = [string]$AuxiliarySampleWeight
 
 & $Python -c "import torch, lerobot, peft; assert torch.cuda.is_available(), 'CUDA is unavailable'"
 if ($LASTEXITCODE -ne 0) {
@@ -61,16 +85,60 @@ if ($ActionSteps -lt 1 -or $ActionSteps -gt $ChunkSize) {
 if ($BatchSize -lt 1) {
     throw "BatchSize must be positive."
 }
+if ($NumWorkers -lt 0) {
+    throw "NumWorkers must be non-negative."
+}
+if ($AuxiliaryDataset) {
+    if (-not $AuxiliaryRepoId) {
+        throw "AuxiliaryRepoId is required when AuxiliaryDataset is set."
+    }
+    if (-not $PhaseBalanced) {
+        throw "Auxiliary replay requires PhaseBalanced."
+    }
+    if (
+        [double]::IsNaN($AuxiliarySampleWeight) -or
+        [double]::IsInfinity($AuxiliarySampleWeight) -or
+        $AuxiliarySampleWeight -le 0
+    ) {
+        throw "AuxiliarySampleWeight must be finite and positive."
+    }
+}
 if (
+    [double]::IsNaN($XYZLossWeight) -or
+    [double]::IsInfinity($XYZLossWeight) -or
     [double]::IsNaN($RotationLossWeight) -or
     [double]::IsInfinity($RotationLossWeight) -or
     [double]::IsNaN($GripperLossWeight) -or
     [double]::IsInfinity($GripperLossWeight) -or
+    $XYZLossWeight -lt 0 -or
     $RotationLossWeight -lt 0 -or
     $GripperLossWeight -lt 0 -or
-    (3 + 3 * $RotationLossWeight + $GripperLossWeight) -le 0
+    (3 * $XYZLossWeight + 3 * $RotationLossWeight + $GripperLossWeight) -le 0
 ) {
     throw "Loss weights must be finite, non-negative, and not all zero."
+}
+if (
+    [double]::IsNaN($ApproachWeight) -or
+    [double]::IsInfinity($ApproachWeight) -or
+    [double]::IsNaN($GraspWeight) -or
+    [double]::IsInfinity($GraspWeight) -or
+    [double]::IsNaN($LiftWeight) -or
+    [double]::IsInfinity($LiftWeight) -or
+    [double]::IsNaN($TransportWeight) -or
+    [double]::IsInfinity($TransportWeight) -or
+    [double]::IsNaN($PlaceReleaseWeight) -or
+    [double]::IsInfinity($PlaceReleaseWeight) -or
+    $ApproachWeight -le 0 -or $ApproachWeight -ge 1 -or
+    $GraspWeight -le 0 -or $GraspWeight -ge 1 -or
+    $LiftWeight -le 0 -or $LiftWeight -ge 1 -or
+    $TransportWeight -le 0 -or $TransportWeight -ge 1 -or
+    $PlaceReleaseWeight -le 0 -or $PlaceReleaseWeight -ge 1 -or
+    [math]::Abs(
+        $ApproachWeight + $GraspWeight + $LiftWeight +
+        $TransportWeight + $PlaceReleaseWeight - 1.0
+    ) -gt 1e-9
+) {
+    throw "Phase weights must be finite, in (0, 1), and sum to 1."
 }
 if (
     [double]::IsNaN($TransitionOversampleFactor) -or
@@ -91,6 +159,42 @@ if ($Resume) {
         throw "Resume checkpoint is missing train_config.json: $PreviousConfigPath"
     }
     $PreviousConfig = Get-Content -Raw $PreviousConfigPath | ConvertFrom-Json
+    $PreviousManifestPath = Join-Path $Output "run_manifest.json"
+    if (-not (Test-Path $PreviousManifestPath)) {
+        throw "Resume requires the original run_manifest.json: $PreviousManifestPath"
+    }
+    $PreviousManifest = Get-Content -Raw $PreviousManifestPath | ConvertFrom-Json
+    $Locked = [ordered]@{
+        model = $Model
+        dataset = $Dataset
+        repo_id = $RepoId
+        seed = $Seed
+        chunk_size = $ChunkSize
+        action_steps = $ActionSteps
+        batch_size = $BatchSize
+        num_workers = $NumWorkers
+        xyz_loss_weight = $XYZLossWeight
+        rotation_loss_weight = $RotationLossWeight
+        gripper_loss_weight = $GripperLossWeight
+        approach_weight = $ApproachWeight
+        grasp_weight = $GraspWeight
+        lift_weight = $LiftWeight
+        transport_weight = $TransportWeight
+        place_release_weight = $PlaceReleaseWeight
+        global_task_prompt = $GlobalTaskPrompt
+        phase_balanced = [bool]$PhaseBalanced
+        full_expert = [bool]$FullExpert
+    }
+    if ($AuxiliaryDataset) {
+        $Locked.auxiliary_dataset = $AuxiliaryDataset
+        $Locked.auxiliary_repo_id = $AuxiliaryRepoId
+        $Locked.auxiliary_sample_weight = $AuxiliarySampleWeight
+    }
+    foreach ($Name in $Locked.Keys) {
+        if ([string]$PreviousManifest.$Name -ne [string]$Locked[$Name]) {
+            throw "Resume provenance mismatch for $Name"
+        }
+    }
     $LearningRate = [double]$PreviousConfig.optimizer.lr
     $WarmupSteps = [int]$PreviousConfig.scheduler.num_warmup_steps
     $DecaySteps = [int]$PreviousConfig.scheduler.num_decay_steps
@@ -121,7 +225,7 @@ $TrainArgs = @(
     "--dataset.root=$Dataset"
     "--dataset.use_imagenet_stats=false"
     "--batch_size=$BatchSize"
-    "--num_workers=0"
+    "--num_workers=$NumWorkers"
     "--steps=$Steps"
     "--eval_freq=0"
     "--log_freq=$LogFreq"
@@ -149,6 +253,11 @@ if (-not $FullExpert) {
     $TrainArgs += "--peft.method_type=LORA"
     $TrainArgs += "--peft.r=$Rank"
     $TrainArgs += "--peft.target_modules=`"all-linear`""
+}
+else {
+    # "FullExpert" means full action-expert tuning, not full-model tuning.
+    $TrainArgs += "--policy.freeze_vision_encoder=true"
+    $TrainArgs += "--policy.train_expert_only=true"
 }
 if ($Resume) {
     $env:VLA_RESUME_CHECKPOINT = $CheckpointPath
@@ -203,6 +312,9 @@ $Manifest = [ordered]@{
     model = $Model
     dataset = $Dataset
     repo_id = $RepoId
+    auxiliary_dataset = $AuxiliaryDataset
+    auxiliary_repo_id = $AuxiliaryRepoId
+    auxiliary_sample_weight = $AuxiliarySampleWeight
     output = $OutputFull
     steps = $Steps
     seed = $Seed
@@ -212,14 +324,23 @@ $Manifest = [ordered]@{
     chunk_size = $ChunkSize
     action_steps = $ActionSteps
     batch_size = $BatchSize
+    num_workers = $NumWorkers
     learning_rate = $LearningRate
     warmup_steps = $WarmupSteps
     decay_steps = $DecaySteps
     decay_lr = if ($DecayLR -gt 0) { $DecayLR } else { 2.5e-6 }
+    xyz_loss_weight = $XYZLossWeight
     rotation_loss_weight = $RotationLossWeight
     gripper_loss_weight = $GripperLossWeight
+    approach_weight = $ApproachWeight
+    grasp_weight = $GraspWeight
+    lift_weight = $LiftWeight
+    transport_weight = $TransportWeight
+    place_release_weight = $PlaceReleaseWeight
+    global_task_prompt = $GlobalTaskPrompt
     transition_oversample_factor = $TransitionOversampleFactor
     transition_oversample_window = $TransitionOversampleWindow
+    phase_balanced = [bool]$PhaseBalanced
     resume = [bool]$Resume
     checkpoint_path = $CheckpointPath
     wandb_mode = $WandbMode

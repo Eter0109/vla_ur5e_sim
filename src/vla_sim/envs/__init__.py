@@ -8,6 +8,17 @@ from .ur5e_lift import (
     create_robosuite_backend,
     make_ur5e_lift,
 )
+from .ur5e_stack import (
+    UR5eStackConfig,
+    UR5eStackEnv,
+    make_ur5e_stack,
+)
+from .ur5e_pick_place import (
+    PickPlaceCameraConfig,
+    UR5ePickPlaceConfig,
+    UR5ePickPlaceEnv,
+    make_ur5e_pick_place,
+)
 
 __all__ = [
     "CameraConfig",
@@ -15,6 +26,13 @@ __all__ = [
     "PrimitiveShape",
     "UR5eLiftConfig",
     "UR5eLiftEnv",
+    "UR5eStackConfig",
+    "UR5eStackEnv",
     "create_robosuite_backend",
     "make_ur5e_lift",
+    "make_ur5e_stack",
+    "PickPlaceCameraConfig",
+    "UR5ePickPlaceConfig",
+    "UR5ePickPlaceEnv",
+    "make_ur5e_pick_place",
 ]

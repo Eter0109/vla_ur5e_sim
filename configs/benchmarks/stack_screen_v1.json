@@ -1,0 +1,369 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "stack_screen_v1",
+  "role": "development",
+  "generator_seed": 55000,
+  "environment_preset": "stack_v1",
+  "scenes": [
+    {
+      "scene_id": "stack_screen_v1-0000",
+      "seed": 55000,
+      "x_m": -0.009933119820421867,
+      "y_m": -0.044604078936219586,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.01662424871909754,
+        "cubeB_y_m": 0.04921363250634008,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0001",
+      "seed": 55001,
+      "x_m": -0.01354805529226423,
+      "y_m": 0.05124441849213803,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.008042762423725393,
+        "cubeB_y_m": -0.04610089287317263,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0002",
+      "seed": 55002,
+      "x_m": 0.034066581765113894,
+      "y_m": -0.048753129381526136,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.04291276895514851,
+        "cubeB_y_m": 0.04205411852877487,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0003",
+      "seed": 55003,
+      "x_m": 0.0385540220559726,
+      "y_m": -0.048486785907450494,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": -0.050857104843843946,
+        "cubeB_y_m": -0.018661231824207612,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0004",
+      "seed": 55004,
+      "x_m": -0.04425061836339203,
+      "y_m": -0.05075201482603185,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.045452765814618476,
+        "cubeB_y_m": 0.04575689901336534,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0005",
+      "seed": 55005,
+      "x_m": -0.05193234856134314,
+      "y_m": -0.04130648216564031,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": 0.03673134004199362,
+        "cubeB_y_m": 0.0428928390272805,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0006",
+      "seed": 55006,
+      "x_m": 0.04234205033304584,
+      "y_m": 0.009327936504516063,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": -0.03837223580242379,
+        "cubeB_y_m": 0.034547482261323925,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0007",
+      "seed": 55007,
+      "x_m": -0.047842370314805704,
+      "y_m": 0.01145564226674891,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.04323562793511786,
+        "cubeB_y_m": -0.0487085100627788,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0008",
+      "seed": 55008,
+      "x_m": -0.04157622340067777,
+      "y_m": 0.0496250319556911,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": 0.03850347169434306,
+        "cubeB_y_m": -0.01082595027989449,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0009",
+      "seed": 55009,
+      "x_m": 0.015160026537986933,
+      "y_m": -0.03475076164897194,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.018983163660812874,
+        "cubeB_y_m": 0.05144814987677593,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0010",
+      "seed": 55010,
+      "x_m": 0.04812063434239051,
+      "y_m": -0.03656305919243847,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.04335014416867775,
+        "cubeB_y_m": 0.015131235606220407,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0011",
+      "seed": 55011,
+      "x_m": -0.04828959698444089,
+      "y_m": -0.03558675123057225,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.048270204845756455,
+        "cubeB_y_m": 0.04364707435078625,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0012",
+      "seed": 55012,
+      "x_m": -0.04055548830536799,
+      "y_m": 0.002351035198526523,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.043739683668802716,
+        "cubeB_y_m": 0.0017990387715363938,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0013",
+      "seed": 55013,
+      "x_m": -0.005559446248169515,
+      "y_m": 0.04690643430316153,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.009790884827949771,
+        "cubeB_y_m": -0.046890617244292616,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0014",
+      "seed": 55014,
+      "x_m": -0.05080391385281292,
+      "y_m": -0.05181960834017359,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.0118091404134981,
+        "cubeB_y_m": 0.0465316555406103,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0015",
+      "seed": 55015,
+      "x_m": 0.030222635686547476,
+      "y_m": 0.04794686656493124,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.05189731282157684,
+        "cubeB_y_m": 0.04952597062050059,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0016",
+      "seed": 55016,
+      "x_m": 0.0065914340137968805,
+      "y_m": 0.04781835180412201,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": 0.03808400502038448,
+        "cubeB_y_m": -0.04311407002901007,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0017",
+      "seed": 55017,
+      "x_m": 0.024387102632345704,
+      "y_m": -0.0485258526307307,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.030157647297531957,
+        "cubeB_y_m": 0.045332172575169805,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0018",
+      "seed": 55018,
+      "x_m": 0.0510010655647461,
+      "y_m": -0.047875658358231196,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.02019127723323002,
+        "cubeB_y_m": 0.043457279956774314,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0019",
+      "seed": 55019,
+      "x_m": -0.029210017884815843,
+      "y_m": 0.04960080043787494,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.03484300832255483,
+        "cubeB_y_m": -0.050444433941963594,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0020",
+      "seed": 55020,
+      "x_m": 0.043263734101476777,
+      "y_m": 0.050127004029977794,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": -0.05116611775994847,
+        "cubeB_y_m": -0.025284576447523514,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 2
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0021",
+      "seed": 55021,
+      "x_m": -0.013494771926302683,
+      "y_m": -0.04857876913305152,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": -0.0145997897494875,
+        "cubeB_y_m": 0.047949616276173126,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0022",
+      "seed": 55022,
+      "x_m": 0.0398770869209266,
+      "y_m": 0.048148499694856677,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "blue_on_red",
+        "cubeB_x_m": 0.009400702662666443,
+        "cubeB_y_m": -0.04945386243947999,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "stack_screen_v1-0023",
+      "seed": 55023,
+      "x_m": -0.04798335321944178,
+      "y_m": 0.04119062492847606,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_on_blue",
+        "cubeB_x_m": 0.048874445124265004,
+        "cubeB_y_m": 0.004249905625004477,
+        "cubeB_yaw_rad": 0.0,
+        "distance_bin": 1
+      }
+    }
+  ]
+}

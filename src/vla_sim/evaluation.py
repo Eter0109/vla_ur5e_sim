@@ -55,20 +55,32 @@ def summarize_results(results: Iterable[Mapping[str, Any]]) -> dict[str, Any]:
     def rate(predicate: Any) -> float | None:
         return sum(bool(predicate(value)) for value in values) / total if total else None
 
+    def reached_phase(value: Mapping[str, Any], phase: str) -> bool:
+        return phase in value.get("phase_trace", [])
+
+    task_results = {}
+    for task in sorted({str(value["task"]) for value in values if value.get("task")}):
+        selected = [value for value in values if value.get("task") == task]
+        task_results[task] = {
+            "episodes": len(selected),
+            "successes": sum(bool(value.get("success")) for value in selected),
+            "success_rate": sum(bool(value.get("success")) for value in selected) / len(selected),
+        }
+
     return {
         "episodes": total,
         "successes": successes,
         "success_rate": successes / total if total else None,
         "wilson_95": {"lower": lower, "upper": upper},
         "failure_stages": dict(sorted(failures.items())),
+        "by_task": task_results,
         "stage_funnel": {
             "approach": rate(lambda value: value.get("approach_success", False)),
             "grasp": rate(lambda value: value.get("ever_grasped", False)),
-            "lift_10cm": rate(lambda value: float(value.get("max_lift_m", 0.0)) >= 0.10),
-            "hold_10_steps": rate(
-                lambda value: int(value.get("max_success_hold_steps", 0)) >= 10
-            ),
-            "success": successes / total if total else None,
+            "lift": rate(lambda value: reached_phase(value, "transport")),
+            "target_reached": rate(lambda value: reached_phase(value, "place")),
+            "release": rate(lambda value: reached_phase(value, "verify")),
+            "stable_stack": successes / total if total else None,
         },
         "gripper_transitions": {
             "system": numeric_summary("gripper_transition_count"),
@@ -127,6 +139,62 @@ def seed_promotion_gate(summaries: Iterable[Mapping[str, Any]]) -> dict[str, Any
         "minimum": minimum,
         "spread": spread,
         "passed": median >= 0.70 - 1e-12 and minimum >= 0.60 - 1e-12 and spread <= 0.10 + 1e-12,
+    }
+
+
+def stack_seed_promotion_gate(summaries: Iterable[Mapping[str, Any]]) -> dict[str, Any]:
+    """Apply Stack v1 development thresholds before consuming the blind split."""
+
+    values = list(summaries)
+    if len(values) != 3:
+        raise ValueError("Stack promotion requires exactly three seed summaries")
+    rates = sorted(float(value["success_rate"]) for value in values)
+    task_gaps = []
+    for value in values:
+        task_rates = [float(item["success_rate"]) for item in value.get("by_task", {}).values()]
+        if len(task_rates) != 2:
+            raise ValueError("Each Stack summary must contain exactly two tasks")
+        task_gaps.append(abs(task_rates[0] - task_rates[1]))
+    return {
+        "rates": rates,
+        "median": rates[1],
+        "minimum": rates[0],
+        "maximum_task_gap": max(task_gaps),
+        "passed": rates[1] >= 0.75 and rates[0] >= 0.65 and max(task_gaps) <= 0.10,
+    }
+
+
+def single_seed_stack_promotion_gate(summary: Mapping[str, Any]) -> dict[str, Any]:
+    """Apply the stricter single-seed development gate before blind evaluation."""
+
+    task_rates = [
+        float(item["success_rate"]) for item in summary.get("by_task", {}).values()
+    ]
+    if len(task_rates) != 2:
+        raise ValueError("Stack summary must contain exactly two tasks")
+    funnel = summary.get("stage_funnel", {})
+    thresholds = {
+        "approach": 0.90,
+        "grasp": 0.85,
+        "lift": 0.80,
+        "target_reached": 0.75,
+    }
+    funnel_passed = {
+        stage: float(funnel.get(stage) or 0.0) >= threshold
+        for stage, threshold in thresholds.items()
+    }
+    success_rate = float(summary["success_rate"])
+    task_gap = abs(task_rates[0] - task_rates[1])
+    return {
+        "success_rate": success_rate,
+        "task_gap": task_gap,
+        "funnel": {stage: float(funnel.get(stage) or 0.0) for stage in thresholds},
+        "thresholds": {
+            "success_rate": 0.75,
+            "task_gap_max": 0.10,
+            "funnel": thresholds,
+        },
+        "passed": success_rate >= 0.75 and task_gap <= 0.10 and all(funnel_passed.values()),
     }
 
 

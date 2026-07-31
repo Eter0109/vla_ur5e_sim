@@ -1,0 +1,1409 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "pick_place_blind_v1",
+  "role": "blind",
+  "generator_seed": 63000,
+  "environment_preset": "pick_place_v1",
+  "scenes": [
+    {
+      "scene_id": "pick_place_blind_v1-0000",
+      "seed": 63000,
+      "x_m": -0.03527825061433545,
+      "y_m": -0.01351989215048472,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15913404213902785,
+        "target_y_m": 0.11031401127516363,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0001",
+      "seed": 63001,
+      "x_m": -0.03571092882950475,
+      "y_m": 0.010053788822023305,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14987339770865057,
+        "target_y_m": -0.09457946271909372,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0002",
+      "seed": 63002,
+      "x_m": -0.05313423308677942,
+      "y_m": -0.02941525625387527,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14526576726505888,
+        "target_y_m": -0.1458763906536827,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0003",
+      "seed": 63003,
+      "x_m": -0.03874218712195861,
+      "y_m": -0.006943103750381152,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16456604704780178,
+        "target_y_m": 0.12006765840854908,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0004",
+      "seed": 63004,
+      "x_m": -0.03780933482385501,
+      "y_m": -0.010182104905531526,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14722919688959704,
+        "target_y_m": -0.11579254437879599,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0005",
+      "seed": 63005,
+      "x_m": -0.044075329701627586,
+      "y_m": -0.0008628820758540615,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15494110550515178,
+        "target_y_m": 0.11228176482317495,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0006",
+      "seed": 63006,
+      "x_m": -0.03945118631090984,
+      "y_m": -0.0028873760372234436,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1525856232358422,
+        "target_y_m": 0.09960218952546643,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0007",
+      "seed": 63007,
+      "x_m": -0.04361359468941663,
+      "y_m": 0.006126381021273532,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1457684600040354,
+        "target_y_m": 0.15310736649092296,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0008",
+      "seed": 63008,
+      "x_m": -0.03659626820755296,
+      "y_m": 0.008429153662744972,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14866470486048589,
+        "target_y_m": 0.11352538235931794,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0009",
+      "seed": 63009,
+      "x_m": -0.03701394803317701,
+      "y_m": 0.020081660818287744,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15078356254590206,
+        "target_y_m": -0.09403458727267999,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0010",
+      "seed": 63010,
+      "x_m": -0.037757742415635356,
+      "y_m": 0.026807882562532255,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1743046815574435,
+        "target_y_m": 0.1483239476808729,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0011",
+      "seed": 63011,
+      "x_m": -0.03854245144719536,
+      "y_m": 0.029095420610877755,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14695667136915963,
+        "target_y_m": 0.1340245368747471,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0012",
+      "seed": 63012,
+      "x_m": -0.04617303274601439,
+      "y_m": -0.03543548268984714,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15601285526603875,
+        "target_y_m": -0.13928895722999027,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0013",
+      "seed": 63013,
+      "x_m": -0.03750866765941814,
+      "y_m": -0.021386530912852298,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15777009079585402,
+        "target_y_m": -0.13266575280141038,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0014",
+      "seed": 63014,
+      "x_m": -0.05719981430216594,
+      "y_m": -0.0023390442534284087,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15196742101100777,
+        "target_y_m": 0.10637460305070137,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0015",
+      "seed": 63015,
+      "x_m": -0.03759919952822936,
+      "y_m": 0.038642847694865375,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16338006375204944,
+        "target_y_m": -0.09617980099714764,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0016",
+      "seed": 63016,
+      "x_m": -0.03883614760287751,
+      "y_m": 0.004991366999186182,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1458255945102494,
+        "target_y_m": -0.10358756547422683,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0017",
+      "seed": 63017,
+      "x_m": -0.044242224663821626,
+      "y_m": -0.008949393412737771,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14853477995461078,
+        "target_y_m": -0.12964149109530168,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0018",
+      "seed": 63018,
+      "x_m": -0.04035441773115896,
+      "y_m": -0.013682046455252436,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14617028542379426,
+        "target_y_m": -0.11498544340708677,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0019",
+      "seed": 63019,
+      "x_m": -0.0352473058471353,
+      "y_m": 0.0243596353377318,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14607383200460314,
+        "target_y_m": 0.1378862300055186,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0020",
+      "seed": 63020,
+      "x_m": -0.04131389136651974,
+      "y_m": 0.013460727799141141,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17027337178258026,
+        "target_y_m": -0.09508437425581462,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0021",
+      "seed": 63021,
+      "x_m": -0.036984548258103475,
+      "y_m": 0.02847628139778601,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15786227117102752,
+        "target_y_m": 0.15637733836654574,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0022",
+      "seed": 63022,
+      "x_m": -0.03505222648034081,
+      "y_m": 0.00022571907263287116,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14566508032103015,
+        "target_y_m": -0.10187946892060414,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0023",
+      "seed": 63023,
+      "x_m": -0.03777199888293576,
+      "y_m": -0.025462429147553936,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14543075863701369,
+        "target_y_m": 0.08192300609654804,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0024",
+      "seed": 63024,
+      "x_m": -0.03615116176608334,
+      "y_m": 0.021904542343977207,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16831502661723519,
+        "target_y_m": -0.09835115441745128,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0025",
+      "seed": 63025,
+      "x_m": -0.0366360453595891,
+      "y_m": 7.581982650552155e-05,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.145904589753724,
+        "target_y_m": 0.10855275275461837,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0026",
+      "seed": 63026,
+      "x_m": -0.040807260444385596,
+      "y_m": 0.019017974448392136,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1496786491387194,
+        "target_y_m": -0.1308393851852934,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0027",
+      "seed": 63027,
+      "x_m": -0.03624934017406361,
+      "y_m": -0.0032386097269532788,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15051879259685153,
+        "target_y_m": 0.1028572075852586,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0028",
+      "seed": 63028,
+      "x_m": -0.04916715931241414,
+      "y_m": -0.021708216279381673,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.157719162501629,
+        "target_y_m": 0.10925502227502495,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0029",
+      "seed": 63029,
+      "x_m": -0.03903447975388992,
+      "y_m": -0.00969079698845314,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15581450353095538,
+        "target_y_m": -0.11509686978211495,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0030",
+      "seed": 63030,
+      "x_m": -0.0368920025558131,
+      "y_m": 0.037115939045454675,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1483790355373748,
+        "target_y_m": -0.06457396686143099,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0031",
+      "seed": 63031,
+      "x_m": -0.03613993106660617,
+      "y_m": 0.01528567386905464,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15154015524397443,
+        "target_y_m": 0.11556055411818747,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0032",
+      "seed": 63032,
+      "x_m": -0.03959192591642279,
+      "y_m": 0.024760253861694274,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1554344307299774,
+        "target_y_m": -0.09578628250171818,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0033",
+      "seed": 63033,
+      "x_m": -0.03750261420909083,
+      "y_m": -0.03193173993060595,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1457417486299754,
+        "target_y_m": -0.13261676331711325,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0034",
+      "seed": 63034,
+      "x_m": -0.035639709778863965,
+      "y_m": -0.018172685490380324,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14512082716144967,
+        "target_y_m": -0.13188909820908917,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0035",
+      "seed": 63035,
+      "x_m": -0.03729078624436115,
+      "y_m": -0.0006543181915013296,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14842099417545213,
+        "target_y_m": 0.1070353038307417,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0036",
+      "seed": 63036,
+      "x_m": -0.035917998783146894,
+      "y_m": 0.025187362695102126,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1662586534477943,
+        "target_y_m": -0.109430168950684,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0037",
+      "seed": 63037,
+      "x_m": -0.05625313717510715,
+      "y_m": 0.014438820033200211,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15286195057415083,
+        "target_y_m": 0.14932846490785287,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0038",
+      "seed": 63038,
+      "x_m": -0.035663034978699285,
+      "y_m": -0.01684697249132329,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14516653786995173,
+        "target_y_m": -0.11830558415444767,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0039",
+      "seed": 63039,
+      "x_m": -0.04866906877761922,
+      "y_m": -0.006209802526961877,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15957781485773972,
+        "target_y_m": 0.09910302345349961,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0040",
+      "seed": 63040,
+      "x_m": -0.03793610644520588,
+      "y_m": 0.008846368660792178,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15146215464199744,
+        "target_y_m": -0.10629913312426698,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0041",
+      "seed": 63041,
+      "x_m": -0.05397529499769111,
+      "y_m": 0.0325577813542793,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16598705808488104,
+        "target_y_m": -0.07978087392644603,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0042",
+      "seed": 63042,
+      "x_m": -0.035090761444467516,
+      "y_m": -0.0031225962372141702,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14663285434929663,
+        "target_y_m": 0.10209402734978443,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0043",
+      "seed": 63043,
+      "x_m": -0.037361776761144716,
+      "y_m": 0.006262897893752478,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14734042716531712,
+        "target_y_m": -0.09616120956022531,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0044",
+      "seed": 63044,
+      "x_m": -0.03809598205275207,
+      "y_m": -0.027227831069289492,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14808009417019785,
+        "target_y_m": -0.13040771935116394,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0045",
+      "seed": 63045,
+      "x_m": -0.040222755372163285,
+      "y_m": -0.03513530349170702,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1513364726417546,
+        "target_y_m": 0.1204542787209992,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0046",
+      "seed": 63046,
+      "x_m": -0.03713365320184397,
+      "y_m": 0.009239173231932456,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14960034464486677,
+        "target_y_m": 0.1156880925833543,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0047",
+      "seed": 63047,
+      "x_m": -0.042641762105294356,
+      "y_m": 0.03870203102686685,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14574987181294174,
+        "target_y_m": -0.06281413386236999,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0048",
+      "seed": 63048,
+      "x_m": -0.036235923908151384,
+      "y_m": 0.027498121592964435,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14547731519424706,
+        "target_y_m": 0.12842905518650885,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0049",
+      "seed": 63049,
+      "x_m": -0.038131976902332845,
+      "y_m": 0.019088328292135553,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14978787637447596,
+        "target_y_m": -0.08260152912428374,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0050",
+      "seed": 63050,
+      "x_m": -0.03569053639360649,
+      "y_m": 0.0326664353994893,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1726852362467103,
+        "target_y_m": 0.1405022408424453,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0051",
+      "seed": 63051,
+      "x_m": -0.039634517630479094,
+      "y_m": 0.02977122010017983,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14732059875045778,
+        "target_y_m": 0.13449047729380167,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0052",
+      "seed": 63052,
+      "x_m": -0.036875649748297545,
+      "y_m": -0.03434195483602272,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16801175216251782,
+        "target_y_m": 0.07736294242175937,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0053",
+      "seed": 63053,
+      "x_m": -0.03506775583845009,
+      "y_m": -0.022414370893661672,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15197211674741248,
+        "target_y_m": -0.12287753565279122,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0054",
+      "seed": 63054,
+      "x_m": -0.038355432560766387,
+      "y_m": 0.00014181691278451064,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14657337090010644,
+        "target_y_m": 0.10702311966929087,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0055",
+      "seed": 63055,
+      "x_m": -0.038018301317690656,
+      "y_m": 0.014238289710288357,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15114744198717275,
+        "target_y_m": -0.08720317651041239,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0056",
+      "seed": 63056,
+      "x_m": -0.03632575509475479,
+      "y_m": 0.004287089550131781,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15243121098904894,
+        "target_y_m": -0.13410385339018738,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0057",
+      "seed": 63057,
+      "x_m": -0.03676287296006642,
+      "y_m": -0.03942908904733925,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14582667659542606,
+        "target_y_m": -0.15298950615614032,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0058",
+      "seed": 63058,
+      "x_m": -0.054355231226653006,
+      "y_m": 0.003374026471823187,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14534116160745222,
+        "target_y_m": -0.12098866993632626,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0059",
+      "seed": 63059,
+      "x_m": -0.054781178522751564,
+      "y_m": 0.007068360627894225,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15469387122819453,
+        "target_y_m": 0.1188353843779569,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0060",
+      "seed": 63060,
+      "x_m": -0.03592084772215097,
+      "y_m": -0.0333216390631976,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1528083008006117,
+        "target_y_m": -0.1341463247891997,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0061",
+      "seed": 63061,
+      "x_m": -0.056393856314002094,
+      "y_m": 0.029182421434782634,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14663545258073252,
+        "target_y_m": 0.13653131135510452,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0062",
+      "seed": 63062,
+      "x_m": -0.044547061764834285,
+      "y_m": -0.020862449204972534,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1695547094158378,
+        "target_y_m": -0.13762147010276998,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0063",
+      "seed": 63063,
+      "x_m": -0.03673900574724326,
+      "y_m": -0.01863652303560728,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1494006144124071,
+        "target_y_m": 0.08319112813894478,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0064",
+      "seed": 63064,
+      "x_m": -0.036707646270705704,
+      "y_m": -0.003922695915387603,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14925886235536368,
+        "target_y_m": 0.09976033289939548,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0065",
+      "seed": 63065,
+      "x_m": -0.038178157347078204,
+      "y_m": 0.01051235166250028,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14549569824817718,
+        "target_y_m": 0.11176030452321681,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0066",
+      "seed": 63066,
+      "x_m": -0.036452698807465704,
+      "y_m": -0.004250197171365218,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14507142098329198,
+        "target_y_m": 0.0984345048698512,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0067",
+      "seed": 63067,
+      "x_m": -0.05172008028051004,
+      "y_m": -0.03400445014296413,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15131499039186602,
+        "target_y_m": 0.08423475655803228,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0068",
+      "seed": 63068,
+      "x_m": -0.04974625853702126,
+      "y_m": -0.029369426230100384,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15818024362399624,
+        "target_y_m": -0.1529943178296407,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0069",
+      "seed": 63069,
+      "x_m": -0.058927207151403524,
+      "y_m": 0.02686775321935265,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16284017164814624,
+        "target_y_m": 0.13390408722298938,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0070",
+      "seed": 63070,
+      "x_m": -0.04006504069778313,
+      "y_m": 0.03055755667995711,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1451503159408474,
+        "target_y_m": -0.07640613928298577,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0071",
+      "seed": 63071,
+      "x_m": -0.03819577552110838,
+      "y_m": 0.020999695354878625,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.145596936064149,
+        "target_y_m": 0.1323665171135994,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0072",
+      "seed": 63072,
+      "x_m": -0.04152118506774896,
+      "y_m": -0.0034753537026529363,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14735373493749268,
+        "target_y_m": 0.0988296513245038,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0073",
+      "seed": 63073,
+      "x_m": -0.03526692768576699,
+      "y_m": 0.025121670962636934,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1492343132960609,
+        "target_y_m": -0.08256752692756951,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0074",
+      "seed": 63074,
+      "x_m": -0.0366716474429799,
+      "y_m": -0.015043478429975787,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14562919751255157,
+        "target_y_m": 0.0877508695793382,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0075",
+      "seed": 63075,
+      "x_m": -0.03592595854502231,
+      "y_m": -0.032849237316792235,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16438732660360272,
+        "target_y_m": 0.09319685536061115,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0076",
+      "seed": 63076,
+      "x_m": -0.0399139871209208,
+      "y_m": -0.0014380661051911423,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14805347445312197,
+        "target_y_m": -0.10252916976218117,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0077",
+      "seed": 63077,
+      "x_m": -0.04078633221732687,
+      "y_m": 0.028105901015530406,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14775801945534606,
+        "target_y_m": 0.1468621509446035,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0078",
+      "seed": 63078,
+      "x_m": -0.05700185010285844,
+      "y_m": 0.033226993607718656,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15088498009732673,
+        "target_y_m": -0.09720776756208181,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0079",
+      "seed": 63079,
+      "x_m": -0.0562718130092198,
+      "y_m": 0.002031987402957902,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15012196649587775,
+        "target_y_m": 0.11269274694658446,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0080",
+      "seed": 63080,
+      "x_m": -0.03629942389542059,
+      "y_m": 0.03102448791396662,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14591478226669302,
+        "target_y_m": 0.14287114384943453,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0081",
+      "seed": 63081,
+      "x_m": -0.052313855550334104,
+      "y_m": 0.0118301225714438,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16135184653609053,
+        "target_y_m": -0.10796877021247678,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0082",
+      "seed": 63082,
+      "x_m": -0.039926083333370575,
+      "y_m": -0.0351944648227918,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14609960697784677,
+        "target_y_m": -0.14173816345165563,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0083",
+      "seed": 63083,
+      "x_m": -0.04066037570314886,
+      "y_m": -0.030370695558771386,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14575155569401246,
+        "target_y_m": 0.07080058525758695,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0084",
+      "seed": 63084,
+      "x_m": -0.04027669187401908,
+      "y_m": 0.013057641177607673,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1464434581269029,
+        "target_y_m": 0.11787031733139411,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0085",
+      "seed": 63085,
+      "x_m": -0.037543945158215464,
+      "y_m": 0.03720432995824869,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15905466295669665,
+        "target_y_m": -0.10817882918855208,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0086",
+      "seed": 63086,
+      "x_m": -0.047443789381823316,
+      "y_m": 0.01617507040868002,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17202196078678977,
+        "target_y_m": 0.13390895327021488,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0087",
+      "seed": 63087,
+      "x_m": -0.0443680080378512,
+      "y_m": -0.029579860940103904,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14560157635468207,
+        "target_y_m": 0.10281716163022828,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0088",
+      "seed": 63088,
+      "x_m": -0.051500684072386636,
+      "y_m": 0.01354081126925813,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16635480555948864,
+        "target_y_m": -0.0991387788347163,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0089",
+      "seed": 63089,
+      "x_m": -0.05624542574763663,
+      "y_m": 0.023398651213353168,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14834491118129176,
+        "target_y_m": 0.12917521689515823,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0090",
+      "seed": 63090,
+      "x_m": -0.05875387052639944,
+      "y_m": -0.01386667636471147,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1503367363459828,
+        "target_y_m": -0.14513427963517336,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0091",
+      "seed": 63091,
+      "x_m": -0.037496391469246514,
+      "y_m": 0.021898878387578813,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1508418269395248,
+        "target_y_m": 0.12289082343264154,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0092",
+      "seed": 63092,
+      "x_m": -0.038342143136829335,
+      "y_m": 0.02777096660534708,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14597928467100038,
+        "target_y_m": -0.08094245176531693,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0093",
+      "seed": 63093,
+      "x_m": -0.0376230352778629,
+      "y_m": -0.036801060896188745,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1465664696768239,
+        "target_y_m": 0.07028904831632957,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0094",
+      "seed": 63094,
+      "x_m": -0.03580207315331499,
+      "y_m": -0.03788298953911994,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14531554622331322,
+        "target_y_m": -0.15014915610325485,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0095",
+      "seed": 63095,
+      "x_m": -0.05129428293517664,
+      "y_m": 0.02609583797087437,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17441741166488056,
+        "target_y_m": 0.1332708480543843,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0096",
+      "seed": 63096,
+      "x_m": -0.0351543633956721,
+      "y_m": -0.032396092972044974,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14539547149546153,
+        "target_y_m": 0.07770083782137846,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0097",
+      "seed": 63097,
+      "x_m": -0.03827847862683001,
+      "y_m": -0.007301258252688611,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14704976561125094,
+        "target_y_m": 0.09936914685998074,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0098",
+      "seed": 63098,
+      "x_m": -0.0456716340335678,
+      "y_m": -0.02339461254895398,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1627826238511569,
+        "target_y_m": -0.1422864277034027,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_blind_v1-0099",
+      "seed": 63099,
+      "x_m": -0.035019556945270695,
+      "y_m": -0.022517903648394306,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1451947022134933,
+        "target_y_m": 0.08049183453020017,
+        "distance_bin": 0
+      }
+    }
+  ]
+}

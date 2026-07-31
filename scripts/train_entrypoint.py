@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 import os
 import sys
 from pathlib import Path
@@ -14,7 +15,14 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from vla_sim.lerobot_compat import install_fast_parquet_loader  # noqa: E402
 from vla_sim.losses import action_dimension_weights, weighted_action_loss  # noqa: E402
-from vla_sim.sampling import transition_sampling_weights  # noqa: E402
+from vla_sim.sampling import (  # noqa: E402
+    GlobalTaskPromptDataset,
+    PhaseActionMaskedDataset,
+    ReplayMixDataset,
+    phase_groups_from_indices,
+    phase_sampling_weights,
+    transition_sampling_weights,
+)
 
 install_fast_parquet_loader()
 
@@ -78,15 +86,18 @@ def _install_smolvla_loss_fix() -> None:
         losses = losses[:, :, :action_dim]
         rotation_weight = float(os.environ.get("VLA_ROTATION_LOSS_WEIGHT", "1.0"))
         gripper_weight = float(os.environ.get("VLA_GRIPPER_LOSS_WEIGHT", "1.0"))
+        xyz_weight = float(os.environ.get("VLA_XYZ_LOSS_WEIGHT", "1.0"))
         dim_weights = action_dimension_weights(
             action_dim,
             rotation_weight=rotation_weight,
             gripper_weight=gripper_weight,
+            xyz_weight=xyz_weight,
             device=losses.device,
             dtype=losses.dtype,
         )
         metrics = {
             "losses_after_forward": losses.detach().mean().item(),
+            "xyz_loss_weight": xyz_weight,
             "rotation_loss_weight": rotation_weight,
             "gripper_loss_weight": gripper_weight,
         }
@@ -113,6 +124,23 @@ def _install_smolvla_loss_fix() -> None:
 
 
 _install_smolvla_loss_fix()
+
+
+def _install_global_task_prompt() -> None:
+    prompt = os.environ.get("VLA_GLOBAL_TASK_PROMPT", "").strip()
+    if not prompt:
+        return
+
+    dataloader_class = torch.utils.data.DataLoader
+    original_init = dataloader_class.__init__
+
+    def data_loader_init(self, dataset, *args, **kwargs):
+        if hasattr(dataset, "hf_dataset"):
+            dataset = GlobalTaskPromptDataset(dataset, prompt)
+            print(f"global_task_prompt prompt={prompt!r}", flush=True)
+        original_init(self, dataset, *args, **kwargs)
+
+    dataloader_class.__init__ = data_loader_init  # type: ignore[method-assign]
 
 
 def _install_transition_sampler() -> None:
@@ -159,7 +187,167 @@ def _install_transition_sampler() -> None:
     dataloader_class.__init__ = data_loader_init  # type: ignore[method-assign]
 
 
+def _phase_group(prompt: str) -> str:
+    normalized = prompt.lower()
+    if "above the grasp" in normalized or normalized.startswith("move above"):
+        return "approach"
+    if "grasp object" in normalized or "down and grasp" in normalized:
+        return "grasp"
+    if "lift the grasped" in normalized or normalized.startswith("lift "):
+        return "lift"
+    if "above target" in normalized or "above the blue storage bin" in normalized:
+        return "transport"
+    if (
+        "onto target" in normalized
+        or "for release" in normalized
+        or "in the blue storage bin" in normalized
+        or "hold safely" in normalized
+    ):
+        return "place_release"
+    raise ValueError(f"Unrecognized task phase prompt: {prompt!r}")
+
+
+def _phase_groups_and_episodes(dataset) -> tuple[list[str], list[int]]:
+    groups: list[str] = []
+    episode_indices: list[int] = []
+    episode_offset = 0
+    sources = (
+        (dataset.base, dataset.auxiliary)
+        if isinstance(dataset, ReplayMixDataset)
+        else (dataset,)
+    )
+    for source in sources:
+        raw = source.hf_dataset.with_format(None)
+        if "phase_index" in raw.column_names:
+            phase_indices = [int(value) for value in raw["phase_index"]]
+            source_groups = phase_groups_from_indices(phase_indices)
+        else:
+            task_indices = raw["task_index"]
+            tasks = source.meta.tasks
+            prompts_by_index = {
+                int(row["task_index"]): str(prompt) for prompt, row in tasks.iterrows()
+            }
+            source_groups = [_phase_group(prompts_by_index[int(index)]) for index in task_indices]
+        source_episodes = [int(value) + episode_offset for value in raw["episode_index"]]
+        groups.extend(source_groups)
+        episode_indices.extend(source_episodes)
+        episode_offset = max(source_episodes, default=episode_offset - 1) + 1
+    return groups, episode_indices
+
+
+def _install_phase_sampler() -> None:
+    if os.environ.get("VLA_PHASE_BALANCED", "0") != "1":
+        return
+    seed = int(os.environ.get("VLA_SAMPLING_SEED", "1000"))
+    chunk_size = int(os.environ.get("VLA_PHASE_CHUNK_SIZE", "1"))
+    target_proportions = {
+        "approach": float(os.environ.get("VLA_APPROACH_WEIGHT", "0.25")),
+        "grasp": float(os.environ.get("VLA_GRASP_WEIGHT", "0.20")),
+        "lift": float(os.environ.get("VLA_LIFT_WEIGHT", "0.25")),
+        "transport": float(os.environ.get("VLA_TRANSPORT_WEIGHT", "0.20")),
+        "place_release": float(os.environ.get("VLA_PLACE_RELEASE_WEIGHT", "0.10")),
+    }
+    if any(not 0.0 < weight < 1.0 for weight in target_proportions.values()):
+        raise ValueError("VLA phase weights must each be in (0, 1)")
+    if abs(sum(target_proportions.values()) - 1.0) > 1e-9:
+        raise ValueError("VLA phase weights must sum to 1")
+    dataloader_class = torch.utils.data.DataLoader
+    original_init = dataloader_class.__init__
+
+    def data_loader_init(self, dataset, *args, **kwargs):
+        if kwargs.get("batch_sampler") is None and hasattr(dataset, "hf_dataset"):
+            groups, episode_indices = _phase_groups_and_episodes(dataset)
+            weights = phase_sampling_weights(groups, target_proportions=target_proportions)
+            sampling_multipliers = getattr(dataset, "sampling_multipliers", None)
+            if sampling_multipliers is not None:
+                sampling_multipliers = torch.as_tensor(
+                    sampling_multipliers,
+                    dtype=weights.dtype,
+                )
+                if sampling_multipliers.shape != weights.shape:
+                    raise ValueError("Replay sampling multipliers must match dataset length")
+                weights *= sampling_multipliers
+            global_prompt = bool(os.environ.get("VLA_GLOBAL_TASK_PROMPT", "").strip())
+            if not global_prompt:
+                dataset = PhaseActionMaskedDataset(
+                    dataset,
+                    groups,
+                    episode_indices,
+                    chunk_size,
+                )
+            generator = torch.Generator().manual_seed(seed)
+            kwargs["sampler"] = torch.utils.data.WeightedRandomSampler(
+                weights, num_samples=len(weights), replacement=True, generator=generator
+            )
+            kwargs["shuffle"] = False
+            print(
+                "phase_sampler "
+                + "/".join(
+                    f"{group}({target_proportions[group]:.0%})"
+                    for group in ("approach", "grasp", "lift", "transport", "place_release")
+                )
+                + f" prompt_aligned_mask={str(not global_prompt).lower()} "
+                f"frames={len(weights)} chunk={chunk_size}",
+                flush=True,
+            )
+        original_init(self, dataset, *args, **kwargs)
+
+    dataloader_class.__init__ = data_loader_init  # type: ignore[method-assign]
+
+
+def _install_auxiliary_replay_dataset() -> None:
+    auxiliary_root = os.environ.get("VLA_AUXILIARY_DATASET", "").strip()
+    if not auxiliary_root:
+        return
+    if os.environ.get("VLA_PHASE_BALANCED", "0") != "1":
+        raise ValueError("Auxiliary replay requires phase-balanced sampling")
+    auxiliary_repo_id = os.environ.get("VLA_AUXILIARY_REPO_ID", "").strip()
+    if not auxiliary_repo_id:
+        raise ValueError("VLA_AUXILIARY_REPO_ID is required for auxiliary replay")
+    auxiliary_sample_weight = float(os.environ.get("VLA_AUXILIARY_SAMPLE_WEIGHT", "1.0"))
+    if not math.isfinite(auxiliary_sample_weight) or auxiliary_sample_weight <= 0:
+        raise ValueError("VLA_AUXILIARY_SAMPLE_WEIGHT must be finite and positive")
+
+    from lerobot.datasets.lerobot_dataset import LeRobotDataset
+
+    dataloader_class = torch.utils.data.DataLoader
+    original_init = dataloader_class.__init__
+
+    def data_loader_init(self, dataset, *args, **kwargs):
+        if hasattr(dataset, "hf_dataset") and not getattr(
+            dataset,
+            "_vla_replay_mixed",
+            False,
+        ):
+            auxiliary = LeRobotDataset(
+                auxiliary_repo_id,
+                root=Path(auxiliary_root),
+                delta_timestamps=dataset.delta_timestamps,
+                image_transforms=dataset.image_transforms,
+                video_backend=dataset.video_backend,
+                tolerance_s=dataset.tolerance_s,
+            )
+            dataset = ReplayMixDataset(dataset, auxiliary, auxiliary_sample_weight)
+            effective_auxiliary_fraction = float(
+                dataset.sampling_multipliers[dataset.base_length :].sum()
+                / dataset.sampling_multipliers.sum()
+            )
+            print(
+                "auxiliary_replay "
+                f"base_frames={dataset.base_length} auxiliary_frames={len(auxiliary)} "
+                f"auxiliary_weight={auxiliary_sample_weight:g} "
+                f"effective_fraction={effective_auxiliary_fraction:.1%}",
+                flush=True,
+            )
+        original_init(self, dataset, *args, **kwargs)
+
+    dataloader_class.__init__ = data_loader_init  # type: ignore[method-assign]
+
+
+_install_global_task_prompt()
 _install_transition_sampler()
+_install_phase_sampler()
+_install_auxiliary_replay_dataset()
 
 from lerobot.scripts import lerobot_train  # noqa: E402
 from lerobot.configs.train import TrainPipelineConfig  # noqa: E402
@@ -179,6 +367,24 @@ if os.name == "nt":
     # requires Windows Developer Mode or administrator privileges; numbered
     # checkpoints are already complete and are used directly by this project.
     lerobot_train.update_last_checkpoint = lambda _checkpoint_dir: None
+
+_original_make_optimizer_and_scheduler = lerobot_train.make_optimizer_and_scheduler
+
+
+def _make_optimizer_and_scheduler_with_resume(cfg, policy):
+    optimizer, lr_scheduler = _original_make_optimizer_and_scheduler(cfg, policy)
+    if _resume_checkpoint and lr_scheduler is not None:
+        try:
+            start_step = int(Path(_resume_checkpoint).name)
+            print(f"Resume patch: Fast-forwarding scheduler by {start_step} steps...", flush=True)
+            for _ in range(start_step):
+                lr_scheduler.step()
+        except ValueError:
+            pass
+    return optimizer, lr_scheduler
+
+
+lerobot_train.make_optimizer_and_scheduler = _make_optimizer_and_scheduler_with_resume
 
 main = lerobot_train.main
 

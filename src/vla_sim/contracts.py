@@ -10,7 +10,9 @@ from numpy.typing import NDArray
 
 ACTION_DIM = 7
 STATE_DIM = 7
+STACK_STATE_DIM = 10
 IMAGE_KEY = "observation.images.front"
+WRIST_IMAGE_KEY = "observation.images.wrist"
 STATE_KEY = "observation.state"
 ACTION_KEY = "action"
 TASK_KEY = "task"
@@ -91,6 +93,10 @@ class ObservationAdapter:
         joints = np.asarray(raw.get("robot0_joint_pos"), dtype=np.float32).reshape(-1)
         if joints.size < 6 or not np.all(np.isfinite(joints[:6])):
             raise ContractError("UR5e observation requires six finite joint positions.")
+        opening = self._extract_gripper_opening(raw)
+        return np.ascontiguousarray(np.r_[joints[:6], np.float32(opening)], dtype=np.float32)
+
+    def _extract_gripper_opening(self, raw: Mapping[str, Any]) -> float:
         aperture = None
         for key in ("robot0_gripper_qpos", "robot0_gripper_pos"):
             if key in raw:
@@ -101,8 +107,59 @@ class ObservationAdapter:
         if aperture is None:
             raise ContractError("Missing Robotiq gripper position observation.")
         denominator = self.gripper_max - self.gripper_min
-        opening = float(np.clip((aperture - self.gripper_min) / denominator, 0.0, 1.0))
-        return np.ascontiguousarray(np.r_[joints[:6], np.float32(opening)], dtype=np.float32)
+        return float(np.clip((aperture - self.gripper_min) / denominator, 0.0, 1.0))
+
+
+@dataclass(frozen=True)
+class StackObservationAdapter(ObservationAdapter):
+    """Expose joint state, Cartesian EEF position, and gripper opening for Stack."""
+
+    def _extract_state(self, raw: Mapping[str, Any]) -> NDArray[np.float32]:
+        joints = np.asarray(raw.get("robot0_joint_pos"), dtype=np.float32).reshape(-1)
+        eef = np.asarray(raw.get("robot0_eef_pos"), dtype=np.float32).reshape(-1)
+        if joints.size < 6 or not np.all(np.isfinite(joints[:6])):
+            raise ContractError("UR5e observation requires six finite joint positions.")
+        if eef.size < 3 or not np.all(np.isfinite(eef[:3])):
+            raise ContractError("Stack observation requires a finite Cartesian EEF position.")
+        opening = self._extract_gripper_opening(raw)
+        return np.ascontiguousarray(
+            np.r_[joints[:6], eef[:3], np.float32(opening)], dtype=np.float32
+        )
+
+
+@dataclass(frozen=True)
+class PickPlaceObservationAdapter(StackObservationAdapter):
+    """Expose third-person and wrist RGB views plus the Stack-compatible state."""
+
+    wrist_camera_name: str = "robot0_eye_in_hand"
+    wrist_flip_vertical: bool = False
+
+    @property
+    def wrist_source_image_key(self) -> str:
+        return f"{self.wrist_camera_name}_image"
+
+    def convert(self, raw: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
+        return {
+            IMAGE_KEY: self._extract_image(raw),
+            WRIST_IMAGE_KEY: self._extract_wrist_image(raw),
+            STATE_KEY: self._extract_state(raw),
+        }
+
+    def _extract_wrist_image(self, raw: Mapping[str, Any]) -> NDArray[np.uint8]:
+        if self.wrist_source_image_key not in raw:
+            raise ContractError(f"Missing camera observation '{self.wrist_source_image_key}'.")
+        image = np.asarray(raw[self.wrist_source_image_key])
+        if image.ndim != 3 or image.shape[-1] < 3:
+            raise ContractError(f"Wrist camera image must be HxWxC; got {image.shape}.")
+        image = image[..., :3]
+        if np.issubdtype(image.dtype, np.floating):
+            scale = 255.0 if image.size and float(np.nanmax(image)) <= 1.0 else 1.0
+            image = np.clip(image * scale, 0.0, 255.0).astype(np.uint8)
+        elif image.dtype != np.uint8:
+            image = np.clip(image, 0, 255).astype(np.uint8)
+        if self.wrist_flip_vertical:
+            image = np.flip(image, axis=0)
+        return np.ascontiguousarray(image)
 
 
 def validate_observation(observation: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
@@ -117,3 +174,38 @@ def validate_observation(observation: Mapping[str, Any]) -> dict[str, NDArray[An
     if state.shape != (STATE_DIM,) or not np.all(np.isfinite(state)):
         raise ContractError("Policy state must be a finite float32 7-vector.")
     return {IMAGE_KEY: np.ascontiguousarray(image), STATE_KEY: np.ascontiguousarray(state)}
+
+
+def validate_stack_observation(observation: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
+    """Validate the Stack policy observation with its 10-D real-robot state."""
+
+    if set(observation) != {IMAGE_KEY, STATE_KEY}:
+        raise ContractError(f"Observation keys must be exactly '{IMAGE_KEY}' and '{STATE_KEY}'.")
+    image = np.asarray(observation[IMAGE_KEY])
+    state = np.asarray(observation[STATE_KEY], dtype=np.float32)
+    if image.ndim != 3 or image.shape[-1] != 3 or image.dtype != np.uint8:
+        raise ContractError("Policy image must be uint8 HxWx3 RGB.")
+    if state.shape != (STACK_STATE_DIM,) or not np.all(np.isfinite(state)):
+        raise ContractError("Stack policy state must be a finite float32 10-vector.")
+    return {IMAGE_KEY: np.ascontiguousarray(image), STATE_KEY: np.ascontiguousarray(state)}
+
+
+def validate_pick_place_observation(observation: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
+    """Validate the dual-camera PickPlace policy observation."""
+
+    expected = {IMAGE_KEY, WRIST_IMAGE_KEY, STATE_KEY}
+    if set(observation) != expected:
+        raise ContractError(f"Observation keys must be exactly {sorted(expected)}.")
+    front = np.asarray(observation[IMAGE_KEY])
+    wrist = np.asarray(observation[WRIST_IMAGE_KEY])
+    state = np.asarray(observation[STATE_KEY], dtype=np.float32)
+    for name, image in (("front", front), ("wrist", wrist)):
+        if image.ndim != 3 or image.shape[-1] != 3 or image.dtype != np.uint8:
+            raise ContractError(f"{name} policy image must be uint8 HxWx3 RGB.")
+    if state.shape != (STACK_STATE_DIM,) or not np.all(np.isfinite(state)):
+        raise ContractError("PickPlace policy state must be a finite float32 10-vector.")
+    return {
+        IMAGE_KEY: np.ascontiguousarray(front),
+        WRIST_IMAGE_KEY: np.ascontiguousarray(wrist),
+        STATE_KEY: np.ascontiguousarray(state),
+    }

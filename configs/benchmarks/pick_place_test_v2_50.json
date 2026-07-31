@@ -1,0 +1,709 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "pick_place_test_v2_50",
+  "role": "test",
+  "generator_seed": 65000,
+  "environment_preset": "pick_place_v1",
+  "scenes": [
+    {
+      "scene_id": "pick_place_test_v2_50-0000",
+      "seed": 65000,
+      "x_m": -0.03735686339637402,
+      "y_m": 0.016303027409441583,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14906719641859012,
+        "target_y_m": 0.11818477568540961,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0001",
+      "seed": 65001,
+      "x_m": -0.03504480969547431,
+      "y_m": -0.0010066372975709448,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16125448187628855,
+        "target_y_m": 0.15114654321650997,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0002",
+      "seed": 65002,
+      "x_m": -0.03896775617721493,
+      "y_m": 0.014346932258631089,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1656241882499601,
+        "target_y_m": -0.12758249680523773,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0003",
+      "seed": 65003,
+      "x_m": -0.03856247940525989,
+      "y_m": 0.0027938004379917183,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14731269027468102,
+        "target_y_m": 0.10927447251651964,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0004",
+      "seed": 65004,
+      "x_m": -0.03576786676091252,
+      "y_m": -0.02737238609957411,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15066587213039476,
+        "target_y_m": -0.15936475335571998,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0005",
+      "seed": 65005,
+      "x_m": -0.04595457895998675,
+      "y_m": -0.026513648497196896,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1611259873241316,
+        "target_y_m": 0.08668648388097416,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0006",
+      "seed": 65006,
+      "x_m": -0.038454414250865376,
+      "y_m": -0.03967329358001944,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14948995614657717,
+        "target_y_m": 0.08577538330087567,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0007",
+      "seed": 65007,
+      "x_m": -0.04876808673982587,
+      "y_m": -0.011992951121216643,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14828661538834384,
+        "target_y_m": 0.13564721624980644,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0008",
+      "seed": 65008,
+      "x_m": -0.037318950677859564,
+      "y_m": 0.015483100198506496,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14538724682999613,
+        "target_y_m": 0.12705790498042493,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0009",
+      "seed": 65009,
+      "x_m": -0.03671387331162404,
+      "y_m": -0.025773969029483486,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14821659682395105,
+        "target_y_m": -0.14290309283154695,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0010",
+      "seed": 65010,
+      "x_m": -0.056505460425089256,
+      "y_m": -0.011530438998696057,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16385206128290822,
+        "target_y_m": 0.10575632274913213,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0011",
+      "seed": 65011,
+      "x_m": -0.038708969817801905,
+      "y_m": 0.02853062785116362,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1456775887390689,
+        "target_y_m": 0.1366118771775721,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0012",
+      "seed": 65012,
+      "x_m": -0.04471296735926643,
+      "y_m": 0.008572402418153435,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1627089550127253,
+        "target_y_m": 0.141618445761972,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0013",
+      "seed": 65013,
+      "x_m": -0.03581099218666766,
+      "y_m": 0.004100655529114178,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14895442915324866,
+        "target_y_m": -0.09643964230848205,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0014",
+      "seed": 65014,
+      "x_m": -0.03706530757685425,
+      "y_m": -0.020619973244486695,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15117901217157625,
+        "target_y_m": 0.0813012593011396,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0015",
+      "seed": 65015,
+      "x_m": -0.03553736170302895,
+      "y_m": -0.012132841159596099,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14549436410284763,
+        "target_y_m": 0.09531384445289656,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0016",
+      "seed": 65016,
+      "x_m": -0.03778858349762069,
+      "y_m": 0.02428602767310164,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14922239468163492,
+        "target_y_m": -0.11151259805318936,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0017",
+      "seed": 65017,
+      "x_m": -0.03986999523571072,
+      "y_m": 0.03840736879122588,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14619199133259764,
+        "target_y_m": -0.06652617344545966,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0018",
+      "seed": 65018,
+      "x_m": -0.04235580674528566,
+      "y_m": -0.031056073889694318,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1453639080513227,
+        "target_y_m": 0.07290925188300443,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0019",
+      "seed": 65019,
+      "x_m": -0.03892732474241492,
+      "y_m": -0.027994462229857717,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14612128223730184,
+        "target_y_m": -0.13117848987162437,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0020",
+      "seed": 65020,
+      "x_m": -0.036276999115992706,
+      "y_m": 0.024962726902081588,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15256373862537953,
+        "target_y_m": -0.07697217605596801,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0021",
+      "seed": 65021,
+      "x_m": -0.03844574966825761,
+      "y_m": -0.022178494879136288,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14928765661294438,
+        "target_y_m": 0.08216315532551632,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0022",
+      "seed": 65022,
+      "x_m": -0.04356958593655043,
+      "y_m": -0.01699920883947251,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14613945351227564,
+        "target_y_m": 0.1360180704144032,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0023",
+      "seed": 65023,
+      "x_m": -0.05467809834704188,
+      "y_m": 0.028188234467925004,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.165563037359747,
+        "target_y_m": 0.1284621935213572,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0024",
+      "seed": 65024,
+      "x_m": -0.041425474463482465,
+      "y_m": 0.0011795096998477445,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16392367026525978,
+        "target_y_m": 0.1413438503685254,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0025",
+      "seed": 65025,
+      "x_m": -0.035313046879167365,
+      "y_m": 0.039843229688765185,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15259744889067312,
+        "target_y_m": 0.1430765314017267,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0026",
+      "seed": 65026,
+      "x_m": -0.05339570954608182,
+      "y_m": -0.0028116788186785674,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16491051220333372,
+        "target_y_m": 0.10460312015524112,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0027",
+      "seed": 65027,
+      "x_m": -0.04713032350594429,
+      "y_m": 0.035845647225929776,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1645047113138983,
+        "target_y_m": 0.14258243256818134,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0028",
+      "seed": 65028,
+      "x_m": -0.035818518257429106,
+      "y_m": -0.0007459332862986834,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15281084667485237,
+        "target_y_m": -0.10240242216328624,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0029",
+      "seed": 65029,
+      "x_m": -0.04325399467706394,
+      "y_m": 0.008583423207125407,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15400202990639786,
+        "target_y_m": 0.15050794413203036,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0030",
+      "seed": 65030,
+      "x_m": -0.03536614149828582,
+      "y_m": -0.00859680016434658,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14925831694307265,
+        "target_y_m": -0.1135814385051226,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0031",
+      "seed": 65031,
+      "x_m": -0.037196380715265195,
+      "y_m": 0.03521334732599555,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15048601391748292,
+        "target_y_m": 0.13799643145787147,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0032",
+      "seed": 65032,
+      "x_m": -0.03661851166457389,
+      "y_m": 0.019464115342945204,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14841722843234606,
+        "target_y_m": 0.11965431258094225,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0033",
+      "seed": 65033,
+      "x_m": -0.05748559506864755,
+      "y_m": 0.02440078841675699,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15569590657171462,
+        "target_y_m": -0.07731022652609994,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0034",
+      "seed": 65034,
+      "x_m": -0.05953409118393511,
+      "y_m": 0.034846531774853924,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16476413801516282,
+        "target_y_m": 0.14309529355599795,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0035",
+      "seed": 65035,
+      "x_m": -0.04357754056660021,
+      "y_m": 0.0004901099654033708,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15015970030989914,
+        "target_y_m": 0.13744083017306533,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0036",
+      "seed": 65036,
+      "x_m": -0.038963783101520086,
+      "y_m": 0.018525113027005317,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14598422639155145,
+        "target_y_m": 0.12225560807758909,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0037",
+      "seed": 65037,
+      "x_m": -0.0387189434983955,
+      "y_m": -0.02597606960426763,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1455368515000384,
+        "target_y_m": 0.07602024358615822,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0038",
+      "seed": 65038,
+      "x_m": -0.043090748782423874,
+      "y_m": -0.003961859598571434,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14578031937215982,
+        "target_y_m": -0.10424981892393419,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0039",
+      "seed": 65039,
+      "x_m": -0.038072420647975815,
+      "y_m": -0.00775705874325263,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1656782845880158,
+        "target_y_m": -0.131001218751941,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0040",
+      "seed": 65040,
+      "x_m": -0.05456197674768689,
+      "y_m": 0.0203896443725402,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15515523144249146,
+        "target_y_m": -0.10203543012400945,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0041",
+      "seed": 65041,
+      "x_m": -0.039376613968065514,
+      "y_m": -0.02719753427258386,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14778732398700264,
+        "target_y_m": -0.12880722917300702,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0042",
+      "seed": 65042,
+      "x_m": -0.042574759185689995,
+      "y_m": 0.03772057109651852,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1688141178526684,
+        "target_y_m": -0.0716113076859585,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0043",
+      "seed": 65043,
+      "x_m": -0.039732689644403116,
+      "y_m": -0.019706642445972485,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14774378724206813,
+        "target_y_m": -0.12426762284883272,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0044",
+      "seed": 65044,
+      "x_m": -0.03836101857956406,
+      "y_m": 0.0026035299040888665,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1506348213642829,
+        "target_y_m": -0.09883923510164934,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0045",
+      "seed": 65045,
+      "x_m": -0.04304919570237882,
+      "y_m": 0.03086432132176444,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15518630241061265,
+        "target_y_m": 0.13733621328355708,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0046",
+      "seed": 65046,
+      "x_m": -0.039594687952635294,
+      "y_m": 0.013156750129050945,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15453537210373589,
+        "target_y_m": 0.11572932251726245,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0047",
+      "seed": 65047,
+      "x_m": -0.035448026302376916,
+      "y_m": 0.0325494301665887,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14545036752925572,
+        "target_y_m": 0.13665405765706298,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0048",
+      "seed": 65048,
+      "x_m": -0.035538849427395686,
+      "y_m": -0.0054192743964874765,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14692773214930657,
+        "target_y_m": 0.10288964207697768,
+        "distance_bin": 0
+      }
+    },
+    {
+      "scene_id": "pick_place_test_v2_50-0049",
+      "seed": 65049,
+      "x_m": -0.04531093894131319,
+      "y_m": 0.0335675934149749,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14569448893417486,
+        "target_y_m": 0.15283084131503213,
+        "distance_bin": 1
+      }
+    }
+  ]
+}
