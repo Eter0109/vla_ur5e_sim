@@ -37,6 +37,8 @@ python scripts/run_pick_place_rollouts.py `
 离线诊断和 50 场评测命令见 [PickPlace v2 Runbook](docs/PICK_PLACE_V2_RUNBOOK.md)，实验身份和
 结果见 [实验注册表](docs/reference/EXPERIMENT_REGISTRY.md)，完整训练迭代见
 [PickPlace VLA 实验报告](docs/reports/PICK_PLACE_VLA_EXPERIMENT_REPORT_20260731.md)。
+项目文档导航与本地数据、checkpoint、rollout 的保存规则见
+[文档索引](docs/README.md) 和 [本地保存结构](docs/reference/LOCAL_STORAGE_LAYOUT.md)。
 
 ## 资产目录
 
