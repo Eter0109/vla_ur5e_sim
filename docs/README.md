@@ -9,7 +9,8 @@
 | 类别 | 文档 | 用途 |
 | --- | --- | --- |
 | 实验注册 | [实验注册表](reference/EXPERIMENT_REGISTRY.md) | PickPlace benchmark 身份、盲测消费状态和治理规则 |
-| 实验报告 | [PickPlace VLA 训练与评测报告](reports/PICK_PLACE_VLA_EXPERIMENT_REPORT_20260731.md) | 20k 训练配置、失败实验、校准迭代和 50 场结果 |
+| 当前进展 | [Teacher Distillation v5.3 报告](reports/PICK_PLACE_TEACHER_DISTILL_V5_3_SUCCESS_20260804.md) | raw pure-VLA development-24 `22/24` 候选、证据边界和下一晋级条件 |
+| 冻结基线 | [PickPlace VLA 训练与评测报告](reports/PICK_PLACE_VLA_EXPERIMENT_REPORT_20260731.md) | 20k 训练配置、固定动作校准和历史 50 场结果 |
 | 上手资料 | [项目上手指南](reference/PROJECT_ONBOARDING_GUIDE.md) | 双相机任务、系统架构和最小可复现路径 |
 | 保存结构 | [本地保存结构与归档规则](reference/LOCAL_STORAGE_LAYOUT.md) | 代码、文档、数据、checkpoint、rollout 和缓存的保存边界 |
 | 操作手册 | [PickPlace v2 Runbook](PICK_PLACE_V2_RUNBOOK.md) | 数据、训练、诊断、可视化和评测的标准命令 |
@@ -18,6 +19,8 @@
 
 - [`archive/stack/`](archive/stack/)：Stack Runbook、阶段交接和优化记录，仅用于追溯。
 - `../scripts/archive/stack/`：保留的 Stack v1 历史脚本；不是当前入口，部分命令依赖旧仓库布局。
+- [`reports/PICK_PLACE_TEACHER_DISTILL_V4_HANDOFF_20260803.md`](reports/PICK_PLACE_TEACHER_DISTILL_V4_HANDOFF_20260803.md)：
+  v4 阶段历史交接，已被 v5.3 结果替代。
 - `reports/archive/`：2026-07-17、2026-07-19 的 lift 阶段报告和旧验收报告，只用于历史追溯。
 - `plans/archive/`：已经执行完成或被后续计划替代的改进计划。
 

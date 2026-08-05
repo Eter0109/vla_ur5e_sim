@@ -8,6 +8,7 @@ from vla_sim.sampling import (
     GlobalTaskPromptDataset,
     PhaseActionMaskedDataset,
     ReplayMixDataset,
+    ReplayMultiMixDataset,
     phase_action_pad_mask,
     phase_chunk_safe_mask,
     phase_groups_from_indices,
@@ -54,6 +55,30 @@ def test_replay_mix_dataset_rejects_invalid_auxiliary_weight(weight: float) -> N
 
     with pytest.raises(ValueError, match="auxiliary_sample_weight"):
         ReplayMixDataset(FakeDataset(), FakeDataset(), weight)
+
+
+def test_replay_multi_mix_dataset_routes_each_source_with_independent_weights() -> None:
+    class FakeDataset:
+        features = {"value": {"dtype": "int64"}}
+        fps = 10
+
+        def __init__(self, values: list[int]) -> None:
+            self.values = values
+            self.hf_dataset = Dataset.from_dict({"value": values})
+            self.meta = object()
+
+        def __len__(self) -> int:
+            return len(self.values)
+
+        def __getitem__(self, index: int):
+            return {"value": self.values[index]}
+
+    mixed = ReplayMultiMixDataset(
+        FakeDataset([1, 2]), [FakeDataset([10]), FakeDataset([20, 21])], [0.2, 0.3]
+    )
+    assert mixed.base_length == 2
+    assert [mixed[index]["value"] for index in range(len(mixed))] == [1, 2, 10, 20, 21]
+    assert mixed.sampling_multipliers.tolist() == [1.0, 1.0, 0.2, 0.3, 0.3]
 
 
 def test_global_task_prompt_dataset_relabels_text_without_changing_actions() -> None:
@@ -170,6 +195,43 @@ def test_phase_sampling_requires_every_group():
         assert "place_release" in str(error)
     else:
         raise AssertionError("Expected missing phase group to fail")
+
+
+def test_phase_sampling_preserves_targets_after_source_phase_filtering() -> None:
+    groups = (
+        ["approach"] * 3
+        + ["grasp"] * 3
+        + ["lift"] * 3
+        + ["transport"] * 4
+        + ["place_release"] * 3
+    )
+    # The final transport entries represent teacher data. Other teacher phase
+    # entries were filtered to zero before phase normalization.
+    multipliers = torch.tensor(
+        [1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 2, 2, 1, 1, 0],
+        dtype=torch.double,
+    )
+    targets = {
+        "approach": 0.18,
+        "grasp": 0.20,
+        "lift": 0.20,
+        "transport": 0.27,
+        "place_release": 0.15,
+    }
+    weights = phase_sampling_weights(
+        groups,
+        target_proportions=targets,
+        sampling_multipliers=multipliers,
+    )
+    normalized = weights / weights.sum()
+    totals = {
+        group: float(normalized[
+            torch.as_tensor([value == group for value in groups], dtype=torch.bool)
+        ].sum())
+        for group in targets
+    }
+    assert totals == pytest.approx(targets)
+    assert torch.all(weights[multipliers == 0] == 0)
 
 
 def test_transition_window_is_upweighted_without_crossing_episode_boundary() -> None:

@@ -1,0 +1,5609 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "pick_place_grasp_recovery_positive_y_v1",
+  "role": "collection",
+  "generator_seed": 70000,
+  "environment_preset": "pick_place_v1",
+  "scenes": [
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0000",
+      "seed": 70000,
+      "x_m": -0.03777297729461106,
+      "y_m": 0.02029042136534605,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15015773267050223,
+        "target_y_m": -0.11698063265092898,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0001",
+      "seed": 70001,
+      "x_m": -0.0500635175577645,
+      "y_m": 0.039616426071931235,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14943050525515966,
+        "target_y_m": 0.15500756506994348,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0002",
+      "seed": 70002,
+      "x_m": -0.03920609251256364,
+      "y_m": 0.039279316592682995,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15774726356053237,
+        "target_y_m": -0.09946712914911554,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0003",
+      "seed": 70003,
+      "x_m": -0.05831268020336118,
+      "y_m": 0.02635587658415995,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16296379061589183,
+        "target_y_m": -0.08062000531263745,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0004",
+      "seed": 70004,
+      "x_m": -0.05292105272917457,
+      "y_m": 0.021697357707748794,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1520943186298542,
+        "target_y_m": 0.12507567752765394,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0005",
+      "seed": 70005,
+      "x_m": -0.04058333909100603,
+      "y_m": 0.029015420936697123,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15966709947798863,
+        "target_y_m": -0.10362293978072977,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0006",
+      "seed": 70006,
+      "x_m": -0.04652837787365067,
+      "y_m": 0.039145878999150466,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16261529296062532,
+        "target_y_m": -0.061177514438952516,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0007",
+      "seed": 70007,
+      "x_m": -0.03906905373989229,
+      "y_m": 0.037909889270993674,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15294103880446464,
+        "target_y_m": -0.07754169935403421,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0008",
+      "seed": 70008,
+      "x_m": -0.036898072285746625,
+      "y_m": 0.03031563796935996,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14883209809153022,
+        "target_y_m": -0.13117002141341882,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0009",
+      "seed": 70009,
+      "x_m": -0.05813408375276642,
+      "y_m": 0.035234744438894613,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1523975269738742,
+        "target_y_m": -0.07393884680721101,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0010",
+      "seed": 70010,
+      "x_m": -0.03772416536127144,
+      "y_m": 0.023436530973000906,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16816844386734212,
+        "target_y_m": -0.09345866427658837,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0011",
+      "seed": 70011,
+      "x_m": -0.04670742881490533,
+      "y_m": 0.020340041322179824,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1541369604574817,
+        "target_y_m": 0.15247743491613222,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0012",
+      "seed": 70012,
+      "x_m": -0.058519489157944055,
+      "y_m": 0.03486525345765977,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15146528428969322,
+        "target_y_m": -0.07933336249271171,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0013",
+      "seed": 70013,
+      "x_m": -0.056092308404916344,
+      "y_m": 0.027981570973165067,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14937654347293564,
+        "target_y_m": 0.13296857327173103,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0014",
+      "seed": 70014,
+      "x_m": -0.04010821219431232,
+      "y_m": 0.03771243206042514,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15565998876095105,
+        "target_y_m": -0.06969070876670781,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0015",
+      "seed": 70015,
+      "x_m": -0.038765005374167466,
+      "y_m": 0.03305010738178753,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15342044214783157,
+        "target_y_m": -0.08878924715390102,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0016",
+      "seed": 70016,
+      "x_m": -0.04658418590033121,
+      "y_m": 0.025159809854636617,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1541896128783484,
+        "target_y_m": 0.1328443911866136,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0017",
+      "seed": 70017,
+      "x_m": -0.05337100380830458,
+      "y_m": 0.03505830016279301,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.159811320063056,
+        "target_y_m": -0.07817753728516916,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0018",
+      "seed": 70018,
+      "x_m": -0.054873677890029345,
+      "y_m": 0.025949709646584808,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14849875926795122,
+        "target_y_m": 0.13356385079093772,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0019",
+      "seed": 70019,
+      "x_m": -0.05003380192276678,
+      "y_m": 0.038131851886028925,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1707269914246097,
+        "target_y_m": -0.06780695574561577,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0020",
+      "seed": 70020,
+      "x_m": -0.03884708084521448,
+      "y_m": 0.0323725269445289,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17392114932588715,
+        "target_y_m": 0.14380119709833114,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0021",
+      "seed": 70021,
+      "x_m": -0.0393027150994093,
+      "y_m": 0.030715398995603053,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15593902097497334,
+        "target_y_m": 0.1464842707342103,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0022",
+      "seed": 70022,
+      "x_m": -0.05089152423747372,
+      "y_m": 0.03896110086986326,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16966509655361284,
+        "target_y_m": -0.07524779530126004,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0023",
+      "seed": 70023,
+      "x_m": -0.04494382978847267,
+      "y_m": 0.0363888163256111,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16987729136483892,
+        "target_y_m": -0.06629116362268278,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0024",
+      "seed": 70024,
+      "x_m": -0.03740013234790977,
+      "y_m": 0.029714137925082672,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16865850688548573,
+        "target_y_m": -0.10228810925376933,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0025",
+      "seed": 70025,
+      "x_m": -0.058210200444316025,
+      "y_m": 0.020213981756384673,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15759772305958902,
+        "target_y_m": 0.1305941114838908,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0026",
+      "seed": 70026,
+      "x_m": -0.04498240595964538,
+      "y_m": 0.021271848216099565,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14779895659634362,
+        "target_y_m": -0.09485128054222468,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0027",
+      "seed": 70027,
+      "x_m": -0.0486168853093498,
+      "y_m": 0.028595601419696685,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16384429864488406,
+        "target_y_m": 0.15379556736663083,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0028",
+      "seed": 70028,
+      "x_m": -0.05824550102625108,
+      "y_m": 0.029552186524929552,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14992280896354152,
+        "target_y_m": 0.15045158497680092,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0029",
+      "seed": 70029,
+      "x_m": -0.04028018173386345,
+      "y_m": 0.026445444231425624,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1706006983986232,
+        "target_y_m": -0.09396476862423278,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0030",
+      "seed": 70030,
+      "x_m": -0.03880924925930074,
+      "y_m": 0.022632266070883787,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17495006082768003,
+        "target_y_m": 0.13443275399039153,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0031",
+      "seed": 70031,
+      "x_m": -0.04254957104937965,
+      "y_m": 0.026461372390223364,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15266286352916894,
+        "target_y_m": 0.15221614181841484,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0032",
+      "seed": 70032,
+      "x_m": -0.04615258494504788,
+      "y_m": 0.021128741782927517,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15265672458112975,
+        "target_y_m": 0.1233669836391065,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0033",
+      "seed": 70033,
+      "x_m": -0.03636365520519554,
+      "y_m": 0.03325652669777406,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16244915051579836,
+        "target_y_m": -0.08824640075825581,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0034",
+      "seed": 70034,
+      "x_m": -0.03737198461756529,
+      "y_m": 0.023271809413727883,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1527712813843346,
+        "target_y_m": -0.081260774741273,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0035",
+      "seed": 70035,
+      "x_m": -0.0358517173079497,
+      "y_m": 0.03175649731198585,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14504329675267194,
+        "target_y_m": -0.12006839250032189,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0036",
+      "seed": 70036,
+      "x_m": -0.04715205535698662,
+      "y_m": 0.02719542648357749,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14903052211024426,
+        "target_y_m": 0.15787000536335752,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0037",
+      "seed": 70037,
+      "x_m": -0.05636878501214238,
+      "y_m": 0.026653875995788757,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15428511186339647,
+        "target_y_m": -0.08055888282235152,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0038",
+      "seed": 70038,
+      "x_m": -0.045192231164042265,
+      "y_m": 0.026471008148738803,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17042558454577683,
+        "target_y_m": 0.14009309221640806,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0039",
+      "seed": 70039,
+      "x_m": -0.0402678592775335,
+      "y_m": 0.032251040993511185,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15709848458075681,
+        "target_y_m": -0.11640112409320093,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0040",
+      "seed": 70040,
+      "x_m": -0.04660829547995336,
+      "y_m": 0.037089330963673825,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1477439489178459,
+        "target_y_m": -0.11987560088185475,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0041",
+      "seed": 70041,
+      "x_m": -0.04945618164564851,
+      "y_m": 0.027840169798266617,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16892915003283662,
+        "target_y_m": -0.09107146642693771,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0042",
+      "seed": 70042,
+      "x_m": -0.052105358530257107,
+      "y_m": 0.025475520006201926,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16114032484728585,
+        "target_y_m": -0.0856829755511743,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0043",
+      "seed": 70043,
+      "x_m": -0.04819203108905108,
+      "y_m": 0.03916546333594046,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14537787083668882,
+        "target_y_m": -0.08434949547420281,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0044",
+      "seed": 70044,
+      "x_m": -0.03504616305647989,
+      "y_m": 0.03208388434733974,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14800815275604426,
+        "target_y_m": -0.08570285139867963,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0045",
+      "seed": 70045,
+      "x_m": -0.035375369598992075,
+      "y_m": 0.030784281742448856,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17377367232910332,
+        "target_y_m": -0.0804273713451418,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0046",
+      "seed": 70046,
+      "x_m": -0.045500155521249516,
+      "y_m": 0.02855608437949965,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15548427769334988,
+        "target_y_m": -0.08370308492045705,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0047",
+      "seed": 70047,
+      "x_m": -0.05058714966583758,
+      "y_m": 0.026943307634446245,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14664878797696043,
+        "target_y_m": 0.12921890441126646,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0048",
+      "seed": 70048,
+      "x_m": -0.035628707315471575,
+      "y_m": 0.024170791647601227,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16281301801702328,
+        "target_y_m": -0.12166399279738024,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0049",
+      "seed": 70049,
+      "x_m": -0.03533182783079321,
+      "y_m": 0.03279168339777004,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14677426792977752,
+        "target_y_m": -0.114550325904668,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0050",
+      "seed": 70050,
+      "x_m": -0.03752662971193993,
+      "y_m": 0.03442204606215531,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1481163755848785,
+        "target_y_m": 0.15325309288228792,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0051",
+      "seed": 70051,
+      "x_m": -0.04247406285371627,
+      "y_m": 0.0316248616939073,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16604922808535122,
+        "target_y_m": 0.14093633900266453,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0052",
+      "seed": 70052,
+      "x_m": -0.04658200328717721,
+      "y_m": 0.03328042325074729,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14976872866056498,
+        "target_y_m": 0.1525835555765976,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0053",
+      "seed": 70053,
+      "x_m": -0.0360866183301329,
+      "y_m": 0.03015921101665851,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16696529234203256,
+        "target_y_m": -0.0923971642679415,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0054",
+      "seed": 70054,
+      "x_m": -0.042799405563184074,
+      "y_m": 0.025826405425124415,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15131246562822348,
+        "target_y_m": -0.07665563656112824,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0055",
+      "seed": 70055,
+      "x_m": -0.05025677383934513,
+      "y_m": 0.03276512259569647,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16468705178657142,
+        "target_y_m": 0.15824657915574145,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0056",
+      "seed": 70056,
+      "x_m": -0.04029227219492274,
+      "y_m": 0.03361598171567681,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16612822141212683,
+        "target_y_m": 0.1372132047177744,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0057",
+      "seed": 70057,
+      "x_m": -0.04219378326322154,
+      "y_m": 0.02667909294757077,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16840677600578385,
+        "target_y_m": 0.13447034704123792,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0058",
+      "seed": 70058,
+      "x_m": -0.03754212321448821,
+      "y_m": 0.03860609506360563,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14859299580716792,
+        "target_y_m": 0.14740916409835877,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0059",
+      "seed": 70059,
+      "x_m": -0.048165429409034344,
+      "y_m": 0.023987741155123147,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15919869561331823,
+        "target_y_m": -0.07915012593597158,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0060",
+      "seed": 70060,
+      "x_m": -0.03661997631185843,
+      "y_m": 0.025311320024691945,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14956229396736453,
+        "target_y_m": -0.11330962793579563,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0061",
+      "seed": 70061,
+      "x_m": -0.051864731352675095,
+      "y_m": 0.03921040768256258,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16165091517033203,
+        "target_y_m": 0.1486645814796432,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0062",
+      "seed": 70062,
+      "x_m": -0.03940053900738727,
+      "y_m": 0.029983310680065035,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15935468130535999,
+        "target_y_m": 0.13340768143335494,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0063",
+      "seed": 70063,
+      "x_m": -0.05810291467574735,
+      "y_m": 0.03072588802143449,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14542069339011776,
+        "target_y_m": -0.08272557143778006,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0064",
+      "seed": 70064,
+      "x_m": -0.04400996977289126,
+      "y_m": 0.020336749654794116,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17222261269718742,
+        "target_y_m": 0.12235781357603495,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0065",
+      "seed": 70065,
+      "x_m": -0.036613901878921516,
+      "y_m": 0.024762495654021853,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16073542046394862,
+        "target_y_m": 0.15550221505927878,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0066",
+      "seed": 70066,
+      "x_m": -0.04055672269899378,
+      "y_m": 0.030631973264884586,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1670034423799759,
+        "target_y_m": 0.15229206592814956,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0067",
+      "seed": 70067,
+      "x_m": -0.05005056189274597,
+      "y_m": 0.02227670868028265,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14552017304202955,
+        "target_y_m": -0.07878500790316352,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0068",
+      "seed": 70068,
+      "x_m": -0.049845636108596346,
+      "y_m": 0.03942828035952994,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17170636421657232,
+        "target_y_m": 0.14768384079657923,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0069",
+      "seed": 70069,
+      "x_m": -0.046893010725966675,
+      "y_m": 0.024374651703808498,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1700135364775229,
+        "target_y_m": 0.12699519008283458,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0070",
+      "seed": 70070,
+      "x_m": -0.035763138247953005,
+      "y_m": 0.02525562250144925,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15228407986381742,
+        "target_y_m": -0.11082019180291611,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0071",
+      "seed": 70071,
+      "x_m": -0.041003512404641465,
+      "y_m": 0.02530022359342052,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14502170290659716,
+        "target_y_m": 0.15837905345416328,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0072",
+      "seed": 70072,
+      "x_m": -0.03735281739238551,
+      "y_m": 0.02401686958565063,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14733186768096806,
+        "target_y_m": -0.09059767129883466,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0073",
+      "seed": 70073,
+      "x_m": -0.039590560957153034,
+      "y_m": 0.02001890345823228,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15961220506448975,
+        "target_y_m": 0.15612754586131414,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0074",
+      "seed": 70074,
+      "x_m": -0.04037064356388263,
+      "y_m": 0.03694502545356546,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14530505480178663,
+        "target_y_m": -0.12060781115369526,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0075",
+      "seed": 70075,
+      "x_m": -0.052496331087362416,
+      "y_m": 0.03404702506853929,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15472288672472112,
+        "target_y_m": 0.14451661853440892,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0076",
+      "seed": 70076,
+      "x_m": -0.03803193419907921,
+      "y_m": 0.03752251183732321,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15383084413572606,
+        "target_y_m": -0.09676205531706597,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0077",
+      "seed": 70077,
+      "x_m": -0.04469212142474163,
+      "y_m": 0.027960993837638663,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1584820953137812,
+        "target_y_m": -0.11010055108654196,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0078",
+      "seed": 70078,
+      "x_m": -0.04388043422635322,
+      "y_m": 0.03814856864158925,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15090360696103444,
+        "target_y_m": 0.14634820935697976,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0079",
+      "seed": 70079,
+      "x_m": -0.04263344381273607,
+      "y_m": 0.034963082539814345,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16110759029141505,
+        "target_y_m": 0.15820814663484392,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0080",
+      "seed": 70080,
+      "x_m": -0.039173559294343234,
+      "y_m": 0.022670924732305003,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15922567621470302,
+        "target_y_m": 0.1571777566479531,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0081",
+      "seed": 70081,
+      "x_m": -0.044863633054217054,
+      "y_m": 0.03567623753829342,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14745898094934698,
+        "target_y_m": -0.06750368332558906,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0082",
+      "seed": 70082,
+      "x_m": -0.054082367574242396,
+      "y_m": 0.023245844325554713,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15169940979910065,
+        "target_y_m": -0.09074317380869157,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0083",
+      "seed": 70083,
+      "x_m": -0.041978911601448704,
+      "y_m": 0.021535468239534165,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1622683604873059,
+        "target_y_m": -0.10283058877740668,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0084",
+      "seed": 70084,
+      "x_m": -0.04736002762982944,
+      "y_m": 0.028369323095159868,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15602947936652248,
+        "target_y_m": 0.14042807654428527,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0085",
+      "seed": 70085,
+      "x_m": -0.04512053308139543,
+      "y_m": 0.03404189134333659,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15362024487593903,
+        "target_y_m": -0.1148522198017661,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0086",
+      "seed": 70086,
+      "x_m": -0.037247219394510186,
+      "y_m": 0.03117256227142155,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15699737138487999,
+        "target_y_m": -0.09434989951257254,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0087",
+      "seed": 70087,
+      "x_m": -0.04098461131960573,
+      "y_m": 0.029922598775330697,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17120184608321867,
+        "target_y_m": 0.1490378317426305,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0088",
+      "seed": 70088,
+      "x_m": -0.04933292019114526,
+      "y_m": 0.029493472376335997,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16760158187072294,
+        "target_y_m": -0.07578908549064921,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0089",
+      "seed": 70089,
+      "x_m": -0.04715874114495304,
+      "y_m": 0.02063551958837738,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15610297669461973,
+        "target_y_m": 0.15934329882266576,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0090",
+      "seed": 70090,
+      "x_m": -0.056400633501766995,
+      "y_m": 0.021860839320406823,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15574484031741603,
+        "target_y_m": -0.10975175047381783,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0091",
+      "seed": 70091,
+      "x_m": -0.046364943736479224,
+      "y_m": 0.03818955210791854,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1498396066745182,
+        "target_y_m": 0.15308012194480167,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0092",
+      "seed": 70092,
+      "x_m": -0.04368681997335723,
+      "y_m": 0.02319020613108832,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14964958867642683,
+        "target_y_m": -0.12606265879106526,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0093",
+      "seed": 70093,
+      "x_m": -0.05790914724101878,
+      "y_m": 0.03452863794979706,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14704505553168593,
+        "target_y_m": -0.08349359027735993,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0094",
+      "seed": 70094,
+      "x_m": -0.040857330148275986,
+      "y_m": 0.036683097868734846,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15199339847769794,
+        "target_y_m": -0.10980687023715874,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0095",
+      "seed": 70095,
+      "x_m": -0.056525714360509655,
+      "y_m": 0.03254784519138859,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1579970084688677,
+        "target_y_m": 0.1455804748532604,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0096",
+      "seed": 70096,
+      "x_m": -0.05330680489973695,
+      "y_m": 0.021346785901811362,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14979056974188243,
+        "target_y_m": 0.13918783379776076,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0097",
+      "seed": 70097,
+      "x_m": -0.05377774995644563,
+      "y_m": 0.024911332665919345,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16323218594091715,
+        "target_y_m": -0.08340826413993095,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0098",
+      "seed": 70098,
+      "x_m": -0.054978170678025136,
+      "y_m": 0.03650456752006803,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17063221642553816,
+        "target_y_m": -0.0667590471847458,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0099",
+      "seed": 70099,
+      "x_m": -0.05491464063738336,
+      "y_m": 0.03637863945271297,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15195604646977565,
+        "target_y_m": -0.08114826832119384,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0100",
+      "seed": 70100,
+      "x_m": -0.03857985350986372,
+      "y_m": 0.02406902868385153,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17386855444728283,
+        "target_y_m": -0.07742279123736345,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0101",
+      "seed": 70101,
+      "x_m": -0.050019978795016885,
+      "y_m": 0.031142315519358692,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1582990545613243,
+        "target_y_m": -0.09137925575770194,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0102",
+      "seed": 70102,
+      "x_m": -0.053691860120667734,
+      "y_m": 0.03815372581563488,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14805595743009972,
+        "target_y_m": -0.07353891975601308,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0103",
+      "seed": 70103,
+      "x_m": -0.0439482159775254,
+      "y_m": 0.034748883471064765,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16107633038676145,
+        "target_y_m": -0.09763371523908017,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0104",
+      "seed": 70104,
+      "x_m": -0.05682889419972479,
+      "y_m": 0.037881311901062864,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15258435069589762,
+        "target_y_m": 0.15630243633716054,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0105",
+      "seed": 70105,
+      "x_m": -0.03516507100107866,
+      "y_m": 0.036534706758937205,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17087267207506002,
+        "target_y_m": -0.08779141534375154,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0106",
+      "seed": 70106,
+      "x_m": -0.04453238858223367,
+      "y_m": 0.023303348578850535,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1665598508153963,
+        "target_y_m": -0.08009603786539686,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0107",
+      "seed": 70107,
+      "x_m": -0.0459764370841806,
+      "y_m": 0.027391149806646593,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15077622228461462,
+        "target_y_m": -0.1138290441216325,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0108",
+      "seed": 70108,
+      "x_m": -0.039212302711364576,
+      "y_m": 0.02870758948517762,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15481777972349278,
+        "target_y_m": 0.12906579438640461,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0109",
+      "seed": 70109,
+      "x_m": -0.053947618489328476,
+      "y_m": 0.02193301550423944,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15245577054507634,
+        "target_y_m": 0.13805711992638978,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0110",
+      "seed": 70110,
+      "x_m": -0.04925170300425192,
+      "y_m": 0.035065692812448285,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16037195909270074,
+        "target_y_m": -0.06776300963168144,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0111",
+      "seed": 70111,
+      "x_m": -0.05392130954690973,
+      "y_m": 0.021127891192149605,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16802805673985513,
+        "target_y_m": -0.09061386364292955,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0112",
+      "seed": 70112,
+      "x_m": -0.03921645635443165,
+      "y_m": 0.035992003031147406,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1535942387167859,
+        "target_y_m": -0.08465190119862083,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0113",
+      "seed": 70113,
+      "x_m": -0.0388463539450558,
+      "y_m": 0.03465989135697079,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15131606305800785,
+        "target_y_m": -0.07096236294926118,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0114",
+      "seed": 70114,
+      "x_m": -0.04000582470379879,
+      "y_m": 0.024275784697776682,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15354599681736117,
+        "target_y_m": -0.11091040549258804,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0115",
+      "seed": 70115,
+      "x_m": -0.05342247559978149,
+      "y_m": 0.028525971089144744,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1717055403691795,
+        "target_y_m": -0.07697729209595476,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0116",
+      "seed": 70116,
+      "x_m": -0.059601647665294515,
+      "y_m": 0.02635705115499632,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16079533707125387,
+        "target_y_m": 0.140375351432196,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0117",
+      "seed": 70117,
+      "x_m": -0.04647891789806162,
+      "y_m": 0.02357157450877797,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16777753617778077,
+        "target_y_m": 0.13132602231630938,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0118",
+      "seed": 70118,
+      "x_m": -0.038489904966972785,
+      "y_m": 0.02457240471998009,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15875814083544829,
+        "target_y_m": -0.12138378382674056,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0119",
+      "seed": 70119,
+      "x_m": -0.04660836550323109,
+      "y_m": 0.03210307075596649,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1549470285687745,
+        "target_y_m": -0.06929577526488015,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0120",
+      "seed": 70120,
+      "x_m": -0.05572965421171725,
+      "y_m": 0.033174484262830775,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1482427895790577,
+        "target_y_m": -0.07713891690344461,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0121",
+      "seed": 70121,
+      "x_m": -0.035276802780195675,
+      "y_m": 0.03193068998224026,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14874021748820765,
+        "target_y_m": -0.0878479464138383,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0122",
+      "seed": 70122,
+      "x_m": -0.059957804378674,
+      "y_m": 0.03189746818540927,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15944966379420822,
+        "target_y_m": 0.13742983396910932,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0123",
+      "seed": 70123,
+      "x_m": -0.03967664094179539,
+      "y_m": 0.03757466075484642,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17194081951068518,
+        "target_y_m": 0.13980066796086674,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0124",
+      "seed": 70124,
+      "x_m": -0.043349784553934734,
+      "y_m": 0.024163887348236227,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14804076641890043,
+        "target_y_m": -0.08422031680756113,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0125",
+      "seed": 70125,
+      "x_m": -0.035312394276063544,
+      "y_m": 0.03729013507980816,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17009599680482276,
+        "target_y_m": 0.15493558305318536,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0126",
+      "seed": 70126,
+      "x_m": -0.0559852191565973,
+      "y_m": 0.033697971940253216,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14979572574446612,
+        "target_y_m": -0.08820095625619978,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0127",
+      "seed": 70127,
+      "x_m": -0.053773045524506215,
+      "y_m": 0.03068005509817947,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1588579728515795,
+        "target_y_m": 0.14078247083261516,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0128",
+      "seed": 70128,
+      "x_m": -0.03660492055279142,
+      "y_m": 0.03338610286246121,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14827623409950377,
+        "target_y_m": -0.10418619651269204,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0129",
+      "seed": 70129,
+      "x_m": -0.03815361931258522,
+      "y_m": 0.028921534387447108,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14881994910796945,
+        "target_y_m": -0.0957005192198335,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0130",
+      "seed": 70130,
+      "x_m": -0.0360187844870207,
+      "y_m": 0.023438461769109797,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1461974528668177,
+        "target_y_m": -0.12789017363125232,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0131",
+      "seed": 70131,
+      "x_m": -0.03887449832349152,
+      "y_m": 0.020776902836288566,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16666481575797476,
+        "target_y_m": -0.08634076130440185,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0132",
+      "seed": 70132,
+      "x_m": -0.040995867534778824,
+      "y_m": 0.023757450500164312,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15075151478712495,
+        "target_y_m": 0.13067620160952706,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0133",
+      "seed": 70133,
+      "x_m": -0.037155594885453586,
+      "y_m": 0.029786796347905972,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15896889234436695,
+        "target_y_m": 0.1580760923986866,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0134",
+      "seed": 70134,
+      "x_m": -0.03501975730638945,
+      "y_m": 0.02495983796285287,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15193939356512326,
+        "target_y_m": -0.11797910989777005,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0135",
+      "seed": 70135,
+      "x_m": -0.0424448766475501,
+      "y_m": 0.038237237287285994,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16583693018761972,
+        "target_y_m": -0.0812365774740803,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0136",
+      "seed": 70136,
+      "x_m": -0.0451825388192567,
+      "y_m": 0.02588054924474362,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15691558292636337,
+        "target_y_m": -0.08237766698701883,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0137",
+      "seed": 70137,
+      "x_m": -0.03688838687232715,
+      "y_m": 0.02179811849363163,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16526113030985587,
+        "target_y_m": -0.11873017430036356,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0138",
+      "seed": 70138,
+      "x_m": -0.0400850369733549,
+      "y_m": 0.02458056475817553,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1564032877653694,
+        "target_y_m": -0.08524217509119023,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0139",
+      "seed": 70139,
+      "x_m": -0.04178864863039314,
+      "y_m": 0.03286929242783391,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15323048721781232,
+        "target_y_m": -0.08207384016513526,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0140",
+      "seed": 70140,
+      "x_m": -0.057084525002311565,
+      "y_m": 0.03382370019221807,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15393434022598407,
+        "target_y_m": 0.15357579091241833,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0141",
+      "seed": 70141,
+      "x_m": -0.04235845794872463,
+      "y_m": 0.022663919595262903,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1659275456206487,
+        "target_y_m": 0.15501455817201346,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0142",
+      "seed": 70142,
+      "x_m": -0.04772974651986929,
+      "y_m": 0.021078892258688232,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14572390889746845,
+        "target_y_m": -0.12998847951983972,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0143",
+      "seed": 70143,
+      "x_m": -0.039954269015712945,
+      "y_m": 0.030639623401222678,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14945990217295693,
+        "target_y_m": -0.12578831929032577,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0144",
+      "seed": 70144,
+      "x_m": -0.04794888521666235,
+      "y_m": 0.03303015006411333,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14991021545339495,
+        "target_y_m": 0.14559384036742337,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0145",
+      "seed": 70145,
+      "x_m": -0.04274113182460453,
+      "y_m": 0.022037811726919654,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17467156804854272,
+        "target_y_m": -0.09294514332456924,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0146",
+      "seed": 70146,
+      "x_m": -0.03690370494405901,
+      "y_m": 0.032684989909806214,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16666305551697913,
+        "target_y_m": -0.11189701428884188,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0147",
+      "seed": 70147,
+      "x_m": -0.04104310905631339,
+      "y_m": 0.020605947766326193,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16140387322975072,
+        "target_y_m": -0.11958494555934121,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0148",
+      "seed": 70148,
+      "x_m": -0.04521524675894579,
+      "y_m": 0.026358704840400708,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15375337513681558,
+        "target_y_m": -0.11565134724051215,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0149",
+      "seed": 70149,
+      "x_m": -0.03823344531309601,
+      "y_m": 0.025128988618873555,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1715487376708036,
+        "target_y_m": -0.0930130869360848,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0150",
+      "seed": 70150,
+      "x_m": -0.04066550365875721,
+      "y_m": 0.029690771251467515,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14580705526420437,
+        "target_y_m": -0.10110774361866257,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0151",
+      "seed": 70151,
+      "x_m": -0.05392387889943453,
+      "y_m": 0.022914357128599676,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1572633440442725,
+        "target_y_m": 0.15080259375289648,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0152",
+      "seed": 70152,
+      "x_m": -0.0538186430460302,
+      "y_m": 0.03385958650917763,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14809056474836818,
+        "target_y_m": 0.14601221880332702,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0153",
+      "seed": 70153,
+      "x_m": -0.051052471302173816,
+      "y_m": 0.03771664701313622,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15610706177685194,
+        "target_y_m": 0.1552507583620175,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0154",
+      "seed": 70154,
+      "x_m": -0.059454085030619316,
+      "y_m": 0.028062132756562382,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15145229805431024,
+        "target_y_m": -0.08411871039051541,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0155",
+      "seed": 70155,
+      "x_m": -0.05553314801242,
+      "y_m": 0.0299699590613886,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15968732420195142,
+        "target_y_m": 0.13481471310061763,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0156",
+      "seed": 70156,
+      "x_m": -0.057331055955388656,
+      "y_m": 0.039048803583937516,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15030148860012973,
+        "target_y_m": -0.07802152813339575,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0157",
+      "seed": 70157,
+      "x_m": -0.038950103671862885,
+      "y_m": 0.03257779388317038,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16826262378130682,
+        "target_y_m": -0.0758552576069176,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0158",
+      "seed": 70158,
+      "x_m": -0.04979403325420561,
+      "y_m": 0.034161890085131805,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15698303802885435,
+        "target_y_m": -0.10423886312411312,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0159",
+      "seed": 70159,
+      "x_m": -0.04092668176707791,
+      "y_m": 0.03448016796173446,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15095606895914,
+        "target_y_m": 0.1368717023050525,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0160",
+      "seed": 70160,
+      "x_m": -0.04025935355329615,
+      "y_m": 0.03400082377430375,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1605993975166347,
+        "target_y_m": 0.1584262723643511,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0161",
+      "seed": 70161,
+      "x_m": -0.045964842343010445,
+      "y_m": 0.03127499870568233,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16204807209480393,
+        "target_y_m": -0.09291051220066641,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0162",
+      "seed": 70162,
+      "x_m": -0.04213468417869068,
+      "y_m": 0.025151849733047793,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1583748969539388,
+        "target_y_m": 0.13063749246238873,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0163",
+      "seed": 70163,
+      "x_m": -0.05720654201222984,
+      "y_m": 0.03882448733436506,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15896073571334726,
+        "target_y_m": 0.15866552116664975,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0164",
+      "seed": 70164,
+      "x_m": -0.037004597317290555,
+      "y_m": 0.024548922472780746,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15405256851115137,
+        "target_y_m": 0.12775657639393004,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0165",
+      "seed": 70165,
+      "x_m": -0.04618869172982635,
+      "y_m": 0.03969192321083112,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15076992978973483,
+        "target_y_m": 0.14382037692125635,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0166",
+      "seed": 70166,
+      "x_m": -0.0428104804659252,
+      "y_m": 0.022489704773717697,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17438005123249267,
+        "target_y_m": 0.13170905587119,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0167",
+      "seed": 70167,
+      "x_m": -0.039335420828004085,
+      "y_m": 0.022873551593211593,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16461035606188607,
+        "target_y_m": 0.13630673706507954,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0168",
+      "seed": 70168,
+      "x_m": -0.04939570891797053,
+      "y_m": 0.02773636788990298,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1683718247949088,
+        "target_y_m": -0.09491481709978604,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0169",
+      "seed": 70169,
+      "x_m": -0.05777576992638262,
+      "y_m": 0.02858796996929734,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14802996356808287,
+        "target_y_m": 0.14675063666933388,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0170",
+      "seed": 70170,
+      "x_m": -0.037287862470930855,
+      "y_m": 0.03549924576509916,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16320841205508665,
+        "target_y_m": -0.07115608485709285,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0171",
+      "seed": 70171,
+      "x_m": -0.04725517966091915,
+      "y_m": 0.03045852403457215,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16627471986770895,
+        "target_y_m": -0.09574306829151706,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0172",
+      "seed": 70172,
+      "x_m": -0.059021284779970554,
+      "y_m": 0.025425373502662434,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14603675242209405,
+        "target_y_m": 0.1377574229640289,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0173",
+      "seed": 70173,
+      "x_m": -0.05234449805499107,
+      "y_m": 0.029933878764636296,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15042239684005507,
+        "target_y_m": -0.11121222405012543,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0174",
+      "seed": 70174,
+      "x_m": -0.04005870122924378,
+      "y_m": 0.021075755295078984,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1573559558904853,
+        "target_y_m": 0.13142875602177798,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0175",
+      "seed": 70175,
+      "x_m": -0.05204685929407842,
+      "y_m": 0.029728346021296495,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16334516921546277,
+        "target_y_m": 0.14931298845610627,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0176",
+      "seed": 70176,
+      "x_m": -0.040453073796749256,
+      "y_m": 0.03407690227927965,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1514856361887567,
+        "target_y_m": -0.11284555646101196,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0177",
+      "seed": 70177,
+      "x_m": -0.05767384951884745,
+      "y_m": 0.03927910198302623,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16485222630134308,
+        "target_y_m": 0.1431161582399272,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0178",
+      "seed": 70178,
+      "x_m": -0.05241240255899223,
+      "y_m": 0.02987399569460692,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14656331459107752,
+        "target_y_m": 0.1598672178347363,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0179",
+      "seed": 70179,
+      "x_m": -0.0430194037348067,
+      "y_m": 0.03363225127206396,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1640839452507086,
+        "target_y_m": -0.0820352545274901,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0180",
+      "seed": 70180,
+      "x_m": -0.04107612595160316,
+      "y_m": 0.03558419699906745,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17107677154954876,
+        "target_y_m": 0.15451418302298306,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0181",
+      "seed": 70181,
+      "x_m": -0.040612215246688135,
+      "y_m": 0.02574739350936814,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15791945147347053,
+        "target_y_m": 0.15726517220469402,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0182",
+      "seed": 70182,
+      "x_m": -0.041736632427364986,
+      "y_m": 0.032543795403706915,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15235645374775048,
+        "target_y_m": 0.13524061119612893,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0183",
+      "seed": 70183,
+      "x_m": -0.049612939529776294,
+      "y_m": 0.02342733811015213,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15025698250800326,
+        "target_y_m": -0.07900871636818049,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0184",
+      "seed": 70184,
+      "x_m": -0.035326802759079595,
+      "y_m": 0.02026671634835685,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15510409701022293,
+        "target_y_m": -0.0913369976246748,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0185",
+      "seed": 70185,
+      "x_m": -0.042428303178426344,
+      "y_m": 0.032010422405557175,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16540478571254305,
+        "target_y_m": 0.15691336724365731,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0186",
+      "seed": 70186,
+      "x_m": -0.03606392490088159,
+      "y_m": 0.025386788020862694,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14634484938439185,
+        "target_y_m": 0.15640193278524853,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0187",
+      "seed": 70187,
+      "x_m": -0.04648288475905893,
+      "y_m": 0.022881363039373385,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16165651053379076,
+        "target_y_m": -0.10710346007686919,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0188",
+      "seed": 70188,
+      "x_m": -0.05844133009010419,
+      "y_m": 0.0280074827135273,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1574864598394526,
+        "target_y_m": 0.1377695507052403,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0189",
+      "seed": 70189,
+      "x_m": -0.03646784141881208,
+      "y_m": 0.025498843240940594,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15936984207102076,
+        "target_y_m": -0.12592200228030634,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0190",
+      "seed": 70190,
+      "x_m": -0.04733746334336375,
+      "y_m": 0.037419727290584806,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16304420578745146,
+        "target_y_m": -0.07778904036623623,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0191",
+      "seed": 70191,
+      "x_m": -0.052049236353353345,
+      "y_m": 0.03918535201391454,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1571730564099531,
+        "target_y_m": -0.06963778316092405,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0192",
+      "seed": 70192,
+      "x_m": -0.05444563803465567,
+      "y_m": 0.03860503313329451,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15738105188698842,
+        "target_y_m": 0.14693164657827026,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0193",
+      "seed": 70193,
+      "x_m": -0.04125429462710939,
+      "y_m": 0.032368065596582125,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14619474565579432,
+        "target_y_m": -0.0945153777127225,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0194",
+      "seed": 70194,
+      "x_m": -0.036775489786456686,
+      "y_m": 0.03378567501501066,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15093874855152867,
+        "target_y_m": -0.07648973829962255,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0195",
+      "seed": 70195,
+      "x_m": -0.03556339724806694,
+      "y_m": 0.03666093633470768,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16075989310591088,
+        "target_y_m": -0.10983119009553988,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0196",
+      "seed": 70196,
+      "x_m": -0.039475566485006386,
+      "y_m": 0.03429266743729434,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15659722971962245,
+        "target_y_m": 0.1536240322618396,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0197",
+      "seed": 70197,
+      "x_m": -0.04422739716639107,
+      "y_m": 0.025238948206459333,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17415573056178443,
+        "target_y_m": -0.08990330026810459,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0198",
+      "seed": 70198,
+      "x_m": -0.05440487401777721,
+      "y_m": 0.025651000920575682,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14560608704147365,
+        "target_y_m": -0.11299041991027249,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0199",
+      "seed": 70199,
+      "x_m": -0.03760305158426996,
+      "y_m": 0.024933270922418448,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1641437412164816,
+        "target_y_m": -0.10208845107912518,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0200",
+      "seed": 70200,
+      "x_m": -0.05510155555606543,
+      "y_m": 0.037943168716469695,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14596039993922788,
+        "target_y_m": -0.07980806030356223,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0201",
+      "seed": 70201,
+      "x_m": -0.03928308943442978,
+      "y_m": 0.027595213474132803,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15530246436955267,
+        "target_y_m": 0.13814522508764485,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0202",
+      "seed": 70202,
+      "x_m": -0.04914539202323627,
+      "y_m": 0.026254754084408645,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16191074840495112,
+        "target_y_m": -0.09729455269949597,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0203",
+      "seed": 70203,
+      "x_m": -0.04429748667133869,
+      "y_m": 0.028508212930262993,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.148648610927284,
+        "target_y_m": -0.098765026053421,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0204",
+      "seed": 70204,
+      "x_m": -0.044959508587061096,
+      "y_m": 0.029448817353212545,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16652180341497302,
+        "target_y_m": 0.13115372891464236,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0205",
+      "seed": 70205,
+      "x_m": -0.05500378562195179,
+      "y_m": 0.029582982555734248,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14753745634897816,
+        "target_y_m": -0.09459510595037102,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0206",
+      "seed": 70206,
+      "x_m": -0.035700933697843634,
+      "y_m": 0.031809872669139955,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1584200883407291,
+        "target_y_m": -0.06917438579047147,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0207",
+      "seed": 70207,
+      "x_m": -0.04336450654029083,
+      "y_m": 0.02173376545121991,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1606788984660813,
+        "target_y_m": -0.10120990932219961,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0208",
+      "seed": 70208,
+      "x_m": -0.05123919955520698,
+      "y_m": 0.023277325549225,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14708638124741324,
+        "target_y_m": -0.11316007449118758,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0209",
+      "seed": 70209,
+      "x_m": -0.037765220619409,
+      "y_m": 0.02062249093520508,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16245144915013263,
+        "target_y_m": -0.11920277195228857,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0210",
+      "seed": 70210,
+      "x_m": -0.0384270907280026,
+      "y_m": 0.03692687582730925,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17124660168470224,
+        "target_y_m": -0.0857244295131661,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0211",
+      "seed": 70211,
+      "x_m": -0.04876163304258027,
+      "y_m": 0.03446408729041417,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.172244771993566,
+        "target_y_m": -0.07116948694356275,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0212",
+      "seed": 70212,
+      "x_m": -0.03963730836224877,
+      "y_m": 0.03372017161812464,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14839364127515411,
+        "target_y_m": -0.07671337440780615,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0213",
+      "seed": 70213,
+      "x_m": -0.0475332464608023,
+      "y_m": 0.02106564030416022,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16373605640329955,
+        "target_y_m": 0.14220885810251746,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0214",
+      "seed": 70214,
+      "x_m": -0.035084324435593894,
+      "y_m": 0.02008044033886063,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1451212739563426,
+        "target_y_m": -0.14587798007077346,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0215",
+      "seed": 70215,
+      "x_m": -0.04022398939306578,
+      "y_m": 0.033461785154217716,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16503431170891453,
+        "target_y_m": 0.15772483597563217,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0216",
+      "seed": 70216,
+      "x_m": -0.03798059316874941,
+      "y_m": 0.03476508257491647,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14537052186244281,
+        "target_y_m": -0.09413412431534937,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0217",
+      "seed": 70217,
+      "x_m": -0.057642721348255994,
+      "y_m": 0.027425665747224257,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15364771641584002,
+        "target_y_m": -0.0761864867074139,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0218",
+      "seed": 70218,
+      "x_m": -0.0583089970049757,
+      "y_m": 0.023830496419431742,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15950868273376634,
+        "target_y_m": 0.14279293228977571,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0219",
+      "seed": 70219,
+      "x_m": -0.03753487990714009,
+      "y_m": 0.02622795325091934,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17308332972340468,
+        "target_y_m": 0.1587846559058613,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0220",
+      "seed": 70220,
+      "x_m": -0.05053998636889797,
+      "y_m": 0.02593560300227241,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15574738378865352,
+        "target_y_m": -0.10563327456745239,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0221",
+      "seed": 70221,
+      "x_m": -0.042761637845678366,
+      "y_m": 0.03573074448587101,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15615338540891371,
+        "target_y_m": -0.07099446909656532,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0222",
+      "seed": 70222,
+      "x_m": -0.057343748298397376,
+      "y_m": 0.031154778594807912,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15081157746183915,
+        "target_y_m": -0.10295302010161621,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0223",
+      "seed": 70223,
+      "x_m": -0.05321518265987985,
+      "y_m": 0.024509601008356294,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14641142435627164,
+        "target_y_m": -0.11494520450139568,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0224",
+      "seed": 70224,
+      "x_m": -0.045430449979282014,
+      "y_m": 0.02369400171834878,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14823275076264622,
+        "target_y_m": -0.08593454382494091,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0225",
+      "seed": 70225,
+      "x_m": -0.04219656596115909,
+      "y_m": 0.032071843170330294,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1604662389651798,
+        "target_y_m": 0.1334446048423061,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0226",
+      "seed": 70226,
+      "x_m": -0.040983263877435706,
+      "y_m": 0.02466900758269313,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14578839058358847,
+        "target_y_m": -0.13622647850705527,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0227",
+      "seed": 70227,
+      "x_m": -0.05317579886614789,
+      "y_m": 0.037364689378960446,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17183110173171076,
+        "target_y_m": -0.0672389981191451,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0228",
+      "seed": 70228,
+      "x_m": -0.04831948945446925,
+      "y_m": 0.029032322364226808,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14915855986492124,
+        "target_y_m": -0.09186615253550037,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0229",
+      "seed": 70229,
+      "x_m": -0.041682140515304444,
+      "y_m": 0.039372107059111115,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1704824389486948,
+        "target_y_m": -0.07931003774634551,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0230",
+      "seed": 70230,
+      "x_m": -0.040521565720156034,
+      "y_m": 0.032821879222084946,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1571914064860661,
+        "target_y_m": -0.10769786842350548,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0231",
+      "seed": 70231,
+      "x_m": -0.04310470266316967,
+      "y_m": 0.024020974728857444,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17232940471745448,
+        "target_y_m": 0.1298310427779288,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0232",
+      "seed": 70232,
+      "x_m": -0.051819411369426624,
+      "y_m": 0.0314774503326224,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15737111467592987,
+        "target_y_m": 0.15046721850861608,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0233",
+      "seed": 70233,
+      "x_m": -0.047827201408895396,
+      "y_m": 0.022328752097111385,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1463891714759025,
+        "target_y_m": 0.14729259943219633,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0234",
+      "seed": 70234,
+      "x_m": -0.05563342809817258,
+      "y_m": 0.029822770158835117,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1592350238481132,
+        "target_y_m": -0.08757222750714277,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0235",
+      "seed": 70235,
+      "x_m": -0.04696734468571934,
+      "y_m": 0.029658422266474773,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16229476639909754,
+        "target_y_m": -0.07557551296940776,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0236",
+      "seed": 70236,
+      "x_m": -0.05973600426850341,
+      "y_m": 0.03149529246329429,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16310935205053154,
+        "target_y_m": -0.06956049996016983,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0237",
+      "seed": 70237,
+      "x_m": -0.044705635041300124,
+      "y_m": 0.02924458285991277,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1533744738878335,
+        "target_y_m": -0.07644802085041655,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0238",
+      "seed": 70238,
+      "x_m": -0.05711364791773675,
+      "y_m": 0.03606500957379025,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14520235746831556,
+        "target_y_m": 0.13990590651507376,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0239",
+      "seed": 70239,
+      "x_m": -0.035034526201669754,
+      "y_m": 0.02552414550869308,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16275600677605356,
+        "target_y_m": -0.10303661221507457,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0240",
+      "seed": 70240,
+      "x_m": -0.04989508311192378,
+      "y_m": 0.02192984545807452,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14764433064541735,
+        "target_y_m": 0.1312154185190125,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0241",
+      "seed": 70241,
+      "x_m": -0.045275135566524016,
+      "y_m": 0.020347482586311708,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1493230316010304,
+        "target_y_m": -0.11462540438617844,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0242",
+      "seed": 70242,
+      "x_m": -0.04649004098179018,
+      "y_m": 0.020794156838380717,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1695940023027389,
+        "target_y_m": -0.08594092972888319,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0243",
+      "seed": 70243,
+      "x_m": -0.04268064882207147,
+      "y_m": 0.033077702958253706,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16801946969156906,
+        "target_y_m": 0.1465708818275728,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0244",
+      "seed": 70244,
+      "x_m": -0.03617871911492011,
+      "y_m": 0.03124967808950909,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14918164134741416,
+        "target_y_m": 0.15198098485574849,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0245",
+      "seed": 70245,
+      "x_m": -0.042470926179521695,
+      "y_m": 0.02571032455276389,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1507745896828025,
+        "target_y_m": -0.09957136052471438,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0246",
+      "seed": 70246,
+      "x_m": -0.05170114695517182,
+      "y_m": 0.033625567416438795,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15512918203385997,
+        "target_y_m": -0.10274727005136977,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0247",
+      "seed": 70247,
+      "x_m": -0.04004217931351933,
+      "y_m": 0.028865565912671205,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17404684687086294,
+        "target_y_m": 0.13387230737164016,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0248",
+      "seed": 70248,
+      "x_m": -0.04971982034420737,
+      "y_m": 0.029427741906309753,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14965867598775662,
+        "target_y_m": -0.07969906055250689,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0249",
+      "seed": 70249,
+      "x_m": -0.04345076816600753,
+      "y_m": 0.033083795491596416,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1459503371492344,
+        "target_y_m": -0.123024537716069,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0250",
+      "seed": 70250,
+      "x_m": -0.04763027711128716,
+      "y_m": 0.033367138459904834,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15794044349443245,
+        "target_y_m": 0.14175955089134926,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0251",
+      "seed": 70251,
+      "x_m": -0.04568415249840345,
+      "y_m": 0.020750695066606383,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16717933558658168,
+        "target_y_m": -0.10449443870415717,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0252",
+      "seed": 70252,
+      "x_m": -0.050601661381251245,
+      "y_m": 0.027852110438164466,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15339819138944064,
+        "target_y_m": 0.14063163329458497,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0253",
+      "seed": 70253,
+      "x_m": -0.04450852524747839,
+      "y_m": 0.034047972361787554,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16940999207593044,
+        "target_y_m": -0.08980815777977849,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0254",
+      "seed": 70254,
+      "x_m": -0.0429639194967509,
+      "y_m": 0.028242072235706052,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16511683103707106,
+        "target_y_m": 0.1294857935538912,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0255",
+      "seed": 70255,
+      "x_m": -0.05454128516896433,
+      "y_m": 0.03663219828498486,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15770220093551174,
+        "target_y_m": 0.1517545595320565,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0256",
+      "seed": 70256,
+      "x_m": -0.04205211729708028,
+      "y_m": 0.03563712171995169,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14634649963724386,
+        "target_y_m": -0.09585472453689729,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0257",
+      "seed": 70257,
+      "x_m": -0.051353273442642955,
+      "y_m": 0.024532219742957252,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16384541998141774,
+        "target_y_m": -0.0983089749156214,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0258",
+      "seed": 70258,
+      "x_m": -0.05594428691810116,
+      "y_m": 0.02377245869077146,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16814966426828107,
+        "target_y_m": -0.08263204306134014,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0259",
+      "seed": 70259,
+      "x_m": -0.05736154283249141,
+      "y_m": 0.02887359195321787,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15296762013685172,
+        "target_y_m": -0.07626120409696441,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0260",
+      "seed": 70260,
+      "x_m": -0.035684801313029396,
+      "y_m": 0.038054363792023316,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15296621189193313,
+        "target_y_m": 0.14526481011978823,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0261",
+      "seed": 70261,
+      "x_m": -0.05446928919342755,
+      "y_m": 0.023264430503738425,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14766530305789885,
+        "target_y_m": -0.11470024027151543,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0262",
+      "seed": 70262,
+      "x_m": -0.05156410179477857,
+      "y_m": 0.03680201309041367,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16262569918516034,
+        "target_y_m": 0.1568461157432697,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0263",
+      "seed": 70263,
+      "x_m": -0.0372164405644977,
+      "y_m": 0.032644800745777816,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1688339173110067,
+        "target_y_m": -0.07527490972512357,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0264",
+      "seed": 70264,
+      "x_m": -0.037348567164330215,
+      "y_m": 0.022711034509189158,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16637070901181256,
+        "target_y_m": -0.08282859085848425,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0265",
+      "seed": 70265,
+      "x_m": -0.051835393883046484,
+      "y_m": 0.03535488368737188,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1587348647181319,
+        "target_y_m": 0.13925008718707968,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0266",
+      "seed": 70266,
+      "x_m": -0.05477153872762171,
+      "y_m": 0.025436797095708064,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16379974126883726,
+        "target_y_m": -0.08651431993797207,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0267",
+      "seed": 70267,
+      "x_m": -0.05215168598617502,
+      "y_m": 0.0356140440460399,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14883928591130252,
+        "target_y_m": -0.06961974128854212,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0268",
+      "seed": 70268,
+      "x_m": -0.043684393844844946,
+      "y_m": 0.025421091313116862,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17118258547242013,
+        "target_y_m": -0.08731547075653726,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0269",
+      "seed": 70269,
+      "x_m": -0.04461442611501655,
+      "y_m": 0.027118354009487873,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16467124914031891,
+        "target_y_m": -0.10657348001170852,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0270",
+      "seed": 70270,
+      "x_m": -0.035976052289567795,
+      "y_m": 0.03457387768372392,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1487993030213991,
+        "target_y_m": -0.08926778001044572,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0271",
+      "seed": 70271,
+      "x_m": -0.038106571091258055,
+      "y_m": 0.03870658978828681,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14963132841062263,
+        "target_y_m": -0.07019799837834466,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0272",
+      "seed": 70272,
+      "x_m": -0.047501800653475826,
+      "y_m": 0.03377331216600897,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17148557266516137,
+        "target_y_m": 0.14687566153002748,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0273",
+      "seed": 70273,
+      "x_m": -0.03761742331022454,
+      "y_m": 0.020585767906299852,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1545118028869489,
+        "target_y_m": -0.13814132138279417,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0274",
+      "seed": 70274,
+      "x_m": -0.0390352432392963,
+      "y_m": 0.031442992010195354,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1565594310770329,
+        "target_y_m": -0.08258622202167658,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0275",
+      "seed": 70275,
+      "x_m": -0.04794168642955574,
+      "y_m": 0.03605522198263389,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16952850603375236,
+        "target_y_m": 0.1372527501447737,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0276",
+      "seed": 70276,
+      "x_m": -0.04114399228032392,
+      "y_m": 0.038348010696154955,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15761854670209327,
+        "target_y_m": -0.11174811407576399,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0277",
+      "seed": 70277,
+      "x_m": -0.05072680283629658,
+      "y_m": 0.029358967551239994,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1700083121206727,
+        "target_y_m": 0.1308589852965675,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0278",
+      "seed": 70278,
+      "x_m": -0.03925358370696476,
+      "y_m": 0.03332653641605059,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16280825498242252,
+        "target_y_m": -0.07014206648874943,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0279",
+      "seed": 70279,
+      "x_m": -0.04599784651846493,
+      "y_m": 0.036045854481988576,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15504058200230603,
+        "target_y_m": 0.15211207363369908,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0280",
+      "seed": 70280,
+      "x_m": -0.04791027670864758,
+      "y_m": 0.026903448510468338,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1645395028792042,
+        "target_y_m": -0.08899956419026271,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0281",
+      "seed": 70281,
+      "x_m": -0.037580983284069364,
+      "y_m": 0.026215711750738547,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15302604484411825,
+        "target_y_m": 0.12819579673695805,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0282",
+      "seed": 70282,
+      "x_m": -0.04525218625009686,
+      "y_m": 0.03484518447233309,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.164137000138392,
+        "target_y_m": -0.07799957582331303,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0283",
+      "seed": 70283,
+      "x_m": -0.04895494142120841,
+      "y_m": 0.025263512310830682,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1632858607268737,
+        "target_y_m": -0.08727218207086508,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0284",
+      "seed": 70284,
+      "x_m": -0.04783881482185381,
+      "y_m": 0.027018787064506576,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1531404062854039,
+        "target_y_m": -0.08109383182284287,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0285",
+      "seed": 70285,
+      "x_m": -0.038433759599648745,
+      "y_m": 0.03721311290663045,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16205975688840135,
+        "target_y_m": -0.09273310884929696,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0286",
+      "seed": 70286,
+      "x_m": -0.03955489557982804,
+      "y_m": 0.039888761353935404,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15974212537294977,
+        "target_y_m": 0.15327797967681575,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0287",
+      "seed": 70287,
+      "x_m": -0.048853708700793565,
+      "y_m": 0.03703636257319938,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15770921281587616,
+        "target_y_m": -0.07577578246300191,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0288",
+      "seed": 70288,
+      "x_m": -0.03629315686374846,
+      "y_m": 0.03761572449150466,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14629483708504845,
+        "target_y_m": -0.09684248707155561,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0289",
+      "seed": 70289,
+      "x_m": -0.057671274150023016,
+      "y_m": 0.03560561355291413,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1497362577446398,
+        "target_y_m": -0.0651392731616659,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0290",
+      "seed": 70290,
+      "x_m": -0.05178873197551387,
+      "y_m": 0.03852843516935801,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15424854739475868,
+        "target_y_m": 0.14780688720566557,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0291",
+      "seed": 70291,
+      "x_m": -0.03965363005686175,
+      "y_m": 0.025906646700659414,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16953672486562238,
+        "target_y_m": -0.09560063547355543,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0292",
+      "seed": 70292,
+      "x_m": -0.046101458977883,
+      "y_m": 0.03312970507495673,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1704052638193372,
+        "target_y_m": -0.09061053972628884,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0293",
+      "seed": 70293,
+      "x_m": -0.05214466191451481,
+      "y_m": 0.031241794731761925,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16760787735177965,
+        "target_y_m": 0.14664177244354945,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0294",
+      "seed": 70294,
+      "x_m": -0.05376519402934203,
+      "y_m": 0.031479486349609516,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1667893675231936,
+        "target_y_m": 0.1397350861262681,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0295",
+      "seed": 70295,
+      "x_m": -0.04257740876011658,
+      "y_m": 0.03668307224802237,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1509851802461283,
+        "target_y_m": 0.14389193345171278,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0296",
+      "seed": 70296,
+      "x_m": -0.050025873193598636,
+      "y_m": 0.0242405291446823,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.169949569780009,
+        "target_y_m": -0.09058496079444787,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0297",
+      "seed": 70297,
+      "x_m": -0.043203146019183694,
+      "y_m": 0.031266709195580854,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1603615472069399,
+        "target_y_m": -0.10692622645700944,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0298",
+      "seed": 70298,
+      "x_m": -0.0359015142300748,
+      "y_m": 0.02632366435387804,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1563429452763151,
+        "target_y_m": -0.0895208055240838,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0299",
+      "seed": 70299,
+      "x_m": -0.04679112968446948,
+      "y_m": 0.024837722056298278,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1468040449036752,
+        "target_y_m": 0.1314261436587066,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0300",
+      "seed": 70300,
+      "x_m": -0.035699074963529115,
+      "y_m": 0.037923851186195796,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1519250306950457,
+        "target_y_m": -0.11619483464704516,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0301",
+      "seed": 70301,
+      "x_m": -0.037767391054670404,
+      "y_m": 0.02135695625394035,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1613959107283758,
+        "target_y_m": 0.15374871134722914,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0302",
+      "seed": 70302,
+      "x_m": -0.04056208421404085,
+      "y_m": 0.030140875672922198,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16383215332406517,
+        "target_y_m": 0.1468860987534424,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0303",
+      "seed": 70303,
+      "x_m": -0.04489155849564609,
+      "y_m": 0.020641375427079733,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14955160627458308,
+        "target_y_m": 0.12095100224109193,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0304",
+      "seed": 70304,
+      "x_m": -0.04012767942217787,
+      "y_m": 0.029086142643744952,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1664447054694331,
+        "target_y_m": -0.08993801167934123,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0305",
+      "seed": 70305,
+      "x_m": -0.041395673639534794,
+      "y_m": 0.021263467163732962,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1561329794197553,
+        "target_y_m": 0.12724127674145,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0306",
+      "seed": 70306,
+      "x_m": -0.04970920028619576,
+      "y_m": 0.022371607029694346,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16067993966773314,
+        "target_y_m": 0.12338848204630179,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0307",
+      "seed": 70307,
+      "x_m": -0.04804829919583928,
+      "y_m": 0.026185532986584582,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16841014802112042,
+        "target_y_m": 0.13945072623301838,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0308",
+      "seed": 70308,
+      "x_m": -0.03583302672443519,
+      "y_m": 0.038616695058196225,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16159360323808555,
+        "target_y_m": -0.09964708089932174,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0309",
+      "seed": 70309,
+      "x_m": -0.04845208580375498,
+      "y_m": 0.02413801190325833,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1607456597627424,
+        "target_y_m": -0.08045976698191946,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0310",
+      "seed": 70310,
+      "x_m": -0.035131119072101584,
+      "y_m": 0.03186358136997868,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14737187067551252,
+        "target_y_m": 0.15869471713312253,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0311",
+      "seed": 70311,
+      "x_m": -0.03903284978223112,
+      "y_m": 0.03448323714478891,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15777350896125245,
+        "target_y_m": -0.06880217790447908,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0312",
+      "seed": 70312,
+      "x_m": -0.049554331557734574,
+      "y_m": 0.02600439208297426,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16903806740532518,
+        "target_y_m": -0.07979000784992053,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0313",
+      "seed": 70313,
+      "x_m": -0.05059340915124527,
+      "y_m": 0.027462625653251672,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16676908175717775,
+        "target_y_m": -0.07680368415646957,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0314",
+      "seed": 70314,
+      "x_m": -0.052357720757378434,
+      "y_m": 0.02524841796072773,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14724340249556825,
+        "target_y_m": -0.09436643181271691,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0315",
+      "seed": 70315,
+      "x_m": -0.047052967903745836,
+      "y_m": 0.03359230048453039,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15182465836824932,
+        "target_y_m": -0.08741364272654675,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0316",
+      "seed": 70316,
+      "x_m": -0.03629775662187334,
+      "y_m": 0.020251474373398814,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15841839375894265,
+        "target_y_m": 0.14932389581763741,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0317",
+      "seed": 70317,
+      "x_m": -0.05240364021126605,
+      "y_m": 0.0288845898633133,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1592909620536859,
+        "target_y_m": -0.08995256420869317,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0318",
+      "seed": 70318,
+      "x_m": -0.04689107914149347,
+      "y_m": 0.03854686658453263,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1584778563520835,
+        "target_y_m": 0.15944410951724922,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0319",
+      "seed": 70319,
+      "x_m": -0.04824833182430166,
+      "y_m": 0.02784699705725681,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16053688352582832,
+        "target_y_m": -0.09673998373321986,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0320",
+      "seed": 70320,
+      "x_m": -0.05529491603333712,
+      "y_m": 0.02589971270339517,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14642891527453103,
+        "target_y_m": 0.1472317606049747,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0321",
+      "seed": 70321,
+      "x_m": -0.04459234312782692,
+      "y_m": 0.03731133881154117,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15599467573396855,
+        "target_y_m": 0.14924422373834548,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0322",
+      "seed": 70322,
+      "x_m": -0.036456924703093335,
+      "y_m": 0.03697851197952884,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16561670031732845,
+        "target_y_m": -0.1067050283367978,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0323",
+      "seed": 70323,
+      "x_m": -0.04313641634553693,
+      "y_m": 0.02352553080449002,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17246747699598966,
+        "target_y_m": 0.12559808314774726,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0324",
+      "seed": 70324,
+      "x_m": -0.05321840719889154,
+      "y_m": 0.03859475898778085,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16450506079145633,
+        "target_y_m": 0.1429234265624014,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0325",
+      "seed": 70325,
+      "x_m": -0.04755432973468081,
+      "y_m": 0.03991383757164128,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1564550804328112,
+        "target_y_m": -0.08028180458491399,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0326",
+      "seed": 70326,
+      "x_m": -0.055735646793703464,
+      "y_m": 0.022084275321394536,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1518645090024358,
+        "target_y_m": -0.0810570100155892,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0327",
+      "seed": 70327,
+      "x_m": -0.053565699041184654,
+      "y_m": 0.021357235875930625,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17039766581985644,
+        "target_y_m": 0.12653259621417948,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0328",
+      "seed": 70328,
+      "x_m": -0.03931506896813375,
+      "y_m": 0.0309964846549685,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1529205399901612,
+        "target_y_m": -0.08109917961410605,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0329",
+      "seed": 70329,
+      "x_m": -0.04320865168306833,
+      "y_m": 0.03908753755895,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14648261710763957,
+        "target_y_m": -0.07602985422947693,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0330",
+      "seed": 70330,
+      "x_m": -0.05739053005302151,
+      "y_m": 0.027652583671309527,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16009676348759566,
+        "target_y_m": 0.14905189020100343,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0331",
+      "seed": 70331,
+      "x_m": -0.038601192858793834,
+      "y_m": 0.036239353634837615,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1485914488876374,
+        "target_y_m": 0.14312148401169514,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0332",
+      "seed": 70332,
+      "x_m": -0.037565155138449755,
+      "y_m": 0.03967640566909548,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17084949759823398,
+        "target_y_m": -0.0732356274855508,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0333",
+      "seed": 70333,
+      "x_m": -0.04033513658478563,
+      "y_m": 0.033560914029608216,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.148231548755195,
+        "target_y_m": -0.1163787373305227,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0334",
+      "seed": 70334,
+      "x_m": -0.04100544968821101,
+      "y_m": 0.024172769216349366,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1555055295853594,
+        "target_y_m": 0.15259256337069219,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0335",
+      "seed": 70335,
+      "x_m": -0.03998206417016164,
+      "y_m": 0.030508967319820713,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1737758959802077,
+        "target_y_m": 0.15694718312315895,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0336",
+      "seed": 70336,
+      "x_m": -0.04561835041894463,
+      "y_m": 0.029008083063768713,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15283143473522634,
+        "target_y_m": 0.14413277292967971,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0337",
+      "seed": 70337,
+      "x_m": -0.038205460025587355,
+      "y_m": 0.022916450505888725,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17029141756510374,
+        "target_y_m": 0.14837096438484823,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0338",
+      "seed": 70338,
+      "x_m": -0.05894994899917842,
+      "y_m": 0.022740899416550962,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1685787757143587,
+        "target_y_m": -0.07918505121107529,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0339",
+      "seed": 70339,
+      "x_m": -0.03702821572579975,
+      "y_m": 0.03722564238469384,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17137736441557866,
+        "target_y_m": -0.09093760948223405,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0340",
+      "seed": 70340,
+      "x_m": -0.040701194409785396,
+      "y_m": 0.03597760932630992,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16010818873164123,
+        "target_y_m": -0.09935933916335085,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0341",
+      "seed": 70341,
+      "x_m": -0.046212460443083074,
+      "y_m": 0.03156294706234761,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16104310517131257,
+        "target_y_m": 0.1317342490643921,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0342",
+      "seed": 70342,
+      "x_m": -0.05142533411181589,
+      "y_m": 0.03402207409275499,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1474770037237429,
+        "target_y_m": -0.11080987190528564,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0343",
+      "seed": 70343,
+      "x_m": -0.05223806165100743,
+      "y_m": 0.03162006869052367,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16678078744301333,
+        "target_y_m": 0.14822068129637692,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0344",
+      "seed": 70344,
+      "x_m": -0.05515866348028607,
+      "y_m": 0.032240031349363686,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16224817208035902,
+        "target_y_m": -0.0888305668062847,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0345",
+      "seed": 70345,
+      "x_m": -0.04368907602392676,
+      "y_m": 0.03504650937148113,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17053022956672348,
+        "target_y_m": -0.07585340834506969,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0346",
+      "seed": 70346,
+      "x_m": -0.055275269700822215,
+      "y_m": 0.03828108571772117,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16290929508367835,
+        "target_y_m": 0.15804240444233195,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0347",
+      "seed": 70347,
+      "x_m": -0.03943067075225406,
+      "y_m": 0.020151730010679512,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14932555470625936,
+        "target_y_m": -0.10905058464081815,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0348",
+      "seed": 70348,
+      "x_m": -0.04532950822914844,
+      "y_m": 0.031553214010314946,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17020039940711915,
+        "target_y_m": -0.07981044526175506,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0349",
+      "seed": 70349,
+      "x_m": -0.046680647730217656,
+      "y_m": 0.02864297500931328,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14814395533211258,
+        "target_y_m": -0.11690493728184237,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0350",
+      "seed": 70350,
+      "x_m": -0.04668995002376104,
+      "y_m": 0.039838014824893825,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15364384480032972,
+        "target_y_m": -0.08631105768015818,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0351",
+      "seed": 70351,
+      "x_m": -0.039634542021473554,
+      "y_m": 0.022400659109897737,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15981081567922428,
+        "target_y_m": 0.13938170489892163,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0352",
+      "seed": 70352,
+      "x_m": -0.0512391011614277,
+      "y_m": 0.025317191989479106,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14884373064063175,
+        "target_y_m": -0.10907878123287702,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0353",
+      "seed": 70353,
+      "x_m": -0.037913094797805594,
+      "y_m": 0.03146027152104837,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16844727034459125,
+        "target_y_m": -0.07469819234646571,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0354",
+      "seed": 70354,
+      "x_m": -0.05291552053901391,
+      "y_m": 0.038114406431775466,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14615399567076487,
+        "target_y_m": -0.07532750654930975,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0355",
+      "seed": 70355,
+      "x_m": -0.036430894433155676,
+      "y_m": 0.03235963483351523,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17112551776787288,
+        "target_y_m": -0.09031585319305446,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0356",
+      "seed": 70356,
+      "x_m": -0.036469401501621104,
+      "y_m": 0.02838363299542705,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1672148478881835,
+        "target_y_m": 0.15496719443165327,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0357",
+      "seed": 70357,
+      "x_m": -0.03820865125579859,
+      "y_m": 0.03277736664720071,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16541284099970693,
+        "target_y_m": -0.10681027814541665,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0358",
+      "seed": 70358,
+      "x_m": -0.042598006736031604,
+      "y_m": 0.021051504551939736,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1625703795187798,
+        "target_y_m": 0.14560602285940236,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0359",
+      "seed": 70359,
+      "x_m": -0.03744746512570468,
+      "y_m": 0.02620826483511849,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1497237359370533,
+        "target_y_m": 0.14904320032552212,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0360",
+      "seed": 70360,
+      "x_m": -0.04663047520564066,
+      "y_m": 0.03999618438855546,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1721602294768837,
+        "target_y_m": 0.1548172224129495,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0361",
+      "seed": 70361,
+      "x_m": -0.05078372975484386,
+      "y_m": 0.030783106760701333,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15094166988673477,
+        "target_y_m": -0.10935646525812878,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0362",
+      "seed": 70362,
+      "x_m": -0.05173966913552087,
+      "y_m": 0.037690199747759175,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1538037681116058,
+        "target_y_m": -0.08758403213161628,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0363",
+      "seed": 70363,
+      "x_m": -0.04047699763797044,
+      "y_m": 0.023042502684172204,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15239997374944136,
+        "target_y_m": 0.12699985446067205,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0364",
+      "seed": 70364,
+      "x_m": -0.04585149714350464,
+      "y_m": 0.03811054042169407,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14543961077124565,
+        "target_y_m": 0.1410530791858209,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0365",
+      "seed": 70365,
+      "x_m": -0.03784868842598292,
+      "y_m": 0.021177787299544774,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15487528704832992,
+        "target_y_m": -0.08262323534348098,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0366",
+      "seed": 70366,
+      "x_m": -0.05267724477603064,
+      "y_m": 0.025997808971276334,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14782470760560382,
+        "target_y_m": -0.1160126758775666,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0367",
+      "seed": 70367,
+      "x_m": -0.0463716324978102,
+      "y_m": 0.03063024080004529,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.167610150072269,
+        "target_y_m": -0.09233970356879094,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0368",
+      "seed": 70368,
+      "x_m": -0.035346665020021185,
+      "y_m": 0.0357367839826362,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14993557281437328,
+        "target_y_m": -0.11524469271028692,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0369",
+      "seed": 70369,
+      "x_m": -0.035267088899396844,
+      "y_m": 0.031930057064718166,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14992574943771383,
+        "target_y_m": -0.1293799325456889,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0370",
+      "seed": 70370,
+      "x_m": -0.03523407762168745,
+      "y_m": 0.03282229885510752,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15201500507640706,
+        "target_y_m": 0.1507349373528614,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0371",
+      "seed": 70371,
+      "x_m": -0.05268436974653087,
+      "y_m": 0.03057513151885663,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1561314142203321,
+        "target_y_m": -0.07099403236103022,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0372",
+      "seed": 70372,
+      "x_m": -0.056699275966842905,
+      "y_m": 0.03025271007471867,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14590762410147193,
+        "target_y_m": -0.11584703058820545,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0373",
+      "seed": 70373,
+      "x_m": -0.04617875196419179,
+      "y_m": 0.03600839400862395,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16178341859490397,
+        "target_y_m": -0.08447607696110118,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0374",
+      "seed": 70374,
+      "x_m": -0.05715599025726253,
+      "y_m": 0.039637121658423695,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15426267418332684,
+        "target_y_m": 0.15665044070765213,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0375",
+      "seed": 70375,
+      "x_m": -0.04594939536505012,
+      "y_m": 0.028303322179582348,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15952908502316018,
+        "target_y_m": -0.08595416647711876,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0376",
+      "seed": 70376,
+      "x_m": -0.04728316733830175,
+      "y_m": 0.023379653091396037,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16426795204523703,
+        "target_y_m": -0.0797717723046744,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0377",
+      "seed": 70377,
+      "x_m": -0.05236839900184148,
+      "y_m": 0.031026735298281996,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15986418670644922,
+        "target_y_m": -0.0772606742123066,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0378",
+      "seed": 70378,
+      "x_m": -0.03985877816075663,
+      "y_m": 0.021621089615977897,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14632881853628713,
+        "target_y_m": -0.10037337800343217,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0379",
+      "seed": 70379,
+      "x_m": -0.03996342920540695,
+      "y_m": 0.02960630524988188,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14900828753787942,
+        "target_y_m": -0.1309478159026707,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0380",
+      "seed": 70380,
+      "x_m": -0.04853176135497385,
+      "y_m": 0.028297905271124343,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14971224461679353,
+        "target_y_m": 0.1291245140253491,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0381",
+      "seed": 70381,
+      "x_m": -0.04029746214385567,
+      "y_m": 0.03725108736152995,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16770335579001483,
+        "target_y_m": 0.1422876499283167,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0382",
+      "seed": 70382,
+      "x_m": -0.046205999373859004,
+      "y_m": 0.03166859595034366,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14796653700057444,
+        "target_y_m": 0.1551414329799881,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0383",
+      "seed": 70383,
+      "x_m": -0.04314702530522545,
+      "y_m": 0.028398965874343735,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15074329254456525,
+        "target_y_m": -0.12215743715902108,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0384",
+      "seed": 70384,
+      "x_m": -0.04098022366290241,
+      "y_m": 0.03437481531604933,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15583944387998552,
+        "target_y_m": 0.1420019285011839,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0385",
+      "seed": 70385,
+      "x_m": -0.041262012349459774,
+      "y_m": 0.031141847324707768,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16071949346250072,
+        "target_y_m": 0.1463329417123466,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0386",
+      "seed": 70386,
+      "x_m": -0.04379837890190198,
+      "y_m": 0.02875052555590351,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17260371758095958,
+        "target_y_m": 0.14816239284303864,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0387",
+      "seed": 70387,
+      "x_m": -0.05965325625470973,
+      "y_m": 0.0217630522189935,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15162343628428096,
+        "target_y_m": 0.13489017715479315,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0388",
+      "seed": 70388,
+      "x_m": -0.05245263707736069,
+      "y_m": 0.028496985189359943,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15062886573541656,
+        "target_y_m": -0.08252305528274001,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0389",
+      "seed": 70389,
+      "x_m": -0.04171538728068287,
+      "y_m": 0.03192969092952736,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15127791582340322,
+        "target_y_m": -0.10234336748693745,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0390",
+      "seed": 70390,
+      "x_m": -0.0356581067474704,
+      "y_m": 0.026259109083725272,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15535378071609085,
+        "target_y_m": 0.14468783181353093,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0391",
+      "seed": 70391,
+      "x_m": -0.038247975756461085,
+      "y_m": 0.029998170874463513,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15004233697351804,
+        "target_y_m": 0.13806332622651526,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0392",
+      "seed": 70392,
+      "x_m": -0.05584097889368038,
+      "y_m": 0.03905517649010708,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15061007820677624,
+        "target_y_m": -0.09497761416315037,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0393",
+      "seed": 70393,
+      "x_m": -0.04828692350581042,
+      "y_m": 0.020238322571972226,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15426096928773467,
+        "target_y_m": -0.1055270054978113,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0394",
+      "seed": 70394,
+      "x_m": -0.03574374756131124,
+      "y_m": 0.027439572828018982,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14808073728088847,
+        "target_y_m": -0.13255436416439773,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0395",
+      "seed": 70395,
+      "x_m": -0.04269370896227545,
+      "y_m": 0.02713672746866066,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16795273185073606,
+        "target_y_m": 0.13580659059752984,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0396",
+      "seed": 70396,
+      "x_m": -0.04947765051830619,
+      "y_m": 0.03965727823481982,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16322049167466987,
+        "target_y_m": 0.1418777806788715,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0397",
+      "seed": 70397,
+      "x_m": -0.036329308998105395,
+      "y_m": 0.039865285131869446,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15050547652211768,
+        "target_y_m": -0.11351896076546272,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0398",
+      "seed": 70398,
+      "x_m": -0.037473200256706696,
+      "y_m": 0.024813880828236448,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1529625375709781,
+        "target_y_m": -0.1133466313127094,
+        "distance_bin": 1
+      }
+    },
+    {
+      "scene_id": "pick_place_grasp_recovery_positive_y_v1-0399",
+      "seed": 70399,
+      "x_m": -0.039800844723134575,
+      "y_m": 0.027730846344094708,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15861651183169115,
+        "target_y_m": 0.13175608176027362,
+        "distance_bin": 1
+      }
+    }
+  ]
+}

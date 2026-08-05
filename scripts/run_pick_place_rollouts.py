@@ -65,7 +65,13 @@ def main() -> int:
     if metadata.get("role") == "blind" and args.output.exists():
         parser.error("Blind output already exists and cannot be overwritten")
     scenes = load_manifest(args.manifest)[: args.episodes]
-    env_config = UR5ePickPlaceConfig(horizon=args.horizon, has_renderer=args.render)
+    # This legacy supervisor estimates object poses from RGB-D. The pure VLA
+    # runner deliberately leaves depth disabled to reduce rollout memory use.
+    env_config = UR5ePickPlaceConfig(
+        horizon=args.horizon,
+        has_renderer=args.render,
+        use_camera_depths=True,
+    )
     validate_pick_place_contract(args.dataset_root, env_config)
     dataset = LeRobotDataset(args.repo_id, root=args.dataset_root)
     config, policy, preprocessor, postprocessor = load_policy(args.checkpoint, dataset, None)

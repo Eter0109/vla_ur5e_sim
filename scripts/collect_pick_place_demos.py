@@ -36,14 +36,18 @@ def main() -> int:
     parser.add_argument("--root", type=Path, required=True)
     parser.add_argument("--repo-id", default="local/ur5e_pick_place_v2_native_bin")
     parser.add_argument("--episodes", type=int, default=1000)
+    parser.add_argument("--distance-bins", type=int, nargs="+", default=[0, 1])
     parser.add_argument("--place-release-tolerance-m", type=float, default=0.020)
     parser.add_argument("--place-release-xy-tolerance-m", type=float)
     args = parser.parse_args()
     scenes = load_manifest(args.manifest)
     if args.root.exists():
         raise FileExistsError(f"Refusing to overwrite dataset root: {args.root}")
-    if args.episodes < 2 or args.episodes % 2:
-        parser.error("PickPlace collection requires a positive, even episode count")
+    bins = sorted(set(args.distance_bins))
+    if args.episodes < len(bins) or args.episodes % len(bins):
+        parser.error("episodes must be positive and divisible by selected distance bins")
+    if any(index not in (0, 1) for index in bins):
+        parser.error("distance-bins must be a subset of 0 1")
     if not 0.0 < args.place_release_tolerance_m <= 0.020:
         parser.error("--place-release-tolerance-m must be in (0, 0.020]")
     if (
@@ -51,15 +55,15 @@ def main() -> int:
         and not 0.0 < args.place_release_xy_tolerance_m <= 0.020
     ):
         parser.error("--place-release-xy-tolerance-m must be in (0, 0.020]")
-    per_bin = args.episodes // 2
+    per_bin = args.episodes // len(bins)
     config = UR5ePickPlaceConfig(horizon=250)
     dataset = LeRobotDataset.create(repo_id=args.repo_id, fps=PICK_PLACE_FPS, root=args.root, robot_type="UR5e", features=features(), use_videos=False, image_writer_threads=2)
     env = make_ur5e_pick_place(config)
-    accepted = [0, 0]
+    accepted = {index: 0 for index in bins}
     try:
         for scene in scenes:
             bin_index = int(scene.overrides["distance_bin"])
-            if accepted[bin_index] >= per_bin:
+            if bin_index not in accepted or accepted[bin_index] >= per_bin:
                 continue
             observation, _ = env.reset(seed=scene.effective_env_seed, scene=scene)
             expert = HeuristicPickPlaceExpert(
@@ -79,14 +83,14 @@ def main() -> int:
             if success:
                 dataset.save_episode(parallel_encoding=True)
                 accepted[bin_index] += 1
-                print(f"accepted={sum(accepted)}/{args.episodes} bin={bin_index}", flush=True)
+                print(f"accepted={sum(accepted.values())}/{args.episodes} bin={bin_index}", flush=True)
             else:
                 dataset.clear_episode_buffer()
-            if sum(accepted) == args.episodes:
+            if sum(accepted.values()) == args.episodes:
                 break
     finally:
         env.close()
-    if accepted != [per_bin, per_bin]:
+    if set(accepted.values()) != {per_bin}:
         raise RuntimeError(f"Collected unbalanced PickPlace data: {accepted}")
     dataset.finalize()
     write_pick_place_contract(args.root, config)
@@ -107,7 +111,7 @@ def main() -> int:
     )
     (args.root / "collection.complete").write_text(
         (
-            f"episodes={args.episodes} bins={accepted[0]},{accepted[1]} "
+            f"episodes={args.episodes} bins={accepted} "
             f"place_release_tolerance_m={args.place_release_tolerance_m} "
             f"place_release_xy_tolerance_m={args.place_release_xy_tolerance_m}\n"
         ),

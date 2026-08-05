@@ -4,10 +4,14 @@
 抓取红色方块并放入远处的蓝色 MuJoCo 原生收纳盒。收纳盒有真实底面和四侧壁，参与 RGB 渲染、
 深度和遮挡；任务通过抓取、抬升、释放、盒内位置和连续 10 步稳定性判定成功。
 
-当前有两个冻结的 50 场结果：**SmolVLA + 有界 RGB-D 视觉伺服**为 `50/50 (100%)`；
-不读取物体真值位姿的 **SmolVLA + 固定动作校准**在全新留出集上为 `46/50 (92%)`。后者仍含
-手工推理校准，不应表述为未经校准的纯端到端 VLA。Stack 和绿色平面目标 PickPlace v1 均为
-历史任务，不再作为默认入口。
+最新 raw pure-VLA development 候选是 Teacher Distillation v5.3 step 300：在
+`pick_place_dev_v1` 前 24/100 场、`samples=2`、`replan=8`、单 policy seed 1000 下取得
+`22/24 (91.7%)`，抓取 `24/24`。该结果不使用动作校准、物体/目标位姿或 RGB-D Supervisor，
+但仍只是经过筛选的 development-24 里程碑，不是完整 development、test/blind 或冻结部署结果。
+
+项目另有两个历史冻结的 50 场系统结果：**SmolVLA + 有界 RGB-D 视觉伺服**为
+`50/50 (100%)`；**SmolVLA + 固定动作校准**为 `46/50 (92%)`。三种协议不能混称。
+Stack 和绿色平面目标 PickPlace v1 均为历史任务，不再作为默认入口。
 
 ## 环境
 
@@ -24,19 +28,20 @@ PickPlace 使用两个 `256×256` RGB 输入：`agentview` 提供全局场景，
 ## 当前标准入口
 
 ```powershell
-python scripts/run_pick_place_rollouts.py `
-  --checkpoint outputs\pick_place_v2_native_bin\maskfix_20k\seed1000\checkpoints\020000\pretrained_model `
+python scripts/run_pick_place_vla_only.py `
+  --checkpoint outputs\pick_place_v2_native_bin\teacher_distill_transport_v5_3_600\seed1000\checkpoints\000300\pretrained_model `
   --dataset-root data\lerobot\pick_place_v2_native_bin_1000 `
   --repo-id local/ur5e_pick_place_v2_native_bin `
-  --manifest configs\benchmarks\pick_place_test_v2_50.json `
-  --episodes 1 --rgb-window --render `
-  --output outputs\pick_place_v2_native_bin\maskfix_20k\visual_check.json
+  --manifest configs\benchmarks\pick_place_dev_v1.json `
+  --episodes 1 --scene-index 0 --samples-per-plan 2 --replan-steps 8 `
+  --policy-seed 1000 --control-mode vla_raw_safety --rgb-window --render `
+  --output outputs\pick_place_v2_native_bin\manual_checks\v5_3_scene0000.json
 ```
 
-这条命令同时显示 MuJoCo 场景窗口和模型实际接收的双 RGB 画面。完整的数据采集、20k 训练、
-离线诊断和 50 场评测命令见 [PickPlace v2 Runbook](docs/PICK_PLACE_V2_RUNBOOK.md)，实验身份和
-结果见 [实验注册表](docs/reference/EXPERIMENT_REGISTRY.md)，完整训练迭代见
-[PickPlace VLA 实验报告](docs/reports/PICK_PLACE_VLA_EXPERIMENT_REPORT_20260731.md)。
+这条命令只使用 development 场景，同时显示 MuJoCo 场景窗口和模型实际接收的双 RGB 画面。
+完整的数据采集、训练和评测规则见 [PickPlace v2 Runbook](docs/PICK_PLACE_V2_RUNBOOK.md)，
+实验身份见 [实验注册表](docs/reference/EXPERIMENT_REGISTRY.md)，最新结果见
+[Teacher Distillation v5.3 报告](docs/reports/PICK_PLACE_TEACHER_DISTILL_V5_3_SUCCESS_20260804.md)。
 项目文档导航与本地数据、checkpoint、rollout 的保存规则见
 [文档索引](docs/README.md) 和 [本地保存结构](docs/reference/LOCAL_STORAGE_LAYOUT.md)。
 

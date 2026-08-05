@@ -8,8 +8,10 @@
 
 - 第三视角 `agentview` 位于正前方约 45° 俯视位置，用于全局定位红色方块与蓝色收纳盒。
 - 腕部视角 `robot0_eye_in_hand` 用于抓取与下放的近距离观察。
-- VLA 接收两路 RGB 和 10-D 本体状态，预测 7-D 兼容 action；第一版只采用 XYZ 输出。
-- Supervisor 固定末端旋转、确认夹爪抓取，并使用第三视角 RGB-D 执行有界 XY 视觉伺服。
+- VLA 接收两路 RGB 和 10-D 本体状态，预测 7-D action；当前 raw 链路执行 XYZ 与 gripper，
+  只保留固定旋转和工作空间安全裁剪。
+- 历史 Supervisor 系统会确认夹爪抓取并使用第三视角 RGB-D 执行有界 XY 视觉伺服；它与
+  当前 `vla_raw_safety` 评估是不同协议。
 - 收纳盒使用 MuJoCo 原生 `Bin`，有底面和四侧壁并参与 RGB、深度与遮挡。
 
 ## 场景与成功条件
@@ -24,12 +26,17 @@
 ## 当前模型与结果
 
 - 数据集：`data/lerobot/pick_place_v2_native_bin_1000`，1,000 episodes / 84,819 frames。
+- raw pure-VLA development 候选：
+  `outputs/pick_place_v2_native_bin/teacher_distill_transport_v5_3_600/seed1000/checkpoints/000300/pretrained_model`。
+- 当前开发结果：`pick_place_dev_v1` 前 24/100 场为 `22/24 (91.7%)`，抓取 `24/24`；
+  使用 `samples=2/replan=8/seed=1000`，无动作 gain、phase Supervisor 或物体/目标位姿。
+- 该结果是单 seed development 候选，完整 100 场 development 和多 seed 验证尚未完成。
 - 系统 checkpoint：`outputs/pick_place_v2_native_bin/maskfix_20k/seed1000/checkpoints/020000/pretrained_model`。
 - 有界 RGB-D 视觉伺服系统：固定 50 场 `50/50`，最终 XY 平均误差 6.71 mm。
 - 非 oracle checkpoint：`outputs/pick_place_v2_native_bin/vla_only_global_20k/seed1000/checkpoints/020000/pretrained_model`。
 - SmolVLA + 固定动作校准：全新固定留出集 `46/50 (92%)`，抓取 `49/50`。
-- 结论边界：前者是完整系统结果；后者不读取物体位姿，但包含手工动作校准，均不能简称为
-  未经校准的纯端到端 VLA 成功率。
+- 结论边界：50/50 是完整视觉伺服系统结果，46/50 包含手工动作校准；只有 v5.3 的
+  `vla_raw_safety` 链路属于当前未经推理校准的 pure-VLA 候选，但它尚非 test/blind 结论。
 
 完整命令见 [`docs/PICK_PLACE_V2_RUNBOOK.md`](../PICK_PLACE_V2_RUNBOOK.md)。当前可执行入口只放在
 根 `scripts/`；旧 Stack 数据、benchmark 和 `scripts/archive/stack/` 仅用于历史追溯。

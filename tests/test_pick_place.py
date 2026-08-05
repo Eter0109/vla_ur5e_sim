@@ -8,12 +8,14 @@ import pytest
 from vla_sim.contracts import PickPlaceObservationAdapter, validate_pick_place_observation
 from vla_sim.envs.ur5e_pick_place import UR5ePickPlaceConfig, UR5ePickPlaceEnv
 from vla_sim.pick_place_control import (
+    VLA_ONLY_CONTROL_MODES,
     VLAOnlyActionCalibration,
     VLAOnlyActionCalibrator,
     VLAOnlySafetyConfig,
     calibrate_vla_only_action,
     filter_vla_only_action,
     scene_policy_seed,
+    uses_vla_only_action_calibration,
 )
 from vla_sim.scenes import PICK_PLACE_DISTANCE_BINS_M, generate_pick_place_scenes
 
@@ -27,6 +29,14 @@ def _raw() -> dict[str, np.ndarray]:
         "robot0_gripper_qpos": np.asarray([-0.024, -0.024], dtype=np.float32),
         "cube_pos": np.asarray([0.06, 0.0, 0.827], dtype=np.float32),
     }
+
+
+def test_vla_only_control_mode_declares_action_calibration() -> None:
+    assert VLA_ONLY_CONTROL_MODES == ("vla_raw_safety", "vla_action_calibrated")
+    assert not uses_vla_only_action_calibration("vla_raw_safety")
+    assert uses_vla_only_action_calibration("vla_action_calibrated")
+    with pytest.raises(ValueError, match="Unknown VLA-only control mode"):
+        uses_vla_only_action_calibration("vla_rgbd_supervised")
 
 
 def test_dual_camera_contract() -> None:
@@ -59,6 +69,21 @@ def test_pick_place_scene_generation_can_target_negative_y_without_eval_leakage(
     assert {scene.overrides["distance_bin"] for scene in scenes} == {0, 1}
     assert all(-0.160 <= scene.overrides["target_y_m"] <= -0.080 for scene in scenes)
     assert all(not scene.scene_id.startswith("pick_place_screen_v1") for scene in scenes)
+
+
+def test_pick_place_scene_generation_can_target_the_hard_distance_bin() -> None:
+    scenes = generate_pick_place_scenes(
+        "pick_place_correction", 12, 68000, target_y_bounds_m=(-0.160, -0.060), distance_bins=(1,)
+    )
+    assert {int(scene.overrides["distance_bin"]) for scene in scenes} == {1}
+    assert all(-0.160 <= float(scene.overrides["target_y_m"]) <= -0.060 for scene in scenes)
+
+
+def test_pick_place_scene_generation_can_focus_on_positive_y_grasp_entry() -> None:
+    scenes = generate_pick_place_scenes(
+        "pick_place_grasp_recovery", 12, 69000, source_y_bounds_m=(0.020, 0.040), distance_bins=(1,)
+    )
+    assert all(0.020 <= scene.y_m <= 0.040 for scene in scenes)
 
 
 @pytest.mark.parametrize(

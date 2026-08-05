@@ -68,6 +68,10 @@ class TemporalEnsemble:
             raise ValueError(
                 f"Expected a non-empty [time, {self.action_dim}] chunk; got {values.shape}"
             )
+        if len(values) > self.chunk_size:
+            raise ValueError(
+                f"Chunk length {len(values)} exceeds configured chunk_size {self.chunk_size}."
+            )
         weights = self.decay ** np.arange(len(values))
         for index, (action, weight) in enumerate(zip(values, weights)):
             self._buffer.setdefault(start_step + index, []).append((action.copy(), float(weight)))

@@ -11,6 +11,17 @@ from numpy.typing import NDArray
 from .stack_control import StackSupervisor, StackSupervisorConfig
 
 
+VLA_ONLY_CONTROL_MODES = ("vla_raw_safety", "vla_action_calibrated")
+
+
+def uses_vla_only_action_calibration(control_mode: str) -> bool:
+    """Return whether a declared deployment mode enables action-history calibration."""
+
+    if control_mode not in VLA_ONLY_CONTROL_MODES:
+        raise ValueError(f"Unknown VLA-only control mode: {control_mode}")
+    return control_mode == "vla_action_calibrated"
+
+
 @dataclass(frozen=True)
 class PickPlaceSupervisorConfig(StackSupervisorConfig):
     target_xy_m: float = 0.030

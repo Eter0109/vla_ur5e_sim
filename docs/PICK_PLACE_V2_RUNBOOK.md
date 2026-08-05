@@ -3,7 +3,24 @@
 所有命令从仓库根目录运行，先激活 `vla_sim_gpu`。当前任务是使用第三视角 RGB 和腕部 RGB，
 将红色方块放入蓝色 MuJoCo 原生收纳盒。
 
-## 1. 当前冻结资产
+## 1. 当前 development 候选与冻结基线
+
+当前 raw pure-VLA development 候选：
+
+| 资产 | 路径或配置 |
+| --- | --- |
+| Checkpoint | `outputs/pick_place_v2_native_bin/teacher_distill_transport_v5_3_600/seed1000/checkpoints/000300/pretrained_model` |
+| 训练入口 | `scripts/train_pick_place_teacher_distill_v5_3.ps1` |
+| 评估入口 | `scripts/evaluate_pick_place_teacher_distill_v5_3_dev24.ps1` |
+| 评测范围 | `pick_place_dev_v1` 前 24/100 场；单 policy seed 1000 |
+| 推理 | `vla_raw_safety`；`samples=2`；`replan=8`；无动作 gain 或 RGB-D Supervisor |
+| 结果 | strict success `22/24 (91.7%)`；抓取 `24/24` |
+
+它已经通过 development-24 晋级门槛，但尚未完成 100 场 development、多 seed 或 test/blind，
+因此不是冻结 canonical checkpoint。详情见
+[Teacher Distillation v5.3 报告](reports/PICK_PLACE_TEACHER_DISTILL_V5_3_SUCCESS_20260804.md)。
+
+以下为历史冻结的系统/校准基线，不应与 raw pure-VLA 候选混称：
 
 | 资产 | 路径 |
 | --- | --- |
@@ -31,18 +48,19 @@
 训练和评测的完整实验记录见
 [PickPlace VLA 训练与评测报告](reports/PICK_PLACE_VLA_EXPERIMENT_REPORT_20260731.md)。
 
-## 2. 查看模型实际运行
+## 2. 查看 raw pure-VLA 候选实际运行
 
 同时打开 MuJoCo 场景和模型实际接收的双 RGB 窗口：
 
 ```powershell
-python scripts/run_pick_place_rollouts.py `
-  --checkpoint outputs\pick_place_v2_native_bin\maskfix_20k\seed1000\checkpoints\020000\pretrained_model `
+python scripts/run_pick_place_vla_only.py `
+  --checkpoint outputs\pick_place_v2_native_bin\teacher_distill_transport_v5_3_600\seed1000\checkpoints\000300\pretrained_model `
   --dataset-root data\lerobot\pick_place_v2_native_bin_1000 `
   --repo-id local/ur5e_pick_place_v2_native_bin `
-  --manifest configs\benchmarks\pick_place_test_v2_50.json `
-  --episodes 1 --rgb-window --render `
-  --output outputs\pick_place_v2_native_bin\maskfix_20k\visual_check.json
+  --manifest configs\benchmarks\pick_place_dev_v1.json `
+  --episodes 1 --scene-index 0 --samples-per-plan 2 --replan-steps 8 `
+  --policy-seed 1000 --control-mode vla_raw_safety --rgb-window --render `
+  --output outputs\pick_place_v2_native_bin\manual_checks\v5_3_scene0000.json
 ```
 
 只看 VLA 输入时保留 `--rgb-window`、去掉 `--render`；只看 MuJoCo 场景时反之。输出请使用新文件名，
@@ -54,9 +72,9 @@ python scripts/run_pick_place_rollouts.py `
 python scripts/generate_pick_place_manifests.py
 
 python scripts/evaluate_pick_place_expert.py `
-  --manifest configs\benchmarks\pick_place_test_v2_50.json `
-  --episodes 50 `
-  --output outputs\pick_place_v2_native_bin\expert_test_50.json
+  --manifest configs\benchmarks\pick_place_screen_v1.json `
+  --episodes 24 `
+  --output outputs\pick_place_v2_native_bin\expert_development_24.json
 ```
 
 manifest 生成是确定性的，但正式实验前仍应记录文件 SHA-256。内部
@@ -109,39 +127,36 @@ python scripts/diagnose_pick_place_checkpoint.py `
   --samples 4
 ```
 
-## 6. 评测与报告
+## 6. development 评测与晋级
 
-先运行少量场景做 smoke，再决定是否运行完整 50 场。每次都写入新的结果文件，并记录 checkpoint、
-数据集、manifest、命令参数、源码状态和结果 SHA-256。
-
-```powershell
-python scripts/run_pick_place_rollouts.py `
-  --checkpoint <checkpoint> `
-  --dataset-root data\lerobot\pick_place_v2_native_bin_1000 `
-  --repo-id local/ur5e_pick_place_v2_native_bin `
-  --manifest configs\benchmarks\pick_place_test_v2_50.json `
-  --episodes 5 `
-  --output outputs\pick_place_v2_native_bin\<run_name>\smoke_5.json
-```
-
-只有完整运行全部 50 个固定场景，才能报告该 test 的成功率。不得把 1 场可视化或 5 场 smoke
-写成正式成功率，也不得把系统结果写成纯端到端 SmolVLA 结果。
-
-不使用 RGB-D 视觉伺服的固定动作校准评测入口为：
+所有筛选和 smoke 只使用 role=`development` 的 manifest。每次写入新的结果文件，并保留 runner
+生成的 `.meta.json`、evaluation fingerprint、checkpoint、manifest、命令参数和结果 SHA-256。
 
 ```powershell
 python scripts/run_pick_place_vla_only.py `
-  --checkpoint outputs\pick_place_v2_native_bin\vla_only_global_20k\seed1000\checkpoints\020000\pretrained_model `
+  --checkpoint <checkpoint> `
   --dataset-root data\lerobot\pick_place_v2_native_bin_1000 `
   --repo-id local/ur5e_pick_place_v2_native_bin `
-  --manifest configs\benchmarks\pick_place_holdout_v4_50.json `
-  --episodes 50 --samples-per-plan 2 `
-  --closed-negative-y-gain 1.3 --transport-positive-x-gain 0.95 `
-  --output outputs\pick_place_v2_native_bin\<run_name>\test50.json
+  --manifest configs\benchmarks\pick_place_screen_v1.json `
+  --episodes 6 --samples-per-plan 2 --replan-steps 8 `
+  --policy-seed 1000 --control-mode vla_raw_safety `
+  --output outputs\pick_place_v2_native_bin\<run_name>\development\screen6.json
 ```
 
-`pick_place_holdout_v4_50` 已用于当前正式结果。复现实验可以重跑，但不能根据其结果继续调参；
-新候选必须先走 development screen，并生成未参与筛选的新 test manifest。
+当前 v5.3 候选的可复现 development-24 入口：
+
+```powershell
+.\scripts\evaluate_pick_place_teacher_distill_v5_3_dev24.ps1 -Step 000300
+```
+
+该脚本只运行 `pick_place_dev_v1` 的前 24/100 场。完整 development 晋级应在 checkpoint、推理参数
+和 seed 列表预先固定后运行全部 100 场；不要把 24 场筛选结果写成完整 development 成功率。
+
+test/blind runner 只允许一次性全量运行且拒绝覆盖。配置未冻结时不得运行 test/blind，也不得使用
+test 的前缀子集做 smoke。以下固定动作校准结果只作为已经完成的历史证据保留：
+
+`pick_place_holdout_v4_50` 已用于 `46/50` 结果，不再用于 v5.3 调参或重复评测。新候选必须先完成
+development 协议，再生成未参与筛选的新 test manifest。
 
 ## 7. 保护规则
 

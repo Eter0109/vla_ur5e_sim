@@ -62,6 +62,7 @@ class UR5ePickPlaceConfig:
     reward_shaping: bool = True
     terminate_on_success: bool = True
     has_renderer: bool = False
+    use_camera_depths: bool = True
     success_hold_steps: int = 10
     placement_tolerance_m: float = 0.030
     table_height_tolerance_m: float = 0.012
@@ -149,7 +150,9 @@ def create_pick_place_backend(config: UR5ePickPlaceConfig | None = None) -> Any:
         camera_names=[camera.third_person.name, "all-eye_in_hand"],
         camera_widths=[camera.third_person.width, camera.wrist_width],
         camera_heights=[camera.third_person.height, camera.wrist_height],
-        camera_depths=[True, True],
+        # Keep the training-time RGB-D render configuration by default. Even the
+        # RGB policy input is sensitive to the renderer's observation lifecycle.
+        camera_depths=[config.use_camera_depths, config.use_camera_depths],
         camera_segmentations=[None, None],
         hard_reset=False,
         ignore_done=False,

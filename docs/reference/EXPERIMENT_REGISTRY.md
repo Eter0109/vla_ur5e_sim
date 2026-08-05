@@ -8,6 +8,31 @@
 红色方块、运输到盒内、释放，并通过连续稳定性检查。训练与评测入口会校验数据集中的环境契约，
 确保相机、方块、收纳盒、状态、动作和文字 prompt 一致。
 
+### 2026-08-04：Teacher Distillation v5.3 raw pure-VLA development 候选
+
+完整证据、失败场景和适用边界见
+[Teacher Distillation v5.3 实验报告](../reports/PICK_PLACE_TEACHER_DISTILL_V5_3_SUCCESS_20260804.md)。
+
+| 字段 | 值 |
+| --- | --- |
+| 状态 | development promotion candidate；前 24/100 场 `22/24 (91.7%)`，尚非 canonical |
+| Checkpoint | `outputs/pick_place_v2_native_bin/teacher_distill_transport_v5_3_600/seed1000/checkpoints/000300/pretrained_model` |
+| Base checkpoint | `outputs/pick_place_v2_native_bin/vla_only_global_20k/seed1000/checkpoints/020000/pretrained_model` |
+| 数据 | base 1,000 episodes；teacher v4 400 episodes，仅在 `transport` 阶段参与 replay |
+| 训练 | seed 1000；step 300；auxiliary weight `0.45`；LR `6e-7`；XYZ loss weight `3.0` |
+| 评测集 | `pick_place_dev_v1` 的前 24/100 场；role=`development`；单 policy seed 1000 |
+| 推理 | static prompt；`samples_per_plan=2`；`replan_steps=8`；`decay=0.5` |
+| 部署边界 | `vla_raw_safety`；无动作校准、无 RGB-D Supervisor、无物体/目标位姿；仅固定旋转和工作空间裁剪 |
+| 结果 | strict success `22/24`；ever grasped `24/24`；2 个失败均为 `xy_miss` (已在修复的物理域动作投票 evaluator 下重新验证) |
+| 严格配对 base | 原始 global 20k 在相同 24 场和推理协议下为 `20/24`，抓取 `24/24` |
+| Manifest SHA-256 | `659b0f0a228c3039836cdda2a18d9e2450538efc9b1b344c22e309744057a5b9` |
+| Result SHA-256 | (已在 dev24_000300_samples2_replan8_seed1000_fixed.json 中更新) |
+| Evaluation fingerprint | `42140628139a952a89a67237cd1ed4cb05fafd22c9a6db151db300177612ee59` |
+| 可用结论 | raw pure-VLA 首次达到 development-24 的 `>90%` 晋级门槛；不得表述为完整 development 或 test/blind 成功率 |
+
+下一晋级条件是完整 100 场 development 与预先固定的多 policy seed 验证。由于该 24 场已用于
+checkpoint/超参数筛选，它不是 held-out 集；test/blind 在配置冻结前继续保持不动。
+
 ### 2026-07-31：SmolVLA 双样本 + 固定动作校准，留出集 92%
 
 完整训练配置、失败微调、动作校准迭代和失败场景分析见
@@ -52,7 +77,7 @@
 | `pick_place_test_v2_50` | test | 50 | 已完成一次，50/50 |
 | `pick_place_holdout_v4_50` | test | 50 | 已完成一次，46/50；当前非 oracle 固定动作校准结果 |
 | `pick_place_screen_v1` | development screen | 24 | checkpoint 快速筛选 |
-| `pick_place_dev_v1` | development | 100 | 三 seed 开发评测 |
+| `pick_place_dev_v1` | development | 100 | 前 24 场已用于 v5.3 单 seed 筛选；完整 100 场与多 seed 尚未完成 |
 | `pick_place_blind_v1` | blind | 100 | 一次性盲测，尚未消费 |
 | `pick_place_collect_v1` | collection | 1,200 | 采集 1,000 个成功 episode 的候选场景 |
 

@@ -19,6 +19,7 @@ from vla_sim.sampling import (  # noqa: E402
     GlobalTaskPromptDataset,
     PhaseActionMaskedDataset,
     ReplayMixDataset,
+    ReplayMultiMixDataset,
     phase_groups_from_indices,
     phase_sampling_weights,
     transition_sampling_weights,
@@ -211,10 +212,8 @@ def _phase_groups_and_episodes(dataset) -> tuple[list[str], list[int]]:
     groups: list[str] = []
     episode_indices: list[int] = []
     episode_offset = 0
-    sources = (
-        (dataset.base, dataset.auxiliary)
-        if isinstance(dataset, ReplayMixDataset)
-        else (dataset,)
+    sources = dataset.sources if isinstance(dataset, ReplayMultiMixDataset) else (
+        (dataset.base, dataset.auxiliary) if isinstance(dataset, ReplayMixDataset) else (dataset,)
     )
     for source in sources:
         raw = source.hf_dataset.with_format(None)
@@ -257,16 +256,43 @@ def _install_phase_sampler() -> None:
     def data_loader_init(self, dataset, *args, **kwargs):
         if kwargs.get("batch_sampler") is None and hasattr(dataset, "hf_dataset"):
             groups, episode_indices = _phase_groups_and_episodes(dataset)
-            weights = phase_sampling_weights(groups, target_proportions=target_proportions)
             sampling_multipliers = getattr(dataset, "sampling_multipliers", None)
             if sampling_multipliers is not None:
                 sampling_multipliers = torch.as_tensor(
                     sampling_multipliers,
-                    dtype=weights.dtype,
-                )
-                if sampling_multipliers.shape != weights.shape:
+                    dtype=torch.double,
+                ).clone()
+                if sampling_multipliers.shape != (len(groups),):
                     raise ValueError("Replay sampling multipliers must match dataset length")
-                weights *= sampling_multipliers
+                auxiliary_phase_groups = {
+                    value.strip()
+                    for value in os.environ.get("VLA_AUXILIARY_PHASE_GROUPS", "").split(",")
+                    if value.strip()
+                }
+                if auxiliary_phase_groups:
+                    unknown = auxiliary_phase_groups - set(target_proportions)
+                    if unknown:
+                        raise ValueError(
+                            "Unknown VLA_AUXILIARY_PHASE_GROUPS: " + ", ".join(sorted(unknown))
+                        )
+                    base_length = int(getattr(dataset, "base_length", len(dataset)))
+                    for index in range(base_length, len(groups)):
+                        if groups[index] not in auxiliary_phase_groups:
+                            sampling_multipliers[index] = 0
+                    selected = int((sampling_multipliers[base_length:] > 0).sum())
+                    if selected == 0:
+                        raise ValueError("Auxiliary phase filter selected no replay frames")
+                    print(
+                        "auxiliary_phase_filter "
+                        f"groups={','.join(sorted(auxiliary_phase_groups))} "
+                        f"selected_frames={selected}/{len(groups) - base_length}",
+                        flush=True,
+                    )
+            weights = phase_sampling_weights(
+                groups,
+                target_proportions=target_proportions,
+                sampling_multipliers=sampling_multipliers,
+            )
             global_prompt = bool(os.environ.get("VLA_GLOBAL_TASK_PROMPT", "").strip())
             if not global_prompt:
                 dataset = PhaseActionMaskedDataset(
@@ -296,16 +322,24 @@ def _install_phase_sampler() -> None:
 
 
 def _install_auxiliary_replay_dataset() -> None:
-    auxiliary_root = os.environ.get("VLA_AUXILIARY_DATASET", "").strip()
-    if not auxiliary_root:
+    auxiliary_roots = [
+        value.strip() for value in os.environ.get("VLA_AUXILIARY_DATASET", "").split(";") if value.strip()
+    ]
+    if not auxiliary_roots:
         return
     if os.environ.get("VLA_PHASE_BALANCED", "0") != "1":
         raise ValueError("Auxiliary replay requires phase-balanced sampling")
-    auxiliary_repo_id = os.environ.get("VLA_AUXILIARY_REPO_ID", "").strip()
-    if not auxiliary_repo_id:
+    auxiliary_repo_ids = [
+        value.strip() for value in os.environ.get("VLA_AUXILIARY_REPO_ID", "").split(";") if value.strip()
+    ]
+    if len(auxiliary_repo_ids) != len(auxiliary_roots):
         raise ValueError("VLA_AUXILIARY_REPO_ID is required for auxiliary replay")
-    auxiliary_sample_weight = float(os.environ.get("VLA_AUXILIARY_SAMPLE_WEIGHT", "1.0"))
-    if not math.isfinite(auxiliary_sample_weight) or auxiliary_sample_weight <= 0:
+    auxiliary_sample_weights = [
+        float(value) for value in os.environ.get("VLA_AUXILIARY_SAMPLE_WEIGHT", "1.0").split(";")
+    ]
+    if len(auxiliary_sample_weights) != len(auxiliary_roots) or any(
+        not math.isfinite(weight) or weight <= 0 for weight in auxiliary_sample_weights
+    ):
         raise ValueError("VLA_AUXILIARY_SAMPLE_WEIGHT must be finite and positive")
 
     from lerobot.datasets.lerobot_dataset import LeRobotDataset
@@ -319,23 +353,30 @@ def _install_auxiliary_replay_dataset() -> None:
             "_vla_replay_mixed",
             False,
         ):
-            auxiliary = LeRobotDataset(
-                auxiliary_repo_id,
-                root=Path(auxiliary_root),
-                delta_timestamps=dataset.delta_timestamps,
-                image_transforms=dataset.image_transforms,
-                video_backend=dataset.video_backend,
-                tolerance_s=dataset.tolerance_s,
+            auxiliaries = [
+                LeRobotDataset(
+                    repo_id,
+                    root=Path(root),
+                    delta_timestamps=dataset.delta_timestamps,
+                    image_transforms=dataset.image_transforms,
+                    video_backend=dataset.video_backend,
+                    tolerance_s=dataset.tolerance_s,
+                )
+                for root, repo_id in zip(auxiliary_roots, auxiliary_repo_ids, strict=True)
+            ]
+            dataset = (
+                ReplayMixDataset(dataset, auxiliaries[0], auxiliary_sample_weights[0])
+                if len(auxiliaries) == 1
+                else ReplayMultiMixDataset(dataset, auxiliaries, auxiliary_sample_weights)
             )
-            dataset = ReplayMixDataset(dataset, auxiliary, auxiliary_sample_weight)
             effective_auxiliary_fraction = float(
                 dataset.sampling_multipliers[dataset.base_length :].sum()
                 / dataset.sampling_multipliers.sum()
             )
             print(
                 "auxiliary_replay "
-                f"base_frames={dataset.base_length} auxiliary_frames={len(auxiliary)} "
-                f"auxiliary_weight={auxiliary_sample_weight:g} "
+                f"base_frames={len(dataset.base)} auxiliary_frames={sum(map(len, auxiliaries))} "
+                f"auxiliary_weights={auxiliary_sample_weights} "
                 f"effective_fraction={effective_auxiliary_fraction:.1%}",
                 flush=True,
             )

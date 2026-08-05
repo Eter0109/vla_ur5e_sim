@@ -5,7 +5,8 @@ param(
     [string]$RepoId = "local/ur5e_custom_lift",
     [string]$AuxiliaryDataset = "",
     [string]$AuxiliaryRepoId = "",
-    [double]$AuxiliarySampleWeight = 1.0,
+    [string]$AuxiliarySampleWeight = "1.0",
+    [string]$AuxiliaryPhaseGroups = "",
     [string]$Output = "outputs\smolvla_lora_smoke",
     [string]$CheckpointPath = "",
     [int]$Steps = 20,
@@ -70,6 +71,7 @@ $env:VLA_PHASE_BALANCED = if ($PhaseBalanced) { "1" } else { "0" }
 $env:VLA_AUXILIARY_DATASET = $AuxiliaryDataset
 $env:VLA_AUXILIARY_REPO_ID = $AuxiliaryRepoId
 $env:VLA_AUXILIARY_SAMPLE_WEIGHT = [string]$AuxiliarySampleWeight
+$env:VLA_AUXILIARY_PHASE_GROUPS = $AuxiliaryPhaseGroups
 
 & $Python -c "import torch, lerobot, peft; assert torch.cuda.is_available(), 'CUDA is unavailable'"
 if ($LASTEXITCODE -ne 0) {
@@ -95,10 +97,15 @@ if ($AuxiliaryDataset) {
     if (-not $PhaseBalanced) {
         throw "Auxiliary replay requires PhaseBalanced."
     }
+    $AuxiliaryRoots = @($AuxiliaryDataset -split ';' | Where-Object { $_ })
+    $AuxiliaryRepoIds = @($AuxiliaryRepoId -split ';' | Where-Object { $_ })
+    $AuxiliaryWeights = @($AuxiliarySampleWeight -split ';' | ForEach-Object { [double]$_ })
     if (
-        [double]::IsNaN($AuxiliarySampleWeight) -or
-        [double]::IsInfinity($AuxiliarySampleWeight) -or
-        $AuxiliarySampleWeight -le 0
+        $AuxiliaryRoots.Count -ne $AuxiliaryRepoIds.Count -or
+        $AuxiliaryRoots.Count -ne $AuxiliaryWeights.Count -or
+        @($AuxiliaryWeights | Where-Object {
+            [double]::IsNaN($_) -or [double]::IsInfinity($_) -or $_ -le 0
+        }).Count -gt 0
     ) {
         throw "AuxiliarySampleWeight must be finite and positive."
     }
@@ -189,6 +196,7 @@ if ($Resume) {
         $Locked.auxiliary_dataset = $AuxiliaryDataset
         $Locked.auxiliary_repo_id = $AuxiliaryRepoId
         $Locked.auxiliary_sample_weight = $AuxiliarySampleWeight
+        $Locked.auxiliary_phase_groups = $AuxiliaryPhaseGroups
     }
     foreach ($Name in $Locked.Keys) {
         if ([string]$PreviousManifest.$Name -ne [string]$Locked[$Name]) {
@@ -315,6 +323,7 @@ $Manifest = [ordered]@{
     auxiliary_dataset = $AuxiliaryDataset
     auxiliary_repo_id = $AuxiliaryRepoId
     auxiliary_sample_weight = $AuxiliarySampleWeight
+    auxiliary_phase_groups = $AuxiliaryPhaseGroups
     output = $OutputFull
     steps = $Steps
     seed = $Seed

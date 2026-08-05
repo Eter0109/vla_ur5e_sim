@@ -132,6 +132,8 @@ def test_missing_or_malformed_predictions_are_rejected() -> None:
         ensemble.add_chunk(1, np.zeros((2, 6)))
     with pytest.raises(ValueError, match="No prediction"):
         ensemble.get_action(1)
+    with pytest.raises(ValueError, match="exceeds configured chunk_size"):
+        ensemble.add_chunk(1, np.zeros((3, 7)))
 
 
 def test_reset_discards_chunks_and_gripper_history() -> None:

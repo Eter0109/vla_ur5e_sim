@@ -19,6 +19,41 @@ from .lerobot_compat import install_fast_parquet_loader
 install_fast_parquet_loader()
 
 
+def aggregate_action_chunks(chunks: torch.Tensor, *, action_dim: int) -> torch.Tensor:
+    """Aggregate postprocessed flow samples while preserving the gripper decision.
+
+    The caller must first convert every sample back to the deployment action
+    domain. Continuous Cartesian dimensions use their arithmetic mean. Gripper
+    samples vote by sign; an even-sample tie falls back to the sample with the
+    largest magnitude, preserving the most confident discrete command.
+    """
+
+    if chunks.ndim != 4 or chunks.shape[0] < 1:
+        raise ValueError("Expected samples shaped [sample, batch, time, action].")
+    if not 1 <= action_dim <= chunks.shape[-1]:
+        raise ValueError("action_dim must be within the predicted action width.")
+
+    aggregated = chunks.mean(dim=0)
+    if action_dim < 7:
+        return aggregated
+
+    grippers = chunks[..., 6]
+    votes = torch.sign(grippers).sum(dim=0)
+    largest_magnitude = grippers.abs().argmax(dim=0, keepdim=True)
+    tie_breaker = grippers.gather(0, largest_magnitude).squeeze(0)
+    aggregated[..., 6] = torch.where(votes == 0, tie_breaker, torch.sign(votes))
+    return aggregated
+
+
+def postprocess_and_aggregate_action_chunks(
+    chunks: torch.Tensor, postprocessor: Any, *, action_dim: int
+) -> torch.Tensor:
+    """Postprocess each flow sample before aggregating discrete action semantics."""
+
+    postprocessed = torch.stack([postprocessor(sample) for sample in chunks])
+    return aggregate_action_chunks(postprocessed, action_dim=action_dim)
+
+
 def _install_peft_compatibility() -> None:
     """Backfill mapping methods expected by older PEFT versions."""
 
@@ -83,6 +118,17 @@ def predict_ensemble_chunk(
             "UR5e",
         )
         batch = preprocessor(batch)
-        chunks = [policy.predict_action_chunk(batch) for _ in range(samples)]
-        chunk = postprocessor(torch.stack(chunks).mean(dim=0))
-    return chunk[0].detach().float().cpu().numpy()
+        chunks = torch.stack([policy.predict_action_chunk(batch) for _ in range(samples)])
+        chunk = postprocess_and_aggregate_action_chunks(
+            chunks,
+            postprocessor,
+            action_dim=int(configured_action_dim(policy)),
+        )
+    action_steps = int(policy.config.n_action_steps)
+    return chunk[0, :action_steps].detach().float().cpu().numpy()
+
+
+def configured_action_dim(policy: Any) -> int:
+    """Return the task action width without exposing SmolVLA internals to callers."""
+
+    return int(policy.config.action_feature.shape[0])

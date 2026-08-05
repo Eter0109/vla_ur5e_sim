@@ -174,25 +174,36 @@ def generate_pick_place_scenes(
     seed: int,
     *,
     target_y_bounds_m: tuple[float, float] = PICK_PLACE_TARGET_Y_M,
+    source_y_bounds_m: tuple[float, float] = PICK_PLACE_SOURCE_Y_M,
+    distance_bins: tuple[int, ...] = tuple(range(len(PICK_PLACE_DISTANCE_BINS_M))),
 ) -> list[SceneSpec]:
     """Generate red-cube-to-blue-storage-bin scenes balanced by transport distance."""
 
-    if count < 1 or count % len(PICK_PLACE_DISTANCE_BINS_M):
-        raise ValueError("PickPlace scene count must be positive and divisible by two")
+    if count < 1 or not distance_bins or count % len(distance_bins):
+        raise ValueError("count must be positive and divisible by selected distance bins")
+    if len(set(distance_bins)) != len(distance_bins) or any(
+        index < 0 or index >= len(PICK_PLACE_DISTANCE_BINS_M) for index in distance_bins
+    ):
+        raise ValueError("distance_bins must be distinct valid PickPlace distance-bin indices")
     target_y_min, target_y_max = target_y_bounds_m
     if not (
         PICK_PLACE_TARGET_Y_M[0] <= target_y_min < target_y_max <= PICK_PLACE_TARGET_Y_M[1]
     ):
         raise ValueError("target_y_bounds_m must be ordered and inside the PickPlace workspace")
+    source_y_min, source_y_max = source_y_bounds_m
+    if not (
+        PICK_PLACE_SOURCE_Y_M[0] <= source_y_min < source_y_max <= PICK_PLACE_SOURCE_Y_M[1]
+    ):
+        raise ValueError("source_y_bounds_m must be ordered and inside the PickPlace workspace")
     rng = np.random.default_rng(seed)
-    bins = [index % len(PICK_PLACE_DISTANCE_BINS_M) for index in range(count)]
+    bins = [distance_bins[index % len(distance_bins)] for index in range(count)]
     rng.shuffle(bins)
     scenes: list[SceneSpec] = []
     for index, bin_index in enumerate(bins):
         lower, upper = PICK_PLACE_DISTANCE_BINS_M[bin_index]
         for _attempt in range(10_000):
             source_x = float(rng.uniform(*PICK_PLACE_SOURCE_X_M))
-            source_y = float(rng.uniform(*PICK_PLACE_SOURCE_Y_M))
+            source_y = float(rng.uniform(source_y_min, source_y_max))
             target_x = float(rng.uniform(*PICK_PLACE_TARGET_X_M))
             target_y = float(rng.uniform(target_y_min, target_y_max))
             if abs(target_y - source_y) < PICK_PLACE_MIN_LATERAL_SEPARATION_M:

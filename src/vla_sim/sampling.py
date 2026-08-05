@@ -61,6 +61,60 @@ class ReplayMixDataset(torch.utils.data.Dataset):
         return getattr(self.base, name)
 
 
+class ReplayMultiMixDataset(torch.utils.data.Dataset):
+    """Replay a base dataset with independently weighted correction datasets."""
+
+    def __init__(self, base, auxiliaries: list, auxiliary_sample_weights: list[float]) -> None:
+        if not auxiliaries or len(auxiliaries) != len(auxiliary_sample_weights):
+            raise ValueError("auxiliaries and auxiliary_sample_weights must be non-empty and aligned")
+        if any(
+            not math.isfinite(weight) or weight <= 0 for weight in auxiliary_sample_weights
+        ):
+            raise ValueError("auxiliary_sample_weights must be finite and positive")
+        for auxiliary in auxiliaries:
+            if getattr(base, "features", None) != getattr(auxiliary, "features", None):
+                raise ValueError("Replay datasets must have identical features")
+            if getattr(base, "fps", None) != getattr(auxiliary, "fps", None):
+                raise ValueError("Replay datasets must have identical FPS")
+        self.base = base
+        self.auxiliaries = tuple(auxiliaries)
+        self.auxiliary_sample_weights = tuple(float(weight) for weight in auxiliary_sample_weights)
+        self.sources = (base, *self.auxiliaries)
+        self._vla_replay_mixed = True
+        self.source_lengths = tuple(len(source) for source in self.sources)
+        self.base_length = self.source_lengths[0]
+        self.source_ends = tuple(torch.as_tensor(self.source_lengths).cumsum(0).tolist())
+        self.hf_dataset = concatenate_datasets([source.hf_dataset for source in self.sources])
+        self.sampling_multipliers = torch.cat(
+            (
+                torch.ones(self.source_lengths[0], dtype=torch.double),
+                *(
+                    torch.full((length,), weight, dtype=torch.double)
+                    for length, weight in zip(
+                        self.source_lengths[1:], self.auxiliary_sample_weights, strict=True
+                    )
+                ),
+            )
+        )
+        self.meta = base.meta
+
+    def __len__(self) -> int:
+        return sum(self.source_lengths)
+
+    def __getitem__(self, index: int):
+        if not 0 <= index < len(self):
+            raise IndexError("Replay dataset index is outside the dataset")
+        start = 0
+        for source, end in zip(self.sources, self.source_ends, strict=True):
+            if index < end:
+                return source[index - start]
+            start = end
+        raise AssertionError("Replay source boundaries do not cover the dataset")
+
+    def __getattr__(self, name: str):
+        return getattr(self.base, name)
+
+
 class GlobalTaskPromptDataset(torch.utils.data.Dataset):
     """Expose one task-level prompt while preserving the original action sequence."""
 
@@ -198,23 +252,43 @@ def phase_chunk_safe_mask(
 def phase_sampling_weights(
     phase_groups: list[str],
     target_proportions: dict[str, float] | None = None,
+    sampling_multipliers: torch.Tensor | None = None,
 ) -> torch.Tensor:
-    """Return weights that give each present Stack phase group specified probability (default equal)."""
+    """Return weights with exact phase mass after source weighting or filtering."""
 
     if not phase_groups:
         raise ValueError("phase_groups must not be empty")
     unknown = sorted(set(phase_groups) - set(PHASE_GROUPS))
     if unknown:
         raise ValueError(f"Unknown phase groups: {', '.join(unknown)}")
-    counts = {name: phase_groups.count(name) for name in PHASE_GROUPS}
-    missing = [name for name, count in counts.items() if count == 0]
+    if sampling_multipliers is None:
+        multipliers = torch.ones(len(phase_groups), dtype=torch.double)
+    else:
+        multipliers = torch.as_tensor(sampling_multipliers, dtype=torch.double).clone()
+        if multipliers.shape != (len(phase_groups),):
+            raise ValueError("sampling_multipliers must have one value per phase group")
+        if not torch.isfinite(multipliers).all() or (multipliers < 0).any():
+            raise ValueError("sampling_multipliers must be finite and non-negative")
+    group_mass = {
+        name: float(multipliers[
+            torch.as_tensor([group == name for group in phase_groups], dtype=torch.bool)
+        ].sum())
+        for name in PHASE_GROUPS
+    }
+    missing = [name for name, mass in group_mass.items() if mass <= 0]
     if missing:
         raise ValueError(f"Dataset is missing required phase groups: {', '.join(missing)}")
     if target_proportions is None:
-        return torch.as_tensor([1.0 / counts[name] for name in phase_groups], dtype=torch.double)
+        return torch.as_tensor(
+            [multipliers[index] / group_mass[name] for index, name in enumerate(phase_groups)],
+            dtype=torch.double,
+        )
     scale = float(len(PHASE_GROUPS))
     return torch.as_tensor(
-        [target_proportions[name] * scale / counts[name] for name in phase_groups],
+        [
+            multipliers[index] * target_proportions[name] * scale / group_mass[name]
+            for index, name in enumerate(phase_groups)
+        ],
         dtype=torch.double,
     )
 
