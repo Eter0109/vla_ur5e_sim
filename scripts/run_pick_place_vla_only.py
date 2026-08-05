@@ -453,7 +453,6 @@ def _render_native_bin(env) -> None:
     env.render()
     native_viewer = getattr(getattr(env.backend, "viewer", None), "viewer", None)
     if native_viewer is not None:
-        native_viewer.opt.geomgroup[:] = 1
         native_viewer.cam.type = 2
         native_viewer.cam.fixedcamid = env.backend.sim.model.camera_name2id(
             env.config.camera.third_person.name

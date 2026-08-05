@@ -169,18 +169,8 @@ def create_pick_place_backend(config: UR5ePickPlaceConfig | None = None) -> Any:
         [camera.wrist_forward_offset_m, 0.0, 0.0], dtype=np.float64
     )
     backend.sim.model.cam_fovy[wrist_camera_id] = camera.wrist_fovy_deg
-    for geom_name in backend.target_bin.contact_geoms:
-        geom_id = backend.sim.model.geom_name2id(geom_name)
-        # Keep the Bin as a genuine MuJoCo geom for RGB rendering and depth
-        # occlusion, while making this introductory Pick-Move-Place task
-        # collision-free at the destination. A distinct, non-overlapping
-        # collision type preserves rendering (unlike contype=0) without
-        # letting the side walls interfere with the scripted demonstrator.
-        backend.sim.model.geom_contype[geom_id] = 2
-        backend.sim.model.geom_conaffinity[geom_id] = 0
-    # Bin is merged as a free-joint composite object. Its collision mask above
-    # intentionally avoids interfering with the introductory demonstrator, so
-    # compensate gravity to keep the storage bin fixed on the table instead of
+    # Bin is merged as a free-joint composite object.
+    # Compensate gravity to keep the storage bin fixed on the table instead of
     # letting it fall through the table after reset.
     bin_body_id = backend.sim.model.body_name2id(backend.target_bin.root_body)
     backend.sim.model.body_gravcomp[bin_body_id] = 1.0

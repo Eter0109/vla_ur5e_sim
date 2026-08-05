@@ -132,11 +132,9 @@ def main() -> int:
                 if args.render:
                     env.render()
                     # robosuite's interactive MuJoCo viewer hides geom group 0
-                    # by default. The native storage bin uses that group, so
-                    # re-enable it for faithful on-screen task visualization.
+                    # by default. The native storage bin uses that group for collisions.
                     native_viewer = getattr(getattr(env.backend, "viewer", None), "viewer", None)
                     if native_viewer is not None:
-                        native_viewer.opt.geomgroup[:] = 1
                         native_viewer.cam.type = 2
                         native_viewer.cam.fixedcamid = env.backend.sim.model.camera_name2id(
                             env.config.camera.third_person.name
