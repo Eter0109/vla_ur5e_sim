@@ -39,7 +39,7 @@ class HeuristicExpertConfig:
     close_command: float = 1.0
     max_position_action: float = 0.8
     object_height_m: float = 0.05
-    release_clearance_m: float = 0.001
+    release_clearance_m: float = 0.025
 
     def __post_init__(self) -> None:
         if self.position_action_scale_m <= 0 or self.place_release_tolerance_m <= 0:

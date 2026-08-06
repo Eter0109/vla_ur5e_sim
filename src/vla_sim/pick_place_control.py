@@ -43,7 +43,7 @@ class PickPlaceSupervisor(StackSupervisor):
 class VLAOnlySafetyConfig:
     """Non-semantic safety limits that do not use task-object poses."""
 
-    workspace_low: tuple[float, float, float] = (-0.25, -0.25, 0.76)
+    workspace_low: tuple[float, float, float] = (-0.25, -0.25, 0.815)
     workspace_high: tuple[float, float, float] = (0.25, 0.25, 1.20)
     position_action_scale_m: float = 0.05
 
