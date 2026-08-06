@@ -4,7 +4,7 @@
 抓取红色方块并放入远处的蓝色 MuJoCo 原生收纳盒。收纳盒有真实底面和四侧壁，参与 RGB 渲染、
 深度和遮挡；任务通过抓取、抬升、释放、盒内位置和连续 10 步稳定性判定成功。
 
-最新 raw pure-VLA development 候选是 Teacher Distillation v5.3 step 300：在
+最新 raw pure-VLA development 候选是 Teacher Distillation v5.3 step 150（基于全物理碰撞与视觉实态环境）：在
 `pick_place_dev_v1` 前 24/100 场、`samples=2`、`replan=8`、单 policy seed 1000 下取得
 `22/24 (91.7%)`，抓取 `24/24`。该结果不使用动作校准、物体/目标位姿或 RGB-D Supervisor，
 但仍只是经过筛选的 development-24 里程碑，不是完整 development、test/blind 或冻结部署结果。
@@ -29,7 +29,7 @@ PickPlace 使用两个 `256×256` RGB 输入：`agentview` 提供全局场景，
 
 ```powershell
 python scripts/run_pick_place_vla_only.py `
-  --checkpoint outputs\pick_place_v2_native_bin\teacher_distill_transport_v5_3_600\seed1000\checkpoints\000300\pretrained_model `
+  --checkpoint outputs\pick_place_v2_native_bin\teacher_distill_transport_v5_3_600\seed1000\checkpoints\000150\pretrained_model `
   --dataset-root data\lerobot\pick_place_v2_native_bin_1000 `
   --repo-id local/ur5e_pick_place_v2_native_bin `
   --manifest configs\benchmarks\pick_place_dev_v1.json `
