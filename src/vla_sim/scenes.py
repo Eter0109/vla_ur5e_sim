@@ -5,9 +5,12 @@ from __future__ import annotations
 import json
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
+from collections.abc import Callable, Hashable
 from typing import Any
 
 import numpy as np
+
+from vla_sim.domain_randomization import sample_domain_randomization
 
 
 STACK_TASKS = ("red_on_blue", "blue_on_red")
@@ -22,6 +25,13 @@ PICK_PLACE_SOURCE_Y_M = (-0.040, 0.040)
 PICK_PLACE_TARGET_X_M = (0.145, 0.175)
 PICK_PLACE_TARGET_Y_M = (-0.160, 0.160)
 PICK_PLACE_MIN_LATERAL_SEPARATION_M = 0.100
+PUSH_ANGLE_BINS_RAD = tuple(
+    (float(np.deg2rad(lower)), float(np.deg2rad(upper)))
+    for lower, upper in ((-15.0, -9.0), (-9.0, -3.0), (-3.0, 3.0), (3.0, 9.0), (9.0, 15.0))
+)
+PUSH_DISTANCE_BINS_M = ((0.100, 0.125), (0.125, 0.150))
+PUSH_OBJECT_XY_M = ((-0.055, 0.025), (-0.055, 0.055))
+PUSH_TABLE_LIMIT_M = 0.250
 
 
 @dataclass(frozen=True)
@@ -229,6 +239,162 @@ def generate_pick_place_scenes(
         else:
             raise RuntimeError(f"Could not sample valid PickPlace scene {index}")
     return scenes
+
+
+def generate_push_scenes(split: str, count: int, seed: int) -> list[SceneSpec]:
+    """Generate deterministic forward-push scenes balanced by angle and distance.
+
+    The target, object geometry, and object appearance are carried in the scene
+    overrides so development and held-out manifests do not depend on the
+    simulator's implicit random state.
+    """
+
+    strata = len(PUSH_ANGLE_BINS_RAD) * len(PUSH_DISTANCE_BINS_M)
+    if count < 1 or count % strata:
+        raise ValueError(f"count must be positive and divisible by {strata} for Push balancing")
+    rng = np.random.default_rng(seed)
+    assignments = [(angle_bin, distance_bin) for angle_bin in range(len(PUSH_ANGLE_BINS_RAD)) for distance_bin in range(len(PUSH_DISTANCE_BINS_M))]
+    assignments *= count // strata
+    rng.shuffle(assignments)
+    scenes: list[SceneSpec] = []
+    for index, (angle_bin, distance_bin) in enumerate(assignments):
+        angle = float(rng.uniform(*PUSH_ANGLE_BINS_RAD[angle_bin]))
+        distance = float(rng.uniform(*PUSH_DISTANCE_BINS_M[distance_bin]))
+        for _attempt in range(1_000):
+            x_m = float(rng.uniform(*PUSH_OBJECT_XY_M[0]))
+            y_m = float(rng.uniform(*PUSH_OBJECT_XY_M[1]))
+            target_x_m = x_m + float(np.cos(angle) * distance)
+            target_y_m = y_m + float(np.sin(angle) * distance)
+            if abs(target_x_m) > PUSH_TABLE_LIMIT_M or abs(target_y_m) > PUSH_TABLE_LIMIT_M:
+                continue
+            dimensions = tuple(float(value) for value in rng.uniform(0.030, 0.060, size=3))
+            rgba = tuple(float(value) for value in rng.uniform(0.10, 0.90, size=3)) + (1.0,)
+            scenes.append(
+                SceneSpec(
+                    scene_id=f"{split}-{index:04d}",
+                    seed=seed + index,
+                    env_seed=seed + index,
+                    x_m=x_m,
+                    y_m=y_m,
+                    yaw_rad=0.0,
+                    overrides={
+                        "task": "push_block_to_red_circle",
+                        "target_x_m": target_x_m,
+                        "target_y_m": target_y_m,
+                        "target_angle_rad": angle,
+                        "target_distance_m": distance,
+                        "angle_bin": angle_bin,
+                        "distance_bin": distance_bin,
+                        "object_shape": "box",
+                        "object_dimensions_m": dimensions,
+                        "object_rgba": rgba,
+                    },
+                )
+            )
+            break
+        else:
+            raise RuntimeError(f"Could not sample valid Push scene {index}")
+    return scenes
+
+
+def attach_domain_randomization(
+    scenes: list[SceneSpec], *, tier_counts: dict[str, int], seed: int
+) -> list[SceneSpec]:
+    """Attach deterministic render/contact samples while preserving geometry.
+
+    ``tier_counts`` must account for every input scene exactly. The assignment
+    is shuffled once with ``seed`` so tiers cannot correlate with geometry
+    strata or source ordering.
+    """
+
+    if sum(tier_counts.values()) != len(scenes):
+        raise ValueError("tier_counts must sum to the number of scenes")
+    if any(count < 0 for count in tier_counts.values()):
+        raise ValueError("tier counts must be non-negative")
+    assignments = [tier for tier, count in tier_counts.items() for _ in range(count)]
+    rng = np.random.default_rng(seed)
+    rng.shuffle(assignments)
+    result: list[SceneSpec] = []
+    for index, (scene, tier) in enumerate(zip(scenes, assignments, strict=True)):
+        overrides = dict(scene.overrides)
+        overrides["domain_randomization"] = sample_domain_randomization(tier, seed + index).as_overrides()
+        result.append(
+            SceneSpec(
+                scene_id=scene.scene_id,
+                seed=scene.seed,
+                env_seed=scene.env_seed,
+                x_m=scene.x_m,
+                y_m=scene.y_m,
+                yaw_rad=scene.yaw_rad,
+                overrides=overrides,
+            )
+        )
+    return result
+
+
+def select_targeted_push_recovery_scenes(
+    scenes: list[SceneSpec], *, count: int
+) -> list[SceneSpec]:
+    """Select an interleaved hard Push subset without consulting evaluation outcomes.
+
+    The current development funnel shows that the deployment distribution is
+    weakest for the far-distance stratum under medium domain randomization,
+    especially in angle bins 1 and 4.  Collection uses fresh source seeds and
+    balances those two cells so replay corrects both sides of the workspace
+    instead of memorizing one direction.
+    """
+
+    if count < 2 or count % 2:
+        raise ValueError("count must be a positive even number")
+    groups: dict[int, list[SceneSpec]] = {1: [], 4: []}
+    for scene in scenes:
+        randomization = scene.overrides.get("domain_randomization", {})
+        angle_bin = int(scene.overrides.get("angle_bin", -1))
+        if (
+            randomization.get("tier") == "medium"
+            and int(scene.overrides.get("distance_bin", -1)) == 1
+            and angle_bin in groups
+        ):
+            groups[angle_bin].append(scene)
+    per_group = count // 2
+    if any(len(group) < per_group for group in groups.values()):
+        available = ", ".join(f"angle{key}={len(value)}" for key, value in groups.items())
+        raise ValueError(f"insufficient targeted Push scenes: {available}")
+    selected: list[SceneSpec] = []
+    for left, right in zip(groups[1][:per_group], groups[4][:per_group], strict=True):
+        selected.extend((left, right))
+    return selected
+
+
+def select_stratified_scenes(
+    scenes: list[SceneSpec],
+    *,
+    count: int,
+    stratum: Callable[[SceneSpec], Hashable],
+) -> list[SceneSpec]:
+    """Select a deterministic round-robin subset spanning every available stratum."""
+
+    if not 1 <= count <= len(scenes):
+        raise ValueError("count must be within the scene collection")
+    groups: dict[Hashable, list[SceneSpec]] = {}
+    for scene in scenes:
+        groups.setdefault(stratum(scene), []).append(scene)
+    ordered_keys = sorted(groups, key=repr)
+    selected: list[SceneSpec] = []
+    offset = 0
+    while len(selected) < count:
+        added = False
+        for key in ordered_keys:
+            group = groups[key]
+            if offset < len(group):
+                selected.append(group[offset])
+                added = True
+                if len(selected) == count:
+                    break
+        if not added:
+            raise ValueError("stratified selection exhausted scenes before reaching count")
+        offset += 1
+    return selected
 
 
 def generate_scenes(split: str, count: int, seed: int) -> list[SceneSpec]:

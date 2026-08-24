@@ -1,0 +1,3959 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "push_robust_development_nominal_v1",
+  "role": "development_nominal",
+  "generator_seed": 211000,
+  "environment_preset": "push_robust_v1",
+  "scenes": [
+    {
+      "scene_id": "push_robust_development_nominal_v1-0000",
+      "seed": 211000,
+      "x_m": -0.021185162540739315,
+      "y_m": -0.030034949429418575,
+      "yaw_rad": 0.0,
+      "env_seed": 211000,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1031332662878035,
+        "target_y_m": -0.06283662903558254,
+        "target_angle_rad": -0.2579728559606437,
+        "target_distance_m": 0.1285730217867765,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04781270375553086,
+          0.038458613536368015,
+          0.05839475943181248
+        ],
+        "object_rgba": [
+          0.5437011292234771,
+          0.5740488284434078,
+          0.8590060850125854,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261000,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0001",
+      "seed": 211001,
+      "x_m": -0.013547682837099007,
+      "y_m": 0.043601976427077575,
+      "yaw_rad": 0.0,
+      "env_seed": 211001,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12355833322237689,
+        "target_y_m": 0.07852936150393852,
+        "target_angle_rad": 0.24944167931529077,
+        "target_distance_m": 0.14148491745768732,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05887055611435303,
+          0.03577294916343063,
+          0.039908862228043206
+        ],
+        "object_rgba": [
+          0.22642782263116468,
+          0.8746778618191472,
+          0.8186698472522393,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261001,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0002",
+      "seed": 211002,
+      "x_m": 0.00399761912433215,
+      "y_m": -0.040414055846428515,
+      "yaw_rad": 0.0,
+      "env_seed": 211002,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10620354378022219,
+        "target_y_m": -0.029405519363554455,
+        "target_angle_rad": 0.10729572935214837,
+        "target_distance_m": 0.10279707637019762,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04095993928806008,
+          0.034802530801123374,
+          0.0376036503583758
+        ],
+        "object_rgba": [
+          0.6563043624311504,
+          0.8408278516482215,
+          0.2896196678197306,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261002,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0003",
+      "seed": 211003,
+      "x_m": -0.022739544861415772,
+      "y_m": -0.001153396888860292,
+      "yaw_rad": 0.0,
+      "env_seed": 211003,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11849970086782141,
+        "target_y_m": -0.027062856913421203,
+        "target_angle_rad": -0.1814266199445743,
+        "target_distance_m": 0.14359604678725724,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05937267851624797,
+          0.04603114996256267,
+          0.05341224254803935
+        ],
+        "object_rgba": [
+          0.48977344887947616,
+          0.24658237738248145,
+          0.6889284772191739,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261003,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0004",
+      "seed": 211004,
+      "x_m": -0.04662990137307804,
+      "y_m": 0.041858787532908386,
+      "yaw_rad": 0.0,
+      "env_seed": 211004,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.059956837631116075,
+        "target_y_m": 0.021419874868616764,
+        "target_angle_rad": -0.18945862297763477,
+        "target_distance_m": 0.1085287154740474,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05804581194510086,
+          0.03116070036433382,
+          0.03686316903145728
+        ],
+        "object_rgba": [
+          0.7821577109091671,
+          0.3223309956678392,
+          0.35482867494681714,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261004,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0005",
+      "seed": 211005,
+      "x_m": -0.0012338038115445038,
+      "y_m": 0.004593666228477636,
+      "yaw_rad": 0.0,
+      "env_seed": 211005,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11584457308517244,
+        "target_y_m": -0.005245630429688121,
+        "target_angle_rad": -0.08384323712239314,
+        "target_distance_m": 0.11749109794149129,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04756777811314504,
+          0.03398846545346669,
+          0.0579397039659175
+        ],
+        "object_rgba": [
+          0.44995996208195044,
+          0.19128598658794083,
+          0.43751272297448274,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261005,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0006",
+      "seed": 211006,
+      "x_m": -0.04861877506166345,
+      "y_m": -0.015581893624326715,
+      "yaw_rad": 0.0,
+      "env_seed": 211006,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.07552388242099134,
+        "target_y_m": 0.015310688518537553,
+        "target_angle_rad": 0.2438936041625872,
+        "target_distance_m": 0.12792869513252045,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.0588551294125661,
+          0.042983869125902685,
+          0.04814518774539006
+        ],
+        "object_rgba": [
+          0.34095612187420277,
+          0.32791373048410066,
+          0.7071526672963578,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261006,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0007",
+      "seed": 211007,
+      "x_m": -0.011371334055987073,
+      "y_m": 0.022863714704088163,
+      "yaw_rad": 0.0,
+      "env_seed": 211007,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.13278161380590597,
+        "target_y_m": 0.0280677872037493,
+        "target_angle_rad": 0.03608537699258468,
+        "target_distance_m": 0.14424685351110914,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.055651533248518084,
+          0.054884103162598175,
+          0.04963954464213639
+        ],
+        "object_rgba": [
+          0.8965007637557098,
+          0.18487367119631637,
+          0.23766343403176793,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261007,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0008",
+      "seed": 211008,
+      "x_m": -0.030356448294145758,
+      "y_m": -0.05263850517380813,
+      "yaw_rad": 0.0,
+      "env_seed": 211008,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.07297514706269001,
+        "target_y_m": -0.059892118870861336,
+        "target_angle_rad": -0.07008247842444437,
+        "target_distance_m": 0.10358587505376841,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04931578612505064,
+          0.049897099409504764,
+          0.05482399471690916
+        ],
+        "object_rgba": [
+          0.874185351700755,
+          0.5232729104250087,
+          0.8895530970371566,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261008,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0009",
+      "seed": 211009,
+      "x_m": 0.012303595171554764,
+      "y_m": 0.04477866117320611,
+      "yaw_rad": 0.0,
+      "env_seed": 211009,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.15113884999185143,
+        "target_y_m": 0.05312755096930827,
+        "target_angle_rad": 0.06006289762430199,
+        "target_distance_m": 0.13908605948061137,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.0556382636823312,
+          0.041754241954849,
+          0.05663679248572678
+        ],
+        "object_rgba": [
+          0.5883203857381186,
+          0.33195366411056765,
+          0.8778550847889032,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261009,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0010",
+      "seed": 211010,
+      "x_m": 0.0006539244970855673,
+      "y_m": -0.028827504538334853,
+      "yaw_rad": 0.0,
+      "env_seed": 211010,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1020113449302275,
+        "target_y_m": -0.05090498966009377,
+        "target_angle_rad": -0.214468224635405,
+        "target_distance_m": 0.10373399648216675,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05674559716937073,
+          0.04504846096023942,
+          0.04179079767409627
+        ],
+        "object_rgba": [
+          0.4452526315377425,
+          0.7052203530854403,
+          0.6677874276933656,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261010,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0011",
+      "seed": 211011,
+      "x_m": -0.02588031943392916,
+      "y_m": 0.0059333498500644885,
+      "yaw_rad": 0.0,
+      "env_seed": 211011,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10432098852161029,
+        "target_y_m": -0.004492190894318203,
+        "target_angle_rad": -0.07990199763753629,
+        "target_distance_m": 0.1306180404582231,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05323319028031846,
+          0.056422225143858154,
+          0.039398199250536406
+        ],
+        "object_rgba": [
+          0.4385190160420994,
+          0.7319074336326906,
+          0.6037604002387087,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261011,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0012",
+      "seed": 211012,
+      "x_m": -0.049506311528193514,
+      "y_m": -0.05396509793863908,
+      "yaw_rad": 0.0,
+      "env_seed": 211012,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.09101516047527261,
+        "target_y_m": -0.07455197047750685,
+        "target_angle_rad": -0.14546854209984209,
+        "target_distance_m": 0.1420214892717032,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03820151768731185,
+          0.050000531788731595,
+          0.03056550475810539
+        ],
+        "object_rgba": [
+          0.8138541544560239,
+          0.33080181332398545,
+          0.43795306143777535,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261012,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0013",
+      "seed": 211013,
+      "x_m": 0.003214050049714187,
+      "y_m": 0.0345611559507081,
+      "yaw_rad": 0.0,
+      "env_seed": 211013,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10229849434065069,
+        "target_y_m": 0.05872209617592514,
+        "target_angle_rad": 0.23917446948419543,
+        "target_distance_m": 0.10198763715769775,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.037060391625001646,
+          0.05793563259631952,
+          0.03931476798316957
+        ],
+        "object_rgba": [
+          0.5672847645587137,
+          0.38735991119790314,
+          0.3056441195031095,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261013,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0014",
+      "seed": 211014,
+      "x_m": -0.020493242548627118,
+      "y_m": 0.04768314517395877,
+      "yaw_rad": 0.0,
+      "env_seed": 211014,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.0933776621095253,
+        "target_y_m": 0.06170195323576652,
+        "target_angle_rad": 0.12249503331982985,
+        "target_distance_m": 0.11473059708351495,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.0321286562156613,
+          0.03266897558846215,
+          0.03958232990118134
+        ],
+        "object_rgba": [
+          0.8404636621031355,
+          0.8550428461677326,
+          0.3900377607737896,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261014,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0015",
+      "seed": 211015,
+      "x_m": -0.020928875350296285,
+      "y_m": -0.0355704731019345,
+      "yaw_rad": 0.0,
+      "env_seed": 211015,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12542603394763124,
+        "target_y_m": -0.04888428235165959,
+        "target_angle_rad": -0.09071964039482926,
+        "target_distance_m": 0.14695923581844952,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03481742650113426,
+          0.039626945845850574,
+          0.042265822349439985
+        ],
+        "object_rgba": [
+          0.4237827786589018,
+          0.22891009411238716,
+          0.2644991795501347,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261015,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0016",
+      "seed": 211016,
+      "x_m": -0.03637318413460014,
+      "y_m": -0.008293220627911789,
+      "yaw_rad": 0.0,
+      "env_seed": 211016,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.08559281807144402,
+        "target_y_m": -0.007514454589298043,
+        "target_angle_rad": 0.0063850207554633776,
+        "target_distance_m": 0.1219684884331509,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03599227016496418,
+          0.0559253007182789,
+          0.03736128599606811
+        ],
+        "object_rgba": [
+          0.8982297641843013,
+          0.5322115989915609,
+          0.5896575913302202,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261016,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0017",
+      "seed": 211017,
+      "x_m": -0.042676348455296366,
+      "y_m": 0.034378985009956294,
+      "yaw_rad": 0.0,
+      "env_seed": 211017,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.0638082214881602,
+        "target_y_m": 0.04481840151298898,
+        "target_angle_rad": 0.09772460783852385,
+        "target_distance_m": 0.106995070227402,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.059412289180148986,
+          0.038941803152291274,
+          0.040386414991695437
+        ],
+        "object_rgba": [
+          0.3373621891598491,
+          0.620255007206672,
+          0.5956358392553461,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261017,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0018",
+      "seed": 211018,
+      "x_m": -0.03370008473887663,
+      "y_m": -0.04990257054670949,
+      "yaw_rad": 0.0,
+      "env_seed": 211018,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.08104390600742176,
+        "target_y_m": -0.06537866303437238,
+        "target_angle_rad": -0.13406593532797095,
+        "target_distance_m": 0.11578295578829081,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.037056105575046766,
+          0.04091318946663121,
+          0.05919830779365515
+        ],
+        "object_rgba": [
+          0.3836582982168707,
+          0.8224557464332438,
+          0.4767811513538581,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261018,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0019",
+      "seed": 211019,
+      "x_m": -0.0230722517286999,
+      "y_m": -0.034853577903754165,
+      "yaw_rad": 0.0,
+      "env_seed": 211019,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12565549612135962,
+        "target_y_m": -0.02318146485221355,
+        "target_angle_rad": 0.07831919917787243,
+        "target_distance_m": 0.1491850569046338,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05373387160604928,
+          0.03180540192126852,
+          0.045868039455529475
+        ],
+        "object_rgba": [
+          0.7375056775538285,
+          0.16733595302190354,
+          0.13533015116454294,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261019,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0020",
+      "seed": 211020,
+      "x_m": -0.004632594682135824,
+      "y_m": -0.042992511093573264,
+      "yaw_rad": 0.0,
+      "env_seed": 211020,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11086797567007457,
+        "target_y_m": -0.01222006613016223,
+        "target_angle_rad": 0.26037841711724097,
+        "target_distance_m": 0.11952959934975128,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.048550593803645715,
+          0.033869615572036244,
+          0.04992048169676562
+        ],
+        "object_rgba": [
+          0.5593909712031293,
+          0.34472438906958613,
+          0.7648881717527057,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261020,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0021",
+      "seed": 211021,
+      "x_m": -0.03262015641190536,
+      "y_m": 0.03875836661254075,
+      "yaw_rad": 0.0,
+      "env_seed": 211021,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.09081469162201433,
+        "target_y_m": 0.009095137666620356,
+        "target_angle_rad": -0.23584267676840082,
+        "target_distance_m": 0.1269490797944394,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05493112713972548,
+          0.05042829637927684,
+          0.03899858439149852
+        ],
+        "object_rgba": [
+          0.7896730573050951,
+          0.8628640155434212,
+          0.897123183158261,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261021,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0022",
+      "seed": 211022,
+      "x_m": -0.04339543200669315,
+      "y_m": 0.010711880599478855,
+      "yaw_rad": 0.0,
+      "env_seed": 211022,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.08140625594688644,
+        "target_y_m": 0.013514548651285067,
+        "target_angle_rad": 0.02245319832758419,
+        "target_distance_m": 0.12483315370634225,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05582299014635398,
+          0.05774073017532076,
+          0.04487250291028685
+        ],
+        "object_rgba": [
+          0.15099680567366472,
+          0.7480808614939146,
+          0.33945232136651377,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261022,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0023",
+      "seed": 211023,
+      "x_m": 0.021349522795783928,
+      "y_m": 0.04799370589717406,
+      "yaw_rad": 0.0,
+      "env_seed": 211023,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1212648845396338,
+        "target_y_m": 0.04327049972270906,
+        "target_angle_rad": -0.047236906979374646,
+        "target_distance_m": 0.10002693731675924,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05208832140089095,
+          0.03284681685289842,
+          0.041962199132319716
+        ],
+        "object_rgba": [
+          0.4770213954381405,
+          0.5494423573397839,
+          0.6814682359405535,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261023,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0024",
+      "seed": 211024,
+      "x_m": -0.014754052480380093,
+      "y_m": -0.01710265644898601,
+      "yaw_rad": 0.0,
+      "env_seed": 211024,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.13375748404957,
+        "target_y_m": -0.02673764427938205,
+        "target_angle_rad": -0.06478623889528269,
+        "target_distance_m": 0.14882375305366605,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05392099423507257,
+          0.031969863639203525,
+          0.05887405174703371
+        ],
+        "object_rgba": [
+          0.6064297237205889,
+          0.6195638875286297,
+          0.5639633674951988,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261024,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0025",
+      "seed": 211025,
+      "x_m": -0.004647239500541862,
+      "y_m": -0.02745756624397587,
+      "yaw_rad": 0.0,
+      "env_seed": 211025,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12302748579549913,
+        "target_y_m": -0.010417685258637364,
+        "target_angle_rad": 0.13267915599090024,
+        "target_distance_m": 0.12880680503534753,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.033178044211586544,
+          0.03154724567709191,
+          0.05676762037607023
+        ],
+        "object_rgba": [
+          0.29126211019415493,
+          0.13851775135100697,
+          0.8496324329251708,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261025,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0026",
+      "seed": 211026,
+      "x_m": -0.04806451539869957,
+      "y_m": -0.03977889802431926,
+      "yaw_rad": 0.0,
+      "env_seed": 211026,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.07074236434070216,
+        "target_y_m": -0.017702755976335686,
+        "target_angle_rad": 0.1837200200770185,
+        "target_distance_m": 0.12084051771295676,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05042074075646072,
+          0.037444402245060154,
+          0.054726046303508705
+        ],
+        "object_rgba": [
+          0.8899157132460438,
+          0.13820934977167046,
+          0.42971746276629186,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261026,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0027",
+      "seed": 211027,
+      "x_m": -0.0019804362666435704,
+      "y_m": -0.04719660106116106,
+      "yaw_rad": 0.0,
+      "env_seed": 211027,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12276520987320458,
+        "target_y_m": -0.07808461215837692,
+        "target_angle_rad": -0.24272603816170735,
+        "target_distance_m": 0.12851282216335436,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04684255692346759,
+          0.04448127962504445,
+          0.059946462972574124
+        ],
+        "object_rgba": [
+          0.610928659103387,
+          0.5940656891200699,
+          0.6238496960881166,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261027,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0028",
+      "seed": 211028,
+      "x_m": -0.036461438803643956,
+      "y_m": -0.05278502344389562,
+      "yaw_rad": 0.0,
+      "env_seed": 211028,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10468327973012785,
+        "target_y_m": -0.02563774856816176,
+        "target_angle_rad": 0.19001602517436444,
+        "target_distance_m": 0.14373171571770899,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04974076910706913,
+          0.053682144405053756,
+          0.05177818431775516
+        ],
+        "object_rgba": [
+          0.18806593507871378,
+          0.8190953872483941,
+          0.29980503706800576,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261028,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0029",
+      "seed": 211029,
+      "x_m": 0.020729169226248935,
+      "y_m": 0.015888059151092378,
+      "yaw_rad": 0.0,
+      "env_seed": 211029,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.15840492136804407,
+        "target_y_m": 0.01146666244336485,
+        "target_angle_rad": -0.03210353009470901,
+        "target_distance_m": 0.13774672945901878,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05217135620907556,
+          0.05192659531784818,
+          0.051323571152328766
+        ],
+        "object_rgba": [
+          0.7971439942809252,
+          0.5829334453034343,
+          0.4830354300222144,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261029,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0030",
+      "seed": 211030,
+      "x_m": -0.0047084645645729395,
+      "y_m": 0.044989146467603165,
+      "yaw_rad": 0.0,
+      "env_seed": 211030,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12362764248441671,
+        "target_y_m": 0.040616877477280974,
+        "target_angle_rad": -0.034055720190267244,
+        "target_distance_m": 0.1284105646300703,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.039653560509643436,
+          0.05842049073614584,
+          0.05590132878812899
+        ],
+        "object_rgba": [
+          0.7002435756951332,
+          0.8181871755974409,
+          0.615230601958576,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261030,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0031",
+      "seed": 211031,
+      "x_m": -0.01977442249721552,
+      "y_m": 0.009763356227424184,
+      "yaw_rad": 0.0,
+      "env_seed": 211031,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.08956560872066217,
+        "target_y_m": 0.027490123968455345,
+        "target_angle_rad": 0.16072666572458325,
+        "target_distance_m": 0.11076768807405403,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05755567489622517,
+          0.04402236956373319,
+          0.03637165280983031
+        ],
+        "object_rgba": [
+          0.22953137305488971,
+          0.8593590030120937,
+          0.2171585383158079,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261031,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0032",
+      "seed": 211032,
+      "x_m": 0.0020378748108846184,
+      "y_m": -0.04706631972815412,
+      "yaw_rad": 0.0,
+      "env_seed": 211032,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10966210176818614,
+        "target_y_m": -0.060686711211444096,
+        "target_angle_rad": -0.12588584535180838,
+        "target_distance_m": 0.10848266816554072,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03395721579038659,
+          0.049442053269768166,
+          0.054417143240113736
+        ],
+        "object_rgba": [
+          0.1707485290088579,
+          0.6331750781071043,
+          0.6145721363748886,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261032,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0033",
+      "seed": 211033,
+      "x_m": -0.0337833296071781,
+      "y_m": -0.05161757331306252,
+      "yaw_rad": 0.0,
+      "env_seed": 211033,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11241769198426942,
+        "target_y_m": -0.06199052712715991,
+        "target_angle_rad": -0.07083124750505757,
+        "target_distance_m": 0.14656853988906454,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04786902548908327,
+          0.03979638079530595,
+          0.04322376430195567
+        ],
+        "object_rgba": [
+          0.25219581770816957,
+          0.36137436996943706,
+          0.2632807946822167,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261033,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0034",
+      "seed": 211034,
+      "x_m": -0.0014380217802347495,
+      "y_m": -0.05294616505041477,
+      "yaw_rad": 0.0,
+      "env_seed": 211034,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10993247285604169,
+        "target_y_m": -0.05849901222450493,
+        "target_angle_rad": -0.04981797638273495,
+        "target_distance_m": 0.11150883905443407,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04408525074589928,
+          0.05109055814845589,
+          0.039740559827038724
+        ],
+        "object_rgba": [
+          0.8969649557692803,
+          0.4133958836498224,
+          0.594557145905182,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261034,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0035",
+      "seed": 211035,
+      "x_m": 0.024268875875526695,
+      "y_m": -0.02735321566493628,
+      "yaw_rad": 0.0,
+      "env_seed": 211035,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1609754516530692,
+        "target_y_m": -0.0632417166057622,
+        "target_angle_rad": -0.2567290301867514,
+        "target_distance_m": 0.14133885651370126,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03355017799250018,
+          0.03434478591679561,
+          0.054558219290120405
+        ],
+        "object_rgba": [
+          0.6154787054146394,
+          0.3346629743072376,
+          0.8354058123040401,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261035,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0036",
+      "seed": 211036,
+      "x_m": -0.01850432714517046,
+      "y_m": -0.029368170843373474,
+      "yaw_rad": 0.0,
+      "env_seed": 211036,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10743709396251223,
+        "target_y_m": -0.029569513001934895,
+        "target_angle_rad": -0.0015986955304983022,
+        "target_distance_m": 0.12594158205012146,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04182297421108696,
+          0.05863930593372185,
+          0.046207149059337795
+        ],
+        "object_rgba": [
+          0.6631977160658871,
+          0.6083553637363703,
+          0.3175325723217044,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261036,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0037",
+      "seed": 211037,
+      "x_m": -0.01797207252590776,
+      "y_m": -0.010433503855227101,
+      "yaw_rad": 0.0,
+      "env_seed": 211037,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10321054289557038,
+        "target_y_m": -0.03973718701661707,
+        "target_angle_rad": -0.23725971291640235,
+        "target_distance_m": 0.12467530680617153,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.041217774517137436,
+          0.0358756440863843,
+          0.042678812329912975
+        ],
+        "object_rgba": [
+          0.37130797247811065,
+          0.5621888116227179,
+          0.5711324386866203,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261037,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0038",
+      "seed": 211038,
+      "x_m": -0.006556628075306131,
+      "y_m": -0.05433253843081499,
+      "yaw_rad": 0.0,
+      "env_seed": 211038,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10696124704475549,
+        "target_y_m": -0.04856369487298532,
+        "target_angle_rad": 0.050775132291280806,
+        "target_distance_m": 0.1136643634907996,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.0498929420302714,
+          0.05602673341086627,
+          0.056482606686808795
+        ],
+        "object_rgba": [
+          0.2386094547265831,
+          0.5457085159840785,
+          0.5092714043909088,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261038,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0039",
+      "seed": 211039,
+      "x_m": -0.03866524558365647,
+      "y_m": 0.04715958579699674,
+      "yaw_rad": 0.0,
+      "env_seed": 211039,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10006854509351593,
+        "target_y_m": 0.04243040827200209,
+        "target_angle_rad": -0.034074950358863196,
+        "target_distance_m": 0.13881437171892685,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05395331042085348,
+          0.03890702872004008,
+          0.05398617467423718
+        ],
+        "object_rgba": [
+          0.7249067890398092,
+          0.32788109354756606,
+          0.2345153939802377,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261039,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0040",
+      "seed": 211040,
+      "x_m": 0.01627985398502369,
+      "y_m": 0.026034386408689512,
+      "yaw_rad": 0.0,
+      "env_seed": 211040,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11960661909333284,
+        "target_y_m": 0.04382809615179664,
+        "target_angle_rad": 0.1705354856542743,
+        "target_distance_m": 0.10484768235001496,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.059643645656804106,
+          0.04092904609678795,
+          0.04946210513942593
+        ],
+        "object_rgba": [
+          0.1741447761080428,
+          0.5154602579658486,
+          0.8363749530003172,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261040,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0041",
+      "seed": 211041,
+      "x_m": 0.009295533614886824,
+      "y_m": -0.030390151645014626,
+      "yaw_rad": 0.0,
+      "env_seed": 211041,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11795343589585558,
+        "target_y_m": -0.036896333316078944,
+        "target_angle_rad": -0.059806259878484674,
+        "target_distance_m": 0.10885251548787217,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04466372964587711,
+          0.03709430999064399,
+          0.047952641229612035
+        ],
+        "object_rgba": [
+          0.18647886855762633,
+          0.6543620989692371,
+          0.7467018137921916,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261041,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0042",
+      "seed": 211042,
+      "x_m": 0.0015620210298111226,
+      "y_m": 0.04365870054243289,
+      "yaw_rad": 0.0,
+      "env_seed": 211042,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1483856815219941,
+        "target_y_m": 0.06757759250665116,
+        "target_angle_rad": 0.16149033158052598,
+        "target_distance_m": 0.14875920365852918,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05949347054985389,
+          0.05047512815202242,
+          0.03657085221443329
+        ],
+        "object_rgba": [
+          0.10751824384917469,
+          0.33771108601755584,
+          0.19091130862036412,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261042,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0043",
+      "seed": 211043,
+      "x_m": -0.030925218565637378,
+      "y_m": -0.01283575312750554,
+      "yaw_rad": 0.0,
+      "env_seed": 211043,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.09304874515872803,
+        "target_y_m": 0.0075373566570409375,
+        "target_angle_rad": 0.16287798430051748,
+        "target_distance_m": 0.12563680704245653,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03379749720763212,
+          0.05224088555719068,
+          0.05766949351387444
+        ],
+        "object_rgba": [
+          0.3778967228553075,
+          0.745723768202231,
+          0.7519363383411005,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261043,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0044",
+      "seed": 211044,
+      "x_m": -0.04215823285573045,
+      "y_m": 0.027646949991669535,
+      "yaw_rad": 0.0,
+      "env_seed": 211044,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.06727612722689286,
+        "target_y_m": 0.006750361257180697,
+        "target_angle_rad": -0.18867954762383204,
+        "target_distance_m": 0.11141160885397725,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.050472185987903574,
+          0.03329664721968312,
+          0.04617705029953942
+        ],
+        "object_rgba": [
+          0.28383702436078184,
+          0.7257971026095061,
+          0.13741154530428884,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261044,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0045",
+      "seed": 211045,
+      "x_m": -0.015507063467030416,
+      "y_m": -0.014162431252285654,
+      "yaw_rad": 0.0,
+      "env_seed": 211045,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10416699981737072,
+        "target_y_m": -0.007673468004337539,
+        "target_angle_rad": 0.05416892376758649,
+        "target_distance_m": 0.11984985634965138,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05728834633297676,
+          0.03765784009262883,
+          0.031635113699312274
+        ],
+        "object_rgba": [
+          0.8799552650697327,
+          0.6874860941327793,
+          0.7019903764452792,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261045,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0046",
+      "seed": 211046,
+      "x_m": -0.015022670053235591,
+      "y_m": 0.03585840470451052,
+      "yaw_rad": 0.0,
+      "env_seed": 211046,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11897037240129027,
+        "target_y_m": 0.043503028750254594,
+        "target_angle_rad": 0.05699061467339988,
+        "target_distance_m": 0.13421093734499115,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05688535171634895,
+          0.047635799810385814,
+          0.04569938219014498
+        ],
+        "object_rgba": [
+          0.6877862050921709,
+          0.6943976566627335,
+          0.4208273653699849,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261046,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0047",
+      "seed": 211047,
+      "x_m": -0.04644920395527316,
+      "y_m": 0.027441079561611174,
+      "yaw_rad": 0.0,
+      "env_seed": 211047,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.07431548338194648,
+        "target_y_m": -0.0038916587396997104,
+        "target_angle_rad": -0.25385545452088165,
+        "target_distance_m": 0.12476317644687815,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.053771383118772234,
+          0.050022955245918314,
+          0.05021733444186759
+        ],
+        "object_rgba": [
+          0.8566181731109229,
+          0.14270217976847255,
+          0.3517459997596504,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261047,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0048",
+      "seed": 211048,
+      "x_m": -0.04043160355026466,
+      "y_m": 0.05418007146481311,
+      "yaw_rad": 0.0,
+      "env_seed": 211048,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.06276107838898415,
+        "target_y_m": 0.06988114906107167,
+        "target_angle_rad": 0.15099491697403264,
+        "target_distance_m": 0.10438033073093177,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05977182804177519,
+          0.03247454485618919,
+          0.058456522374689054
+        ],
+        "object_rgba": [
+          0.7264836146887733,
+          0.7384569233178314,
+          0.587869600372425,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261048,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "push_robust_development_nominal_v1-0049",
+      "seed": 211049,
+      "x_m": -0.0012886527991630356,
+      "y_m": -0.02112477300502081,
+      "yaw_rad": 0.0,
+      "env_seed": 211049,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.14193828795157543,
+        "target_y_m": -0.0032209227845806307,
+        "target_angle_rad": 0.12435831236793192,
+        "target_distance_m": 0.14434162396734873,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.030309207033316125,
+          0.03751589878451098,
+          0.053533530272695244
+        ],
+        "object_rgba": [
+          0.4089891481325083,
+          0.24680363361321467,
+          0.36711355275356206,
+          1.0
+        ],
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 261049,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    }
+  ]
+}

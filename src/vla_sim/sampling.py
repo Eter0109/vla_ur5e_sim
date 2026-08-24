@@ -34,7 +34,14 @@ class ReplayMixDataset(torch.utils.data.Dataset):
         self.auxiliary_sample_weight = float(auxiliary_sample_weight)
         self._vla_replay_mixed = True
         self.base_length = len(base)
-        self.hf_dataset = concatenate_datasets([base.hf_dataset, auxiliary.hf_dataset])
+        # The Windows large-image path uses a lightweight lazy parquet view,
+        # not a Hugging Face ``Dataset``. Training consumes this wrapper via
+        # ``__len__`` / ``__getitem__``; retaining the base view for metadata
+        # avoids forcing either source through an eager concatenation.
+        try:
+            self.hf_dataset = concatenate_datasets([base.hf_dataset, auxiliary.hf_dataset])
+        except ValueError:
+            self.hf_dataset = base.hf_dataset
         self.sampling_multipliers = torch.cat(
             (
                 torch.ones(self.base_length, dtype=torch.double),
@@ -84,7 +91,10 @@ class ReplayMultiMixDataset(torch.utils.data.Dataset):
         self.source_lengths = tuple(len(source) for source in self.sources)
         self.base_length = self.source_lengths[0]
         self.source_ends = tuple(torch.as_tensor(self.source_lengths).cumsum(0).tolist())
-        self.hf_dataset = concatenate_datasets([source.hf_dataset for source in self.sources])
+        try:
+            self.hf_dataset = concatenate_datasets([source.hf_dataset for source in self.sources])
+        except ValueError:
+            self.hf_dataset = base.hf_dataset
         self.sampling_multipliers = torch.cat(
             (
                 torch.ones(self.source_lengths[0], dtype=torch.double),
@@ -133,6 +143,38 @@ class GlobalTaskPromptDataset(torch.utils.data.Dataset):
 
     def __getattr__(self, name: str):
         return getattr(self.dataset, name)
+
+
+def apply_replay_task_prompts(
+    base,
+    auxiliaries: list,
+    *,
+    base_prompt: str = "",
+    auxiliary_prompts: list[str] | None = None,
+):
+    """Relabel replay sources while allowing a multitask base to keep its prompts.
+
+    A multitask base already contains the correct task-level language per
+    sample, whereas older correction datasets can contain phase prompts.  The
+    auxiliary sources therefore need independent task-level relabeling without
+    collapsing all base samples to one task.
+    """
+
+    prompts = [] if auxiliary_prompts is None else auxiliary_prompts
+    if prompts and len(prompts) != len(auxiliaries):
+        raise ValueError("one auxiliary task prompt is required per auxiliary dataset")
+    if any(not prompt.strip() for prompt in prompts):
+        raise ValueError("auxiliary task prompts must not be empty")
+    prompted_base = GlobalTaskPromptDataset(base, base_prompt) if base_prompt.strip() else base
+    prompted_auxiliaries = (
+        [
+            GlobalTaskPromptDataset(source, prompt)
+            for source, prompt in zip(auxiliaries, prompts, strict=True)
+        ]
+        if prompts
+        else auxiliaries
+    )
+    return prompted_base, prompted_auxiliaries
 
 
 class PhaseActionMaskedDataset(torch.utils.data.Dataset):

@@ -45,6 +45,11 @@ def configure_runtime_directories() -> Path:
     os.environ["TEMP"] = str(temp_dir)
     os.environ["TMP"] = str(temp_dir)
     os.environ["NUMBA_CACHE_DIR"] = str(numba_dir)
+    # On this Windows runtime, robosuite's import-time Numba compilation can
+    # block indefinitely on a stale cache lock. Keep the safe interpreter path
+    # as the default; callers with a healthy cache may opt back in explicitly.
+    if os.environ.get("VLA_SIM_NUMBA_DISABLE_JIT", "1") == "1":
+        os.environ.setdefault("NUMBA_DISABLE_JIT", "1")
     return runtime_root
 
 

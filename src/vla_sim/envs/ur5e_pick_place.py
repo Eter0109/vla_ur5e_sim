@@ -15,6 +15,12 @@ from vla_sim.contracts import (
     DEFAULT_ACTION_SPEC,
     PickPlaceObservationAdapter,
 )
+from vla_sim.domain_randomization import (
+    DomainRandomizationSample,
+    apply_domain_randomization,
+    capture_render_baseline,
+    policy_observation_randomized,
+)
 from vla_sim.scenes import SceneSpec
 from vla_sim.sim.dependencies import require_robosuite
 
@@ -226,6 +232,9 @@ class UR5ePickPlaceEnv:
         self._success_hold_count = 0
         self._ever_grasped = False
         self._ever_lifted = False
+        self._render_baseline = capture_render_baseline(backend)
+        self._randomization_sample: DomainRandomizationSample | None = None
+        self._visual_step = 0
         self._validate_backend_action_space()
 
     @classmethod
@@ -257,6 +266,20 @@ class UR5ePickPlaceEnv:
             self._apply_cube_scene(scene, raw)
         table_z = float(np.asarray(self.backend.table_offset, dtype=np.float64)[2])
         self._set_target(target_x, target_y, table_z)
+        randomization = scene.overrides.get("domain_randomization") if scene else None
+        self._randomization_sample = (
+            DomainRandomizationSample.from_mapping(randomization)
+            if isinstance(randomization, Mapping)
+            else None
+        )
+        apply_domain_randomization(
+            self.backend,
+            self._render_baseline,
+            self._randomization_sample,
+            front_camera_name=self.config.camera.third_person.name,
+            front_look_at_m=self.config.camera.third_person_look_at_m,
+            wrist_camera_name=self.config.camera.wrist_name,
+        )
         refreshed = self.backend._get_observations(force_update=True)
         self._raw_observation = self._with_target(refreshed)
         cube = self._cube_position()
@@ -264,7 +287,8 @@ class UR5ePickPlaceEnv:
         self._success_hold_count = 0
         self._ever_grasped = False
         self._ever_lifted = False
-        return self._observation_adapter.convert(self._raw_observation), {"success": False}
+        self._visual_step = 0
+        return self._policy_observation(self._raw_observation), {"success": False}
 
     def _reset_robot_pose(self) -> None:
         """Restore robot joints and controller goals between independent episodes."""
@@ -331,7 +355,12 @@ class UR5ePickPlaceEnv:
             "target_xy_error_m": conditions["xy_error_m"],
         })
         terminated = bool(success and self.config.terminate_on_success)
-        return self._observation_adapter.convert(self._raw_observation), float(reward), terminated, bool(done and not terminated), info
+        self._visual_step += 1
+        return self._policy_observation(self._raw_observation), float(reward), terminated, bool(done and not terminated), info
+
+    def _policy_observation(self, raw: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
+        observation = self._observation_adapter.convert(raw)
+        return policy_observation_randomized(observation, self._randomization_sample, self._visual_step)
 
     def _check_success(self) -> tuple[bool, dict[str, Any]]:
         cube = self._cube_position()

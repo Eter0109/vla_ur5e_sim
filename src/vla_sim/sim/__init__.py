@@ -11,7 +11,7 @@ from .contracts import (
     validate_observation,
 )
 from .dependencies import RobosuiteUnavailableError, require_robosuite
-from .expert import HeuristicExpertConfig, HeuristicLiftExpert, LiftPhase, HeuristicStackExpert, StackPhase, HeuristicPickPlaceExpert, PickPlacePhase
+from .expert import HeuristicExpertConfig, HeuristicLiftExpert, LiftPhase, HeuristicStackExpert, StackPhase, HeuristicPickPlaceExpert, PickPlacePhase, HeuristicPushExpert, PushPhase
 from vla_sim.stack_control import (
     ColorDepthObjectPoseProvider,
     ObjectPoseEstimate,
@@ -34,6 +34,8 @@ __all__ = [
     "StackPhase",
     "HeuristicPickPlaceExpert",
     "PickPlacePhase",
+    "HeuristicPushExpert",
+    "PushPhase",
     "ObservationAdapter",
     "RobosuiteUnavailableError",
     "require_robosuite",

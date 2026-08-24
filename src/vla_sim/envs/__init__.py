@@ -19,6 +19,11 @@ from .ur5e_pick_place import (
     UR5ePickPlaceEnv,
     make_ur5e_pick_place,
 )
+from .ur5e_push import (
+    UR5ePushConfig,
+    UR5ePushEnv,
+    make_ur5e_push,
+)
 
 __all__ = [
     "CameraConfig",
@@ -35,4 +40,7 @@ __all__ = [
     "UR5ePickPlaceConfig",
     "UR5ePickPlaceEnv",
     "make_ur5e_pick_place",
+    "UR5ePushConfig",
+    "UR5ePushEnv",
+    "make_ur5e_push",
 ]

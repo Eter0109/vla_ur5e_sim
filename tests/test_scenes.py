@@ -3,13 +3,19 @@ from __future__ import annotations
 import math
 
 from vla_sim.scenes import (
+    PUSH_ANGLE_BINS_RAD,
+    PUSH_DISTANCE_BINS_M,
     STACK_DISTANCE_BINS_M,
     SceneSpec,
+    attach_domain_randomization,
+    generate_push_scenes,
     generate_stack_scenes,
     load_manifest,
     load_manifest_metadata,
     oriented_rectangles_overlap,
     save_manifest,
+    select_stratified_scenes,
+    select_targeted_push_recovery_scenes,
 )
 
 
@@ -89,3 +95,53 @@ def test_collection_first_round_has_400_scenes_per_cell() -> None:
         for distance_bin in range(3)
     }
     assert set(counts.values()) == {400}
+
+
+def test_targeted_push_recovery_selection_balances_fresh_hard_cells() -> None:
+    pool = attach_domain_randomization(
+        generate_push_scenes("targeted_pool", 6000, 410_000),
+        tier_counts={"light": 1200, "medium": 4800},
+        seed=460_000,
+    )
+    selected = select_targeted_push_recovery_scenes(pool, count=900)
+
+    assert len(selected) == 900
+    assert [scene.overrides["angle_bin"] for scene in selected[::2]] == [1] * 450
+    assert [scene.overrides["angle_bin"] for scene in selected[1::2]] == [4] * 450
+    assert {scene.overrides["distance_bin"] for scene in selected} == {1}
+    assert {scene.overrides["domain_randomization"]["tier"] for scene in selected} == {
+        "medium"
+    }
+    assert all(
+        PUSH_ANGLE_BINS_RAD[int(scene.overrides["angle_bin"])][0]
+        <= float(scene.overrides["target_angle_rad"])
+        <= PUSH_ANGLE_BINS_RAD[int(scene.overrides["angle_bin"])][1]
+        for scene in selected
+    )
+    assert all(
+        PUSH_DISTANCE_BINS_M[1][0]
+        <= float(scene.overrides["target_distance_m"])
+        <= PUSH_DISTANCE_BINS_M[1][1]
+        for scene in selected
+    )
+
+
+def test_stratified_scene_selection_round_robins_groups_deterministically() -> None:
+    scenes = [
+        SceneSpec(f"scene-{index}", index, 0.0, 0.0, 0.0, overrides={"group": index % 3})
+        for index in range(12)
+    ]
+
+    selected = select_stratified_scenes(
+        scenes, count=7, stratum=lambda scene: scene.overrides["group"]
+    )
+
+    assert [scene.scene_id for scene in selected] == [
+        "scene-0",
+        "scene-1",
+        "scene-2",
+        "scene-3",
+        "scene-4",
+        "scene-5",
+        "scene-6",
+    ]

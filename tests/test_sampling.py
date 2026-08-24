@@ -9,6 +9,7 @@ from vla_sim.sampling import (
     PhaseActionMaskedDataset,
     ReplayMixDataset,
     ReplayMultiMixDataset,
+    apply_replay_task_prompts,
     phase_action_pad_mask,
     phase_chunk_safe_mask,
     phase_groups_from_indices,
@@ -92,6 +93,30 @@ def test_global_task_prompt_dataset_relabels_text_without_changing_actions() -> 
 def test_global_task_prompt_dataset_rejects_empty_prompt() -> None:
     with pytest.raises(ValueError, match="must not be empty"):
         GlobalTaskPromptDataset([], " ")
+
+
+def test_replay_task_prompts_can_preserve_multitask_base_and_relabel_auxiliaries() -> None:
+    base = [{"task": "push"}, {"task": "pick"}]
+    auxiliaries = [[{"task": "push phase"}], [{"task": "pick phase"}]]
+
+    prompted_base, prompted_auxiliaries = apply_replay_task_prompts(
+        base,
+        auxiliaries,
+        auxiliary_prompts=["push the block", "place the cube"],
+    )
+
+    assert prompted_base is base
+    assert prompted_base[0]["task"] == "push"
+    assert prompted_base[1]["task"] == "pick"
+    assert prompted_auxiliaries[0][0]["task"] == "push the block"
+    assert prompted_auxiliaries[1][0]["task"] == "place the cube"
+
+
+def test_replay_task_prompts_require_one_nonempty_prompt_per_auxiliary() -> None:
+    with pytest.raises(ValueError, match="one auxiliary task prompt"):
+        apply_replay_task_prompts([], [[], []], auxiliary_prompts=["push"])
+    with pytest.raises(ValueError, match="must not be empty"):
+        apply_replay_task_prompts([], [[]], auxiliary_prompts=[" "])
 
 
 def test_phase_action_pad_mask_keeps_short_phase_start_and_masks_remainder() -> None:

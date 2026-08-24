@@ -1,0 +1,589 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "push_blind_v4",
+  "role": "blind",
+  "generator_seed": 102000,
+  "environment_preset": "push_forward_v1",
+  "scenes": [
+    {
+      "scene_id": "push_blind_v4-0000",
+      "seed": 102000,
+      "x_m": -0.01190529217599031,
+      "y_m": 0.04528591744364729,
+      "yaw_rad": 0.0,
+      "env_seed": 102000,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.08843601099648737,
+        "target_y_m": 0.03219326044064136,
+        "target_angle_rad": -0.12974821065739459,
+        "target_distance_m": 0.10119187116438474,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04836407280118153,
+          0.05015445907706419,
+          0.04053705447354251
+        ],
+        "object_rgba": [
+          0.5374578567421685,
+          0.3474116862779746,
+          0.736468995997706,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0001",
+      "seed": 102001,
+      "x_m": -0.04476230813267613,
+      "y_m": 0.02232708008702667,
+      "yaw_rad": 0.0,
+      "env_seed": 102001,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.06968510223773111,
+        "target_y_m": 0.027465921513320713,
+        "target_angle_rad": 0.04487119505378266,
+        "target_distance_m": 0.11456272269676988,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.043745124166088306,
+          0.055018701513943044,
+          0.031804940267857164
+        ],
+        "object_rgba": [
+          0.32505224379291575,
+          0.6846839942478478,
+          0.22651061566370548,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0002",
+      "seed": 102002,
+      "x_m": -0.026021834578022426,
+      "y_m": -0.03767958299050505,
+      "yaw_rad": 0.0,
+      "env_seed": 102002,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1020144262413451,
+        "target_y_m": -0.043329359861308016,
+        "target_angle_rad": -0.04409777471301318,
+        "target_distance_m": 0.12816085230402835,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.052682102360364275,
+          0.059810619495602874,
+          0.04848891856236303
+        ],
+        "object_rgba": [
+          0.25090602189632905,
+          0.29140064482962535,
+          0.6515502298073733,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0003",
+      "seed": 102003,
+      "x_m": -0.02539086966033138,
+      "y_m": 0.03325392309530676,
+      "yaw_rad": 0.0,
+      "env_seed": 102003,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.08087499620827635,
+        "target_y_m": 0.014096768648764031,
+        "target_angle_rad": -0.17835998298811448,
+        "target_distance_m": 0.10797884429504523,
+        "angle_bin": 1,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.052567511548801626,
+          0.043170639265604445,
+          0.05735934754997779
+        ],
+        "object_rgba": [
+          0.8348885199487307,
+          0.28638830347861177,
+          0.474580581811639,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0004",
+      "seed": 102004,
+      "x_m": -0.042187118704291766,
+      "y_m": -0.010520410701226009,
+      "yaw_rad": 0.0,
+      "env_seed": 102004,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.06054318661150115,
+        "target_y_m": -0.042106628537007286,
+        "target_angle_rad": -0.29829344423321297,
+        "target_distance_m": 0.10747653133333554,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04751894472466885,
+          0.045872371233679834,
+          0.05954346684113628
+        ],
+        "object_rgba": [
+          0.4227277868865048,
+          0.47893948561396615,
+          0.760710954064853,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0005",
+      "seed": 102005,
+      "x_m": 0.013009844127508989,
+      "y_m": -0.00913095875930741,
+      "yaw_rad": 0.0,
+      "env_seed": 102005,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12781201101144468,
+        "target_y_m": 0.03129658198181872,
+        "target_angle_rad": 0.3385885733530573,
+        "target_distance_m": 0.12171246267996731,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04406782380535778,
+          0.036694600721923425,
+          0.05623101652261564
+        ],
+        "object_rgba": [
+          0.44682305493040353,
+          0.16611353715502702,
+          0.5377206156863465,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0006",
+      "seed": 102006,
+      "x_m": -0.03907474472484515,
+      "y_m": 0.027356032394763523,
+      "yaw_rad": 0.0,
+      "env_seed": 102006,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.07564047469837497,
+        "target_y_m": 0.038046142966054824,
+        "target_angle_rad": 0.09291989659891275,
+        "target_distance_m": 0.11521223906922377,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04311416642101423,
+          0.044536318846729796,
+          0.05127039293023321
+        ],
+        "object_rgba": [
+          0.479450539403789,
+          0.2832345911715726,
+          0.4617685185517503,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0007",
+      "seed": 102007,
+      "x_m": -0.026710997899559413,
+      "y_m": 0.004597411187113987,
+      "yaw_rad": 0.0,
+      "env_seed": 102007,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10909750355976094,
+        "target_y_m": -0.012066985986086555,
+        "target_angle_rad": -0.12209477645514338,
+        "target_distance_m": 0.1368270850444911,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04053429315789844,
+          0.050816723776639754,
+          0.04713311639155008
+        ],
+        "object_rgba": [
+          0.5812290011546574,
+          0.3516962336083991,
+          0.572372271691778,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0008",
+      "seed": 102008,
+      "x_m": -0.003923490141243942,
+      "y_m": 0.01751721292164147,
+      "yaw_rad": 0.0,
+      "env_seed": 102008,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.09871365359782241,
+        "target_y_m": 0.042572434069195725,
+        "target_angle_rad": 0.23943180061209515,
+        "target_distance_m": 0.10565106427133905,
+        "angle_bin": 4,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04785829455984711,
+          0.05072850852620952,
+          0.051568896659817294
+        ],
+        "object_rgba": [
+          0.3726703591686914,
+          0.4794488189306293,
+          0.12055173108442041,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0009",
+      "seed": 102009,
+      "x_m": 0.016787981955123578,
+      "y_m": 0.005540768345004457,
+      "yaw_rad": 0.0,
+      "env_seed": 102009,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.14062571866149418,
+        "target_y_m": 0.010603397825917179,
+        "target_angle_rad": 0.040858401503477235,
+        "target_distance_m": 0.12394117657105476,
+        "angle_bin": 2,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04003351512124277,
+          0.034111403310980316,
+          0.053171134435718866
+        ],
+        "object_rgba": [
+          0.6166554583732595,
+          0.35674460658468854,
+          0.12456138128743968,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0010",
+      "seed": 102010,
+      "x_m": 0.022952370398276502,
+      "y_m": -0.05135286105798407,
+      "yaw_rad": 0.0,
+      "env_seed": 102010,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.16632834285634787,
+        "target_y_m": -0.09144182026954287,
+        "target_angle_rad": -0.2726444550058919,
+        "target_distance_m": 0.14887509573116542,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.057155658990804895,
+          0.051781597879723924,
+          0.03523849307861508
+        ],
+        "object_rgba": [
+          0.6609996367552932,
+          0.375121924117759,
+          0.6175453889025109,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0011",
+      "seed": 102011,
+      "x_m": 0.017003064215168208,
+      "y_m": -0.02981196879748584,
+      "yaw_rad": 0.0,
+      "env_seed": 102011,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.1459241553186043,
+        "target_y_m": 0.010237565588653196,
+        "target_angle_rad": 0.3011999692207644,
+        "target_distance_m": 0.13499856642145133,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05671076122294985,
+          0.03374547962371264,
+          0.04959501440326993
+        ],
+        "object_rgba": [
+          0.49572297966162215,
+          0.46186066314981056,
+          0.4469874734933813,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0012",
+      "seed": 102012,
+      "x_m": -0.012302901985312545,
+      "y_m": -0.003826419227362869,
+      "yaw_rad": 0.0,
+      "env_seed": 102012,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.12346327094472724,
+        "target_y_m": -0.03631380838053528,
+        "target_angle_rad": -0.23487285602886687,
+        "target_distance_m": 0.13959901205258987,
+        "angle_bin": 0,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.055834705552379175,
+          0.03104253162091257,
+          0.030986933824730837
+        ],
+        "object_rgba": [
+          0.5962409671728114,
+          0.8583814685806674,
+          0.1461193220202035,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0013",
+      "seed": 102013,
+      "x_m": -0.03306828447433923,
+      "y_m": 0.05464442967967804,
+      "yaw_rad": 0.0,
+      "env_seed": 102013,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.0973867037595087,
+        "target_y_m": 0.033598353031117266,
+        "target_angle_rad": -0.15995010135722962,
+        "target_distance_m": 0.1321417469893239,
+        "angle_bin": 1,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05867710973927752,
+          0.0514018501293967,
+          0.04909811640252057
+        ],
+        "object_rgba": [
+          0.5662925982867114,
+          0.4211320783945134,
+          0.7484604409107376,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0014",
+      "seed": 102014,
+      "x_m": -0.046819462861571556,
+      "y_m": 0.0015851494226480772,
+      "yaw_rad": 0.0,
+      "env_seed": 102014,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.0989221544404797,
+        "target_y_m": 0.01351388044439776,
+        "target_angle_rad": 0.081666446756744,
+        "target_distance_m": 0.14622897673719398,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03553944792562042,
+          0.038519040279838546,
+          0.05989001377390019
+        ],
+        "object_rgba": [
+          0.6052489177335978,
+          0.1094384886554841,
+          0.5078500783806529,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0015",
+      "seed": 102015,
+      "x_m": -0.0166286923502567,
+      "y_m": -0.03605571386033214,
+      "yaw_rad": 0.0,
+      "env_seed": 102015,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.10062420958125476,
+        "target_y_m": -0.019202144256389813,
+        "target_angle_rad": 0.14275911827230794,
+        "target_distance_m": 0.11845794958446466,
+        "angle_bin": 3,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.04768488731102799,
+          0.056992362178099984,
+          0.05583263456707087
+        ],
+        "object_rgba": [
+          0.199491959223342,
+          0.6516941962239859,
+          0.8253012405369325,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0016",
+      "seed": 102016,
+      "x_m": -0.028670176279633804,
+      "y_m": 0.022300289601300295,
+      "yaw_rad": 0.0,
+      "env_seed": 102016,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.09815403936745457,
+        "target_y_m": 0.05376773272147037,
+        "target_angle_rad": 0.24320712377684495,
+        "target_distance_m": 0.1306697426760316,
+        "angle_bin": 4,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.03175151444184794,
+          0.04738927502086387,
+          0.05189934962245806
+        ],
+        "object_rgba": [
+          0.33863913432506365,
+          0.48861314092892116,
+          0.832967758408411,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0017",
+      "seed": 102017,
+      "x_m": 0.02143160065849254,
+      "y_m": -0.015580931444374162,
+      "yaw_rad": 0.0,
+      "env_seed": 102017,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.14866816731925359,
+        "target_y_m": 0.009648532205432832,
+        "target_angle_rad": 0.1957487089642539,
+        "target_distance_m": 0.12971379931092614,
+        "angle_bin": 3,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.0523003916142042,
+          0.04271811855451193,
+          0.036799286552500705
+        ],
+        "object_rgba": [
+          0.40294984006342394,
+          0.39775495734637356,
+          0.6476596939462571,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0018",
+      "seed": 102018,
+      "x_m": -0.05213516551190281,
+      "y_m": -0.03562685478825549,
+      "yaw_rad": 0.0,
+      "env_seed": 102018,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.05455326089296912,
+        "target_y_m": -0.07075202994650989,
+        "target_angle_rad": -0.3180542417996373,
+        "target_distance_m": 0.1123218512073489,
+        "angle_bin": 0,
+        "distance_bin": 0,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.05228434585327178,
+          0.042578556574278545,
+          0.05066650541524932
+        ],
+        "object_rgba": [
+          0.7268896915967881,
+          0.4612969131145509,
+          0.8190151517735293,
+          1.0
+        ]
+      }
+    },
+    {
+      "scene_id": "push_blind_v4-0019",
+      "seed": 102019,
+      "x_m": -0.012616350718900986,
+      "y_m": -0.019862535582616102,
+      "yaw_rad": 0.0,
+      "env_seed": 102019,
+      "overrides": {
+        "task": "push_block_to_red_circle",
+        "target_x_m": 0.11609064217431098,
+        "target_y_m": -0.011199012743364519,
+        "target_angle_rad": 0.06721059651681761,
+        "target_distance_m": 0.12899824280818536,
+        "angle_bin": 2,
+        "distance_bin": 1,
+        "object_shape": "box",
+        "object_dimensions_m": [
+          0.050669163096320184,
+          0.04085588014013925,
+          0.05249705472974481
+        ],
+        "object_rgba": [
+          0.4497911088711958,
+          0.11622574077091681,
+          0.2843776911762077,
+          1.0
+        ]
+      }
+    }
+  ]
+}

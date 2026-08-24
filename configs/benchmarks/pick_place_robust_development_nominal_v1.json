@@ -1,0 +1,3209 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "pick_place_robust_development_nominal_v1",
+  "role": "development_nominal",
+  "generator_seed": 221000,
+  "environment_preset": "pick_place_robust_v1",
+  "scenes": [
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0000",
+      "seed": 221000,
+      "x_m": -0.03884459482869858,
+      "y_m": 0.023567088293181347,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16042653210424793,
+        "target_y_m": 0.14875315692267557,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271000,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0001",
+      "seed": 221001,
+      "x_m": -0.04124225580838865,
+      "y_m": -0.026535383771363198,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14722284636474453,
+        "target_y_m": -0.12751881315731875,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271001,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0002",
+      "seed": 221002,
+      "x_m": -0.039416017732260916,
+      "y_m": 0.0365938748774623,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14723108740795202,
+        "target_y_m": -0.06702729342878172,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271002,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0003",
+      "seed": 221003,
+      "x_m": -0.037012314242965735,
+      "y_m": 0.0070251323347115605,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1524033799232321,
+        "target_y_m": -0.09468245318249388,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271003,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0004",
+      "seed": 221004,
+      "x_m": -0.04147373681593219,
+      "y_m": -0.03661461469932844,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1470495152935498,
+        "target_y_m": 0.06353463075080104,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271004,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0005",
+      "seed": 221005,
+      "x_m": -0.03575409158202736,
+      "y_m": 0.010473895787801092,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15160426982851663,
+        "target_y_m": 0.11444875070426627,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271005,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0006",
+      "seed": 221006,
+      "x_m": -0.037860164925781065,
+      "y_m": 0.003926047039727848,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14538711008731314,
+        "target_y_m": 0.1125925808682938,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271006,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0007",
+      "seed": 221007,
+      "x_m": -0.035219099869089415,
+      "y_m": -0.01972510551464736,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14749472326844987,
+        "target_y_m": -0.12899390145241152,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271007,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0008",
+      "seed": 221008,
+      "x_m": -0.036556466200836864,
+      "y_m": -0.0014908107700196613,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14689851802305828,
+        "target_y_m": -0.10987360241231947,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271008,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0009",
+      "seed": 221009,
+      "x_m": -0.03826778807062927,
+      "y_m": 0.010875002734175923,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17421458983676172,
+        "target_y_m": -0.10903112071333623,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271009,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0010",
+      "seed": 221010,
+      "x_m": -0.0362734188140558,
+      "y_m": 0.021460171701487146,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17227795786137284,
+        "target_y_m": 0.13632547373255213,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271010,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0011",
+      "seed": 221011,
+      "x_m": -0.040110525890392906,
+      "y_m": -0.002481550365039331,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1461622571259268,
+        "target_y_m": -0.10379168196472247,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271011,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0012",
+      "seed": 221012,
+      "x_m": -0.0579406155587298,
+      "y_m": -0.03449294873442983,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1516127245061142,
+        "target_y_m": 0.08804470029522551,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271012,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0013",
+      "seed": 221013,
+      "x_m": -0.053133028203829986,
+      "y_m": 0.011545574956312178,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16621885329906086,
+        "target_y_m": -0.09770543454633995,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271013,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0014",
+      "seed": 221014,
+      "x_m": -0.037565540433833075,
+      "y_m": 0.005698969561611873,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16177959674101317,
+        "target_y_m": -0.11774841987486674,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271014,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0015",
+      "seed": 221015,
+      "x_m": -0.05140437220368766,
+      "y_m": 0.03666180752432142,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17121541797409856,
+        "target_y_m": 0.14091761719345972,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271015,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0016",
+      "seed": 221016,
+      "x_m": -0.03798162393414192,
+      "y_m": -0.015729176024769826,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14510228214454995,
+        "target_y_m": 0.08674327186536052,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271016,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0017",
+      "seed": 221017,
+      "x_m": -0.0352926035018383,
+      "y_m": -0.03999275455386604,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1525259250956408,
+        "target_y_m": 0.06002998687576397,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271017,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0018",
+      "seed": 221018,
+      "x_m": -0.039214469847993594,
+      "y_m": 0.028611600176396697,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14547428520517555,
+        "target_y_m": -0.08094154222359784,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271018,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0019",
+      "seed": 221019,
+      "x_m": -0.048322243580560385,
+      "y_m": 0.01841894980703812,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16372140357022583,
+        "target_y_m": 0.1378129438985284,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271019,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0020",
+      "seed": 221020,
+      "x_m": -0.04540377115028851,
+      "y_m": -0.0066720191133207984,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15151251761706183,
+        "target_y_m": 0.12638989202457493,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271020,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0021",
+      "seed": 221021,
+      "x_m": -0.03639173244348881,
+      "y_m": 0.021715015688835652,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14525681406030022,
+        "target_y_m": -0.08305594571892361,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271021,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0022",
+      "seed": 221022,
+      "x_m": -0.04690955706253689,
+      "y_m": 0.004939710764723763,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16446754719727827,
+        "target_y_m": 0.12994681549438822,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271022,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0023",
+      "seed": 221023,
+      "x_m": -0.043747701846398646,
+      "y_m": -0.025522099455052932,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16599209427477774,
+        "target_y_m": 0.1079999277287432,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271023,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0024",
+      "seed": 221024,
+      "x_m": -0.04149077097508846,
+      "y_m": 0.03688381807423415,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16560722451312776,
+        "target_y_m": -0.06792297644935413,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271024,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0025",
+      "seed": 221025,
+      "x_m": -0.039021546935069734,
+      "y_m": 0.005172267280844557,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1458751277251314,
+        "target_y_m": -0.10247684764104445,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271025,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0026",
+      "seed": 221026,
+      "x_m": -0.04874141121320892,
+      "y_m": 0.0019187573198898022,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16900846863642788,
+        "target_y_m": -0.11082784193879647,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271026,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0027",
+      "seed": 221027,
+      "x_m": -0.03797554421567778,
+      "y_m": 0.0066738704460621995,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1606872381311153,
+        "target_y_m": -0.09699831061568141,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271027,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0028",
+      "seed": 221028,
+      "x_m": -0.039159405853975315,
+      "y_m": 0.01083993007862201,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15359100911032372,
+        "target_y_m": 0.1364074209133123,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271028,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0029",
+      "seed": 221029,
+      "x_m": -0.03791049396465817,
+      "y_m": -0.007938542420271776,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14899509354449192,
+        "target_y_m": -0.10835402719690258,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271029,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0030",
+      "seed": 221030,
+      "x_m": -0.03872273516746556,
+      "y_m": 0.011205050420468432,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16364363229712198,
+        "target_y_m": 0.14516912486641734,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271030,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0031",
+      "seed": 221031,
+      "x_m": -0.03624918268850614,
+      "y_m": -0.0072219697642562156,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14759041547354768,
+        "target_y_m": -0.11091205745470784,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271031,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0032",
+      "seed": 221032,
+      "x_m": -0.03802407661370952,
+      "y_m": 0.03018843410201933,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14641624175514986,
+        "target_y_m": 0.1340728558639209,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271032,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0033",
+      "seed": 221033,
+      "x_m": -0.036152461547903664,
+      "y_m": 0.011692994751027384,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14702515991126436,
+        "target_y_m": -0.09609085993789596,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271033,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0034",
+      "seed": 221034,
+      "x_m": -0.03506279522077588,
+      "y_m": -0.0025339629906358588,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14828507116859208,
+        "target_y_m": -0.11147749867006283,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271034,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0035",
+      "seed": 221035,
+      "x_m": -0.03506015046061409,
+      "y_m": -0.025462175877365826,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1485251492493326,
+        "target_y_m": 0.07973383325480146,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271035,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0036",
+      "seed": 221036,
+      "x_m": -0.03741986006249698,
+      "y_m": 0.008598107200153894,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14702148862051295,
+        "target_y_m": -0.09832201170927615,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271036,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0037",
+      "seed": 221037,
+      "x_m": -0.054311356781632535,
+      "y_m": 0.017985620552512467,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1554108345353599,
+        "target_y_m": -0.08633408946009716,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271037,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0038",
+      "seed": 221038,
+      "x_m": -0.043233857888007,
+      "y_m": 0.021381867719378625,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.16498253280695016,
+        "target_y_m": 0.12943575669949078,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271038,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0039",
+      "seed": 221039,
+      "x_m": -0.03749928444996231,
+      "y_m": 0.025974524950202187,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1452180473055487,
+        "target_y_m": 0.13708127110384485,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271039,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0040",
+      "seed": 221040,
+      "x_m": -0.03678363049749502,
+      "y_m": 0.037063480580186985,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14990968759848897,
+        "target_y_m": -0.07431006342909022,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271040,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0041",
+      "seed": 221041,
+      "x_m": -0.049891684505067674,
+      "y_m": -0.016459185863809313,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1703168188720421,
+        "target_y_m": 0.09700111646314444,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271041,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0042",
+      "seed": 221042,
+      "x_m": -0.03766709874554644,
+      "y_m": -0.01001228157843408,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15077921155456814,
+        "target_y_m": -0.11056900460755972,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271042,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0043",
+      "seed": 221043,
+      "x_m": -0.05181843065969568,
+      "y_m": 0.006782560297018042,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17037082511191748,
+        "target_y_m": 0.11998399906142618,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271043,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0044",
+      "seed": 221044,
+      "x_m": -0.04026458780475325,
+      "y_m": 0.02527992477945506,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14551490429443767,
+        "target_y_m": -0.11221547853843429,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271044,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0045",
+      "seed": 221045,
+      "x_m": -0.0352493535057955,
+      "y_m": -0.007694792254690705,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14630040006518727,
+        "target_y_m": -0.1191504559328003,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271045,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0046",
+      "seed": 221046,
+      "x_m": -0.042368749182760235,
+      "y_m": 0.022157656621161648,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14718225347045452,
+        "target_y_m": 0.14542222094619425,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271046,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0047",
+      "seed": 221047,
+      "x_m": -0.04169135400101387,
+      "y_m": -0.010089879014073305,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1459044299235144,
+        "target_y_m": 0.09041330448542792,
+        "distance_bin": 0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271047,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0048",
+      "seed": 221048,
+      "x_m": -0.040209024812634685,
+      "y_m": -0.02993505148457956,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17141492392248733,
+        "target_y_m": 0.10181250478008916,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271048,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_robust_development_nominal_v1-0049",
+      "seed": 221049,
+      "x_m": -0.0388072626063863,
+      "y_m": -0.016161498240559232,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17010638801285763,
+        "target_y_m": 0.11573250824608186,
+        "distance_bin": 1,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 271049,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    }
+  ]
+}

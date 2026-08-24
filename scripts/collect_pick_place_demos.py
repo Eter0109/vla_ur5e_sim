@@ -39,6 +39,11 @@ def main() -> int:
     parser.add_argument("--distance-bins", type=int, nargs="+", default=[0, 1])
     parser.add_argument("--place-release-tolerance-m", type=float, default=0.020)
     parser.add_argument("--place-release-xy-tolerance-m", type=float)
+    parser.add_argument(
+        "--task-prompt",
+        default="place the red cube in the blue storage bin",
+        help="Single task-level language label written for every demonstration frame.",
+    )
     args = parser.parse_args()
     scenes = load_manifest(args.manifest)
     if args.root.exists():
@@ -75,7 +80,15 @@ def main() -> int:
             success = False
             for _step in range(env.config.horizon):
                 action = expert.act(env.raw_observation)
-                dataset.add_frame({IMAGE_KEY: observation[IMAGE_KEY], WRIST_IMAGE_KEY: observation[WRIST_IMAGE_KEY], STATE_KEY: observation[STATE_KEY], ACTION_KEY: action, TASK_KEY: expert.prompt})
+                dataset.add_frame(
+                    {
+                        IMAGE_KEY: observation[IMAGE_KEY],
+                        WRIST_IMAGE_KEY: observation[WRIST_IMAGE_KEY],
+                        STATE_KEY: observation[STATE_KEY],
+                        ACTION_KEY: action,
+                        TASK_KEY: args.task_prompt,
+                    }
+                )
                 observation, _, terminated, truncated, info = env.step(action)
                 success = bool(info["success"])
                 if terminated or truncated:

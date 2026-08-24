@@ -2,7 +2,34 @@
 
 本文件保存可提交的实验摘要和 benchmark 身份；逐局 rollout、checkpoint 与训练日志仍位于本地 `outputs/`。
 
-## 当前任务：PickPlace v2 双相机原生收纳盒放置
+## 当前任务：UR5e 双任务 SmolVLA Sim-to-Real 鲁棒训练（2026-08-12 ～）
+
+双任务鲁棒训练目标：单一 SmolVLA checkpoint 同时满足 Push 与 PickPlace 两类任务在 nominal 和 randomized 场景下各 50 场的成功率门禁（≥80%）。
+
+### 2026-08-24：当前最优开发集结果
+
+完整实验历程、参数消融矩阵和接手执行顺序见
+[双任务 SmolVLA 交接文档（2026-08-24）](../reports/MULTITASK_ROBUST_HANDOVER_20260824.md)。
+
+| 字段 | 值 |
+| --- | --- |
+| 状态 | 开发进行中；四项 ≥70% 门禁 3/4 达标（Push Randomized 未达标）；四项 ≥80% 门禁 1/4 达标（PickPlace Randomized） |
+| Checkpoint（最优基线） | `outputs/multitask_robust/smolvla_30k_lazy_bs2_final/seed1000/checkpoints/030000/pretrained_model` |
+| checkpoint SHA-256 | `DFFBFCD07911EBCC0658B853ED5031855741DAE26C3241B9AA67AB56C76DD7B7`（model.safetensors） |
+| 训练 | 30k steps；seed=1000；batch=2；双任务 1500+1500 episodes |
+| Push 控制参数 | `replan=4, decay=0.75, seed=1000, samples_per_plan=1` |
+| PickPlace 控制参数 | `replan=4, decay=0.75, gain=1.8, samples_per_plan=2, mode=vla_action_calibrated` |
+| Push Nominal（50场）| 37/50 = **74.0%**（≥70% 达标，≥80% 未达标）|
+| Push Randomized（50场）| 33/50 = **66.0%**（≥70% 未达标）|
+| PickPlace Nominal（50场）| 36/50 = **72.0%**（≥70% 达标，≥80% 未达标）|
+| PickPlace Randomized（50场）| 40/50 = **80.0%**（≥70% 和 ≥80% 均达标）|
+| LoRA 最优筛选点 | `key_screen_lora1500`：Push Randomized 20场 16/20 (80%)，PickPlace Nominal 20场 11/20 (55%) —— 50场全量验证待完成 |
+| 盲测状态 | push_robust_blind_v1 / pick_place_robust_blind_v1 均未消费 |
+| 后续行动 | 确认 lora1500 checkpoint 路径 → 50场全量四项评测 → 视结果选择联合微调或解锁盲测 |
+
+---
+
+## 历史任务：PickPlace v2 双相机原生收纳盒放置
 
 当前场景使用第三视角 RGB 与腕部 RGB 共同观测红色方块和 MuJoCo 原生蓝色收纳盒。任务要求抓取
 红色方块、运输到盒内、释放，并通过连续稳定性检查。训练与评测入口会校验数据集中的环境契约，

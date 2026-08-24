@@ -40,6 +40,10 @@ class HeuristicExpertConfig:
     max_position_action: float = 0.8
     object_height_m: float = 0.05
     release_clearance_m: float = 0.025
+    push_standoff_m: float = 0.080
+    push_goal_extension_m: float = 0.120
+    push_stop_distance_m: float = 0.020
+    push_hold_steps: int = 5
 
     def __post_init__(self) -> None:
         if self.position_action_scale_m <= 0 or self.place_release_tolerance_m <= 0:
@@ -53,6 +57,10 @@ class HeuristicExpertConfig:
             raise ValueError("close_steps must be at least one.")
         if self.object_height_m <= 0 or self.release_clearance_m < 0:
             raise ValueError("Object height must be positive and release clearance non-negative.")
+        if self.push_standoff_m <= 0 or self.push_goal_extension_m <= 0:
+            raise ValueError("Push distances must be positive.")
+        if self.push_stop_distance_m <= 0 or self.push_hold_steps < 1:
+            raise ValueError("Push stop distance and hold steps must be positive.")
 
 
 class HeuristicLiftExpert:
@@ -452,3 +460,82 @@ class HeuristicStackExpert:
         if value.size < size or not np.all(np.isfinite(value[:size])):
             raise ContractError(f"'{key}' must contain {size} finite values.")
         return value[:size].copy()
+
+class PushPhase(Enum):
+    APPROACH = auto()
+    PUSH = auto()
+    HOLD = auto()
+    DONE = auto()
+
+class HeuristicPushExpert:
+    def __init__(self, config: HeuristicExpertConfig | None = None) -> None:
+        self.config = config or HeuristicExpertConfig(
+            position_tolerance_m=0.025,
+            max_position_action=0.3,
+            # The gripper's contact geometry, rather than cube-center height,
+            # determines the flat push plane. For the current table this is
+            # approximately z=0.825m across the randomized box heights.
+            grasp_height_m=-0.002,
+            push_standoff_m=0.080,
+            # Collection targets extend to 0.15 m from the block.  Retain
+            # contact through the full reachable horizon so demonstrations do
+            # not systematically teach a short push on the far-distance bin.
+            push_goal_extension_m=0.135,
+        )
+        self.reset()
+
+    def reset(self) -> None:
+        self.phase = PushPhase.APPROACH
+        self._hold_steps = 0
+
+    def _delta(self, target: np.ndarray, current: np.ndarray) -> np.ndarray:
+        diff = target - current
+        norm = float(np.linalg.norm(diff))
+        if norm > self.config.max_position_action * 0.05:
+            diff = diff / norm * (self.config.max_position_action * 0.05)
+        return (diff / 0.05).astype(np.float32)
+
+    def act(self, obs: Mapping[str, Any]) -> NDArray[np.float32]:
+        """Return a flat, fixed-orientation, privileged-state Push action."""
+
+        eef = self._vector(obs, "robot0_eef_pos", 3)
+        cube = self._vector(obs, "cube_pos", 3)
+        target = self._vector(obs, "target_pos", 3)
+        half_extents = self._vector(obs, "object_half_extents_m", 3)
+        delta_xy = target[:2] - cube[:2]
+        target_distance = float(np.linalg.norm(delta_xy))
+        push_dir = np.asarray([1.0, 0.0]) if target_distance < 1e-6 else delta_xy / target_distance
+        clearance = float(max(self.config.push_standoff_m, max(half_extents[0], half_extents[1]) + 0.020))
+        action = np.zeros(7, dtype=np.float32)
+        action[6] = self.config.close_command
+
+        if self.phase is PushPhase.APPROACH:
+            align = cube.copy()
+            align[:2] -= push_dir * clearance
+            align[2] = cube[2] + self.config.grasp_height_m
+            action[:3] = self._delta(align, eef)
+            if np.linalg.norm(align - eef) <= self.config.position_tolerance_m:
+                self.phase = PushPhase.PUSH
+        elif self.phase is PushPhase.PUSH:
+            if target_distance <= self.config.push_stop_distance_m:
+                self.phase = PushPhase.HOLD
+            else:
+                # A target-plus-extension command can pull the gripper around
+                # the cube on large positive angles. Advance from the current
+                # cube pose instead, retaining contact while closing distance.
+                goal = cube.copy()
+                goal[:2] += push_dir * min(target_distance, self.config.push_goal_extension_m)
+                goal[2] = cube[2] + self.config.grasp_height_m
+                action[:3] = self._delta(goal, eef)
+        elif self.phase is PushPhase.HOLD:
+            self._hold_steps += 1
+            if self._hold_steps >= self.config.push_hold_steps:
+                self.phase = PushPhase.DONE
+        return DEFAULT_ACTION_SPEC.validate(action, clip=True)
+
+    @staticmethod
+    def _vector(obs: Mapping[str, Any], key: str, size: int) -> NDArray[np.float64]:
+        values = np.asarray(obs.get(key), dtype=np.float64).reshape(-1)
+        if values.size < size or not np.all(np.isfinite(values[:size])):
+            raise ContractError(f"Push expert requires {size} finite values for '{key}'.")
+        return values[:size].copy()

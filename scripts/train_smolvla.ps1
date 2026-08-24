@@ -7,6 +7,8 @@ param(
     [string]$AuxiliaryRepoId = "",
     [string]$AuxiliarySampleWeight = "1.0",
     [string]$AuxiliaryPhaseGroups = "",
+    [string]$BaseTaskPrompt = "",
+    [string]$AuxiliaryTaskPrompts = "",
     [string]$Output = "outputs\smolvla_lora_smoke",
     [string]$CheckpointPath = "",
     [int]$Steps = 20,
@@ -72,6 +74,8 @@ $env:VLA_AUXILIARY_DATASET = $AuxiliaryDataset
 $env:VLA_AUXILIARY_REPO_ID = $AuxiliaryRepoId
 $env:VLA_AUXILIARY_SAMPLE_WEIGHT = [string]$AuxiliarySampleWeight
 $env:VLA_AUXILIARY_PHASE_GROUPS = $AuxiliaryPhaseGroups
+$env:VLA_BASE_TASK_PROMPT = $BaseTaskPrompt
+$env:VLA_AUXILIARY_TASK_PROMPTS = $AuxiliaryTaskPrompts
 
 & $Python -c "import torch, lerobot, peft; assert torch.cuda.is_available(), 'CUDA is unavailable'"
 if ($LASTEXITCODE -ne 0) {
@@ -93,9 +97,6 @@ if ($NumWorkers -lt 0) {
 if ($AuxiliaryDataset) {
     if (-not $AuxiliaryRepoId) {
         throw "AuxiliaryRepoId is required when AuxiliaryDataset is set."
-    }
-    if (-not $PhaseBalanced) {
-        throw "Auxiliary replay requires PhaseBalanced."
     }
     $AuxiliaryRoots = @($AuxiliaryDataset -split ';' | Where-Object { $_ })
     $AuxiliaryRepoIds = @($AuxiliaryRepoId -split ';' | Where-Object { $_ })
@@ -189,6 +190,8 @@ if ($Resume) {
         transport_weight = $TransportWeight
         place_release_weight = $PlaceReleaseWeight
         global_task_prompt = $GlobalTaskPrompt
+        base_task_prompt = $BaseTaskPrompt
+        auxiliary_task_prompts = $AuxiliaryTaskPrompts
         phase_balanced = [bool]$PhaseBalanced
         full_expert = [bool]$FullExpert
     }
@@ -323,7 +326,9 @@ $Manifest = [ordered]@{
     auxiliary_dataset = $AuxiliaryDataset
     auxiliary_repo_id = $AuxiliaryRepoId
     auxiliary_sample_weight = $AuxiliarySampleWeight
-    auxiliary_phase_groups = $AuxiliaryPhaseGroups
+        auxiliary_phase_groups = $AuxiliaryPhaseGroups
+        base_task_prompt = $BaseTaskPrompt
+        auxiliary_task_prompts = $AuxiliaryTaskPrompts
     output = $OutputFull
     steps = $Steps
     seed = $Seed

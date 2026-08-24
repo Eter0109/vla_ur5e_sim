@@ -110,7 +110,7 @@ def main() -> int:
         parser.error(str(error))
 
     metadata = load_manifest_metadata(args.manifest)
-    if metadata.get("environment_preset") != "pick_place_v1":
+    if metadata.get("environment_preset") not in {"pick_place_v1", "pick_place_robust_v1"}:
         parser.error("VLA-only evaluation requires a compatible PickPlace manifest")
     if args.episodes < 1:
         parser.error("episodes must be positive")

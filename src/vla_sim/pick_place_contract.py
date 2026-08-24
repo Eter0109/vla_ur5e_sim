@@ -110,5 +110,9 @@ def validate_pick_place_contract(dataset_root: Path, config: UR5ePickPlaceConfig
 
     task_table = pq.read_table(dataset_root / "meta" / "tasks.parquet").to_pydict()
     recorded_prompts = set(task_table.get("__index_level_0__", ()))
-    if recorded_prompts != set(expected["prompts"]):
-        raise RuntimeError("Dataset task prompts do not match rollout phase prompts.")
+    supported_prompt_sets = (
+        set(expected["prompts"]),
+        {PICK_PLACE_GLOBAL_PROMPT},
+    )
+    if recorded_prompts not in supported_prompt_sets:
+        raise RuntimeError("Dataset task prompts do not match a supported PickPlace instruction mode.")

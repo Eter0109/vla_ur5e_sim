@@ -20,6 +20,7 @@ from vla_sim.sampling import (  # noqa: E402
     PhaseActionMaskedDataset,
     ReplayMixDataset,
     ReplayMultiMixDataset,
+    apply_replay_task_prompts,
     phase_groups_from_indices,
     phase_sampling_weights,
     transition_sampling_weights,
@@ -327,8 +328,6 @@ def _install_auxiliary_replay_dataset() -> None:
     ]
     if not auxiliary_roots:
         return
-    if os.environ.get("VLA_PHASE_BALANCED", "0") != "1":
-        raise ValueError("Auxiliary replay requires phase-balanced sampling")
     auxiliary_repo_ids = [
         value.strip() for value in os.environ.get("VLA_AUXILIARY_REPO_ID", "").split(";") if value.strip()
     ]
@@ -341,6 +340,12 @@ def _install_auxiliary_replay_dataset() -> None:
         not math.isfinite(weight) or weight <= 0 for weight in auxiliary_sample_weights
     ):
         raise ValueError("VLA_AUXILIARY_SAMPLE_WEIGHT must be finite and positive")
+    base_task_prompt = os.environ.get("VLA_BASE_TASK_PROMPT", "").strip()
+    auxiliary_task_prompts = [
+        value.strip() for value in os.environ.get("VLA_AUXILIARY_TASK_PROMPTS", "").split(";")
+    ]
+    if auxiliary_task_prompts and len(auxiliary_task_prompts) != len(auxiliary_roots):
+        raise ValueError("one VLA_AUXILIARY_TASK_PROMPTS value per auxiliary is required")
 
     from lerobot.datasets.lerobot_dataset import LeRobotDataset
 
@@ -364,10 +369,16 @@ def _install_auxiliary_replay_dataset() -> None:
                 )
                 for root, repo_id in zip(auxiliary_roots, auxiliary_repo_ids, strict=True)
             ]
+            base, prompted_auxiliaries = apply_replay_task_prompts(
+                dataset,
+                auxiliaries,
+                base_prompt=base_task_prompt,
+                auxiliary_prompts=auxiliary_task_prompts,
+            )
             dataset = (
-                ReplayMixDataset(dataset, auxiliaries[0], auxiliary_sample_weights[0])
+                ReplayMixDataset(base, prompted_auxiliaries[0], auxiliary_sample_weights[0])
                 if len(auxiliaries) == 1
-                else ReplayMultiMixDataset(dataset, auxiliaries, auxiliary_sample_weights)
+                else ReplayMultiMixDataset(base, prompted_auxiliaries, auxiliary_sample_weights)
             )
             effective_auxiliary_fraction = float(
                 dataset.sampling_multipliers[dataset.base_length :].sum()
