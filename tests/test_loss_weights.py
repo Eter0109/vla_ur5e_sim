@@ -11,7 +11,7 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from vla_sim.losses import action_dimension_weights, weighted_action_loss  # noqa: E402
+from vla_sim.policy.losses import action_dimension_weights, weighted_action_loss
 
 
 def test_standard_weights_match_plain_mean() -> None:

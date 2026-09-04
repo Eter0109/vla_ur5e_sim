@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "migration": "three_task_refactor",
+  "datasets": {
+    "sim2real_v2_push_1500": {
+      "episodes": 1500,
+      "frames": 94806,
+      "original_info_sha256": "49d24332de4265dc5852fcc07f89e6f8a305072c4d3a2a624a9dbf2cd32fec87",
+      "tasks_sha256": "4ee1103b9c6af1cd436ffc5004178318b729fe619ec7afd45e5d5f13889fa055"
+    },
+    "sim2real_v2_pick_place_1500": {
+      "episodes": 1500,
+      "frames": 126182,
+      "original_info_sha256": "5734031dc9d5db970cf66b256538feded734ef57a80909f6bf83ab145de4933a",
+      "tasks_sha256": "0ff0f0695c6e76960e668dfe25e87f64a088cd6fcb0e4f9642bf719a3fde3d89"
+    },
+    "sim2real_v2_color_pick_1500": {
+      "episodes": 1500,
+      "frames": 66788,
+      "original_info_sha256": "58cb571de0a864f7dc83954a49772d35e0669e15308da916596c6fb83e35873f",
+      "tasks_sha256": "78df4fa40beef04dd328e1b66d892a22c08fa1f4351a5cc260fbfa95f36a6fc1"
+    },
+    "multitask_sim2real_v2_4500": {
+      "episodes": 4500,
+      "frames": 287776,
+      "original_info_sha256": "c62f22614437ccdcc2b357b218b5942e48901a62a8849e27b7251a8a875fce15",
+      "tasks_sha256": "117eb0ad682e8e0d7f2c804504fe109c9212e23fd895a55c598376d802761367"
+    }
+  },
+  "policy": {
+    "base_model_sha256": "fc3d3ffd99ca4eef739c0a590ce702eb229b1f1a9a08353220222a5daffd82fc",
+    "current_adapter_sha256": "d3aee0fb0f5795d7377cf0441a77d5e7e5eb6ab7ebf1e2a14a08182587bf0422",
+    "current_optimizer_sha256": "a5af757e72157c030d480e2f96ccc3ead7bc443dcb61df6f0d80d7769300ec4c",
+    "training_step": 4000
+  },
+  "path_mapping": {
+    "data/lerobot": "assets/simulation/datasets",
+    "configs/benchmarks": "assets/simulation/manifests",
+    "round2_020000": "assets/policy/base",
+    "sim2real_v2_004000": "assets/policy/current"
+  }
+}

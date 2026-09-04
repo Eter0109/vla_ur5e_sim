@@ -3,7 +3,7 @@ from __future__ import annotations
 import numpy as np
 import pytest
 
-from vla_sim.temporal import TemporalEnsemble
+from vla_sim.policy.temporal import TemporalEnsemble
 
 
 def _chunk(first_gripper: float, second_gripper: float) -> np.ndarray:

@@ -1,11 +1,11 @@
 import numpy as np
 
-from vla_sim.sim.expert import (
+from vla_sim.simulation.experts import (
     HeuristicExpertConfig,
     HeuristicPickPlaceExpert,
     PickPlacePhase,
 )
-from vla_sim.stack_control import task_phase_prompt
+from vla_sim.simulation.pick_place_contract import task_phase_prompt
 
 
 def test_pick_place_expert_uses_shared_phase_prompts() -> None:

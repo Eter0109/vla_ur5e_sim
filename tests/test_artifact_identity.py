@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from vla_sim.artifact_identity import sha256_directory, sha256_file
+from vla_sim.simulation.artifacts import sha256_directory, sha256_file
 
 
 def test_file_hash_is_streamed_and_content_sensitive(tmp_path: Path) -> None:

@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "tasks": {
+    "push": {
+      "prompt": "push the block into the red target circle",
+      "horizon": 250,
+      "dataset": "assets/simulation/datasets/sim2real_v2_push_1500",
+      "repo_id": "local/sim2real_v2_push_1500",
+      "collection": "assets/simulation/manifests/collection/push.json",
+      "benchmarks": {
+        "screen": "assets/simulation/manifests/benchmark/push/screen.json",
+        "nominal": "assets/simulation/manifests/benchmark/push/nominal.json",
+        "randomized_screen": "assets/simulation/manifests/benchmark/push/randomized_screen.json",
+        "randomized": "assets/simulation/manifests/benchmark/push/randomized.json",
+        "blind": "assets/simulation/manifests/benchmark/push/blind.json"
+      }
+    },
+    "pick_place": {
+      "prompt": "place the red cube in the blue storage bin",
+      "horizon": 250,
+      "dataset": "assets/simulation/datasets/sim2real_v2_pick_place_1500",
+      "repo_id": "local/sim2real_v2_pick_place_1500",
+      "collection": "assets/simulation/manifests/collection/pick_place.json",
+      "benchmarks": {
+        "screen": "assets/simulation/manifests/benchmark/pick_place/screen.json",
+        "nominal": "assets/simulation/manifests/benchmark/pick_place/nominal.json",
+        "randomized_screen": "assets/simulation/manifests/benchmark/pick_place/randomized_screen.json",
+        "randomized": "assets/simulation/manifests/benchmark/pick_place/randomized.json",
+        "blind": "assets/simulation/manifests/benchmark/pick_place/blind.json"
+      }
+    },
+    "color_pick": {
+      "prompt": "pick up the requested color cube",
+      "horizon": 200,
+      "dataset": "assets/simulation/datasets/sim2real_v2_color_pick_1500",
+      "repo_id": "local/sim2real_v2_color_pick_1500",
+      "collection": "assets/simulation/manifests/collection/color_pick.json",
+      "benchmarks": {
+        "screen": "assets/simulation/manifests/benchmark/color_pick/screen.json",
+        "nominal": "assets/simulation/manifests/benchmark/color_pick/nominal.json",
+        "randomized": "assets/simulation/manifests/benchmark/color_pick/randomized.json",
+        "blind": "assets/simulation/manifests/benchmark/color_pick/blind.json"
+      }
+    }
+  },
+  "combined_dataset": {
+    "path": "assets/simulation/datasets/multitask_sim2real_v2_4500",
+    "repo_id": "local/multitask_sim2real_v2_4500"
+  }
+}

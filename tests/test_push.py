@@ -5,10 +5,13 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from vla_sim.envs.ur5e_push import UR5ePushConfig, UR5ePushEnv
-from vla_sim.scenes import PUSH_ANGLE_BINS_RAD, PUSH_DISTANCE_BINS_M, generate_push_scenes
-from vla_sim.sim.expert import HeuristicPushExpert, PushPhase
-
+from vla_sim.simulation.experts import HeuristicPushExpert, PushPhase
+from vla_sim.simulation.scenes import (
+    PUSH_ANGLE_BINS_RAD,
+    PUSH_DISTANCE_BINS_M,
+    generate_push_scenes,
+)
+from vla_sim.simulation.tasks.push import UR5ePushConfig, UR5ePushEnv
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -98,9 +101,12 @@ def test_push_expert_uses_fixed_rotation_and_closed_loop_goal() -> None:
     assert expert.phase is PushPhase.HOLD
 
 
-def test_push_operational_scripts_configure_offline_cache_before_lerobot_import() -> None:
-    for name in ("run_push_vla_only_benchmark.py", "collect_push_demos_v2.py"):
-        source = (ROOT / "scripts" / name).read_text(encoding="utf-8")
+def test_push_operations_configure_offline_cache_before_lerobot_import() -> None:
+    for relative in (
+        "src/vla_sim/evaluation/tasks/push.py",
+        "src/vla_sim/simulation/collection.py",
+    ):
+        source = (ROOT / relative).read_text(encoding="utf-8")
         environment_setup = source.index('"HF_HUB_OFFLINE": "1"')
         lerobot_import = source.index(
             "from lerobot.datasets.lerobot_dataset import LeRobotDataset"
@@ -112,7 +118,7 @@ def test_push_operational_scripts_configure_offline_cache_before_lerobot_import(
 
 
 def test_push_benchmark_records_full_checkpoint_and_sampling_identity() -> None:
-    source = (ROOT / "scripts" / "run_push_vla_only_benchmark.py").read_text(
+    source = (ROOT / "src/vla_sim/evaluation/tasks/push.py").read_text(
         encoding="utf-8"
     )
 

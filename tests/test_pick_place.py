@@ -5,9 +5,11 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-from vla_sim.contracts import PickPlaceObservationAdapter, validate_pick_place_observation
-from vla_sim.envs.ur5e_pick_place import UR5ePickPlaceConfig, UR5ePickPlaceEnv
-from vla_sim.pick_place_control import (
+from vla_sim.simulation.contracts import (
+    PickPlaceObservationAdapter,
+    validate_pick_place_observation,
+)
+from vla_sim.simulation.pick_place_control import (
     VLA_ONLY_CONTROL_MODES,
     VLAOnlyActionCalibration,
     VLAOnlyActionCalibrator,
@@ -17,7 +19,8 @@ from vla_sim.pick_place_control import (
     scene_policy_seed,
     uses_vla_only_action_calibration,
 )
-from vla_sim.scenes import PICK_PLACE_DISTANCE_BINS_M, generate_pick_place_scenes
+from vla_sim.simulation.scenes import PICK_PLACE_DISTANCE_BINS_M, generate_pick_place_scenes
+from vla_sim.simulation.tasks.pick_place import UR5ePickPlaceConfig, UR5ePickPlaceEnv
 
 
 def _raw() -> dict[str, np.ndarray]:

@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-import torch
 import pytest
+import torch
 
-from vla_sim.policy_runtime import (
+from vla_sim.policy.runtime import (
     aggregate_action_chunks,
     postprocess_and_aggregate_action_chunks,
 )

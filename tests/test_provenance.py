@@ -1,6 +1,6 @@
 import pytest
 
-from vla_sim.provenance import (
+from vla_sim.simulation.provenance import (
     collection_resume_source_index,
     immutable_mismatches,
     scene_seed_overlap,

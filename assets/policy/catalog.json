@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "base": "assets/policy/base/pretrained_model",
+  "current": "assets/policy/current/pretrained_model",
+  "training_state": "assets/policy/current/training_state",
+  "step": 4000
+}

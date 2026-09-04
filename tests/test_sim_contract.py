@@ -9,21 +9,22 @@ from xml.etree.ElementTree import Element, SubElement
 import numpy as np
 import pytest
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from vla_sim.envs import PrimitiveObjectConfig, UR5eLiftConfig, UR5eLiftEnv  # noqa: E402
-from vla_sim.sim import (  # noqa: E402
+from vla_sim.simulation.contracts import (
     ActionSpec,
     ContractError,
-    HeuristicLiftExpert,
     ObservationAdapter,
-    RobosuiteUnavailableError,
 )
-from vla_sim.sim.dependencies import require_robosuite  # noqa: E402
+from vla_sim.simulation.dependencies import (
+    RobosuiteUnavailableError,
+    require_robosuite,
+)
+from vla_sim.simulation.experts import HeuristicPickExpert
+from vla_sim.simulation.tasks import PrimitiveObjectConfig
 
 
 def _raw_observation() -> dict[str, np.ndarray]:
@@ -106,30 +107,8 @@ def test_primitive_object_config_mutates_mjcf(
     np.testing.assert_allclose(fake_object.size, np.asarray(dimensions) / 2.0)
 
 
-def test_fake_backend_exercises_full_env_contract_without_robosuite() -> None:
-    backend = FakeBackend()
-    env = UR5eLiftEnv(backend, UR5eLiftConfig())
-    observation, info = env.reset(seed=7)
-    assert observation["observation.state"].shape == (7,)
-    assert info == {"success": False}
-
-    _, reward, terminated, truncated, step_info = env.step(np.zeros(7))
-    assert reward == pytest.approx(0.25)
-    assert not terminated
-    assert not truncated
-    assert step_info == {
-        "success": False,
-        "success_hold_count": 0,
-        "grasped": False,
-        "lifted": False,
-        "object_lift_m": 0.0,
-    }
-    env.close()
-    assert backend.closed
-
-
 def test_heuristic_expert_emits_executable_normalized_action() -> None:
-    expert = HeuristicLiftExpert()
+    expert = HeuristicPickExpert()
     action = expert.act(_raw_observation())
     assert action.shape == (7,)
     assert action.dtype == np.float32

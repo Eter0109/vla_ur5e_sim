@@ -4,7 +4,7 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from vla_sim.domain_randomization import (
+from vla_sim.simulation.randomization import (
     Sim2RealEpisodeRuntime,
     apply_domain_randomization,
     capture_render_baseline,
@@ -16,7 +16,7 @@ from vla_sim.domain_randomization import (
     sample_domain_randomization,
     sample_sim2real_v2,
 )
-from vla_sim.scenes import (
+from vla_sim.simulation.scenes import (
     attach_domain_randomization,
     attach_sim2real_v2_randomization,
     generate_push_scenes,

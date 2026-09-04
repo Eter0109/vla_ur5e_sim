@@ -5,12 +5,12 @@ import json
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from vla_sim.envs import UR5ePickPlaceConfig
-from vla_sim.pick_place_contract import (
+from vla_sim.simulation.pick_place_contract import (
     PICK_PLACE_GLOBAL_PROMPT,
     build_pick_place_contract,
     validate_pick_place_contract,
 )
+from vla_sim.simulation.tasks import UR5ePickPlaceConfig
 
 
 def test_contract_accepts_single_global_task_prompt(tmp_path) -> None:

@@ -7,7 +7,7 @@ from pathlib import Path
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from scripts.build_multitask_sim2real_v2_dataset import build
+from vla_sim.simulation.dataset_build import build
 
 
 def _stats(value: float, count: int) -> dict:

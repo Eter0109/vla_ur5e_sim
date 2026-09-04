@@ -11,8 +11,13 @@ dist/
 build/
 *.egg-info/
 
-# Local datasets, checkpoints and rendered rollouts are intentionally ignored.
-data/
+# Large three-task assets are local and intentionally ignored.
+assets/simulation/datasets/
+assets/policy/base/
+assets/policy/current/
+.runtime/resolved_checkpoints/
+
+# Refactored runs are written outside the source tree by default.
 outputs/
 videos/
 wandb/

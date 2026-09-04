@@ -4,22 +4,22 @@ from types import SimpleNamespace
 
 import numpy as np
 
-from vla_sim.color_pick_contract import (
+from vla_sim.simulation.color_pick_contract import (
     build_color_pick_contract,
     color_pick_prompt,
     color_pick_prompts,
 )
-from vla_sim.contracts import IMAGE_KEY, STATE_KEY, WRIST_IMAGE_KEY
-from vla_sim.domain_randomization import DomainRandomizationSample
-from vla_sim.envs import UR5eColorPickConfig, UR5eColorPickEnv
-from vla_sim.scenes import (
+from vla_sim.simulation.contracts import IMAGE_KEY, STATE_KEY, WRIST_IMAGE_KEY
+from vla_sim.simulation.experts import HeuristicColorPickExpert
+from vla_sim.simulation.randomization import DomainRandomizationSample
+from vla_sim.simulation.scenes import (
     COLOR_PICK_COLORS,
     COLOR_PICK_GRIPPER_CLEARANCE_M,
     COLOR_PICK_OBJECT_XY_M,
     generate_color_pick_scenes,
     oriented_rectangles_overlap,
 )
-from vla_sim.sim import HeuristicColorPickExpert
+from vla_sim.simulation.tasks import UR5eColorPickConfig, UR5eColorPickEnv
 
 
 def _raw() -> dict[str, np.ndarray]:
