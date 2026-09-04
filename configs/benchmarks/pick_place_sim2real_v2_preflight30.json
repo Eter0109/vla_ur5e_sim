@@ -1,0 +1,2626 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "pick_place_sim2real_v2_preflight30",
+  "role": "preflight",
+  "generator_seed": 320000,
+  "environment_preset": "pick_place_sim2real_v2",
+  "scenes": [
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0012",
+      "seed": 320012,
+      "x_m": -0.03630759951484528,
+      "y_m": 0.005653145660130594,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14948808988991763,
+        "target_y_m": -0.09819830531679184,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820012,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0021",
+      "seed": 320021,
+      "x_m": -0.03598669193967682,
+      "y_m": 0.03285036171819818,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1477918617672329,
+        "target_y_m": -0.07365714174383182,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820021,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0047",
+      "seed": 320047,
+      "x_m": -0.037686202279894554,
+      "y_m": -0.028170954292813362,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15099877650159754,
+        "target_y_m": -0.13080528130644464,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820047,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0058",
+      "seed": 320058,
+      "x_m": -0.03513015263676016,
+      "y_m": -0.02662333232199452,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15186334168799348,
+        "target_y_m": -0.1280975098262612,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820058,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0060",
+      "seed": 320060,
+      "x_m": -0.041589071310687085,
+      "y_m": -0.022023014336425045,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14695217157782636,
+        "target_y_m": -0.12378142418982353,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820060,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0035",
+      "seed": 320035,
+      "x_m": -0.037595828181217254,
+      "y_m": -0.016897892018727347,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1679480705228546,
+        "target_y_m": 0.09392681134426797,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820035,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0046",
+      "seed": 320046,
+      "x_m": -0.035774628802391586,
+      "y_m": -0.011605997269550548,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15575256783213912,
+        "target_y_m": 0.10814513845026255,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820046,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0062",
+      "seed": 320062,
+      "x_m": -0.050436760137909945,
+      "y_m": 0.03305656937291191,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1683180135373439,
+        "target_y_m": -0.07772893571281493,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820062,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0069",
+      "seed": 320069,
+      "x_m": -0.04397798172546652,
+      "y_m": -0.010387897026026709,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15687721988860623,
+        "target_y_m": -0.13113738189887478,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820069,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0083",
+      "seed": 320083,
+      "x_m": -0.04160421657204385,
+      "y_m": -0.014264049384523698,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1635894529724957,
+        "target_y_m": 0.11596520772156313,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 820083,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "gamma": 1.0,
+          "white_balance": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "radial_distortion_k1": 0.0,
+          "object_mass_scale": 1.0,
+          "object_friction_scale": 1.0,
+          "gripper_friction_scale": 1.0,
+          "translation_action_gain": 1.0,
+          "rotation_action_gain": 1.0,
+          "joint_noise_std_rad": 0.0,
+          "eef_noise_std_m": 0.0,
+          "gripper_noise_std": 0.0,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0000",
+      "seed": 320000,
+      "x_m": -0.03949818748670804,
+      "y_m": -0.0026621587040662822,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.145930581033599,
+        "target_y_m": 0.10489306145201047,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820000,
+          "front_position_offset_m": [
+            0.015770769101002884,
+            -0.024020087726687588,
+            -0.012062213228289048
+          ],
+          "front_look_at_offset_m": [
+            0.019546887727177723,
+            -0.00808015262089233,
+            0.01740084819755146
+          ],
+          "front_fovy_offset_deg": 1.7756019695248497,
+          "wrist_position_offset_m": [
+            -0.0004077650869248508,
+            0.0006014979448943775,
+            0.0005895733182008011
+          ],
+          "wrist_rotation_deg": [
+            -0.4267620017362024,
+            0.7930113652841142,
+            -0.971069207484275
+          ],
+          "wrist_fovy_offset_deg": 0.27910811823315695,
+          "light_position_offset_m": [
+            0.11228496120584619,
+            -0.11432032544276854,
+            -0.11127285856214778
+          ],
+          "light_diffuse_scale": 1.0211714211310388,
+          "light_ambient": 0.03393764549712778,
+          "light_tint": [
+            0.98904645515677,
+            0.978266696753406,
+            0.9973749349795833
+          ],
+          "table_rgb": [
+            0.5,
+            0.36,
+            0.22
+          ],
+          "table_friction_scale": 0.9258946034745711,
+          "brightness": 0.9993155205503765,
+          "contrast": 1.0963041819791741,
+          "saturation": 0.9465619988696701,
+          "hue_shift": -0.0005442341552828085,
+          "gaussian_noise_std": 0.004221292675088342,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.55,
+            0.55,
+            0.55
+          ],
+          "gamma": 0.9647421232450093,
+          "white_balance": [
+            1.0488111874812405,
+            1.0473758529696302,
+            0.9773813774514983
+          ],
+          "radial_distortion_k1": -0.02653845284879368,
+          "object_mass_scale": 0.9244269571138249,
+          "object_friction_scale": 0.9332322662105219,
+          "gripper_friction_scale": 1.0866534370126528,
+          "translation_action_gain": 0.9985566117246759,
+          "rotation_action_gain": 0.9982923973336196,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0004",
+      "seed": 320004,
+      "x_m": -0.04285834135625689,
+      "y_m": 0.023830761492257123,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14601115087314676,
+        "target_y_m": 0.12441309492214983,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820004,
+          "front_position_offset_m": [
+            0.022834128036225365,
+            -0.023810320627112063,
+            0.008886792622440153
+          ],
+          "front_look_at_offset_m": [
+            0.01951156801702292,
+            -0.0038532124900128237,
+            0.013101610597047678
+          ],
+          "front_fovy_offset_deg": -1.20060074874029,
+          "wrist_position_offset_m": [
+            0.0019250672012905727,
+            0.0015623063679654384,
+            -0.0019416024823280464
+          ],
+          "wrist_rotation_deg": [
+            0.8729661177929187,
+            -0.5951112435496366,
+            -0.3768073952915121
+          ],
+          "wrist_fovy_offset_deg": -0.3821945451157778,
+          "light_position_offset_m": [
+            0.10084911108435202,
+            -0.19879954359133165,
+            0.1425744473652722
+          ],
+          "light_diffuse_scale": 1.1269138455270222,
+          "light_ambient": 0.025668820150140593,
+          "light_tint": [
+            0.9751814853701601,
+            0.950045871795867,
+            0.9565987944741938
+          ],
+          "table_rgb": [
+            0.18,
+            0.21,
+            0.24
+          ],
+          "table_friction_scale": 0.9351719920166184,
+          "brightness": 1.0117613791543998,
+          "contrast": 0.9267987946862872,
+          "saturation": 0.925617845499693,
+          "hue_shift": 0.008202598136685781,
+          "gaussian_noise_std": 0.008816583886163049,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.63,
+            0.65,
+            0.62
+          ],
+          "gamma": 0.9175241370139575,
+          "white_balance": [
+            0.9779761863016921,
+            1.0458282839760498,
+            1.0177854530969817
+          ],
+          "radial_distortion_k1": -0.009357557291057209,
+          "object_mass_scale": 0.9473739481399841,
+          "object_friction_scale": 1.0497623133837124,
+          "gripper_friction_scale": 1.0930089452017933,
+          "translation_action_gain": 0.9857309173021076,
+          "rotation_action_gain": 1.0121196217906454,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0005",
+      "seed": 320005,
+      "x_m": -0.03861189825843604,
+      "y_m": 0.00828979863033618,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14526030844953047,
+        "target_y_m": 0.11200050499931083,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820005,
+          "front_position_offset_m": [
+            -0.016128543979046374,
+            0.02336045108624605,
+            -0.00488968552855459
+          ],
+          "front_look_at_offset_m": [
+            0.001472489297328173,
+            -0.009981492371286845,
+            0.016224267424414806
+          ],
+          "front_fovy_offset_deg": 2.7111377197243707,
+          "wrist_position_offset_m": [
+            0.0008115877766898629,
+            -0.001324853378411635,
+            -0.0017728067532585406
+          ],
+          "wrist_rotation_deg": [
+            0.39059605054731295,
+            -0.7022709816626442,
+            -0.7682601024205604
+          ],
+          "wrist_fovy_offset_deg": -0.9718388978374843,
+          "light_position_offset_m": [
+            0.11788409363957014,
+            0.05511259895405185,
+            0.18082626118479816
+          ],
+          "light_diffuse_scale": 0.8792140569226952,
+          "light_ambient": 0.0733435234757581,
+          "light_tint": [
+            1.0094638679362726,
+            1.0198847535500666,
+            0.9988628284898363
+          ],
+          "table_rgb": [
+            0.34,
+            0.34,
+            0.34
+          ],
+          "table_friction_scale": 1.1708216693722495,
+          "brightness": 1.05832244796649,
+          "contrast": 1.0813461651568799,
+          "saturation": 1.0077582322629868,
+          "hue_shift": -0.008788610925812105,
+          "gaussian_noise_std": 0.006300842229461492,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.63,
+            0.65,
+            0.62
+          ],
+          "gamma": 0.9736985105408535,
+          "white_balance": [
+            0.9777686610582286,
+            1.0014341775824491,
+            1.022638942106324
+          ],
+          "radial_distortion_k1": -0.006601201748271588,
+          "object_mass_scale": 0.9760641751371785,
+          "object_friction_scale": 1.0213641312752182,
+          "gripper_friction_scale": 0.9087700066752818,
+          "translation_action_gain": 1.0178601458838186,
+          "rotation_action_gain": 0.9892857329512335,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0007",
+      "seed": 320007,
+      "x_m": -0.038427513063056,
+      "y_m": 0.03711761475634196,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1471405426946907,
+        "target_y_m": -0.06629897382811802,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820007,
+          "front_position_offset_m": [
+            -0.02251462051401598,
+            0.016524277086344602,
+            -0.0123825575664391
+          ],
+          "front_look_at_offset_m": [
+            -0.0073953797025094175,
+            -0.005364831962044217,
+            0.0013001176373245507
+          ],
+          "front_fovy_offset_deg": 2.500908515514592,
+          "wrist_position_offset_m": [
+            0.0005334083762356273,
+            -0.0016493761957110209,
+            0.0009428591909627633
+          ],
+          "wrist_rotation_deg": [
+            -0.4204403361769835,
+            -0.022986940895129093,
+            0.3921650458527559
+          ],
+          "wrist_fovy_offset_deg": -0.1305331534738161,
+          "light_position_offset_m": [
+            -0.1227854629771657,
+            -0.12831412546243243,
+            0.0018767435822723555
+          ],
+          "light_diffuse_scale": 1.1789837316514404,
+          "light_ambient": 0.04311563270217326,
+          "light_tint": [
+            1.0079375666130737,
+            0.973671382541828,
+            0.9825997345623303
+          ],
+          "table_rgb": [
+            0.5,
+            0.36,
+            0.22
+          ],
+          "table_friction_scale": 0.9563422202385323,
+          "brightness": 1.0792099964098547,
+          "contrast": 1.0392128985710587,
+          "saturation": 1.0607254694177775,
+          "hue_shift": -0.009324393837704968,
+          "gaussian_noise_std": 0.007313406508127225,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.72,
+            0.7,
+            0.66
+          ],
+          "gamma": 1.0240551821434574,
+          "white_balance": [
+            1.0104543411847564,
+            0.9600704756732525,
+            1.0435961421260982
+          ],
+          "radial_distortion_k1": 0.016028486502299114,
+          "object_mass_scale": 1.0064895666317095,
+          "object_friction_scale": 0.9605525965195666,
+          "gripper_friction_scale": 1.0945030171818897,
+          "translation_action_gain": 1.0297100260717602,
+          "rotation_action_gain": 0.9938115024648093,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0008",
+      "seed": 320008,
+      "x_m": -0.035879540766946924,
+      "y_m": -0.014294312499803796,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14962042259849198,
+        "target_y_m": -0.12200773044767171,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820008,
+          "front_position_offset_m": [
+            -0.015396450868618716,
+            0.02157677947293936,
+            0.018256749342782947
+          ],
+          "front_look_at_offset_m": [
+            0.01895066507235536,
+            0.010908114479891453,
+            -0.0019979048204982718
+          ],
+          "front_fovy_offset_deg": -0.822242261128999,
+          "wrist_position_offset_m": [
+            0.0012504162947777,
+            0.0005211936172622085,
+            0.001280780510231054
+          ],
+          "wrist_rotation_deg": [
+            -0.40498247977474433,
+            -0.9270131027395319,
+            0.2731800689553334
+          ],
+          "wrist_fovy_offset_deg": -0.6915177738261955,
+          "light_position_offset_m": [
+            -0.1113742033461087,
+            0.04726084875714559,
+            -0.014893325883999997
+          ],
+          "light_diffuse_scale": 1.0372577513985044,
+          "light_ambient": 0.021709466105843546,
+          "light_tint": [
+            0.9875877256044661,
+            1.0361418802081526,
+            1.0289467775499133
+          ],
+          "table_rgb": [
+            0.18,
+            0.21,
+            0.24
+          ],
+          "table_friction_scale": 1.1938829639432669,
+          "brightness": 0.9574500111977233,
+          "contrast": 0.9376388177390685,
+          "saturation": 1.0275484261969368,
+          "hue_shift": 0.0025336783248612015,
+          "gaussian_noise_std": 0.00859993113752039,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.63,
+            0.65,
+            0.62
+          ],
+          "gamma": 1.007351985475885,
+          "white_balance": [
+            0.9870115956270474,
+            0.9816381987575505,
+            0.9587784579803598
+          ],
+          "radial_distortion_k1": -0.010437992267155978,
+          "object_mass_scale": 0.8830794502235209,
+          "object_friction_scale": 1.0436176120461456,
+          "gripper_friction_scale": 0.9380721004313589,
+          "translation_action_gain": 1.004342093146306,
+          "rotation_action_gain": 1.0224980214140773,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0001",
+      "seed": 320001,
+      "x_m": -0.056699561932382875,
+      "y_m": -0.011007680175176712,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14791388648227854,
+        "target_y_m": -0.12059558211956958,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820001,
+          "front_position_offset_m": [
+            -0.012910827404269742,
+            0.006845513889942867,
+            -0.01591026302745356
+          ],
+          "front_look_at_offset_m": [
+            0.0027141131524040657,
+            -0.01701472869858528,
+            -0.009126339029606726
+          ],
+          "front_fovy_offset_deg": -0.4029295267500803,
+          "wrist_position_offset_m": [
+            -0.00042388117949425114,
+            0.000493279743654082,
+            0.0005282438135821854
+          ],
+          "wrist_rotation_deg": [
+            0.21786263986759868,
+            0.4687672683439603,
+            -0.17999422758029993
+          ],
+          "wrist_fovy_offset_deg": 0.10857844290354657,
+          "light_position_offset_m": [
+            0.004534513944657759,
+            -0.13911687190528263,
+            -0.06196586668879875
+          ],
+          "light_diffuse_scale": 0.9616673604421928,
+          "light_ambient": 0.06027527172606684,
+          "light_tint": [
+            0.9711903231901698,
+            0.9589020577665003,
+            1.0005054167925764
+          ],
+          "table_rgb": [
+            0.72,
+            0.7,
+            0.64
+          ],
+          "table_friction_scale": 1.0111426507937633,
+          "brightness": 1.0197198403559988,
+          "contrast": 1.0278733849406037,
+          "saturation": 0.958800813180014,
+          "hue_shift": 0.009284309968470907,
+          "gaussian_noise_std": 0.004923892604906327,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.55,
+            0.55,
+            0.55
+          ],
+          "gamma": 1.037491854006396,
+          "white_balance": [
+            1.0038916634935513,
+            0.9509828131161645,
+            1.0496004913822563
+          ],
+          "radial_distortion_k1": 0.01971409554573756,
+          "object_mass_scale": 0.981662448134254,
+          "object_friction_scale": 0.932320062271072,
+          "gripper_friction_scale": 1.076383922970759,
+          "translation_action_gain": 0.9765586369575404,
+          "rotation_action_gain": 1.0126273932606575,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0002",
+      "seed": 320002,
+      "x_m": -0.05507626603332508,
+      "y_m": -0.03856845176317509,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15503357858631445,
+        "target_y_m": 0.07370954039047578,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820002,
+          "front_position_offset_m": [
+            0.008191981864283882,
+            -0.028360099525092754,
+            0.01938782725464357
+          ],
+          "front_look_at_offset_m": [
+            0.001898993570434486,
+            -0.01974768079824036,
+            0.002446613144071571
+          ],
+          "front_fovy_offset_deg": -2.64940704046546,
+          "wrist_position_offset_m": [
+            0.001258000399554528,
+            -0.0002103125654239256,
+            0.0016444115647342929
+          ],
+          "wrist_rotation_deg": [
+            0.07330066437777338,
+            0.36152195328499226,
+            0.8406703776106772
+          ],
+          "wrist_fovy_offset_deg": -0.06087060787319376,
+          "light_position_offset_m": [
+            0.09195051979292618,
+            -0.044522011849299103,
+            0.026844791075871482
+          ],
+          "light_diffuse_scale": 1.1529400148512323,
+          "light_ambient": 0.03917159639038023,
+          "light_tint": [
+            1.0266065619719222,
+            0.9988248056711206,
+            0.9502360352137429
+          ],
+          "table_rgb": [
+            0.34,
+            0.34,
+            0.34
+          ],
+          "table_friction_scale": 1.1166852294439855,
+          "brightness": 0.9813200164579755,
+          "contrast": 0.9342333832444334,
+          "saturation": 1.0422541065484012,
+          "hue_shift": -0.008651865289083406,
+          "gaussian_noise_std": 0.009620778754636393,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.72,
+            0.7,
+            0.66
+          ],
+          "gamma": 0.9832394316498173,
+          "white_balance": [
+            0.9773505692711013,
+            1.014296646458793,
+            0.9779017559674464
+          ],
+          "radial_distortion_k1": -0.013352297082327165,
+          "object_mass_scale": 0.9535146344778196,
+          "object_friction_scale": 0.9676061190940245,
+          "gripper_friction_scale": 0.9876952791721884,
+          "translation_action_gain": 1.0110593513485546,
+          "rotation_action_gain": 1.0164357172875547,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0003",
+      "seed": 320003,
+      "x_m": -0.05381636914182202,
+      "y_m": -0.017902698067746803,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1555169567700312,
+        "target_y_m": -0.12731827151975025,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820003,
+          "front_position_offset_m": [
+            -0.019800562985654947,
+            0.029474924948608518,
+            -0.008115120618519565
+          ],
+          "front_look_at_offset_m": [
+            0.007679421221594061,
+            -0.008095970094996461,
+            0.016442139688104648
+          ],
+          "front_fovy_offset_deg": -2.400892493547472,
+          "wrist_position_offset_m": [
+            6.510761148923339e-05,
+            0.0017019317951151827,
+            0.0015049616078209927
+          ],
+          "wrist_rotation_deg": [
+            -0.08586053778495062,
+            -0.6519008244437596,
+            0.7961753481165745
+          ],
+          "wrist_fovy_offset_deg": -0.8155349900915967,
+          "light_position_offset_m": [
+            -0.03136928976958667,
+            -0.14520339755085332,
+            -0.178054679793997
+          ],
+          "light_diffuse_scale": 1.0318437308636703,
+          "light_ambient": 0.08878612452943284,
+          "light_tint": [
+            1.006110695920611,
+            1.0249697043707264,
+            1.0466814466664962
+          ],
+          "table_rgb": [
+            0.72,
+            0.7,
+            0.64
+          ],
+          "table_friction_scale": 0.9862459778869768,
+          "brightness": 1.0281824804672426,
+          "contrast": 0.9277880689468914,
+          "saturation": 0.9668235509676139,
+          "hue_shift": -0.005453477013132313,
+          "gaussian_noise_std": 0.00928233484748892,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.42,
+            0.45,
+            0.48
+          ],
+          "gamma": 0.93899229428685,
+          "white_balance": [
+            1.0039697461969481,
+            0.9836251607820387,
+            0.9543169079379711
+          ],
+          "radial_distortion_k1": -0.0027082313070640254,
+          "object_mass_scale": 0.9790452406429933,
+          "object_friction_scale": 1.0314980947806889,
+          "gripper_friction_scale": 1.094628102358699,
+          "translation_action_gain": 1.0004064709982978,
+          "rotation_action_gain": 1.0173667801094768,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0014",
+      "seed": 320014,
+      "x_m": -0.04029681217455242,
+      "y_m": -0.01439465872524549,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14702330735927555,
+        "target_y_m": 0.14893236249702826,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820014,
+          "front_position_offset_m": [
+            0.007078860393642611,
+            0.012377921080897851,
+            -0.011095945557974366
+          ],
+          "front_look_at_offset_m": [
+            0.010996068732542951,
+            0.0030379276852782813,
+            0.004854900549538254
+          ],
+          "front_fovy_offset_deg": 2.9237405081578283,
+          "wrist_position_offset_m": [
+            0.00048603022098505245,
+            -0.001338237790809384,
+            0.00032670265237288304
+          ],
+          "wrist_rotation_deg": [
+            0.5513281125466116,
+            -0.6543248081682711,
+            0.8448685394795081
+          ],
+          "wrist_fovy_offset_deg": 0.727405117201354,
+          "light_position_offset_m": [
+            -0.041391369631256,
+            0.17242189076637465,
+            -0.016691813320590526
+          ],
+          "light_diffuse_scale": 1.0924817629757522,
+          "light_ambient": 0.07281604179604416,
+          "light_tint": [
+            0.999547969177156,
+            1.041446046296998,
+            0.9777041096289456
+          ],
+          "table_rgb": [
+            0.5,
+            0.36,
+            0.22
+          ],
+          "table_friction_scale": 0.8613009360791939,
+          "brightness": 0.976334704115627,
+          "contrast": 0.9389344175244031,
+          "saturation": 0.9295673731569571,
+          "hue_shift": -0.004543346383013036,
+          "gaussian_noise_std": 0.0010037990780656747,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.63,
+            0.65,
+            0.62
+          ],
+          "gamma": 1.0824745994930822,
+          "white_balance": [
+            1.0217904768647992,
+            0.9924926690148119,
+            0.9959367954318293
+          ],
+          "radial_distortion_k1": 0.026838479400518242,
+          "object_mass_scale": 0.9289377497270466,
+          "object_friction_scale": 0.9784190593734523,
+          "gripper_friction_scale": 1.000720017598452,
+          "translation_action_gain": 1.0052173831829099,
+          "rotation_action_gain": 1.0293865697290865,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0016",
+      "seed": 320016,
+      "x_m": -0.04540893845796407,
+      "y_m": -0.01970508198222988,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15935656327785133,
+        "target_y_m": -0.13649624725708315,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "light",
+          "seed": 820016,
+          "front_position_offset_m": [
+            -0.028394160238966546,
+            0.024810321484655062,
+            -0.0069449040915302
+          ],
+          "front_look_at_offset_m": [
+            -0.017871513338077634,
+            -0.005582269331533709,
+            0.01095062181958682
+          ],
+          "front_fovy_offset_deg": 2.226845302276107,
+          "wrist_position_offset_m": [
+            -0.0003351996225913565,
+            0.0004278454333965613,
+            0.001060843555522658
+          ],
+          "wrist_rotation_deg": [
+            0.1746351855328392,
+            -0.5662817383601622,
+            -0.2805002167589379
+          ],
+          "wrist_fovy_offset_deg": -0.990198617973219,
+          "light_position_offset_m": [
+            -0.14639238934043217,
+            0.10007102274726387,
+            -0.1926873218505306
+          ],
+          "light_diffuse_scale": 0.9019357499455474,
+          "light_ambient": 0.035615802285182296,
+          "light_tint": [
+            1.037489721443089,
+            1.0311707695442136,
+            1.0136077226120477
+          ],
+          "table_rgb": [
+            0.72,
+            0.7,
+            0.64
+          ],
+          "table_friction_scale": 1.1418506836653142,
+          "brightness": 0.9260772531589195,
+          "contrast": 0.9261054554097122,
+          "saturation": 1.0789127395209384,
+          "hue_shift": 0.00572458764542799,
+          "gaussian_noise_std": 0.0063842360363797505,
+          "blur_probability": 0.0,
+          "schema_version": 2,
+          "background_rgb": [
+            0.42,
+            0.45,
+            0.48
+          ],
+          "gamma": 1.0602682838191246,
+          "white_balance": [
+            0.9747802067992201,
+            0.9902275772459956,
+            0.9638557457593447
+          ],
+          "radial_distortion_k1": -0.021833200172296154,
+          "object_mass_scale": 1.0847290292150296,
+          "object_friction_scale": 1.0055171666635159,
+          "gripper_friction_scale": 1.0138775626500829,
+          "translation_action_gain": 1.0016770916794433,
+          "rotation_action_gain": 0.9771642082996814,
+          "joint_noise_std_rad": 0.0017453292519943296,
+          "eef_noise_std_m": 0.001,
+          "gripper_noise_std": 0.005,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0010",
+      "seed": 320010,
+      "x_m": -0.03701098998625507,
+      "y_m": -0.010490983932030077,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14861278286477578,
+        "target_y_m": -0.11834345472564053,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820010,
+          "front_position_offset_m": [
+            0.06483514453482143,
+            -0.0571815780315892,
+            -0.043559470688817936
+          ],
+          "front_look_at_offset_m": [
+            0.002679445490103932,
+            -0.023343943834725805,
+            0.006789359359078432
+          ],
+          "front_fovy_offset_deg": -3.013501554348581,
+          "wrist_position_offset_m": [
+            -0.0018855654361188932,
+            -0.004920968764518025,
+            -0.0034105144549609967
+          ],
+          "wrist_rotation_deg": [
+            -0.8912173620421044,
+            -1.5141346466760426,
+            -0.9079886657566334
+          ],
+          "wrist_fovy_offset_deg": -0.18134200736431705,
+          "light_position_offset_m": [
+            -0.4271927152589604,
+            0.3116109926542985,
+            0.06932718110097624
+          ],
+          "light_diffuse_scale": 1.4923892723453482,
+          "light_ambient": 0.22851221081540976,
+          "light_tint": [
+            0.9709347810559734,
+            0.9854586052045253,
+            1.0923099131305631
+          ],
+          "table_rgb": [
+            0.34,
+            0.34,
+            0.34
+          ],
+          "table_friction_scale": 1.0746602216510792,
+          "brightness": 1.1699412099958335,
+          "contrast": 0.8669238919675819,
+          "saturation": 1.1108312726847764,
+          "hue_shift": -0.02998202591583525,
+          "gaussian_noise_std": 0.0038771171837513776,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.72,
+            0.7,
+            0.66
+          ],
+          "gamma": 0.8973599897834975,
+          "white_balance": [
+            1.036431071963687,
+            0.9047063185298062,
+            1.0732944264353361
+          ],
+          "radial_distortion_k1": -0.05066342922057386,
+          "object_mass_scale": 1.2058715375772566,
+          "object_friction_scale": 0.949684327678251,
+          "gripper_friction_scale": 1.2473133719688358,
+          "translation_action_gain": 0.9612680280176301,
+          "rotation_action_gain": 1.01424254538897,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "action_delay"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0013",
+      "seed": 320013,
+      "x_m": -0.03691171115019906,
+      "y_m": -0.009560349647073398,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14708464538529467,
+        "target_y_m": 0.09969667580074928,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820013,
+          "front_position_offset_m": [
+            -0.025978990092381464,
+            -0.03585735069952325,
+            -0.020545371958861715
+          ],
+          "front_look_at_offset_m": [
+            -0.009345421149729808,
+            -0.029435876299491286,
+            0.014911025023893385
+          ],
+          "front_fovy_offset_deg": 1.9857328393546911,
+          "wrist_position_offset_m": [
+            0.0031837263211760584,
+            0.00034006873400961417,
+            -0.0015053645582882636
+          ],
+          "wrist_rotation_deg": [
+            1.1764432471464659,
+            -1.1128657373629012,
+            1.0194092448784842
+          ],
+          "wrist_fovy_offset_deg": -0.6657608349210618,
+          "light_position_offset_m": [
+            -0.28305484796819436,
+            0.26295530914801135,
+            0.45555266251804316
+          ],
+          "light_diffuse_scale": 0.5370870182794815,
+          "light_ambient": 0.01880560669716727,
+          "light_tint": [
+            0.9431579467562529,
+            0.9938918654511278,
+            1.0848582639970337
+          ],
+          "table_rgb": [
+            0.56,
+            0.48,
+            0.34
+          ],
+          "table_friction_scale": 0.928414277847122,
+          "brightness": 0.9278063192833361,
+          "contrast": 1.1440621349228448,
+          "saturation": 1.1765082085440615,
+          "hue_shift": 0.016701512482799517,
+          "gaussian_noise_std": 0.01069979590614602,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.55,
+            0.55,
+            0.55
+          ],
+          "gamma": 0.9612971292255232,
+          "white_balance": [
+            0.9231587499332975,
+            1.041351381472016,
+            1.119584734333716
+          ],
+          "radial_distortion_k1": -0.06637914947792845,
+          "object_mass_scale": 1.096315810671996,
+          "object_friction_scale": 0.8690621515116561,
+          "gripper_friction_scale": 1.0245500087688273,
+          "translation_action_gain": 0.953633784932351,
+          "rotation_action_gain": 1.0385962021508477,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "image_delay"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0025",
+      "seed": 320025,
+      "x_m": -0.03642851711576332,
+      "y_m": 0.0356549961897288,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1516026604021563,
+        "target_y_m": 0.1374326710394346,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820025,
+          "front_position_offset_m": [
+            -0.07195461381797447,
+            -0.04079920051074138,
+            0.009259565836880701
+          ],
+          "front_look_at_offset_m": [
+            0.016207050855399932,
+            0.0294367303988188,
+            0.0014216824886322914
+          ],
+          "front_fovy_offset_deg": 3.873060185598705,
+          "wrist_position_offset_m": [
+            0.002268238051333222,
+            0.0011982747515655442,
+            -0.0024022851758576215
+          ],
+          "wrist_rotation_deg": [
+            1.3430068050527488,
+            0.005080476625628272,
+            1.6770602385266544
+          ],
+          "wrist_fovy_offset_deg": -1.3289280764627722,
+          "light_position_offset_m": [
+            -0.4505382564564916,
+            0.33359765293262134,
+            -0.3084584716282118
+          ],
+          "light_diffuse_scale": 0.5805629822898407,
+          "light_ambient": 0.1227658209489913,
+          "light_tint": [
+            1.000183842553236,
+            0.9034166160715261,
+            1.086030476101584
+          ],
+          "table_rgb": [
+            0.3,
+            0.42,
+            0.4
+          ],
+          "table_friction_scale": 0.7853698140119967,
+          "brightness": 1.220913562454119,
+          "contrast": 0.8395184046809716,
+          "saturation": 0.9125862631573188,
+          "hue_shift": -0.01427114012140258,
+          "gaussian_noise_std": 0.011863004685016894,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.63,
+            0.65,
+            0.62
+          ],
+          "gamma": 0.9515762885281711,
+          "white_balance": [
+            0.9902894552746857,
+            0.9057181292244921,
+            0.9706124961916421
+          ],
+          "radial_distortion_k1": -0.07746070148836985,
+          "object_mass_scale": 0.8740966754305279,
+          "object_friction_scale": 0.7673878652778814,
+          "gripper_friction_scale": 1.21382658748296,
+          "translation_action_gain": 1.0049279293509839,
+          "rotation_action_gain": 0.9395057717637092,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0030",
+      "seed": 320030,
+      "x_m": -0.04125508669172954,
+      "y_m": 0.0264039531865626,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.14519093440901226,
+        "target_y_m": -0.07788304441352076,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820030,
+          "front_position_offset_m": [
+            -0.0792995013237386,
+            -0.060104110579556294,
+            -0.016686434692247933
+          ],
+          "front_look_at_offset_m": [
+            -0.005226584979919187,
+            0.009368859144938832,
+            -0.009940346173845298
+          ],
+          "front_fovy_offset_deg": 3.0693188682619503,
+          "wrist_position_offset_m": [
+            -0.0020672183314139636,
+            -0.003178783396069731,
+            0.0017896723212742181
+          ],
+          "wrist_rotation_deg": [
+            -0.036526426980706184,
+            -0.09921451281022264,
+            -2.8480520675924357
+          ],
+          "wrist_fovy_offset_deg": -0.9699901167806448,
+          "light_position_offset_m": [
+            -0.460946809598915,
+            -0.2431422082276049,
+            -0.09164811426217889
+          ],
+          "light_diffuse_scale": 0.8696516942979282,
+          "light_ambient": 0.12048742057432402,
+          "light_tint": [
+            0.9945831986918154,
+            1.1166863481265057,
+            0.9512325356649063
+          ],
+          "table_rgb": [
+            0.34,
+            0.34,
+            0.34
+          ],
+          "table_friction_scale": 0.8102565084661848,
+          "brightness": 1.1534966053487548,
+          "contrast": 1.2160840925361303,
+          "saturation": 0.8191187527417585,
+          "hue_shift": 0.006192058888612406,
+          "gaussian_noise_std": 0.00010823307998587107,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.72,
+            0.7,
+            0.66
+          ],
+          "gamma": 1.0840254537872693,
+          "white_balance": [
+            0.9779192429182467,
+            0.9400252506060794,
+            1.117359515746199
+          ],
+          "radial_distortion_k1": -0.018281681048672775,
+          "object_mass_scale": 0.7943576759406994,
+          "object_friction_scale": 0.8558546913395225,
+          "gripper_friction_scale": 1.1445382871425358,
+          "translation_action_gain": 0.9667502791126399,
+          "rotation_action_gain": 0.9317854819844503,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "action_delay"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0032",
+      "seed": 320032,
+      "x_m": -0.03575728671829939,
+      "y_m": 0.001357755058949757,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.1536962903611708,
+        "target_y_m": 0.10201555799837167,
+        "distance_bin": 0,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820032,
+          "front_position_offset_m": [
+            -0.041276241896713056,
+            0.04616634138995131,
+            -0.007834923622730208
+          ],
+          "front_look_at_offset_m": [
+            0.037073236893218696,
+            0.02681150414640867,
+            -0.018336518800364437
+          ],
+          "front_fovy_offset_deg": 0.33427767420840837,
+          "wrist_position_offset_m": [
+            0.0022422326684811145,
+            0.0030354413933861733,
+            0.0003091731117252153
+          ],
+          "wrist_rotation_deg": [
+            -1.1621239118565667,
+            0.7344428765646649,
+            -2.4453889242458517
+          ],
+          "wrist_fovy_offset_deg": -0.5102208079614758,
+          "light_position_offset_m": [
+            -0.4898869348244559,
+            -0.4479658041447975,
+            -0.2672856133431435
+          ],
+          "light_diffuse_scale": 0.7702065282411787,
+          "light_ambient": 0.03668180826537373,
+          "light_tint": [
+            1.0256014387975574,
+            0.9642063058772263,
+            1.0180987924262874
+          ],
+          "table_rgb": [
+            0.3,
+            0.42,
+            0.4
+          ],
+          "table_friction_scale": 1.1243571749158505,
+          "brightness": 1.2366956671475924,
+          "contrast": 1.2395457539475085,
+          "saturation": 1.103330745581925,
+          "hue_shift": 0.00976467052949316,
+          "gaussian_noise_std": 0.010724551355214622,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.55,
+            0.55,
+            0.55
+          ],
+          "gamma": 0.9494900945219292,
+          "white_balance": [
+            0.9711339244107522,
+            1.07112723771276,
+            0.8842168933009801
+          ],
+          "radial_distortion_k1": -0.042707892028760366,
+          "object_mass_scale": 1.2186286526699286,
+          "object_friction_scale": 0.9756482926796844,
+          "gripper_friction_scale": 1.1394350295803803,
+          "translation_action_gain": 0.9707841474985985,
+          "rotation_action_gain": 1.0540390053266273,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "action_delay"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0006",
+      "seed": 320006,
+      "x_m": -0.052159437730099636,
+      "y_m": 0.007266393996457822,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15488631345296566,
+        "target_y_m": 0.14250750037365614,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820006,
+          "front_position_offset_m": [
+            -0.032133537649044294,
+            -0.026846899883115734,
+            -0.03493061180066468
+          ],
+          "front_look_at_offset_m": [
+            0.005247295523558161,
+            -0.012918568219112043,
+            0.013663659831238972
+          ],
+          "front_fovy_offset_deg": 0.43332806327531426,
+          "wrist_position_offset_m": [
+            -0.004763072514538759,
+            0.002246310636479308,
+            0.0033264474176776674
+          ],
+          "wrist_rotation_deg": [
+            2.370197457033825,
+            1.0259604956421349,
+            1.266397687370782
+          ],
+          "wrist_fovy_offset_deg": 0.7169513275481281,
+          "light_position_offset_m": [
+            0.2981901811205169,
+            0.3826639448792939,
+            -0.32414514162968255
+          ],
+          "light_diffuse_scale": 1.4316596147856324,
+          "light_ambient": 0.11613533565728923,
+          "light_tint": [
+            1.0353921498501253,
+            0.914112950402597,
+            1.022192879715283
+          ],
+          "table_rgb": [
+            0.5,
+            0.36,
+            0.22
+          ],
+          "table_friction_scale": 1.2447347122906853,
+          "brightness": 1.2162460226795802,
+          "contrast": 1.1711094846422345,
+          "saturation": 0.8545872058802524,
+          "hue_shift": 0.0025846722351139315,
+          "gaussian_noise_std": 0.017835674734282422,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.42,
+            0.45,
+            0.48
+          ],
+          "gamma": 0.8568657148719595,
+          "white_balance": [
+            0.9933475332374977,
+            0.8903544724664013,
+            1.1086493313779309
+          ],
+          "radial_distortion_k1": -0.037288652275218194,
+          "object_mass_scale": 1.0078742614037834,
+          "object_friction_scale": 0.7945439410144117,
+          "gripper_friction_scale": 1.1290082096037475,
+          "translation_action_gain": 1.0538999958228226,
+          "rotation_action_gain": 0.9707899040413008,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0009",
+      "seed": 320009,
+      "x_m": -0.049850405733086876,
+      "y_m": 0.009051252968830373,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15027097873133513,
+        "target_y_m": -0.13751527283284598,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820009,
+          "front_position_offset_m": [
+            -0.031826116711627266,
+            0.009959110372908683,
+            -0.011007903993645415
+          ],
+          "front_look_at_offset_m": [
+            0.008884790631203107,
+            0.011561209395696326,
+            0.004862228176141171
+          ],
+          "front_fovy_offset_deg": -1.2729778210687241,
+          "wrist_position_offset_m": [
+            -0.0037253128288582994,
+            0.0008193728349797647,
+            -0.0017900402761244862
+          ],
+          "wrist_rotation_deg": [
+            -0.9460359455191036,
+            0.7148587633208692,
+            -1.449234812417351
+          ],
+          "wrist_fovy_offset_deg": -0.22958743221663713,
+          "light_position_offset_m": [
+            -0.1784688708265667,
+            -0.027026463312561644,
+            -0.1880879387818979
+          ],
+          "light_diffuse_scale": 0.7287546575156251,
+          "light_ambient": 0.1293614538770955,
+          "light_tint": [
+            1.087044447630301,
+            1.0675479315655543,
+            0.9360853146830898
+          ],
+          "table_rgb": [
+            0.5,
+            0.36,
+            0.22
+          ],
+          "table_friction_scale": 1.2238374953790414,
+          "brightness": 0.7925208059633371,
+          "contrast": 0.9236434141907608,
+          "saturation": 0.998024894198817,
+          "hue_shift": -0.010340736733875033,
+          "gaussian_noise_std": 0.013570384026402095,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.72,
+            0.7,
+            0.66
+          ],
+          "gamma": 0.9577947056659881,
+          "white_balance": [
+            0.9306338114704293,
+            1.0292445191195827,
+            1.0720361105100678
+          ],
+          "radial_distortion_k1": -0.06592357180883565,
+          "object_mass_scale": 1.1449431386380997,
+          "object_friction_scale": 1.0793465366718895,
+          "gripper_friction_scale": 1.0300413540294682,
+          "translation_action_gain": 0.9615627750593025,
+          "rotation_action_gain": 1.04521806637924,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "image_delay"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0011",
+      "seed": 320011,
+      "x_m": -0.037942531163527346,
+      "y_m": -0.018850641140566067,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15959852333172417,
+        "target_y_m": -0.15192043794475532,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820011,
+          "front_position_offset_m": [
+            0.022284758586063158,
+            -0.007011708933675517,
+            -0.009745293449091877
+          ],
+          "front_look_at_offset_m": [
+            0.014833062965459234,
+            -0.0333829045302917,
+            -0.00638893377261387
+          ],
+          "front_fovy_offset_deg": 0.008426353941776377,
+          "wrist_position_offset_m": [
+            -0.002863324940646479,
+            0.0010684353846777735,
+            0.00495340877712229
+          ],
+          "wrist_rotation_deg": [
+            -0.8369347088297587,
+            2.597561332662961,
+            -2.2461613884739373
+          ],
+          "wrist_fovy_offset_deg": -2.9781843855556698,
+          "light_position_offset_m": [
+            -0.08560509454731136,
+            -0.21100174736292276,
+            -0.004804349318374701
+          ],
+          "light_diffuse_scale": 0.5979572534209661,
+          "light_ambient": 0.10741506054393846,
+          "light_tint": [
+            1.0483016039599997,
+            1.0433688093571922,
+            0.9630775756924235
+          ],
+          "table_rgb": [
+            0.5,
+            0.36,
+            0.22
+          ],
+          "table_friction_scale": 0.8362140620830627,
+          "brightness": 1.1413355819118896,
+          "contrast": 0.9384373152932379,
+          "saturation": 1.1056718930511231,
+          "hue_shift": 0.02473043879388579,
+          "gaussian_noise_std": 0.011447107823123926,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.42,
+            0.45,
+            0.48
+          ],
+          "gamma": 0.8669466761554045,
+          "white_balance": [
+            1.102792659559544,
+            0.8925505712283454,
+            0.9232462617098175
+          ],
+          "radial_distortion_k1": -0.054953827839401226,
+          "object_mass_scale": 0.8707661862434284,
+          "object_friction_scale": 0.8138419143697686,
+          "gripper_friction_scale": 1.1435982147966477,
+          "translation_action_gain": 1.0373039243216087,
+          "rotation_action_gain": 1.061868119949864,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "action_delay"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0017",
+      "seed": 320017,
+      "x_m": -0.05682370607547865,
+      "y_m": 0.003580379300596785,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.15703200962131908,
+        "target_y_m": 0.1144155800812389,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820017,
+          "front_position_offset_m": [
+            0.00933270640990154,
+            -0.04514863913779573,
+            0.013394420479466929
+          ],
+          "front_look_at_offset_m": [
+            0.00323310653150069,
+            -0.0045743377575673955,
+            0.014610710761131369
+          ],
+          "front_fovy_offset_deg": -3.072058425494765,
+          "wrist_position_offset_m": [
+            0.003644618362413526,
+            -0.0022642205769132485,
+            -0.0029939356055844113
+          ],
+          "wrist_rotation_deg": [
+            -0.02665855912925874,
+            -2.8582276558394977,
+            -2.2468031218529516
+          ],
+          "wrist_fovy_offset_deg": 1.665512636795241,
+          "light_position_offset_m": [
+            -0.07424016815829915,
+            -0.36564340982338805,
+            -0.4565323264673665
+          ],
+          "light_diffuse_scale": 1.4444051541766763,
+          "light_ambient": 0.06234282136363323,
+          "light_tint": [
+            0.9781322817453573,
+            0.9644238480262344,
+            1.0326642188100883
+          ],
+          "table_rgb": [
+            0.72,
+            0.7,
+            0.64
+          ],
+          "table_friction_scale": 0.854354762788525,
+          "brightness": 1.10804187614741,
+          "contrast": 0.9296468367991253,
+          "saturation": 0.8943050004798799,
+          "hue_shift": 0.006899697977744028,
+          "gaussian_noise_std": 0.005785738086948169,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.55,
+            0.55,
+            0.55
+          ],
+          "gamma": 0.9702094514752715,
+          "white_balance": [
+            1.0837908763868058,
+            0.9585836229168375,
+            0.9765868066484316
+          ],
+          "radial_distortion_k1": -0.05462896890703396,
+          "object_mass_scale": 1.2821708788227295,
+          "object_friction_scale": 0.7746873763849816,
+          "gripper_friction_scale": 0.8637773123487988,
+          "translation_action_gain": 1.0301611702380642,
+          "rotation_action_gain": 1.0305857593018852,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "none"
+        }
+      }
+    },
+    {
+      "scene_id": "pick_place_sim2real_v2_collection-primary-0022",
+      "seed": 320022,
+      "x_m": -0.0492345751072889,
+      "y_m": -0.03737710126949951,
+      "yaw_rad": 0.0,
+      "env_seed": null,
+      "overrides": {
+        "task": "red_to_storage_bin",
+        "target_x_m": 0.17362198361876904,
+        "target_y_m": -0.13968262915137822,
+        "distance_bin": 1,
+        "candidate_partition": "primary",
+        "domain_randomization": {
+          "tier": "medium",
+          "seed": 820022,
+          "front_position_offset_m": [
+            0.022193548770397503,
+            0.026326562945872614,
+            -0.004322840569315076
+          ],
+          "front_look_at_offset_m": [
+            0.0051089550077194415,
+            0.005060464778496733,
+            0.009013727301257601
+          ],
+          "front_fovy_offset_deg": -3.8386163697096536,
+          "wrist_position_offset_m": [
+            0.002501019372622677,
+            -0.0007129009281761963,
+            -0.0003242866778216712
+          ],
+          "wrist_rotation_deg": [
+            -1.5398524191593808,
+            0.9340354613079036,
+            0.8936589106532824
+          ],
+          "wrist_fovy_offset_deg": 2.0925575053495606,
+          "light_position_offset_m": [
+            0.18209559698599087,
+            -0.16262923294019227,
+            0.052878186221904544
+          ],
+          "light_diffuse_scale": 1.145229639831248,
+          "light_ambient": 0.10317492419202717,
+          "light_tint": [
+            1.0535096651692728,
+            0.9253422261832512,
+            1.05806693314852
+          ],
+          "table_rgb": [
+            0.34,
+            0.34,
+            0.34
+          ],
+          "table_friction_scale": 1.1309133193660146,
+          "brightness": 1.1712875919383343,
+          "contrast": 1.2025417940301675,
+          "saturation": 0.9593262708998889,
+          "hue_shift": 0.028940938201547563,
+          "gaussian_noise_std": 0.01930231963376014,
+          "blur_probability": 0.2,
+          "schema_version": 2,
+          "background_rgb": [
+            0.72,
+            0.7,
+            0.66
+          ],
+          "gamma": 0.8692034290243543,
+          "white_balance": [
+            1.106770319953991,
+            0.9836338569179504,
+            0.8896196869604891
+          ],
+          "radial_distortion_k1": -0.002023979167455059,
+          "object_mass_scale": 0.8734453502822159,
+          "object_friction_scale": 0.7581927855661218,
+          "gripper_friction_scale": 1.0565019896136538,
+          "translation_action_gain": 1.0579835282262584,
+          "rotation_action_gain": 0.9887972873705746,
+          "joint_noise_std_rad": 0.005235987755982988,
+          "eef_noise_std_m": 0.003,
+          "gripper_noise_std": 0.015,
+          "temporal_mode": "none"
+        }
+      }
+    }
+  ],
+  "randomization_schema_version": 2,
+  "source_manifest": "configs/benchmarks/pick_place_sim2real_v2_collection.json",
+  "tier_counts": {
+    "nominal": 10,
+    "light": 10,
+    "medium": 10
+  }
+}

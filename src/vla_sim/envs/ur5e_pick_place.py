@@ -2,24 +2,25 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from functools import lru_cache
-from typing import Any, Mapping
+from typing import Any
 
 import numpy as np
 from numpy.typing import NDArray
 
 from vla_sim.contracts import (
+    DEFAULT_ACTION_SPEC,
     ActionSpec,
     ContractError,
-    DEFAULT_ACTION_SPEC,
     PickPlaceObservationAdapter,
 )
 from vla_sim.domain_randomization import (
     DomainRandomizationSample,
+    Sim2RealEpisodeRuntime,
     apply_domain_randomization,
     capture_render_baseline,
-    policy_observation_randomized,
 )
 from vla_sim.scenes import SceneSpec
 from vla_sim.sim.dependencies import require_robosuite
@@ -234,11 +235,12 @@ class UR5ePickPlaceEnv:
         self._ever_lifted = False
         self._render_baseline = capture_render_baseline(backend)
         self._randomization_sample: DomainRandomizationSample | None = None
+        self._sim2real_runtime = Sim2RealEpisodeRuntime()
         self._visual_step = 0
         self._validate_backend_action_space()
 
     @classmethod
-    def create(cls, config: UR5ePickPlaceConfig | None = None) -> "UR5ePickPlaceEnv":
+    def create(cls, config: UR5ePickPlaceConfig | None = None) -> UR5ePickPlaceEnv:
         effective = config or UR5ePickPlaceConfig()
         return cls(create_pick_place_backend(effective), effective)
 
@@ -272,6 +274,8 @@ class UR5ePickPlaceEnv:
             if isinstance(randomization, Mapping)
             else None
         )
+        self._sim2real_runtime.reset(self._randomization_sample)
+        cube = getattr(self.backend, "cube", None)
         apply_domain_randomization(
             self.backend,
             self._render_baseline,
@@ -279,6 +283,8 @@ class UR5ePickPlaceEnv:
             front_camera_name=self.config.camera.third_person.name,
             front_look_at_m=self.config.camera.third_person_look_at_m,
             wrist_camera_name=self.config.camera.wrist_name,
+            object_body_names=(getattr(cube, "root_body", ""),),
+            object_geom_names=tuple(getattr(cube, "contact_geoms", ())),
         )
         refreshed = self.backend._get_observations(force_update=True)
         self._raw_observation = self._with_target(refreshed)
@@ -329,7 +335,9 @@ class UR5ePickPlaceEnv:
         return augmented
 
     def step(self, action: Any):
-        raw, reward, done, backend_info = self.backend.step(self.action_spec.validate(action))
+        requested_action = self.action_spec.validate(action)
+        execution_action = self._sim2real_runtime.execution_action(requested_action)
+        raw, reward, done, backend_info = self.backend.step(execution_action)
         if self._lock_target_bin():
             self.backend.sim.forward()
             raw = self.backend._get_observations(force_update=True)
@@ -360,7 +368,7 @@ class UR5ePickPlaceEnv:
 
     def _policy_observation(self, raw: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
         observation = self._observation_adapter.convert(raw)
-        return policy_observation_randomized(observation, self._randomization_sample, self._visual_step)
+        return self._sim2real_runtime.policy_observation(observation, self._visual_step)
 
     def _check_success(self) -> tuple[bool, dict[str, Any]]:
         cube = self._cube_position()

@@ -2,20 +2,22 @@
 
 from __future__ import annotations
 
+import json
 import math
 import os
 import sys
 from pathlib import Path
 from typing import Any
 
+import numpy as np
 import torch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from vla_sim.lerobot_compat import install_fast_parquet_loader  # noqa: E402
-from vla_sim.losses import action_dimension_weights, weighted_action_loss  # noqa: E402
-from vla_sim.sampling import (  # noqa: E402
+from vla_sim.lerobot_compat import install_fast_parquet_loader
+from vla_sim.losses import action_dimension_weights, weighted_action_loss
+from vla_sim.sampling import (
     GlobalTaskPromptDataset,
     PhaseActionMaskedDataset,
     ReplayMixDataset,
@@ -23,20 +25,20 @@ from vla_sim.sampling import (  # noqa: E402
     apply_replay_task_prompts,
     phase_groups_from_indices,
     phase_sampling_weights,
+    task_sampling_weights,
     transition_sampling_weights,
 )
 
 install_fast_parquet_loader()
 
-from lerobot.policies.smolvla.configuration_smolvla import SmolVLAConfig  # noqa: E402
-from lerobot.policies.smolvla.modeling_smolvla import SmolVLAPolicy  # noqa: E402
-from lerobot.utils.constants import (  # noqa: E402
+from lerobot.policies.smolvla.configuration_smolvla import SmolVLAConfig
+from lerobot.policies.smolvla.modeling_smolvla import SmolVLAPolicy
+from lerobot.utils.constants import (
     ACTION,
     OBS_LANGUAGE_ATTENTION_MASK,
     OBS_LANGUAGE_TOKENS,
     OBS_STATE,
 )
-
 
 if not hasattr(SmolVLAConfig, "get"):
     def _config_get(self: SmolVLAConfig, key: str, default: Any = None) -> Any:
@@ -162,8 +164,29 @@ def _install_transition_sampler() -> None:
             and "action" in dataset.hf_dataset.column_names
         ):
             unformatted = dataset.hf_dataset.with_format(None)
-            actions = torch.as_tensor(unformatted["action"])
-            episode_indices = torch.as_tensor(unformatted["episode_index"])
+            # The public column accessor materializes a Python list of
+            # hundreds of thousands of tiny action arrays.  The on-disk
+            # feature is a fixed-size Arrow list, so read its contiguous
+            # values buffer directly when available.  This preserves action
+            # order exactly while keeping transition-weight construction
+            # practical for the replay-mixed dataset.
+            arrow_actions = getattr(unformatted, "data", None)
+            if arrow_actions is not None:
+                action_column = arrow_actions.column("action").combine_chunks()
+                action_dim = int(action_column.type.list_size)
+                action_values = action_column.values.to_numpy(zero_copy_only=False)
+                actions = torch.from_numpy(
+                    np.asarray(action_values, dtype=np.float32).reshape(-1, action_dim)
+                )
+                episode_values = (
+                    arrow_actions.column("episode_index")
+                    .combine_chunks()
+                    .to_numpy(zero_copy_only=False)
+                )
+                episode_indices = torch.from_numpy(np.asarray(episode_values))
+            else:
+                actions = torch.from_numpy(np.asarray(unformatted["action"], dtype=np.float32))
+                episode_indices = torch.as_tensor(unformatted["episode_index"])
             weights = transition_sampling_weights(
                 actions,
                 episode_indices,
@@ -182,6 +205,50 @@ def _install_transition_sampler() -> None:
                 "transition_sampler "
                 f"factor={factor:g} window={window} "
                 f"weighted_frames={int((weights > 1).sum())}/{len(weights)}",
+                flush=True,
+            )
+        original_init(self, dataset, *args, **kwargs)
+
+    dataloader_class.__init__ = data_loader_init  # type: ignore[method-assign]
+
+
+def _install_task_sampler() -> None:
+    raw_contract = os.environ.get("VLA_TASK_SAMPLING_PROPORTIONS", "").strip()
+    if not raw_contract:
+        return
+    target_proportions = {
+        str(prompt): float(proportion)
+        for prompt, proportion in json.loads(raw_contract).items()
+    }
+    seed = int(os.environ.get("VLA_SAMPLING_SEED", "1000"))
+    dataloader_class = torch.utils.data.DataLoader
+    original_init = dataloader_class.__init__
+
+    def data_loader_init(self, dataset, *args, **kwargs):
+        if kwargs.get("batch_sampler") is None and hasattr(dataset, "hf_dataset"):
+            raw = dataset.hf_dataset.with_format(None)
+            task_indices = [int(value) for value in raw["task_index"]]
+            prompts_by_index = {
+                int(row["task_index"]): str(prompt)
+                for prompt, row in dataset.meta.tasks.iterrows()
+            }
+            labels = [prompts_by_index[index] for index in task_indices]
+            weights = task_sampling_weights(labels, target_proportions)
+            generator = torch.Generator().manual_seed(seed)
+            kwargs["sampler"] = torch.utils.data.WeightedRandomSampler(
+                weights,
+                num_samples=len(weights),
+                replacement=True,
+                generator=generator,
+            )
+            kwargs["shuffle"] = False
+            counts = {label: labels.count(label) for label in target_proportions}
+            print(
+                "task_sampler "
+                + " ".join(
+                    f"{label!r}={target_proportions[label]:.6f}({counts[label]} frames)"
+                    for label in target_proportions
+                ),
                 flush=True,
             )
         original_init(self, dataset, *args, **kwargs)
@@ -400,9 +467,50 @@ _install_global_task_prompt()
 _install_transition_sampler()
 _install_phase_sampler()
 _install_auxiliary_replay_dataset()
+_install_task_sampler()
 
-from lerobot.scripts import lerobot_train  # noqa: E402
-from lerobot.configs.train import TrainPipelineConfig  # noqa: E402
+from lerobot.configs.train import TrainPipelineConfig
+from lerobot.scripts import lerobot_train
+
+_continue_peft_adapter = os.environ.get("VLA_CONTINUE_PEFT_ADAPTER", "0") == "1"
+if _continue_peft_adapter:
+    _original_make_policy = lerobot_train.make_policy
+
+    def _make_trainable_peft_policy(*args, **kwargs):
+        policy = _original_make_policy(*args, **kwargs)
+        try:
+            from peft import PeftModel
+        except ImportError as error:
+            raise RuntimeError("PEFT is required to continue an existing LoRA adapter") from error
+        if not isinstance(policy, PeftModel):
+            raise TypeError("Expected a PEFT checkpoint, but the loaded policy is not a PeftModel")
+        adapters = list(policy.peft_config)
+        if adapters != ["default"]:
+            raise RuntimeError(f"Expected exactly one default PEFT adapter, got {adapters}")
+        config = policy.peft_config["default"]
+        if str(config.peft_type).upper().split(".")[-1] != "LORA":
+            raise RuntimeError(f"Expected LoRA adapter, got {config.peft_type}")
+        policy.set_adapter("default")
+        config.inference_mode = False
+        trainable = sum(parameter.numel() for parameter in policy.parameters() if parameter.requires_grad)
+        lora_trainable = sum(
+            parameter.numel()
+            for name, parameter in policy.named_parameters()
+            if parameter.requires_grad and "lora_" in name
+        )
+        if trainable == 0 or lora_trainable != trainable:
+            raise RuntimeError(
+                "Existing adapter continuation must train LoRA parameters only: "
+                f"trainable={trainable}, lora_trainable={lora_trainable}"
+            )
+        print(
+            f"continue_peft_adapter adapter=default rank={config.r} "
+            f"trainable_params={trainable}",
+            flush=True,
+        )
+        return policy
+
+    lerobot_train.make_policy = _make_trainable_peft_policy
 
 _resume_checkpoint = os.environ.get("VLA_RESUME_CHECKPOINT")
 if _resume_checkpoint:

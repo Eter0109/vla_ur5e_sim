@@ -7,12 +7,13 @@ prevents renderer state from leaking between episodes.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
-from typing import Any, Iterable, Mapping
+from collections.abc import Iterable, Mapping
+from dataclasses import asdict, dataclass, replace
+from functools import lru_cache
+from typing import Any
 
 import numpy as np
 from numpy.typing import NDArray
-
 
 PUSH_FRONT_CAMERA_POSITION_M = (0.50, 0.0, 1.35)
 PUSH_FRONT_CAMERA_LOOK_AT_M = (0.0, 0.0, 0.80)
@@ -33,6 +34,12 @@ BLIND_TABLE_COLORS = (
     (0.21, 0.31, 0.25),
     (0.60, 0.62, 0.64),
     (0.25, 0.29, 0.38),
+)
+TRAIN_BACKGROUND_COLORS = (
+    (0.55, 0.55, 0.55),
+    (0.72, 0.70, 0.66),
+    (0.42, 0.45, 0.48),
+    (0.63, 0.65, 0.62),
 )
 
 
@@ -60,12 +67,26 @@ class DomainRandomizationSample:
     hue_shift: float = 0.0
     gaussian_noise_std: float = 0.0
     blur_probability: float = 0.0
+    schema_version: int = 1
+    background_rgb: tuple[float, float, float] = (0.5, 0.5, 0.5)
+    gamma: float = 1.0
+    white_balance: tuple[float, float, float] = (1.0, 1.0, 1.0)
+    radial_distortion_k1: float = 0.0
+    object_mass_scale: float = 1.0
+    object_friction_scale: float = 1.0
+    gripper_friction_scale: float = 1.0
+    translation_action_gain: float = 1.0
+    rotation_action_gain: float = 1.0
+    joint_noise_std_rad: float = 0.0
+    eef_noise_std_m: float = 0.0
+    gripper_noise_std: float = 0.0
+    temporal_mode: str = "none"
 
     def as_overrides(self) -> dict[str, Any]:
         return asdict(self)
 
     @classmethod
-    def from_mapping(cls, value: Mapping[str, Any]) -> "DomainRandomizationSample":
+    def from_mapping(cls, value: Mapping[str, Any]) -> DomainRandomizationSample:
         normalized = dict(value)
         for name in (
             "front_position_offset_m",
@@ -75,6 +96,8 @@ class DomainRandomizationSample:
             "light_position_offset_m",
             "light_tint",
             "table_rgb",
+            "background_rgb",
+            "white_balance",
         ):
             if name in normalized:
                 normalized[name] = tuple(float(item) for item in normalized[name])
@@ -94,6 +117,133 @@ class RenderBaseline:
     light_specular: NDArray[np.float64]
     table_rgba: dict[int, NDArray[np.float64]]
     table_friction: dict[int, NDArray[np.float64]]
+    background_rgba: dict[int, NDArray[np.float64]]
+    geom_friction: NDArray[np.float64]
+    body_mass: NDArray[np.float64]
+    body_inertia: NDArray[np.float64]
+
+
+class Sim2RealEpisodeRuntime:
+    """Deterministic policy I/O and one-step latency for one environment."""
+
+    def __init__(self) -> None:
+        self.sample: DomainRandomizationSample | None = None
+        self._previous_action: NDArray[np.float32] | None = None
+        self._previous_images: dict[str, NDArray[np.uint8]] = {}
+
+    def reset(self, sample: DomainRandomizationSample | None) -> None:
+        self.sample = sample
+        self._previous_action = None
+        self._previous_images.clear()
+
+    def execution_action(self, action: NDArray[np.float32]) -> NDArray[np.float32]:
+        requested = np.asarray(action, dtype=np.float32).copy()
+        sample = self.sample
+        if sample is None or sample.tier == "nominal":
+            return requested
+        scaled = requested.copy()
+        scaled[:3] *= np.float32(sample.translation_action_gain)
+        scaled[3:6] *= np.float32(sample.rotation_action_gain)
+        scaled = np.clip(scaled, -1.0, 1.0).astype(np.float32)
+        if sample.temporal_mode != "action_delay":
+            return scaled
+        executed = scaled if self._previous_action is None else self._previous_action
+        self._previous_action = scaled.copy()
+        return executed.copy()
+
+    def policy_observation(
+        self,
+        observation: Mapping[str, NDArray[Any]],
+        step: int,
+    ) -> dict[str, NDArray[Any]]:
+        transformed = policy_observation_randomized(observation, self.sample, step)
+        sample = self.sample
+        if sample is None or sample.tier == "nominal":
+            return transformed
+        rng = np.random.default_rng(sample.seed + 1_000_003 + step * 37)
+        state_key = "observation.state"
+        if state_key in transformed:
+            state = np.asarray(transformed[state_key], dtype=np.float32).copy()
+            if state.size >= 10:
+                state[:6] += rng.normal(0.0, sample.joint_noise_std_rad, size=6)
+                state[6:9] += rng.normal(0.0, sample.eef_noise_std_m, size=3)
+                state[9] = np.clip(
+                    state[9] + rng.normal(0.0, sample.gripper_noise_std),
+                    0.0,
+                    1.0,
+                )
+            transformed[state_key] = state
+        if sample.temporal_mode == "image_delay":
+            for key, value in tuple(transformed.items()):
+                image = np.asarray(value)
+                if image.dtype != np.uint8 or image.ndim != 3:
+                    continue
+                current = image.copy()
+                if key in self._previous_images:
+                    transformed[key] = self._previous_images[key]
+                self._previous_images[key] = current
+        return transformed
+
+
+def sample_sim2real_v2(
+    tier: str,
+    seed: int,
+    *,
+    color_sensitive: bool = False,
+) -> DomainRandomizationSample:
+    """Return the version-2 full-chain sample used by new collection manifests."""
+
+    base = sample_domain_randomization(tier, seed)
+    if tier == "nominal":
+        return replace(base, schema_version=2)
+    rng = np.random.default_rng(seed + 900_001)
+    if tier == "light":
+        mass = (0.85, 1.15)
+        contact = (0.90, 1.10)
+        action_gain = (0.97, 1.03)
+        gamma = (0.90, 1.10)
+        white_balance = (0.95, 1.05)
+        radial_k1 = 0.03
+        joint_noise = float(np.deg2rad(0.1))
+        eef_noise = 0.001
+        gripper_noise = 0.005
+        temporal_mode = "none"
+    elif tier == "medium":
+        mass = (0.70, 1.30)
+        contact = (0.75, 1.25)
+        action_gain = (0.93, 1.07)
+        gamma = (0.80, 1.20)
+        white_balance = (0.88, 1.12)
+        radial_k1 = 0.08
+        joint_noise = float(np.deg2rad(0.3))
+        eef_noise = 0.003
+        gripper_noise = 0.015
+        temporal_mode = str(rng.choice(("none", "none", "image_delay", "action_delay")))
+    else:
+        # Blind and stress retain the established rendering/contact profile;
+        # v2 training manifests only contain nominal, light, and medium.
+        return replace(base, schema_version=2)
+    hue = float(np.clip(base.hue_shift, -0.02, 0.02)) if color_sensitive else base.hue_shift
+    background = TRAIN_BACKGROUND_COLORS[int(rng.integers(len(TRAIN_BACKGROUND_COLORS)))]
+    uniform = lambda limits: float(rng.uniform(*limits))
+    return replace(
+        base,
+        schema_version=2,
+        background_rgb=background,
+        gamma=uniform(gamma),
+        white_balance=tuple(float(rng.uniform(*white_balance)) for _ in range(3)),
+        radial_distortion_k1=float(rng.uniform(-radial_k1, radial_k1)),
+        object_mass_scale=uniform(mass),
+        object_friction_scale=uniform(contact),
+        gripper_friction_scale=uniform(contact),
+        translation_action_gain=uniform(action_gain),
+        rotation_action_gain=uniform(action_gain),
+        joint_noise_std_rad=joint_noise,
+        eef_noise_std_m=eef_noise,
+        gripper_noise_std=gripper_noise,
+        temporal_mode=temporal_mode,
+        hue_shift=hue,
+    )
 
 
 def sample_domain_randomization(tier: str, seed: int) -> DomainRandomizationSample:
@@ -280,6 +430,10 @@ def capture_render_baseline(backend: Any) -> RenderBaseline | None:
         "light_diffuse",
         "light_ambient",
         "light_specular",
+        "geom_rgba",
+        "geom_friction",
+        "body_mass",
+        "body_inertia",
     )
     if model is None or any(not hasattr(model, attribute) for attribute in required_attributes):
         # Unit-test and non-MuJoCo backends can implement task state without a
@@ -288,11 +442,16 @@ def capture_render_baseline(backend: Any) -> RenderBaseline | None:
         return None
     table_rgba: dict[int, NDArray[np.float64]] = {}
     table_friction: dict[int, NDArray[np.float64]] = {}
+    background_rgba: dict[int, NDArray[np.float64]] = {}
     for index in range(int(getattr(model, "ngeom", 0))):
         name = model.geom_id2name(index) or ""
         if "table" in name.lower():
             table_rgba[index] = np.asarray(model.geom_rgba[index], dtype=np.float64).copy()
             table_friction[index] = np.asarray(model.geom_friction[index], dtype=np.float64).copy()
+        if name == "floor" or name.startswith("wall_"):
+            background_rgba[index] = np.asarray(
+                model.geom_rgba[index], dtype=np.float64
+            ).copy()
     return RenderBaseline(
         camera_positions=np.asarray(model.cam_pos, dtype=np.float64).copy(),
         camera_quaternions=np.asarray(model.cam_quat, dtype=np.float64).copy(),
@@ -303,6 +462,10 @@ def capture_render_baseline(backend: Any) -> RenderBaseline | None:
         light_specular=np.asarray(model.light_specular, dtype=np.float64).copy(),
         table_rgba=table_rgba,
         table_friction=table_friction,
+        background_rgba=background_rgba,
+        geom_friction=np.asarray(model.geom_friction, dtype=np.float64).copy(),
+        body_mass=np.asarray(model.body_mass, dtype=np.float64).copy(),
+        body_inertia=np.asarray(model.body_inertia, dtype=np.float64).copy(),
     )
 
 
@@ -314,6 +477,8 @@ def apply_domain_randomization(
     front_camera_name: str,
     front_look_at_m: Iterable[float],
     wrist_camera_name: str = "robot0_eye_in_hand",
+    object_body_names: Iterable[str] = (),
+    object_geom_names: Iterable[str] = (),
 ) -> None:
     """Restore baseline state, then apply a sample to mutable MuJoCo fields."""
 
@@ -333,6 +498,11 @@ def apply_domain_randomization(
         model.geom_rgba[index] = value
     for index, value in baseline.table_friction.items():
         model.geom_friction[index] = value
+    for index, value in baseline.background_rgba.items():
+        model.geom_rgba[index] = value
+    model.geom_friction[:] = baseline.geom_friction
+    model.body_mass[:] = baseline.body_mass
+    model.body_inertia[:] = baseline.body_inertia
     if sample is None or sample.tier == "nominal":
         backend.sim.forward()
         return
@@ -364,6 +534,32 @@ def apply_domain_randomization(
         model.geom_rgba[index, :3] = np.asarray(sample.table_rgb, dtype=np.float64)
         model.geom_rgba[index, 3] = rgba[3]
         model.geom_friction[index] = baseline.table_friction[index] * sample.table_friction_scale
+    for index, rgba in baseline.background_rgba.items():
+        model.geom_rgba[index, :3] = np.asarray(sample.background_rgb, dtype=np.float64)
+        model.geom_rgba[index, 3] = rgba[3]
+    for name in object_body_names:
+        try:
+            body_id = model.body_name2id(name)
+        except (KeyError, ValueError):
+            continue
+        model.body_mass[body_id] = baseline.body_mass[body_id] * sample.object_mass_scale
+        model.body_inertia[body_id] = (
+            baseline.body_inertia[body_id] * sample.object_mass_scale
+        )
+    for name in object_geom_names:
+        try:
+            geom_id = model.geom_name2id(name)
+        except (KeyError, ValueError):
+            continue
+        model.geom_friction[geom_id] = (
+            baseline.geom_friction[geom_id] * sample.object_friction_scale
+        )
+    for geom_id in range(int(getattr(model, "ngeom", 0))):
+        name = model.geom_id2name(geom_id) or ""
+        if "fingerpad_collision" in name:
+            model.geom_friction[geom_id] = (
+                baseline.geom_friction[geom_id] * sample.gripper_friction_scale
+            )
     backend.sim.forward()
 
 
@@ -391,12 +587,54 @@ def photometric_randomize(
     pixels *= sample.brightness
     if sample.hue_shift:
         pixels = np.roll(pixels, 1 if sample.hue_shift > 0 else -1, axis=-1) * abs(sample.hue_shift) + pixels * (1.0 - abs(sample.hue_shift))
+    pixels *= np.asarray(sample.white_balance, dtype=np.float32)
+    pixels = np.clip(pixels, 0.0, 1.0) ** (1.0 / sample.gamma)
     rng = np.random.default_rng(sample.seed + stream)
     if sample.gaussian_noise_std:
         pixels += rng.normal(0.0, sample.gaussian_noise_std, size=pixels.shape)
     if sample.blur_probability and float(rng.random()) < sample.blur_probability:
         pixels = _box_blur_3x3(pixels)
-    return np.clip(pixels * 255.0, 0.0, 255.0).astype(np.uint8)
+    output = np.clip(pixels * 255.0, 0.0, 255.0).astype(np.uint8)
+    if sample.radial_distortion_k1:
+        output = _radial_distort(output, sample.radial_distortion_k1)
+    return output
+
+
+@lru_cache(maxsize=16)
+def _radial_maps(
+    height: int,
+    width: int,
+    k1: float,
+) -> tuple[NDArray[np.float32], NDArray[np.float32]]:
+    yy, xx = np.indices((height, width), dtype=np.float32)
+    center_x = (width - 1.0) / 2.0
+    center_y = (height - 1.0) / 2.0
+    scale_x = max(center_x, 1.0)
+    scale_y = max(center_y, 1.0)
+    normalized_x = (xx - center_x) / scale_x
+    normalized_y = (yy - center_y) / scale_y
+    radius_squared = normalized_x**2 + normalized_y**2
+    factor = 1.0 + np.float32(k1) * radius_squared
+    map_x = center_x + normalized_x * factor * scale_x
+    map_y = center_y + normalized_y * factor * scale_y
+    return map_x.astype(np.float32), map_y.astype(np.float32)
+
+
+def _radial_distort(
+    image: NDArray[np.uint8],
+    k1: float,
+) -> NDArray[np.uint8]:
+    import cv2
+
+    height, width = image.shape[:2]
+    map_x, map_y = _radial_maps(height, width, round(float(k1), 9))
+    return cv2.remap(
+        image,
+        map_x,
+        map_y,
+        interpolation=cv2.INTER_LINEAR,
+        borderMode=cv2.BORDER_REFLECT_101,
+    )
 
 
 def points_visible(

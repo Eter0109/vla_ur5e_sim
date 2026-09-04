@@ -94,6 +94,35 @@ def main() -> int:
         if not progress_path.exists():
             raise ValueError("Resume requires collection_progress.json")
         results = json.loads(progress_path.read_text(encoding="utf-8"))
+        successful = [entry for entry in results if bool(entry.get("success"))]
+        if dataset.num_episodes > len(successful):
+            # An interruption can occur after save_episode() has durably
+            # committed an episode but before the periodic progress flush.
+            # Collection is sequential and only successful episodes are saved,
+            # so reconstruct the missing tail from the dataset metadata rather
+            # than duplicating already-persisted demonstrations.
+            if any(not bool(entry.get("success")) for entry in results):
+                raise ValueError("Cannot recover a progress tail containing failed scenes")
+            if dataset.num_episodes > len(scenes):
+                raise ValueError("Dataset has more episodes than manifest scenes")
+            episode_rows = dataset.meta.episodes.select(
+                range(len(successful), dataset.num_episodes)
+            ).to_list()
+            for source_index, episode in enumerate(episode_rows, start=len(successful)):
+                scene = scenes[source_index]
+                results.append(
+                    {
+                        "scene_id": scene.scene_id,
+                        "source_index": source_index,
+                        "success": True,
+                        "frames": int(episode["length"]),
+                        "attempts": None,
+                        "recovered_from_dataset": True,
+                        "angle_bin": int(scene.overrides["angle_bin"]),
+                        "distance_bin": int(scene.overrides["distance_bin"]),
+                    }
+                )
+            progress_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
         start_source_index = collection_resume_source_index(
             results,
             dataset_episodes=dataset.num_episodes,
@@ -165,11 +194,22 @@ def main() -> int:
                 dataset.clear_episode_buffer()
                 results.append(result)
                 if args.allow_failures:
+                    args.root.mkdir(parents=True, exist_ok=True)
+                    (args.root / "collection_progress.json").write_text(
+                        json.dumps(results, indent=2), encoding="utf-8"
+                    )
                     print(f"skipped_failed_scene={scene.scene_id}", flush=True)
                     continue
                 raise RuntimeError(f"Expert failed collection scene {scene.scene_id}; dataset was not finalized.")
             dataset.save_episode(parallel_encoding=True)
             results.append(result)
+            # Keep the recovery point synchronized with durable episode
+            # commits. The periodic print remains useful, but must not be the
+            # only persistence boundary for long-running collection jobs.
+            args.root.mkdir(parents=True, exist_ok=True)
+            (args.root / "collection_progress.json").write_text(
+                json.dumps(results, indent=2), encoding="utf-8"
+            )
             accepted += 1
             if accepted % args.reset_env_every == 0 and accepted < episodes:
                 # MuJoCo's Windows binding retains native allocations across
@@ -179,8 +219,6 @@ def main() -> int:
                 gc.collect()
                 env = make_ur5e_push(UR5ePushConfig(horizon=args.horizon))
             if accepted % 10 == 0 or accepted == episodes:
-                args.root.mkdir(parents=True, exist_ok=True)
-                (args.root / "collection_progress.json").write_text(json.dumps(results, indent=2), encoding="utf-8")
                 print(f"accepted={accepted}/{episodes} scene={scene.scene_id}", flush=True)
     finally:
         env.close()

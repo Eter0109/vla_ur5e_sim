@@ -13,11 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT / "src") not in sys.path:
     sys.path.insert(0, str(ROOT / "src"))
 
-from vla_sim.envs import UR5ePushConfig, make_ur5e_push  # noqa: E402
-from vla_sim.evaluation import summarize_results  # noqa: E402
-from vla_sim.pick_place_control import filter_vla_only_action  # noqa: E402
-from vla_sim.scenes import load_manifest, load_manifest_metadata  # noqa: E402
-from vla_sim.sim import HeuristicPushExpert  # noqa: E402
+from vla_sim.envs import UR5ePushConfig, make_ur5e_push
+from vla_sim.evaluation import summarize_results
+from vla_sim.pick_place_control import filter_vla_only_action
+from vla_sim.scenes import load_manifest, load_manifest_metadata
+from vla_sim.sim import HeuristicPushExpert
 
 
 def main() -> int:
@@ -28,7 +28,11 @@ def main() -> int:
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     metadata = load_manifest_metadata(args.manifest)
-    if metadata.get("environment_preset") not in {"push_forward_v1", "push_robust_v1"}:
+    if metadata.get("environment_preset") not in {
+        "push_forward_v1",
+        "push_robust_v1",
+        "push_sim2real_v2",
+    }:
         raise ValueError("Push expert evaluation requires a supported Push manifest.")
     scenes = load_manifest(args.manifest)
     episodes = len(scenes) if args.episodes is None else args.episodes

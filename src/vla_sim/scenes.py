@@ -3,15 +3,17 @@
 from __future__ import annotations
 
 import json
+from collections.abc import Callable, Hashable
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
-from collections.abc import Callable, Hashable
 from typing import Any
 
 import numpy as np
 
-from vla_sim.domain_randomization import sample_domain_randomization
-
+from vla_sim.domain_randomization import (
+    sample_domain_randomization,
+    sample_sim2real_v2,
+)
 
 STACK_TASKS = ("red_on_blue", "blue_on_red")
 STACK_DISTANCE_BINS_M = ((0.075, 0.095), (0.095, 0.115), (0.115, 0.140))
@@ -32,6 +34,12 @@ PUSH_ANGLE_BINS_RAD = tuple(
 PUSH_DISTANCE_BINS_M = ((0.100, 0.125), (0.125, 0.150))
 PUSH_OBJECT_XY_M = ((-0.055, 0.025), (-0.055, 0.055))
 PUSH_TABLE_LIMIT_M = 0.250
+COLOR_PICK_TASK = "pick_requested_color"
+COLOR_PICK_COLORS = ("red", "green", "blue")
+COLOR_PICK_WORKSPACE_X_M = (-0.080, 0.080)
+COLOR_PICK_WORKSPACE_Y_M = (-0.110, 0.110)
+COLOR_PICK_OBJECT_XY_M = (0.050, 0.050)
+COLOR_PICK_GRIPPER_CLEARANCE_M = 0.035
 
 
 @dataclass(frozen=True)
@@ -45,7 +53,7 @@ class SceneSpec:
     overrides: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
-    def from_dict(cls, value: dict) -> "SceneSpec":
+    def from_dict(cls, value: dict) -> SceneSpec:
         normalized = dict(value)
         # Version-1 manifests used one seed for the environment and policy.
         # Keep that field so existing datasets and reports remain readable.
@@ -241,6 +249,76 @@ def generate_pick_place_scenes(
     return scenes
 
 
+def generate_color_pick_scenes(split: str, count: int, seed: int) -> list[SceneSpec]:
+    """Generate balanced three-cube scenes for language-conditioned color selection.
+
+    Red, green, and blue cubes are placed independently in a fixed workspace while
+    preserving enough clearance for the Robotiq fingers. The requested target color
+    is exactly balanced and is carried only in the scene task metadata / language prompt.
+    """
+
+    if count < len(COLOR_PICK_COLORS) or count % len(COLOR_PICK_COLORS):
+        raise ValueError("count must be positive and divisible by three target colors")
+    rng = np.random.default_rng(seed)
+    targets = [
+        color
+        for color in COLOR_PICK_COLORS
+        for _ in range(count // len(COLOR_PICK_COLORS))
+    ]
+    rng.shuffle(targets)
+    scenes: list[SceneSpec] = []
+    for index, target_color in enumerate(targets):
+        for _attempt in range(10_000):
+            positions = {
+                color: (
+                    float(rng.uniform(*COLOR_PICK_WORKSPACE_X_M)),
+                    float(rng.uniform(*COLOR_PICK_WORKSPACE_Y_M)),
+                )
+                for color in COLOR_PICK_COLORS
+            }
+            pairs = (("red", "green"), ("red", "blue"), ("green", "blue"))
+            if any(
+                oriented_rectangles_overlap(
+                    positions[left],
+                    0.0,
+                    COLOR_PICK_OBJECT_XY_M,
+                    positions[right],
+                    0.0,
+                    COLOR_PICK_OBJECT_XY_M,
+                    clearance_m=COLOR_PICK_GRIPPER_CLEARANCE_M,
+                )
+                for left, right in pairs
+            ):
+                continue
+            red_x, red_y = positions["red"]
+            green_x, green_y = positions["green"]
+            blue_x, blue_y = positions["blue"]
+            scenes.append(
+                SceneSpec(
+                    scene_id=f"{split}-{index:04d}",
+                    seed=seed + index,
+                    env_seed=seed + index,
+                    x_m=red_x,
+                    y_m=red_y,
+                    yaw_rad=0.0,
+                    overrides={
+                        "task": COLOR_PICK_TASK,
+                        "target_color": target_color,
+                        "green_x_m": green_x,
+                        "green_y_m": green_y,
+                        "green_yaw_rad": 0.0,
+                        "blue_x_m": blue_x,
+                        "blue_y_m": blue_y,
+                        "blue_yaw_rad": 0.0,
+                    },
+                )
+            )
+            break
+        else:
+            raise RuntimeError(f"Could not sample valid ColorPick scene {index}")
+    return scenes
+
+
 def generate_push_scenes(split: str, count: int, seed: int) -> list[SceneSpec]:
     """Generate deterministic forward-push scenes balanced by angle and distance.
 
@@ -332,6 +410,58 @@ def attach_domain_randomization(
     return result
 
 
+def attach_sim2real_v2_randomization(
+    scenes: list[SceneSpec],
+    *,
+    group_fields: tuple[str, ...],
+    seed: int,
+    color_sensitive: bool = False,
+) -> list[SceneSpec]:
+    """Attach an exact 20/50/30 tier mix independently within every group."""
+
+    if not scenes or not group_fields:
+        raise ValueError("scenes and group_fields must be non-empty")
+    groups: dict[tuple[Any, ...], list[int]] = {}
+    for index, scene in enumerate(scenes):
+        try:
+            key = tuple(scene.overrides[field] for field in group_fields)
+        except KeyError as error:
+            raise ValueError(f"scene is missing grouping field {error.args[0]!r}") from error
+        groups.setdefault(key, []).append(index)
+    assignments: list[str | None] = [None] * len(scenes)
+    rng = np.random.default_rng(seed)
+    for indices in groups.values():
+        if len(indices) % 10:
+            raise ValueError("each sim2real-v2 group size must be divisible by 10")
+        unit = len(indices) // 10
+        tiers = ["nominal"] * (2 * unit) + ["light"] * (5 * unit) + ["medium"] * (3 * unit)
+        rng.shuffle(tiers)
+        for index, tier in zip(indices, tiers, strict=True):
+            assignments[index] = tier
+    randomized: list[SceneSpec] = []
+    for index, (scene, tier) in enumerate(zip(scenes, assignments, strict=True)):
+        if tier is None:
+            raise AssertionError("sim2real-v2 tier assignment is incomplete")
+        overrides = dict(scene.overrides)
+        overrides["domain_randomization"] = sample_sim2real_v2(
+            tier,
+            seed + index,
+            color_sensitive=color_sensitive,
+        ).as_overrides()
+        randomized.append(
+            SceneSpec(
+                scene_id=scene.scene_id,
+                seed=scene.seed,
+                env_seed=scene.env_seed,
+                x_m=scene.x_m,
+                y_m=scene.y_m,
+                yaw_rad=scene.yaw_rad,
+                overrides=overrides,
+            )
+        )
+    return randomized
+
+
 def select_targeted_push_recovery_scenes(
     scenes: list[SceneSpec], *, count: int
 ) -> list[SceneSpec]:
@@ -411,6 +541,7 @@ def save_manifest(
     role: str | None = None,
     generator_seed: int | None = None,
     environment_preset: str | None = None,
+    extra_metadata: dict[str, Any] | None = None,
 ) -> Path:
     """Write a legacy list manifest or a schema-v2 benchmark manifest.
 
@@ -433,6 +564,11 @@ def save_manifest(
             "environment_preset": environment_preset,
             "scenes": [asdict(scene) for scene in scenes],
         }
+        if extra_metadata:
+            reserved = set(payload) & set(extra_metadata)
+            if reserved:
+                raise ValueError(f"extra metadata overrides reserved fields: {sorted(reserved)}")
+            payload.update(extra_metadata)
     destination.write_text(
         json.dumps(payload, indent=2), encoding="utf-8"
     )
@@ -454,10 +590,4 @@ def load_manifest_metadata(path: str | Path) -> dict[str, Any]:
         return {"schema_version": 1, "benchmark_id": None, "role": "legacy"}
     if not isinstance(values, dict):
         raise ValueError("Manifest root must be a JSON list or object")
-    return {
-        "schema_version": values.get("schema_version"),
-        "benchmark_id": values.get("benchmark_id"),
-        "role": values.get("role"),
-        "generator_seed": values.get("generator_seed"),
-        "environment_preset": values.get("environment_preset"),
-    }
+    return {key: value for key, value in values.items() if key != "scenes"}

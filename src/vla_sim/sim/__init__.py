@@ -1,5 +1,13 @@
 """Simulation contracts and utilities that do not require a simulator import."""
 
+from vla_sim.stack_control import (
+    ColorDepthObjectPoseProvider,
+    ObjectPoseEstimate,
+    ObjectPoseProvider,
+    StackSupervisor,
+    StackSupervisorConfig,
+)
+
 from .contracts import (
     ACTION_DIM,
     IMAGE_KEY,
@@ -11,13 +19,17 @@ from .contracts import (
     validate_observation,
 )
 from .dependencies import RobosuiteUnavailableError, require_robosuite
-from .expert import HeuristicExpertConfig, HeuristicLiftExpert, LiftPhase, HeuristicStackExpert, StackPhase, HeuristicPickPlaceExpert, PickPlacePhase, HeuristicPushExpert, PushPhase
-from vla_sim.stack_control import (
-    ColorDepthObjectPoseProvider,
-    ObjectPoseEstimate,
-    ObjectPoseProvider,
-    StackSupervisor,
-    StackSupervisorConfig,
+from .expert import (
+    HeuristicColorPickExpert,
+    HeuristicExpertConfig,
+    HeuristicLiftExpert,
+    HeuristicPickPlaceExpert,
+    HeuristicPushExpert,
+    HeuristicStackExpert,
+    LiftPhase,
+    PickPlacePhase,
+    PushPhase,
+    StackPhase,
 )
 
 __all__ = [
@@ -26,23 +38,24 @@ __all__ = [
     "STATE_DIM",
     "STATE_KEY",
     "ActionSpec",
+    "ColorDepthObjectPoseProvider",
     "ContractError",
+    "HeuristicColorPickExpert",
     "HeuristicExpertConfig",
     "HeuristicLiftExpert",
-    "LiftPhase",
-    "HeuristicStackExpert",
-    "StackPhase",
     "HeuristicPickPlaceExpert",
-    "PickPlacePhase",
     "HeuristicPushExpert",
-    "PushPhase",
-    "ObservationAdapter",
-    "RobosuiteUnavailableError",
-    "require_robosuite",
-    "validate_observation",
-    "ColorDepthObjectPoseProvider",
+    "HeuristicStackExpert",
+    "LiftPhase",
     "ObjectPoseEstimate",
     "ObjectPoseProvider",
+    "ObservationAdapter",
+    "PickPlacePhase",
+    "PushPhase",
+    "RobosuiteUnavailableError",
+    "StackPhase",
     "StackSupervisor",
     "StackSupervisorConfig",
+    "require_robosuite",
+    "validate_observation",
 ]

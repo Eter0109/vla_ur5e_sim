@@ -3,27 +3,28 @@
 from __future__ import annotations
 
 import math
+from collections.abc import Mapping
 from dataclasses import dataclass, field
 from functools import lru_cache
-from typing import Any, Mapping
+from typing import Any
 from xml.etree.ElementTree import SubElement
 
 import numpy as np
 from numpy.typing import NDArray
 
+from vla_sim.domain_randomization import (
+    DomainRandomizationSample,
+    Sim2RealEpisodeRuntime,
+    apply_domain_randomization,
+    capture_render_baseline,
+)
+from vla_sim.scenes import SceneSpec
 from vla_sim.sim.contracts import (
     DEFAULT_ACTION_SPEC,
     ActionSpec,
     ContractError,
 )
 from vla_sim.sim.dependencies import require_robosuite
-from vla_sim.scenes import SceneSpec
-from vla_sim.domain_randomization import (
-    DomainRandomizationSample,
-    apply_domain_randomization,
-    capture_render_baseline,
-    policy_observation_randomized,
-)
 
 from .objects import PrimitiveObjectConfig
 from .ur5e_lift import CameraConfig, _controller_config
@@ -187,11 +188,12 @@ class UR5ePushEnv:
         self._target_pos: NDArray[np.float64] | None = None
         self._render_baseline = capture_render_baseline(backend)
         self._randomization_sample: DomainRandomizationSample | None = None
+        self._sim2real_runtime = Sim2RealEpisodeRuntime()
         self._visual_step = 0
         self._validate_backend_action_space()
 
     @classmethod
-    def create(cls, config: UR5ePushConfig | None = None) -> "UR5ePushEnv":
+    def create(cls, config: UR5ePushConfig | None = None) -> UR5ePushEnv:
         effective_config = config or UR5ePushConfig()
         return cls(create_robosuite_backend(effective_config), effective_config)
 
@@ -320,12 +322,16 @@ class UR5ePushEnv:
             if isinstance(randomization, Mapping)
             else None
         )
+        self._sim2real_runtime.reset(self._randomization_sample)
+        cube = getattr(self.backend, "cube", None)
         apply_domain_randomization(
             self.backend,
             self._render_baseline,
             self._randomization_sample,
             front_camera_name=self.config.camera.name,
             front_look_at_m=(0.0, 0.0, self._table_z()),
+            object_body_names=(getattr(cube, "root_body", ""),),
+            object_geom_names=tuple(getattr(cube, "contact_geoms", ())),
         )
         raw = self.backend._get_observations(force_update=True)
         if not isinstance(raw, Mapping):
@@ -404,7 +410,8 @@ class UR5ePushEnv:
         dict[str, NDArray[Any]], float, bool, bool, dict[str, Any]
     ]:
         normalized_action = self.action_spec.validate(action)
-        raw, _, done, backend_info = self.backend.step(normalized_action)
+        execution_action = self._sim2real_runtime.execution_action(normalized_action)
+        raw, _, done, backend_info = self.backend.step(execution_action)
         if not isinstance(raw, Mapping):
             raise ContractError("robosuite step() did not return an observation mapping.")
             
@@ -438,7 +445,7 @@ class UR5ePushEnv:
 
     def _policy_observation(self, raw: Mapping[str, Any]) -> dict[str, NDArray[Any]]:
         observation = self._observation_adapter.convert(raw)
-        return policy_observation_randomized(observation, self._randomization_sample, self._visual_step)
+        return self._sim2real_runtime.policy_observation(observation, self._visual_step)
 
     def render(self) -> Any:
         return self.backend.render()

@@ -2,13 +2,15 @@
 
 from __future__ import annotations
 
+from collections.abc import Mapping
 from dataclasses import dataclass
 from enum import Enum, auto
-from typing import Any, Mapping
+from typing import Any
 
 import numpy as np
 from numpy.typing import NDArray
 
+from vla_sim.scenes import COLOR_PICK_COLORS
 from vla_sim.stack_control import task_phase_prompt
 
 from .contracts import DEFAULT_ACTION_SPEC, ContractError
@@ -157,6 +159,61 @@ class HeuristicLiftExpert:
         if value.size < size or not np.all(np.isfinite(value[:size])):
             raise ContractError(f"'{key}' must contain {size} finite values.")
         return value[:size].copy()
+
+
+class HeuristicColorPickExpert(HeuristicLiftExpert):
+    """Privileged expert that lifts the language-requested colored cube."""
+
+    def __init__(
+        self, target_color: str, config: HeuristicExpertConfig | None = None
+    ) -> None:
+        if target_color not in COLOR_PICK_COLORS:
+            raise ValueError(f"Unsupported ColorPick target color: {target_color!r}")
+        self.target_color = target_color
+        super().__init__(config)
+
+    @property
+    def prompt(self) -> str:
+        return f"pick up the {self.target_color} cube"
+
+    def act(self, raw_observation: Mapping[str, Any]) -> NDArray[np.float32]:
+        target = self._vector(raw_observation, "target_cube_pos", 3)
+        eef = self._vector(raw_observation, "robot0_eef_pos", 3)
+        if self._initial_object_z is None:
+            self._initial_object_z = float(target[2])
+        if float(target[2]) >= self._initial_object_z + self.config.success_delta_m:
+            self.phase = LiftPhase.DONE
+
+        action = np.zeros(7, dtype=np.float32)
+        action[-1] = self.config.open_command
+        if self.phase is LiftPhase.APPROACH:
+            goal = target.copy()
+            goal[2] += self.config.approach_height_m
+            action[:3] = self._position_delta(goal, eef)
+            if np.linalg.norm(goal - eef) <= self.config.position_tolerance_m:
+                self.phase = LiftPhase.DESCEND
+        elif self.phase is LiftPhase.DESCEND:
+            goal = target.copy()
+            goal[2] += self.config.grasp_height_m
+            action[:3] = self._position_delta(goal, eef)
+            if np.linalg.norm(goal - eef) <= self.config.position_tolerance_m:
+                self.phase = LiftPhase.CLOSE
+        elif self.phase is LiftPhase.CLOSE:
+            action[-1] = self.config.close_command
+            self._close_counter += 1
+            if self._close_counter >= self.config.close_steps:
+                self.phase = LiftPhase.LIFT
+                self._lift_target = eef.copy()
+                self._lift_target[2] += self.config.lift_distance_m
+        elif self.phase is LiftPhase.LIFT:
+            action[-1] = self.config.close_command
+            if self._lift_target is None:
+                self._lift_target = eef.copy()
+                self._lift_target[2] += self.config.lift_distance_m
+            action[:3] = self._position_delta(self._lift_target, eef)
+        elif self.phase is LiftPhase.DONE:
+            action[-1] = self.config.close_command
+        return DEFAULT_ACTION_SPEC.validate(action, clip=True)
 
 
 class PickPlacePhase(Enum):

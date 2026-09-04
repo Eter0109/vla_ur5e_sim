@@ -9,7 +9,7 @@ description = "Local MuJoCo/robosuite VLA grasping loop for a UR5-class arm"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
-  "numpy>=1.26,<2",
+  "numpy>=2,<2.3",
   "PyYAML>=6.0,<7",
 ]
 
@@ -18,12 +18,13 @@ sim = [
   "mujoco>=3.3,<3.4",
   "robosuite>=1.5.2,<1.6",
   "opencv-python>=4.10,<4.12",
-  "numba>=0.59,<0.60",
+  "numba>=0.61,<0.63",
 ]
 vla = [
-  "lerobot==0.4.4",
+  "lerobot[smolvla]==0.4.4",
   "peft==0.17.1",
   "num2words==0.5.14",
+  "transformers>=4.57.1,<5",
 ]
 dev = [
   "pytest>=8,<9",

@@ -1,0 +1,4089 @@
+{
+  "schema_version": 2,
+  "benchmark_id": "color_pick_development_v1",
+  "role": "development",
+  "generator_seed": 75000,
+  "environment_preset": "color_pick_v1",
+  "scenes": [
+    {
+      "scene_id": "color_pick_development_v1-0000",
+      "seed": 75000,
+      "x_m": 0.05104308166138306,
+      "y_m": 0.05082771520653191,
+      "yaw_rad": 0.0,
+      "env_seed": 75000,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.0598349682988097,
+        "green_y_m": -0.10682635674962498,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.07871735491571505,
+        "blue_y_m": 0.10568158463593279,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125000,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0001",
+      "seed": 75001,
+      "x_m": -0.050081345032215285,
+      "y_m": -0.07459113778105192,
+      "yaw_rad": 0.0,
+      "env_seed": 75001,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.07526511183054423,
+        "green_y_m": 0.03023182259594788,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.04684074716640229,
+        "blue_y_m": 0.04038318577787671,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125001,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0002",
+      "seed": 75002,
+      "x_m": -0.02785845006648035,
+      "y_m": 0.019987648157007945,
+      "yaw_rad": 0.0,
+      "env_seed": 75002,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.02611390381390445,
+        "green_y_m": -0.09089813698252816,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.04138502134982018,
+        "blue_y_m": 0.10959870694916203,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125002,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0003",
+      "seed": 75003,
+      "x_m": -0.04502393892917354,
+      "y_m": -0.05132144825208507,
+      "yaw_rad": 0.0,
+      "env_seed": 75003,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.009145586977598388,
+        "green_y_m": 0.08069534401759805,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.04226498310653044,
+        "blue_y_m": -0.020400906308367592,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125003,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0004",
+      "seed": 75004,
+      "x_m": 0.07354893063672831,
+      "y_m": -0.05620466496153783,
+      "yaw_rad": 0.0,
+      "env_seed": 75004,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.0683025265846431,
+        "green_y_m": 0.03917391594513138,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.044169698307340986,
+        "blue_y_m": 0.08872373219054815,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125004,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0005",
+      "seed": 75005,
+      "x_m": -0.03792012321498518,
+      "y_m": 0.09087050198338913,
+      "yaw_rad": 0.0,
+      "env_seed": 75005,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.061032172333862364,
+        "green_y_m": -0.0030394332541860136,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.06731790521875546,
+        "blue_y_m": 0.09042314952062476,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125005,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0006",
+      "seed": 75006,
+      "x_m": -0.05858548476086449,
+      "y_m": 0.10263954556260131,
+      "yaw_rad": 0.0,
+      "env_seed": 75006,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.07856685686566268,
+        "green_y_m": 0.06620283260276814,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.05385902707463379,
+        "blue_y_m": -0.047017371853509515,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125006,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0007",
+      "seed": 75007,
+      "x_m": 0.05172242312675311,
+      "y_m": 0.01504981969902576,
+      "yaw_rad": 0.0,
+      "env_seed": 75007,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.0784984251518158,
+        "green_y_m": 0.028152807225544654,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.05073583405794292,
+        "blue_y_m": -0.07468543369288905,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125007,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0008",
+      "seed": 75008,
+      "x_m": 0.0536083341995371,
+      "y_m": -0.05297269200126669,
+      "yaw_rad": 0.0,
+      "env_seed": 75008,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.05251881599581114,
+        "green_y_m": 0.03331185625858883,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.059204182504131245,
+        "blue_y_m": -0.10278424077451002,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125008,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0009",
+      "seed": 75009,
+      "x_m": 0.05205286929577578,
+      "y_m": 0.07230414391520769,
+      "yaw_rad": 0.0,
+      "env_seed": 75009,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.05580983390527443,
+        "green_y_m": -0.03954458846984392,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.053311669598736275,
+        "blue_y_m": -0.045164248824609274,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125009,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0010",
+      "seed": 75010,
+      "x_m": 0.03361476177945902,
+      "y_m": -0.08496436295036841,
+      "yaw_rad": 0.0,
+      "env_seed": 75010,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.07330794107066634,
+        "green_y_m": -0.03751490029740401,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.04098169670318712,
+        "blue_y_m": 0.02987348090030452,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125010,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0011",
+      "seed": 75011,
+      "x_m": -0.03008666519441313,
+      "y_m": -0.09147453412280279,
+      "yaw_rad": 0.0,
+      "env_seed": 75011,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.038405842672929666,
+        "green_y_m": 0.08228114011443281,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.05831174822332143,
+        "blue_y_m": 0.0566031592998122,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125011,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0012",
+      "seed": 75012,
+      "x_m": 0.018652250741343662,
+      "y_m": -0.07221422455045627,
+      "yaw_rad": 0.0,
+      "env_seed": 75012,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.07716022428957885,
+        "green_y_m": 0.039923924228044874,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.029720579922510065,
+        "blue_y_m": 0.023272858645315378,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125012,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0013",
+      "seed": 75013,
+      "x_m": 0.003820409574872702,
+      "y_m": -0.06118806062364477,
+      "yaw_rad": 0.0,
+      "env_seed": 75013,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.03469919649141522,
+        "green_y_m": 0.06607961841504455,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.05109841720229304,
+        "blue_y_m": 0.037501254706768225,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125013,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0014",
+      "seed": 75014,
+      "x_m": 0.06598189089266866,
+      "y_m": -0.05313307148994392,
+      "yaw_rad": 0.0,
+      "env_seed": 75014,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.030789828888138,
+        "green_y_m": 0.08454133607190849,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.06016596479197073,
+        "blue_y_m": 0.03292686090804221,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125014,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0015",
+      "seed": 75015,
+      "x_m": 0.050003979814998226,
+      "y_m": -0.0692814032067307,
+      "yaw_rad": 0.0,
+      "env_seed": 75015,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.04172510500347969,
+        "green_y_m": 0.06725168436762936,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.05223112768540947,
+        "blue_y_m": -0.05458532859792178,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125015,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0016",
+      "seed": 75016,
+      "x_m": -0.04609006015627482,
+      "y_m": 0.07788366175745749,
+      "yaw_rad": 0.0,
+      "env_seed": 75016,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.07724859435226496,
+        "green_y_m": -0.09253354917679948,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.03272519592167175,
+        "blue_y_m": -0.048743012083530914,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125016,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0017",
+      "seed": 75017,
+      "x_m": -0.06444213173016682,
+      "y_m": -0.07223379740087152,
+      "yaw_rad": 0.0,
+      "env_seed": 75017,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.06265076218602429,
+        "green_y_m": -0.06705959192493666,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.022804783454348374,
+        "blue_y_m": 0.08761285883719537,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125017,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0018",
+      "seed": 75018,
+      "x_m": 0.004572201459027633,
+      "y_m": 0.1098716123758658,
+      "yaw_rad": 0.0,
+      "env_seed": 75018,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.06432214257531411,
+        "green_y_m": 0.017158183117959844,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.06713721290289902,
+        "blue_y_m": 0.011791140223363639,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125018,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0019",
+      "seed": 75019,
+      "x_m": -0.0633894257538428,
+      "y_m": -0.08093830940037357,
+      "yaw_rad": 0.0,
+      "env_seed": 75019,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.03243907705605023,
+        "green_y_m": -0.08152435634298298,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.007065334310907598,
+        "blue_y_m": 0.07958499943147697,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125019,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0020",
+      "seed": 75020,
+      "x_m": -0.060533861892061065,
+      "y_m": -0.042053483393229896,
+      "yaw_rad": 0.0,
+      "env_seed": 75020,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.04914926152129205,
+        "green_y_m": 0.03628865822702999,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.05953920418472451,
+        "blue_y_m": 0.07060899893752216,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125020,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0021",
+      "seed": 75021,
+      "x_m": 0.05010568824369037,
+      "y_m": 0.07119544060232995,
+      "yaw_rad": 0.0,
+      "env_seed": 75021,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.04529964565163438,
+        "green_y_m": -0.10317823751112631,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.06799885471372795,
+        "blue_y_m": 0.08430996017321708,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125021,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0022",
+      "seed": 75022,
+      "x_m": -0.027197678158659498,
+      "y_m": -0.009280456479794169,
+      "yaw_rad": 0.0,
+      "env_seed": 75022,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.06628332751056175,
+        "green_y_m": 0.04626578961559728,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.042281393959759814,
+        "blue_y_m": -0.1053202885176068,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125022,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0023",
+      "seed": 75023,
+      "x_m": -0.01921057142699297,
+      "y_m": -0.07025590424027547,
+      "yaw_rad": 0.0,
+      "env_seed": 75023,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.07515212133310172,
+        "green_y_m": 0.05381246363987667,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.07718075888364061,
+        "blue_y_m": 0.07905387955695613,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125023,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0024",
+      "seed": 75024,
+      "x_m": 0.046516950866468884,
+      "y_m": -0.08163646873361628,
+      "yaw_rad": 0.0,
+      "env_seed": 75024,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 9.457260952075441e-05,
+        "green_y_m": 0.01717636989199174,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.03941170480629845,
+        "blue_y_m": -0.0700548979988617,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125024,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0025",
+      "seed": 75025,
+      "x_m": -0.02999276308342219,
+      "y_m": 0.08913312620109108,
+      "yaw_rad": 0.0,
+      "env_seed": 75025,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.050562424321828475,
+        "green_y_m": -0.07817562929562286,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.07222973301188403,
+        "blue_y_m": -0.09444120553004956,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125025,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0026",
+      "seed": 75026,
+      "x_m": -0.05397193015646497,
+      "y_m": 0.05741033283809514,
+      "yaw_rad": 0.0,
+      "env_seed": 75026,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.07420548095869324,
+        "green_y_m": 0.07637313675799424,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.056423869658824094,
+        "blue_y_m": -0.0920622330354392,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125026,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0027",
+      "seed": 75027,
+      "x_m": -0.045554269024679,
+      "y_m": -0.026601073768203573,
+      "yaw_rad": 0.0,
+      "env_seed": 75027,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.0247226426773461,
+        "green_y_m": 0.0799347119057925,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.052447119208846496,
+        "blue_y_m": -0.08640464870074563,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125027,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0028",
+      "seed": 75028,
+      "x_m": 0.021359715327915488,
+      "y_m": 0.08180839852379095,
+      "yaw_rad": 0.0,
+      "env_seed": 75028,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.061818040406770566,
+        "green_y_m": -0.06168910083550632,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.051661309051230085,
+        "blue_y_m": -0.07285828932564911,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125028,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0029",
+      "seed": 75029,
+      "x_m": 0.036023570729237744,
+      "y_m": 0.0591214007168956,
+      "yaw_rad": 0.0,
+      "env_seed": 75029,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.011521986341967327,
+        "green_y_m": -0.04486248634953159,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.06570449381402195,
+        "blue_y_m": 0.10666198582155169,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125029,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0030",
+      "seed": 75030,
+      "x_m": -0.05167364461589184,
+      "y_m": -0.10952521955862415,
+      "yaw_rad": 0.0,
+      "env_seed": 75030,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.06144147723396269,
+        "green_y_m": -0.020511505646677086,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.0013727332599892672,
+        "blue_y_m": 0.08785671457377443,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125030,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0031",
+      "seed": 75031,
+      "x_m": -0.06644931143156696,
+      "y_m": -0.10280205348992595,
+      "yaw_rad": 0.0,
+      "env_seed": 75031,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.07693459689952216,
+        "green_y_m": 0.009052008492726984,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.0460216034021688,
+        "blue_y_m": -0.014613865248526106,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125031,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0032",
+      "seed": 75032,
+      "x_m": -0.05700859769771059,
+      "y_m": 0.048881952181203905,
+      "yaw_rad": 0.0,
+      "env_seed": 75032,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.038329493430116185,
+        "green_y_m": -0.09818490125045688,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.056125399699777465,
+        "blue_y_m": -0.05685701011075767,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125032,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0033",
+      "seed": 75033,
+      "x_m": -0.056685196829135975,
+      "y_m": -0.0753456259925987,
+      "yaw_rad": 0.0,
+      "env_seed": 75033,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.05835912069685982,
+        "green_y_m": -0.051474428132980976,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.05060446077660195,
+        "blue_y_m": 0.0609983631625811,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125033,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0034",
+      "seed": 75034,
+      "x_m": 0.06229482989698189,
+      "y_m": 0.09948460957409984,
+      "yaw_rad": 0.0,
+      "env_seed": 75034,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.05170593993029215,
+        "green_y_m": 0.10315659303744436,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.018469212713289752,
+        "blue_y_m": -0.015414346668250742,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125034,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0035",
+      "seed": 75035,
+      "x_m": 0.02367058370106402,
+      "y_m": -0.007408537175835214,
+      "yaw_rad": 0.0,
+      "env_seed": 75035,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.05530677257529322,
+        "green_y_m": -0.10834329005547602,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.07674141975233399,
+        "blue_y_m": 0.09848026704640596,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125035,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0036",
+      "seed": 75036,
+      "x_m": -0.007964612752269548,
+      "y_m": -0.052387062135470966,
+      "yaw_rad": 0.0,
+      "env_seed": 75036,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.07976499455452817,
+        "green_y_m": -0.03277854083600644,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.012274599242827783,
+        "blue_y_m": 0.052860147788772696,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125036,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0037",
+      "seed": 75037,
+      "x_m": 0.014767757385367813,
+      "y_m": 0.0720642131699701,
+      "yaw_rad": 0.0,
+      "env_seed": 75037,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.054202003818003844,
+        "green_y_m": -0.10927108304092362,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.07712891700500472,
+        "blue_y_m": -0.018654815758789425,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125037,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0038",
+      "seed": 75038,
+      "x_m": -0.06407954438075958,
+      "y_m": 0.10122930851522004,
+      "yaw_rad": 0.0,
+      "env_seed": 75038,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.03776431809629362,
+        "green_y_m": 0.013676051107830045,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.04768379651353695,
+        "blue_y_m": -0.04362526520378161,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125038,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0039",
+      "seed": 75039,
+      "x_m": 0.06991176471948489,
+      "y_m": 0.09150430061979235,
+      "yaw_rad": 0.0,
+      "env_seed": 75039,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.05657178652914871,
+        "green_y_m": 0.06309483603137027,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.05775161727550775,
+        "blue_y_m": -0.03535316251940636,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125039,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0040",
+      "seed": 75040,
+      "x_m": 0.05247381343021314,
+      "y_m": -0.019150279501823395,
+      "yaw_rad": 0.0,
+      "env_seed": 75040,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.049495390894060784,
+        "green_y_m": 0.0932076088298565,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.07543680028063679,
+        "blue_y_m": -0.022531496277854085,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125040,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0041",
+      "seed": 75041,
+      "x_m": 0.06620893731011905,
+      "y_m": 0.01501587792078403,
+      "yaw_rad": 0.0,
+      "env_seed": 75041,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.05417185354193371,
+        "green_y_m": -0.07571199025573669,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.048151340485683265,
+        "blue_y_m": 0.07046473209388067,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125041,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0042",
+      "seed": 75042,
+      "x_m": -0.030661926675318564,
+      "y_m": -0.10177506268776536,
+      "yaw_rad": 0.0,
+      "env_seed": 75042,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.021952994067965637,
+        "green_y_m": 0.004269932541351051,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.048458003478398126,
+        "blue_y_m": 0.10909661249525936,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125042,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0043",
+      "seed": 75043,
+      "x_m": 0.07889393218549025,
+      "y_m": -0.1015962810037944,
+      "yaw_rad": 0.0,
+      "env_seed": 75043,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.0696564623085847,
+        "green_y_m": 0.03782281339212608,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.05100376176046044,
+        "blue_y_m": -0.07923855313143188,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125043,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0044",
+      "seed": 75044,
+      "x_m": -0.0752499116965263,
+      "y_m": 0.10921864284093681,
+      "yaw_rad": 0.0,
+      "env_seed": 75044,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.029992816029356564,
+        "green_y_m": 0.06119328199179881,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.057924188043790716,
+        "blue_y_m": -0.02553271532355471,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125044,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0045",
+      "seed": 75045,
+      "x_m": 0.069996383982235,
+      "y_m": -0.07088691365176385,
+      "yaw_rad": 0.0,
+      "env_seed": 75045,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.045892949055086445,
+        "green_y_m": -0.07644542897580298,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.011527228477507062,
+        "blue_y_m": 0.08051161200851857,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125045,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0046",
+      "seed": 75046,
+      "x_m": -0.052709000583625085,
+      "y_m": 0.010015867114512342,
+      "yaw_rad": 0.0,
+      "env_seed": 75046,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.026548364224215408,
+        "green_y_m": 0.09738121440340534,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.05937196914863034,
+        "blue_y_m": 0.06811936354587335,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125046,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0047",
+      "seed": 75047,
+      "x_m": 0.0627797693033972,
+      "y_m": -0.08235967847212636,
+      "yaw_rad": 0.0,
+      "env_seed": 75047,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.05146367307289014,
+        "green_y_m": 0.046095827568820844,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.07194941056299482,
+        "blue_y_m": 0.07535071078576551,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125047,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0048",
+      "seed": 75048,
+      "x_m": 0.015120793335211255,
+      "y_m": -0.08445477206649053,
+      "yaw_rad": 0.0,
+      "env_seed": 75048,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.07475997592360505,
+        "green_y_m": 0.08514822758414455,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.030605883656278775,
+        "blue_y_m": 0.021144944191284334,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125048,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0049",
+      "seed": 75049,
+      "x_m": -0.06030476196872117,
+      "y_m": -0.025347927124395916,
+      "yaw_rad": 0.0,
+      "env_seed": 75049,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": -0.022016677326374745,
+        "green_y_m": 0.10177466051244215,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.050743682534960075,
+        "blue_y_m": -0.08650041080574651,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125049,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0050",
+      "seed": 75050,
+      "x_m": -0.01674904743724147,
+      "y_m": -0.09619334488180431,
+      "yaw_rad": 0.0,
+      "env_seed": 75050,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.06277252237215993,
+        "green_y_m": 0.08422731346274005,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.06190586901920035,
+        "blue_y_m": 0.04226436513046582,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125050,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0051",
+      "seed": 75051,
+      "x_m": -0.03379434158483658,
+      "y_m": 0.020447273546376446,
+      "yaw_rad": 0.0,
+      "env_seed": 75051,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.0706910248067089,
+        "green_y_m": 0.07326763761722903,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.06169060270809189,
+        "blue_y_m": -0.09390633844401051,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125051,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0052",
+      "seed": 75052,
+      "x_m": -0.008935610491277793,
+      "y_m": -0.08439289308626521,
+      "yaw_rad": 0.0,
+      "env_seed": 75052,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.06656130003362387,
+        "green_y_m": 0.10059542773802006,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.03953831061638509,
+        "blue_y_m": 0.02404508546647542,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125052,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0053",
+      "seed": 75053,
+      "x_m": 0.07994634684360157,
+      "y_m": -0.04461082423350533,
+      "yaw_rad": 0.0,
+      "env_seed": 75053,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": -0.07098937472625082,
+        "green_y_m": -0.062482826802054886,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.020210023593344777,
+        "blue_y_m": 0.05179050194291816,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125053,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0054",
+      "seed": 75054,
+      "x_m": 0.07662343678529544,
+      "y_m": -0.10925828610381923,
+      "yaw_rad": 0.0,
+      "env_seed": 75054,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "blue",
+        "green_x_m": 0.023312770024584706,
+        "green_y_m": -0.010158261043033176,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.0675709410584911,
+        "blue_y_m": -0.0053038292213092725,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125054,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0055",
+      "seed": 75055,
+      "x_m": 0.04329785914617594,
+      "y_m": 0.03540063890718943,
+      "yaw_rad": 0.0,
+      "env_seed": 75055,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": -0.07764951139095998,
+        "green_y_m": -0.03015439320066346,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.019428033251770727,
+        "blue_y_m": -0.05026072573725919,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125055,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0056",
+      "seed": 75056,
+      "x_m": -0.04567897638368765,
+      "y_m": -0.07183684433254349,
+      "yaw_rad": 0.0,
+      "env_seed": 75056,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.04069898462101197,
+        "green_y_m": 0.0593667558034751,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.05645318268084047,
+        "blue_y_m": -0.06737173372227037,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125056,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0057",
+      "seed": 75057,
+      "x_m": 0.06455716445805139,
+      "y_m": 0.08313875996829197,
+      "yaw_rad": 0.0,
+      "env_seed": 75057,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.032455333233393904,
+        "green_y_m": -0.09743080438429684,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.0779735565313384,
+        "blue_y_m": -0.04733233242000694,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125057,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0058",
+      "seed": 75058,
+      "x_m": 0.06105380490221056,
+      "y_m": -0.10556193191452563,
+      "yaw_rad": 0.0,
+      "env_seed": 75058,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "red",
+        "green_x_m": 0.0755057514534196,
+        "green_y_m": -0.018986462583502672,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": 0.018167014691273617,
+        "blue_y_m": 0.10530095196829208,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125058,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    },
+    {
+      "scene_id": "color_pick_development_v1-0059",
+      "seed": 75059,
+      "x_m": 0.0592507568058878,
+      "y_m": 0.017062603706469684,
+      "yaw_rad": 0.0,
+      "env_seed": 75059,
+      "overrides": {
+        "task": "pick_requested_color",
+        "target_color": "green",
+        "green_x_m": 0.06270016159740584,
+        "green_y_m": -0.0973201796626206,
+        "green_yaw_rad": 0.0,
+        "blue_x_m": -0.02758483685072758,
+        "blue_y_m": -0.0975547279734116,
+        "blue_yaw_rad": 0.0,
+        "domain_randomization": {
+          "tier": "nominal",
+          "seed": 125059,
+          "front_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_look_at_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "front_fovy_offset_deg": 0.0,
+          "wrist_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_rotation_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "wrist_fovy_offset_deg": 0.0,
+          "light_position_offset_m": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "light_diffuse_scale": 1.0,
+          "light_ambient": 0.0,
+          "light_tint": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "table_rgb": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "table_friction_scale": 1.0,
+          "brightness": 1.0,
+          "contrast": 1.0,
+          "saturation": 1.0,
+          "hue_shift": 0.0,
+          "gaussian_noise_std": 0.0,
+          "blur_probability": 0.0
+        }
+      }
+    }
+  ]
+}
