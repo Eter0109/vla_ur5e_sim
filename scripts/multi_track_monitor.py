@@ -52,11 +52,12 @@ def parse_log(log_path: Path):
                     loss = float(m_loss.group(1))
                 if m_lr and not lr:
                     lr = m_lr.group(1)
-            m_bar = re.search(r"(\d+)/12000.*,\s+([0-9.]+)step/s", line)
-            if m_bar and not step:
-                step = int(m_bar.group(1))
-            if m_bar and not speed:
-                speed = f"{m_bar.group(2)} step/s"
+            m_bar = re.search(r"(\d+)/12000.*,\s+([0-9.]+(?:step/s|s/step))", line)
+            if m_bar:
+                if not step:
+                    step = int(m_bar.group(1))
+                if not speed:
+                    speed = m_bar.group(2)
             if step and loss and speed:
                 break
         return step, loss, lr, speed
